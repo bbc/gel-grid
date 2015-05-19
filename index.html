@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>GEL Grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+        var GEL = {
+            browser : {
+                isIE8: false
+            },
+            mustard : false
+        };
+    </script>
+    <!--[if IE 8]><script>GEL.browser.isIE8 = true;</script><![endif]-->
+    <script>
+        GEL.mustard = (function () {
+            var enhanced = (
+                'addEventListener' in window &&
+                'querySelector' in window.document &&
+                'localStorage' in window
+            );
+            return (enhanced || GEL.browser.isIE8);
+        })();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <script>
+        if (GEL.mustard && GEL.browser.isIE8) {
+            document.write('<link rel="stylesheet" href="assets/css/gel-demo-fixed.css" />');
+        } else if (GEL.mustard) {
+            document.write('<link rel="stylesheet" href="assets/css/gel-demo-enhanced.css" />');
+        } else {
+            document.write('<link rel="stylesheet" href="assets/css/gel-demo-base.css" />');
+        }
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/base.css" />
+    </noscript>
+    <script>
+    !function(){function e(e,o){this.loadResource(e,o)}e.prototype.loadResource=function(e,o){try{this.loadResourceFromLocalStorage(e,o)}catch(t){this.loadResourceFromRemote(e,o)}},e.prototype.loadResourceFromLocalStorage=function(e,o){var t,r=window.localStorage.getItem(e);if(r&&(t=JSON.parse(r)),t&&t.url!==o)throw"Resource is either not present or has been updated";this.insertSvgIntoBody(t.data,"local")},e.prototype.loadResourceFromRemote=function(e,o){return this.supportsXMLHttpRequest()?void this.loadResourceViaXmlHttp(e,o):void this.loadResourceViaXDomainRequest(e,o)},e.prototype.loadResourceViaXmlHttp=function(e,o){var t=new XMLHttpRequest,r=this;t.onreadystatechange=function(){4===this.readyState&&(r.insertSvgIntoBody(this.responseText,"remote"),r.removePreviousVersion(e),r.writeToLocalStorage(e,o,this.responseText))},t.open("GET",o),t.send()},e.prototype.loadResourceViaXDomainRequest=function(e,o){var t=new XDomainRequest,r=this;t.onload=function(){this.responseText&&(r.insertSvgIntoBody(this.responseText,"remote"),r.removePreviousVersion(e),r.writeToLocalStorage(e,o,this.responseText))},t.onprogress=function(){},t.onerror=function(){},t.ontimeout=function(){},t.open("GET",o,!0),t.send()},e.prototype.supportsXMLHttpRequest=function(){var e=new XMLHttpRequest;return"withCredentials"in e},e.prototype.writeToLocalStorage=function(e,o,t){var r=JSON.stringify({url:o,data:t});try{window.localStorage.setItem(e,r)}catch(n){}},e.prototype.insertSvgIntoBody=function(e,o){var t=document.createElement("div");t.innerHTML=e,t.setAttribute("data-loaded-from",o),t.style.display="none",document.body.insertBefore(t,document.body.childNodes[0])},e.prototype.removePreviousVersion=function(e){window.localStorage.hasOwnProperty(e)&&window.localStorage.removeItem(e)},window.Shovel={load:function(o,t){new e(o,t)}}}();
+	</script>
+	<script>
+	    if (GEL.mustard && !GEL.browser.isIE8) {
+	        window.addEventListener('load', function () {
+	            Shovel.load('gel-icons-core', 'assets/svg/gel-icons-core.svg');
+	            Shovel.load('gel-icons-media', 'assets/svg/gel-icons-media.svg');
+	        });
+	    }
+	</script>
+</head>
+	<body>
+
+		<!-- GEL Demos Header -->
+        <div class="gel-demo">
+			<header role="banner" class="gel-demo-header">
+                <div class="gel-wrap">
+                    <a class="gel-demo-header__github-link" href="http://github.com/bbc">
+    			        <object data="assets/images/github-logo.svg" type="image/svg+xml">
+    			            <img src="assets/images/github-logo.png" alt="Github Logo" />
+    			        </object>
+                    </a>
+                </div>
+			    <div class="gel-demo-header__banner">
+                    <div class="gel-wrap clearfix">
+    					<div class="gel-demo-header__brand">
+                            <a class="gel-demo-header__brand-logo" href="http://www.bbc.co.uk/gel">
+            			        <object data="assets/images/bbc-gel-logo.svg" type="image/svg+xml">
+            			            <img src="assets/images/bbc-gel-logo.png" alt="BBC GEL Logo" />
+            			        </object>
+        					</a>
+    			   			<i class="gel-demo-header__brand-beta gel-minion-bold">Beta</i>
+                        </div>
+
+    					<a class="gel-demo-header__banner-button button gel-long-primer-bold" href="http://www.bbc.co.uk/gel/guidelines/grid">
+    						Go to BBC GEL
+    					</a>
+                    </div>
+                </div>
+                <div class="gel-demo-header__intro">
+                    <div class="gel-wrap">
+                    	<div class="gel-layout">
+                    		<div class="gel-layout__item gel-bp-l-2/3">
+		                        <h1 class="gel-demo-header__intro-title gel-canon-bold">Grid</h1>
+		                        <!--<p>This guideline explains how to use the BBC icons. They were designed to enable a consistent visual language across all of the BBC digital platforms – the web, apps and television.<p>-->
+		                    </div>
+		                </div>
+                    </div>
+                </div>
+			</header>
+			<!-- GEL demo content area -->
+            <main role="main" class="gel-demo-content">
+                <div class="gel-wrap">
+                	<h2 class="gel-double-pica-bold">Area for GEL Guideline Demos</h2>
+                </div>
+            </main>
+            <footer role="contentinfo" class="gel-demo-footer">
+            	<!-- To be confirmed -->
+            </footer>
+		</div>
+
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "gel-demos",
+  "version": "0.0.1",
+  "homepage": "https://github.com/bbc/gel-demos",
+  "authors": [
+    "shaun.bent@bbc.co.uk"
+  ],
+  "description": "A boilerplate for creating GEL Demos",
+  "main": "index.html",
+  "keywords": [
+    "gel",
+    "bbc",
+    "demo"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gel-typography": "https://github.com/bbc-gel/gel-typography.git#~0.5.0",
+    "gel-layout": "https://github.com/bbc-gel/gel-layout.git#~0.0.5",
+    "gel-widths": "https://github.com/bbc/gel-widths.git#~0.1.1-beta"
+  }
+}

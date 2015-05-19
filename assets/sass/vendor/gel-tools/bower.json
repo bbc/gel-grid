@@ -1,0 +1,32 @@
+{
+  "name": "gel-tools",
+  "homepage": "https://github.com/shaunbent/gel-tools",
+  "authors": [
+    "shaun.bent@bbc.co.uk"
+  ],
+  "description": "A collection of common Sass Mixins & Functions needed to build GEL components",
+  "main": [
+    "_math.scss",
+    "_rem.scss"
+  ],
+  "keywords": [
+    "tools",
+    "sass",
+    "gel",
+    "bbc",
+    "responsive",
+    "global experience language"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gel-settings": "git@github.com:bbc-gel/gel-settings.git#~0.3.0"
+  }
+}

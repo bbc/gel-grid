@@ -1,0 +1,37 @@
+///*------------------------------------*\
+//    # GLOBALS
+//\*------------------------------------*/
+
+// The following variables overide the default values defined as part
+// of the GEL Settings component
+
+
+// Layout
+$gel-layout-enable--center: true;
+$gel-layout-enable--right: true;
+$gel-spacing-enable--margins: true;
+$gel-spacing-enable--margins-alt: true;
+$gel-spacing-enable--margins-tiny: true;
+$gel-spacing-enable--margins-small: true;
+$gel-spacing-enable--margins-large: true;
+$gel-spacing-enable--margins-large-alt: true;
+$gel-spacing-enable--margins-huge: true;
+$gel-spacing-enable--margins-none: true;
+
+$gel-spacing-enable--paddings: true;
+$gel-spacing-enable--paddings-tiny: true;
+$gel-spacing-enable--paddings-small: true;
+$gel-spacing-enable--paddings-large: true;
+$gel-spacing-enable--paddings-huge: true;
+$gel-spacing-enable--paddings-none: true;
+
+// Widths
+$gel-width-enable--markup-output: true;
+
+// Typography
+$gel-type-enable--font-family: true;
+
+/* Remove Whitespace - Temporary */
+$gel-layout-enable--whitespace-fix: true;
+
+

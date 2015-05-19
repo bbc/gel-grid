@@ -1,0 +1,91 @@
+/*------------------------------------*\
+    # DEMO HEADER
+\*------------------------------------*/
+
+.gel-demo-header {
+
+}
+
+.gel-demo-header__intro-title  {
+    margin-top: double($gel-alt-spacing-unit);
+    margin-bottom: $gel-alt-spacing-unit;
+}
+
+.gel-demo-header__github-link {
+    display: block;
+    margin-top: $gel-spacing-unit;
+    margin-bottom: $gel-spacing-unit;
+
+    object {
+        max-width: 72px;
+        vertical-align: middle;
+    }
+}
+
+.gel-demo-header__banner {
+    border-top: 1px solid $gel-color--alto;
+	border-bottom: 1px solid $gel-color--alto;
+    padding-top: $gel-alt-spacing-unit;
+	padding-bottom: $gel-alt-spacing-unit;
+}
+
+.gel-demo-header__brand {
+    display: block;
+    margin-bottom: $gel-alt-spacing-unit;
+
+    @if $enhanced {
+        @include mq($from: 460px) {
+            float: left;
+            margin-bottom: 0;
+            padding-top: halve($gel-alt-spacing-unit);
+            padding-bottom: halve($gel-alt-spacing-unit);
+        }
+    }
+}
+
+.gel-demo-header__brand-logo {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    &:active {
+        top: 1px;
+    }
+
+    object {
+        vertical-align: middle;
+
+        @if $enhanced {
+            @include mq($from: gel-bp-l) {
+                width: 164px;
+            }
+        }
+    }
+}
+
+.gel-demo-header__brand-beta {
+    padding-top: 1px;
+    padding-right: halve($gel-spacing-unit);
+    padding-bottom: 1px;
+    padding-left: halve($gel-spacing-unit);
+
+    font-style: normal;
+    font-weight: bold;
+
+    color: white;
+    background: $gel-color--orange;
+
+    vertical-align: top;
+}
+
+.gel-demo-header__banner-button {
+    display: block;
+    width: 100%;
+
+    @if $enhanced {
+        @include mq($from: 460px) {
+            float: right;
+            width: auto;
+        }
+    }
+}

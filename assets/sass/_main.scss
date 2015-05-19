@@ -1,0 +1,40 @@
+// settings
+@import 'settings/globals';
+@import 'vendor/gel-settings/globals';
+@import 'settings/colours';
+
+
+// tools
+@import 'vendor/sass-mq/mq';
+@import 'vendor/gel-tools/rem';
+@import 'vendor/gel-tools/math';
+
+
+// generic
+@import 'generic/normalize';
+@import 'generic/reset';
+@import 'generic/box-sizing';
+
+
+// base
+@import 'base/typography';
+
+
+// object
+@import 'vendor/gel-layout/layout';
+@import 'vendor/gel-typography/typography';
+@import 'objects/button';
+
+
+// components
+@import 'components/demo-header';
+@import 'components/demo-content';
+
+
+// trumps
+@import 'vendor/gel-widths/widths';
+@import 'trumps/spacing';
+@import 'trumps/clearfix';
+
+
+

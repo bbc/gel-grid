@@ -1,0 +1,31 @@
+{
+  "name": "gel-widths",
+  "homepage": "https://github.com/shaunbent/gel-widths",
+  "authors": [
+    "shaun.bent@bbc.co.uk"
+  ],
+  "description": "A basic set of widths to use with the GEL layout system",
+  "main": "_widths.scss",
+  "keywords": [
+    "widths",
+    "sass",
+    "gel",
+    "bbc",
+    "responsive",
+    "global experience language"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "example"
+  ],
+  "dependencies": {
+    "gel-settings": "git@github.com:bbc/gel-settings.git#~0.3.0",
+    "gel-tools": "git@github.com:bbc/gel-tools.git#~0.3.0"
+  }
+}

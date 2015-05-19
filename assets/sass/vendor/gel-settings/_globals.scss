@@ -1,0 +1,80 @@
+///*------------------------------------*\
+//    # GEL GLOBALS
+//\*------------------------------------*/
+
+// The following variables are the provide a common configuration to use across
+// various GEL components. These variables should not be modified or
+// adjusted directly; you should predefine the variables in your own projec,
+// to overide these default settings.
+
+
+// Namespace
+//
+// By default all GEL components are namespaced with `gel-`, this allows us to
+// share components without the chance of there being any conflicts within existing
+// products. It also helps with sharing components across products.
+$gel-namespace: 'gel-' !default;
+
+
+
+// Spacing
+//
+// GEL spacing is based on an 8px baseline and multiples of this number, where possible
+// this baseline and multiples of should act as your default spacing unit. This helps to
+// ensure we have consistant spacing across products.
+//
+// We also make available an alternative spacing unit based on a 12px baseline to allow more
+// flexibility with spacing elements
+$gel-spacing-unit: 8px !default;
+$gel-alt-spacing-unit: 12px !default;
+
+
+
+// Base settings
+//
+// Base settings are used primarly by our tools at the momement but there use could change in
+// the future
+$gel-base-font-size: 16px !default;
+
+
+
+// Breakpoints
+//
+// GEL defines four major breakpoints, by adhering to these key breakpoints we can ensure a
+// consistant experience across products.
+//
+// To give products the option to use a naming convention they see fit the naming of these
+// major is customisable
+$gel-breakpoints: ();
+$gel-breakpoint-names: (gel-bp-xs, gel-bp-s, gel-bp-m, gel-bp-l) !default;
+$gel-breakpoint-sizes: (240px, 400px, 600px, 900px) !default;
+$gel-breakpoint-static: gel-bp-l !default;
+
+// Loop through each of our breakpoint-sizes, map this with the appropriate name
+// and append it to the $mq-breakpoints map.
+@each $breakpoint in $gel-breakpoint-sizes {
+    $i: index($gel-breakpoint-sizes, $breakpoint);
+    $breakpoint-name: #{nth($gel-breakpoint-names, $i)};
+
+    $gel-breakpoints: map-merge($gel-breakpoints, ($breakpoint-name: $breakpoint)) !global;
+}
+
+
+
+// MQ Config
+//
+// We're making use of the Guardians Sass MQ script to handle our media queries,
+// it also handles outputing a static version without Media Queries for older
+// versions of IE
+
+// MQ expects a Sass Map containing the available breakpoints
+$mq-breakpoints: $gel-breakpoints;
+
+// In order to output the appropriate styles for older versions of IE which don't
+// support Media Queries we need to define which breakpoint we want styles output for
+$mq-static-breakpoint: #{$gel-breakpoint-static};
+
+
+
+// Define a variable so we can tell the other components the settings are available
+$gel-settings-available: true;

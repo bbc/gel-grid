@@ -1,0 +1,70 @@
+///*------------------------------------*\
+//    # WIDTHS
+//\*------------------------------------*/
+
+/**
+ * A series of width helper classes, mixins and functions that you can use to size
+ * things like layout systems. Classes can take a fraction-like format (e.g. `.gel-2/3`)
+ */
+
+
+// We need to check that the GEL settings are available globally
+$gel-settings-available: false !default;
+@if ($gel-settings-available == false) {
+    @warn "Have you included the GEL global settings file?";
+}
+
+
+// import the local dependancies
+@import 'settings';
+@import 'tools';
+
+
+// define some output control variables
+$core: true !default;
+$enhanced: true !default;
+
+
+//  Create our width helper classes prefixed with any given alias.
+@if $gel-width-enable--markup-output {
+
+    @if $core {
+        @include gel-widths($gel-width-columns);
+    }
+
+    @if $enhanced {
+        @each $breakpoint in $gel-width-breakpoints {
+            @include mq($from: $breakpoint) {
+                @include gel-widths($gel-width-columns, '#{$breakpoint}-')
+            }
+        }
+    }
+
+}
+
+
+// The legacy with classes are being deprecated and will be removed in the near future.
+// We're moving away from spoke word format class names in favour of numberic classes
+// as these are faster and easier to write and also allows us to make better use of Sass
+// in generating the output.
+//
+// If you're already using these legacy classes within your markup please find and replace them
+// for the newer improved syntax
+//
+@if $gel-width-enable--legacy-output {
+
+    @warn 'Legacy classes are being deprecated, please change to use the new syntax';
+
+    @if $core {
+        @include gel-legacy-widths();
+    }
+
+    @if $enhanced {
+        @each $breakpoint in $gel-width-breakpoints {
+            @include mq($from: $breakpoint) {
+                @include gel-legacy-widths('#{$breakpoint}-')
+            }
+        }
+    }
+
+}
