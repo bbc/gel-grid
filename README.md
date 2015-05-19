@@ -1,1 +1,1 @@
-# gel-grid
+# GEL Grid
