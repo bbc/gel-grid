@@ -1,7 +1,5 @@
-# GEL Demos
+# GEL Grid
 
-Working examples of documented BBC GEL guidelines and patterns.
-
-This repository gives a 'GEL Demo' wrapper to use with Github pages. 
+A demo of the GEL Grid.
 
 Work in progress.
