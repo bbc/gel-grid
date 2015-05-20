@@ -1,0 +1,10 @@
+/*------------------------------------*\
+    #GRID DEMO
+\*------------------------------------*/
+
+.gel-style-guide-grid-item {
+  @extend %gel-pica;
+  background-color: #c7e1e4; /*#a2bec6*/
+  text-align: center;
+  padding: $gel-alt-spacing-unit 0;
+}
