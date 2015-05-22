@@ -46,7 +46,6 @@
 	    if (GEL.mustard && !GEL.browser.isIE8) {
 	        window.addEventListener('load', function () {
 	            Shovel.load('gel-icons-core', 'assets/svg/gel-icons-core.svg');
-	            Shovel.load('gel-icons-media', 'assets/svg/gel-icons-media.svg');
 	        });
 	    }
 	</script>
@@ -84,7 +83,8 @@
                     	<div class="gel-layout">
                     		<div class="gel-layout__item gel-bp-l-2/3">
 		                        <h1 class="gel-demo-header__intro-title gel-canon-bold">Grid</h1>
-		                        <!--<p>This guideline explains how to use the BBC icons. They were designed to enable a consistent visual language across all of the BBC digital platforms – the web, apps and television.<p>-->
+		                        <p>GEL proposes a 12 column grid with margin and gutter dimensions adjusted according to breakpoints optimised for feature phones, smart phones, tablet devices and desktops.</p>
+                                <p>The breakpoints in this guideline are used to define major changes to the grid only. It is likely that these will need to be used in combination with other, minor breakpoints that are optimised for the content proposition and layout behaviour.</p>
 		                    </div>
 		                </div>
                     </div>
@@ -93,6 +93,16 @@
 			<!-- GEL demo content area -->
             <main role="main" class="gel-demo-content">
                 <div class="gel-wrap">
+
+                    <div class="gel-demo-controls gel-grid-controls">
+                        <p class="gel-grid-controls__label gel-double-pica mb">Your device is currently using:</p>
+                        <p class="gel-grid-controls__group-name gel-great-primer"></p>
+                        <p class="gel-grid-controls__margin-gutter-size gel-brevier"></p>
+                        <div class="gel-demo-controls__options gel-brevier-bold">
+                            <button class="gel-demo-controls__option gel-grid-controls__option-toggle" id="overlay-toggle">Toggle Grid Overlay On</button>
+                        </div>
+                    </div>
+
                 	 <div class="gel-layout gel-mb">
                         <div class="gel-layout__item">
                             <div class="gel-style-guide-grid-item">100% (One Whole)</div>
@@ -164,8 +174,6 @@
             </footer>
 		</div>
 
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	    <script src="assets/js/main.js"></script>
-
 	</body>
 </html>
