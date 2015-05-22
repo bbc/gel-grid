@@ -28,7 +28,10 @@
 
 // components
 @import 'components/demo-header';
+@import 'components/demo-controls';
 @import 'components/demo-content';
+
+@import 'components/grid-controls';
 @import 'components/grid-demo';
 
 
@@ -36,6 +39,3 @@
 @import 'vendor/gel-widths/widths';
 @import 'trumps/spacing';
 @import 'trumps/clearfix';
-
-
-
