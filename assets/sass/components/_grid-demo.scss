@@ -20,7 +20,14 @@
   text-align: center;
   padding: $gel-spacing-unit 0;
   border-bottom: 8px solid #aec4cc;
+  margin-bottom: double($gel-spacing-unit);
+  @if $enhanced {
+        @include mq($from: gel-bp-l) {
+            margin-bottom:0;
+        }
+  }
 }
+
 
 .gel-demo-grid-item:before, .gel-demo-grid-item:after {
   content: '';

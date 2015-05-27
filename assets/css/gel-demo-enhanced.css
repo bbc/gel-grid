@@ -1375,9 +1375,17 @@ body {
   text-align: center;
   padding: 8px 0;
   border-bottom: 8px solid #aec4cc;
+  margin-bottom: 16px;
 }
 
-/* line 25, /Users/jonesa109/Sites/gel-grid/assets/sass/components/_grid-demo.scss */
+@media (min-width: 56.25em) {
+  /* line 17, /Users/jonesa109/Sites/gel-grid/assets/sass/components/_grid-demo.scss */
+  .gel-demo-grid-item {
+    margin-bottom: 0;
+  }
+}
+
+/* line 32, /Users/jonesa109/Sites/gel-grid/assets/sass/components/_grid-demo.scss */
 .gel-demo-grid-item:before, .gel-demo-grid-item:after {
   content: '';
   height: 8px;
@@ -1389,7 +1397,7 @@ body {
   display: block;
 }
 
-/* line 36, /Users/jonesa109/Sites/gel-grid/assets/sass/components/_grid-demo.scss */
+/* line 43, /Users/jonesa109/Sites/gel-grid/assets/sass/components/_grid-demo.scss */
 .gel-demo-grid-item:after {
   margin-top: 8px;
 }
