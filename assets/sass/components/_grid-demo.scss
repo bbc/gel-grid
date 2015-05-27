@@ -2,9 +2,37 @@
     #GRID DEMO
 \*------------------------------------*/
 
-.gel-style-guide-grid-item {
-  @extend %gel-pica;
-  background-color: #c7e1e4; /*#a2bec6*/
-  text-align: center;
-  padding: $gel-alt-spacing-unit 0;
+.gel-demo-section {
+    margin-bottom: double($gel-spacing-unit);
+    padding-top: double($gel-spacing-unit);
+    border-top: 1px solid #dcdcdc;
+
+    &:first-child {
+        border-top: 0;
+    }
 }
+
+
+
+.gel-demo-grid-item {
+  @extend %gel-pica;
+  background-color: #d4e7eb; /*#a2bec6*/
+  text-align: center;
+  padding: $gel-spacing-unit 0;
+  border-bottom: 8px solid #aec4cc;
+}
+
+.gel-demo-grid-item:before, .gel-demo-grid-item:after {
+  content: '';
+  height: 8px;
+  width: 100%;
+  background: #aec4cc;
+  top: 0;
+  left: 0;
+  position: relative;
+  display: block;
+ }
+
+ .gel-demo-grid-item:after {
+  margin-top:8px;
+ }

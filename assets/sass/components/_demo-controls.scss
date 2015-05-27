@@ -10,7 +10,7 @@
     position: relative;
 
     margin-right: -$gel-spacing-unit;
-    margin-bottom: double($gel-spacing-unit);
+    margin-bottom: double($gel-alt-spacing-unit);
     margin-left: -$gel-spacing-unit;
     padding: $gel-spacing-unit;
 
@@ -30,18 +30,27 @@
         }
     }
 
-    > :last-child {
-        margin-bottom: 0; /* [1] */
+
+}
+
+.gel-grid-controls__margin-gutter-size, .gel-demo-controls__options {
+    display:block;
+    margin-bottom: $gel-spacing-unit;
+}
+
+.gel-grid-controls__margin-gutter-size {
+        @if $enhanced {
+        @include mq($from: gel-bp-m) {
+            margin-bottom: 0;
+        }
     }
 }
 
 .gel-demo-controls__options {
-    position: absolute;
-    bottom: $gel-spacing-unit;
-    right: $gel-spacing-unit;
-
     @if $enhanced {
-        @include mq($from: gel-bp-s) {
+        @include mq($from: gel-bp-m) {
+            margin-bottom: 0;
+            position: absolute;
             bottom: double($gel-spacing-unit);
             right: double($gel-spacing-unit);
         }
