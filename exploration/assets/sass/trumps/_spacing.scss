@@ -1,0 +1,272 @@
+/*------------------------------------*\
+    # SPACING
+\*------------------------------------*/
+
+/**
+ * The GEL Layout system is based on the the Harry Roberts inuitcss layout system with
+ * modifications applied to ensure it adheres to the GEL guidelines. It uses `box-sizing: border-box;`
+ * and `display: inline-block;` to create an extremely powerful, flexible alternative
+ * to the traditional grid system.
+ */
+
+
+
+// We need to check that the GEL settings are available globally
+$gel-settings-available: false !default;
+@if ($gel-settings-available == false) {
+    @warn 'Have you included the GEL global settings file?';
+}
+
+
+
+// define some output control variables
+$core: true !default;
+$enhanced: true !default;
+
+
+// Varaibles to allow customisation and configuration of the component
+$gel-spacing-namespace: $gel-namespace !default;
+
+$gel-spacing-margin: $gel-spacing-unit !default;
+$gel-spacing-padding: $gel-spacing-unit !default;
+
+$gel-spacing-enable--margins: false !default;
+$gel-spacing-enable--margins-alt: false !default;
+$gel-spacing-enable--margins-tiny: false !default;
+$gel-spacing-enable--margins-small: false !default;
+$gel-spacing-enable--margins-large: false !default;
+$gel-spacing-enable--margins-large-alt: false !default;
+$gel-spacing-enable--margins-huge: false !default;
+$gel-spacing-enable--margins-none: false !default;
+
+$gel-spacing-enable--paddings: false !default;
+$gel-spacing-enable--paddings-tiny: false !default;
+$gel-spacing-enable--paddings-small: false !default;
+$gel-spacing-enable--paddings-large: false !default;
+$gel-spacing-enable--paddings-huge: false !default;
+$gel-spacing-enable--paddings-none: false !default;
+
+
+
+@if $gel-spacing-enable--margins {
+
+    /**
+     * Margin spacing classes
+     */
+    .#{$gel-spacing-namespace}m       { margin:           $gel-spacing-margin !important; }
+    .#{$gel-spacing-namespace}mt      { margin-top:       $gel-spacing-margin !important; }
+    .#{$gel-spacing-namespace}mr      { margin-right:     $gel-spacing-margin !important; }
+    .#{$gel-spacing-namespace}mb      { margin-bottom:    $gel-spacing-margin !important; }
+    .#{$gel-spacing-namespace}ml      { margin-left:      $gel-spacing-margin !important; }
+    .#{$gel-spacing-namespace}mh      { margin-right:     $gel-spacing-margin !important; margin-left:      $gel-spacing-margin !important; }
+    .#{$gel-spacing-namespace}mv      { margin-top:       $gel-spacing-margin !important; margin-bottom:    $gel-spacing-margin !important; }
+
+}
+
+
+@if $gel-spacing-enable--margins-alt {
+
+    /**
+     * Alt margin spacing classes
+     */
+    .#{$gel-spacing-namespace}m\+-      { margin:           $gel-alt-spacing-unit !important; }
+    .#{$gel-spacing-namespace}mt\+-     { margin-top:       $gel-alt-spacing-unit !important; }
+    .#{$gel-spacing-namespace}mr\+-     { margin-right:     $gel-alt-spacing-unit !important; }
+    .#{$gel-spacing-namespace}mb\+-     { margin-bottom:    $gel-alt-spacing-unit !important; }
+    .#{$gel-spacing-namespace}ml\+-     { margin-left:      $gel-alt-spacing-unit !important; }
+    .#{$gel-spacing-namespace}mh\+-     { margin-right:     $gel-alt-spacing-unit !important; margin-left:      $gel-alt-spacing-unit !important; }
+    .#{$gel-spacing-namespace}mv\+-     { margin-top:       $gel-alt-spacing-unit !important; margin-bottom:    $gel-alt-spacing-unit !important; }
+
+}
+
+
+@if $gel-spacing-enable--margins-tiny {
+
+    /**
+     * Tiny margin spacing classes
+     */
+    .#{$gel-spacing-namespace}m--     { margin:           quarter($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mt--    { margin-top:       quarter($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mr--    { margin-right:     quarter($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mb--    { margin-bottom:    quarter($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}ml--    { margin-left:      quarter($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mh--    { margin-right:     quarter($gel-spacing-margin) !important; margin-left:      quarter($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mv--    { margin-top:       quarter($gel-spacing-margin) !important; margin-bottom:    quarter($gel-spacing-margin) !important; }
+
+}
+
+
+@if $gel-spacing-enable--margins-small {
+
+    /**
+     * Small margin spacing classes
+     */
+    .#{$gel-spacing-namespace}m-      { margin:           halve($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mt-     { margin-top:       halve($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mr-     { margin-right:     halve($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mb-     { margin-bottom:    halve($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}ml-     { margin-left:      halve($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mh-     { margin-right:     halve($gel-spacing-margin) !important; margin-left:      halve($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mv-     { margin-top:       halve($gel-spacing-margin) !important; margin-bottom:    halve($gel-spacing-margin) !important; }
+
+}
+
+
+@if $gel-spacing-enable--margins-large {
+
+    /**
+     * Large margin spacing classes
+     */
+    .#{$gel-spacing-namespace}m\+     { margin:           double($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mt\+    { margin-top:       double($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mr\+    { margin-right:     double($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mb\+    { margin-bottom:    double($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}ml\+    { margin-left:      double($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mh\+    { margin-right:     double($gel-spacing-margin) !important; margin-left:      double($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mv\+    { margin-top:       double($gel-spacing-margin) !important; margin-bottom:    double($gel-spacing-margin) !important; }
+
+}
+
+@if $gel-spacing-enable--margins-large-alt {
+
+    /**
+     * Large margin spacing classes
+     */
+    .#{$gel-spacing-namespace}m\+\+\-    { margin:           double($gel-alt-spacing-unit) !important; }
+    .#{$gel-spacing-namespace}mt\+\+\-    { margin-top:       double($gel-alt-spacing-unit) !important; }
+    .#{$gel-spacing-namespace}mr\+\+\-    { margin-right:     double($gel-alt-spacing-unit) !important; }
+    .#{$gel-spacing-namespace}mb\+\+\-    { margin-bottom:    double($gel-alt-spacing-unit) !important; }
+    .#{$gel-spacing-namespace}ml\+\+\-    { margin-left:      double($gel-alt-spacing-unit) !important; }
+    .#{$gel-spacing-namespace}mh\+\+\-    { margin-right:     double($gel-alt-spacing-unit) !important; margin-left:      double($gel-alt-spacing-unit) !important; }
+    .#{$gel-spacing-namespace}mv\+\+\-    { margin-top:       double($gel-alt-spacing-unit) !important; margin-bottom:    double($gel-alt-spacing-unit) !important; }
+
+}
+
+
+@if $gel-spacing-enable--margins-huge {
+
+    /**
+     * Huge margin spacing classes
+     */
+    .#{$gel-spacing-namespace}m\+\+   { margin:           quadruple($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mt\+\+  { margin-top:       quadruple($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mr\+\+  { margin-right:     quadruple($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mb\+\+  { margin-bottom:    quadruple($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}ml\+\+  { margin-left:      quadruple($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mh\+\+  { margin-right:     quadruple($gel-spacing-margin) !important; margin-left:      quadruple($gel-spacing-margin) !important; }
+    .#{$gel-spacing-namespace}mv\+\+  { margin-top:       quadruple($gel-spacing-margin) !important; margin-bottom:    quadruple($gel-spacing-margin) !important; }
+
+}
+
+
+@if $gel-spacing-enable--margins-none {
+
+    /**
+     * Zero margin spacing classes
+     */
+    .#{$gel-spacing-namespace}m0      { margin:           0 !important; }
+    .#{$gel-spacing-namespace}mt0     { margin-top:       0 !important; }
+    .#{$gel-spacing-namespace}mr0     { margin-right:     0 !important; }
+    .#{$gel-spacing-namespace}mb0     { margin-bottom:    0 !important; }
+    .#{$gel-spacing-namespace}ml0     { margin-left:      0 !important; }
+    .#{$gel-spacing-namespace}mh0     { margin-right:     0 !important; margin-left:      0 !important; }
+    .#{$gel-spacing-namespace}mv0     { margin-top:       0 !important; margin-bottom:    0 !important; }
+
+}
+
+
+
+@if $gel-spacing-enable--paddings {
+
+    /**
+     * Padding spacing classes
+     */
+    .#{$gel-spacing-namespace}p       { padding:           $gel-spacing-padding !important; }
+    .#{$gel-spacing-namespace}pt      { padding-top:       $gel-spacing-padding !important; }
+    .#{$gel-spacing-namespace}pr      { padding-right:     $gel-spacing-padding !important; }
+    .#{$gel-spacing-namespace}pb      { padding-bottom:    $gel-spacing-padding !important; }
+    .#{$gel-spacing-namespace}pl      { padding-left:      $gel-spacing-padding !important; }
+    .#{$gel-spacing-namespace}ph      { padding-right:     $gel-spacing-padding !important; padding-left:      $gel-spacing-padding !important; }
+    .#{$gel-spacing-namespace}pv      { padding-top:       $gel-spacing-padding !important; padding-bottom:    $gel-spacing-padding !important; }
+
+}
+
+
+@if $gel-spacing-enable--paddings-tiny {
+
+    /**
+     * Tiny padding spacing classes
+     */
+    .#{$gel-spacing-namespace}p--     { padding:           quarter($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pt--    { padding-top:       quarter($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pr--    { padding-right:     quarter($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pb--    { padding-bottom:    quarter($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pl--    { padding-left:      quarter($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}ph--    { padding-right:     quarter($gel-spacing-padding) !important; padding-left:      quarter($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pv--    { padding-top:       quarter($gel-spacing-padding) !important; padding-bottom:    quarter($gel-spacing-padding) !important; }
+
+}
+
+
+@if $gel-spacing-enable--paddings-small {
+
+    /**
+     * Small padding spacing classes
+     */
+    .#{$gel-spacing-namespace}p-      { padding:           halve($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pt-     { padding-top:       halve($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pr-     { padding-right:     halve($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pb-     { padding-bottom:    halve($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pl-     { padding-left:      halve($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}ph-     { padding-right:     halve($gel-spacing-padding) !important; padding-left:      halve($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pv-     { padding-top:       halve($gel-spacing-padding) !important; padding-bottom:    halve($gel-spacing-padding) !important; }
+
+}
+
+
+@if $gel-spacing-enable--paddings-large {
+
+    /**
+     * Large padding spacing classes
+     */
+    .#{$gel-spacing-namespace}p\+     { padding:           double($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pt\+    { padding-top:       double($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pr\+    { padding-right:     double($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pb\+    { padding-bottom:    double($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pl\+    { padding-left:      double($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}ph\+    { padding-right:     double($gel-spacing-padding) !important; padding-left:      double($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pv\+    { padding-top:       double($gel-spacing-padding) !important; padding-bottom:    double($gel-spacing-padding) !important; }
+
+}
+
+
+@if $gel-spacing-enable--paddings-huge {
+
+    /**
+     * Huge padding spacing classes
+     */
+    .#{$gel-spacing-namespace}p\+\+   { padding:           quadruple($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pt\+\+  { padding-top:       quadruple($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pr\+\+  { padding-right:     quadruple($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pb\+\+  { padding-bottom:    quadruple($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pl\+\+  { padding-left:      quadruple($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}ph\+\+  { padding-right:     quadruple($gel-spacing-padding) !important; padding-left:      quadruple($gel-spacing-padding) !important; }
+    .#{$gel-spacing-namespace}pv\+\+  { padding-top:       quadruple($gel-spacing-padding) !important; padding-bottom:    quadruple($gel-spacing-padding) !important; }
+
+}
+
+
+@if $gel-spacing-enable--paddings-none {
+
+    /**
+     * Zero padding spacing classes
+     */
+    .#{$gel-spacing-namespace}p0      { padding:           0 !important; }
+    .#{$gel-spacing-namespace}pt0     { padding-top:       0 !important; }
+    .#{$gel-spacing-namespace}pr0     { padding-right:     0 !important; }
+    .#{$gel-spacing-namespace}pb0     { padding-bottom:    0 !important; }
+    .#{$gel-spacing-namespace}pl0     { padding-left:      0 !important; }
+    .#{$gel-spacing-namespace}ph0     { padding-right:     0 !important; padding-left:      0 !important; }
+    .#{$gel-spacing-namespace}pv0     { padding-top:       0 !important; padding-bottom:    0 !important; }
+
+}

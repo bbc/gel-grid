@@ -1,0 +1,67 @@
+.button {
+    display: inline-block;
+
+    position:relative;
+
+    padding-top: double($gel-spacing-unit);
+    padding-right: double($gel-spacing-unit);
+    padding-bottom: double($gel-spacing-unit);
+    padding-left: double($gel-spacing-unit);
+
+    border:0;
+        
+    margin: 0;
+
+    line-height: 1.2; 
+
+    background-color: $gel-color--tundora;
+    border: 1px solid $gel-color--tundora;
+
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+
+    cursor: pointer;
+    color:white;
+    text-align:center;
+
+    color: white !important;
+    text-decoration: none !important;
+
+    @if $enhanced {
+        @include mq($from: gel-bp-xs) {
+            min-width:192px;
+        }
+    }
+
+    .gel-icon--inline {
+        margin-right:$gel-spacing-unit;
+    }
+}
+
+.button:hover {
+    text-decoration: underline !important;
+    background-color: #121212;
+}
+
+.button:active {
+    top: 1px;
+    background-color: $gel-color--orange;
+    border: 1px solid $gel-color--orange;
+}
+
+/* to make a button clear */
+.button--clear {
+    background-color: transparent;
+    color:#404040 !important;
+}
+/* clear button hover styles */
+.button--clear:hover {
+    text-decoration: underline !important;
+    background-color: transparent;
+    border: 1px solid #404040;
+}
+
+.button--clear:active {
+    background-color: transparent !important;
+}

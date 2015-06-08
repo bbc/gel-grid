@@ -1,0 +1,134 @@
+///*------------------------------------*\
+//    # WIDTHS - TOOL
+//\*------------------------------------*/
+
+// Returns a percentage value for the required number of columns
+//
+// @param {Number}  $span - number of columns required to span
+// @param {Number}  $columns ($gel-total-columns) - total number of columns available
+//
+@function gel-columns($span, $columns: $gel-width-total-columns) {
+	@if $span >= 1 {
+		// Convert the given span to a fraction of the columns
+		@return percentage($span / $columns);
+	} @else {
+		// A fraction has been supplied so lets just converting it to a percentage
+		@return percentage($span);
+	}
+}
+
+
+// Get a width for a specific number of columns
+//
+// @param {Number}  $span - number of columns required to span
+// @param {Number}  $columns ($gel-width-default-total-columns) - total number of columns available
+//
+@mixin gel-columns($span, $columns: $gel-width-total-columns) {
+	width: gel-columns($span, $columns);
+}
+
+
+// Generate width classes for the requested columns and breakpoint modifier
+//
+// @param {List}    $columns - a list of all the columns you'd like to be output
+// @param {String}  $namespace ($gel-width-namespace) - any namespacing you'd like to be applied
+//
+@mixin gel-widths($columns, $namespace: $gel-width-namespace) {
+	@each $column in $columns {
+		@if $column == 1 {
+			// no point outputting 100% several times so lets just do it once
+			.#{$namespace}#{$column}\/#{$column} {
+				width: 100% !important;
+			}
+		} @else {
+			@for $i from 1 to $column {
+				.#{$namespace}#{$i}\/#{$column} {
+					width: gel-columns($i / $column) !important;
+				}
+			}
+		}
+	}
+}
+
+
+// Generate width classes for the requested columns and breakpoint modifier
+//
+// @param {String}  $breakpoint - any breakpoint namespacing you'd like to be applied
+//
+@mixin gel-legacy-widths($breakpoint: '') {
+
+	// Decide the type of class we want to use
+	$gel-width-class-type: if($gel-width-enable--silent-classes, unquote('%'), unquote('.'));
+
+	// Whole
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-whole           { width: gel-columns(1/1) !important; }
+
+	// Halves
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-half,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}two-quarters,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}three-sixths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}four-eighths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}five-tenths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}six-twelfths        { width: gel-columns(1/2) !important; }
+
+	// Thirds
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-third,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}two-sixths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}three-ninths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}four-twelfths       { width: gel-columns(1/3) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}two-thirds,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}four-sixths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}six-ninths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}eight-twelfths      { width: gel-columns(2/3) !important; }
+
+	// Quarters
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-quarter,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}two-eighths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}three-twelfths      { width: gel-columns(1/4) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}three-quarters,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}six-eighths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}nine-twelfths       { width: gel-columns(3/4) !important; }
+
+	// Fifths
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-fifth,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}two-tenths          { width: gel-columns(1/5) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}two-fifths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}four-tenths         { width: gel-columns(2/5) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}three-fifths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}six-tenths          { width: gel-columns(3/5) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}four-fifths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}eight-tenths        { width: gel-columns(4/5) !important; }
+
+	// Sixths
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-sixth,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}two-twelfths        { width: gel-columns(1/6) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}five-sixths,
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}ten-twelfths        { width: gel-columns(5/6) !important; }
+
+	// Eighths
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-eighth          { width: gel-columns(1/8) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}three-eighths       { width: gel-columns(3/8) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}five-eighths        { width: gel-columns(5/8) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}seven-eighths       { width: gel-columns(7/8) !important; }
+
+	// Ninths
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-ninth           { width: gel-columns(1/9) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}two-ninths          { width: gel-columns(2/9) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}four-ninths         { width: gel-columns(4/9) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}five-ninths         { width: gel-columns(5/9) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}seven-ninths        { width: gel-columns(7/9) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}eight-ninths        { width: gel-columns(8/9) !important; }
+
+	// Tenths
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-tenth           { width: gel-columns(1/10) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}three-tenths        { width: gel-columns(3/10) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}seven-tenths        { width: gel-columns(7/10) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}nine-tenths         { width: gel-columns(9/10) !important; }
+
+	// Twelfths
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}one-twelfth         { width: gel-columns(1/12) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}five-twelfths       { width: gel-columns(5/12) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}seven-twelfths      { width: gel-columns(7/12) !important; }
+	#{$gel-width-class-type}#{$gel-width-namespace}#{$breakpoint}eleven-twelfths     { width: gel-columns(11/12) !important; }
+
+}

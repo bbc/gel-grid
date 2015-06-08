@@ -1,0 +1,29 @@
+{
+  "name": "gel-settings",
+  "homepage": "https://github.com/bbc-gel/gel-settings",
+  "authors": [
+    "shaun.bent@bbc.co.uk"
+  ],
+  "description": "Common global settings used by GEL components",
+  "main": "_globals.scss",
+  "keywords": [
+    "settings",
+    "sass",
+    "gel",
+    "bbc",
+    "responsive",
+    "global experience language"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sass-mq": "~3.1.2"
+  }
+}

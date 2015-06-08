@@ -1,0 +1,28 @@
+{
+  "name": "gel-widths",
+  "version": "0.1.0-beta",
+  "description": "A collection of grid-agnostic width classes and helpers to use for sizing elements",
+  "main": "_widths.scss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbc/gel-widths.git"
+  },
+  "keywords": [
+	"widths",
+    "sass",
+    "gel",
+    "bbc",
+    "responsive",
+    "global experience language"
+  ],
+  "author": "BBC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bbc/gel-widths/issues"
+  },
+  "homepage": "https://github.com/bbc/gel-widths",
+  "dependencies": {
+    "gel-settings": "git+ssh://github.com/bbc/gel-settings.git#0.3.0",
+    "gel-tools": "git+ssh://github.com/bbc/gel-tools.git#0.3.0"
+  }
+}

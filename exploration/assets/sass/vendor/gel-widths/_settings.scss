@@ -1,0 +1,25 @@
+///*------------------------------------*\
+//    # WIDTHS - SETTINGS
+//\*------------------------------------*/
+
+// general configuration
+$gel-width-namespace: $gel-namespace !default;
+$gel-width-breakpoints: (gel-bp-s, gel-bp-m, gel-bp-l) !default;
+$gel-width-total-columns: 12 !default;
+$gel-width-columns: (
+	1
+	2
+	3
+	4
+	5
+	8
+	10
+	12
+	24
+) !default;
+
+
+// output configuration
+$gel-width-enable--markup-output: false !default;
+$gel-width-enable--legacy-output: false !default;
+$gel-width-enable--silent-classes: false !default;

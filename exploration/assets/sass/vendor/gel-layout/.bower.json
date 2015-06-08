@@ -1,0 +1,41 @@
+{
+  "name": "gel-layout",
+  "homepage": "https://github.com/bbc-gel/gel-layout",
+  "authors": [
+    "shaun.bent@bbc.co.uk"
+  ],
+  "description": "The layout system used by the GEL Grid",
+  "main": "_layout.scss",
+  "keywords": [
+    "layout",
+    "grid",
+    "sass",
+    "gel",
+    "bbc",
+    "responsive",
+    "global experience language"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gel-settings": "git@github.com:bbc-gel/gel-settings.git#~0.3.0",
+    "gel-tools": "git@github.com:bbc-gel/gel-tools.git#~0.3.0"
+  },
+  "version": "0.0.5",
+  "_release": "0.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.5",
+    "commit": "19049d076f0e742b31a0d44d7b14d6d199873d1f"
+  },
+  "_source": "https://github.com/bbc-gel/gel-layout.git",
+  "_target": "~0.0.5",
+  "_originalSource": "https://github.com/bbc-gel/gel-layout.git"
+}
