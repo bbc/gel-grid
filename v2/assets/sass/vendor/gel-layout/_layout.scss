@@ -27,11 +27,10 @@ $enhanced: true !default;
 // Varaibles to allow customisation and configuration of the component
 $gel-layout-namespace: $gel-namespace !default;
 $gel-layout-max-width: 1008px !default;
-$gel-layout-large-max-width: 1312px !default;
+$gel-layout-large-max-width: 1280px !default;
 
 $gel-layout-margin-change: 400px;
 $gel-layout-gutter-change: 600px;
-$gel-layout-large-margin-change: 1200px;
 
 $gel-layout-enable--box-sizing: false !default;
 $gel-layout-enable--whitespace-fix: false !default;
@@ -69,9 +68,7 @@ $gel-layout-enable--auto: false !default;
                 width: $gel-layout-max-width; /* [1] */
             }
         }
-        @include mq($from: $gel-layout-large-margin-change) {
-            padding-left: double($gel-spacing-unit) * 2;
-            padding-right: double($gel-spacing-unit) * 2;
+        @include mq($from: $gel-layout-large-max-width) {
             max-width: $gel-layout-large-max-width;
         }
     }

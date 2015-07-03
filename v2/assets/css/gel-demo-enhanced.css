@@ -592,7 +592,7 @@ small, figcaption {
  * 1. IE8 doesn't apply border-box box-sizing logic correctly on (min|max)-(width|height) properties.
  *    As we serve IE8 a none responsive layout, lets just use the `width` property
  */
-/* line 53, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+/* line 52, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
 .gel-wrap {
   max-width: 1008px;
   margin: 0 auto;
@@ -601,25 +601,23 @@ small, figcaption {
 }
 
 @media (min-width: 25em) {
-  /* line 53, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+  /* line 52, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
   .gel-wrap {
     padding-left: 16px;
     padding-right: 16px;
     max-width: 1008px;
   }
-  /* line 67, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+  /* line 66, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
   .lt-ie9 .gel-wrap {
     width: 1008px;
     /* [1] */
   }
 }
 
-@media (min-width: 75em) {
-  /* line 53, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+@media (min-width: 80em) {
+  /* line 52, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
   .gel-wrap {
-    padding-left: 32px;
-    padding-right: 32px;
-    max-width: 1312px;
+    max-width: 1280px;
   }
 }
 
@@ -629,7 +627,7 @@ small, figcaption {
      * 1. Remove any margin and padding which may effect our layout
      * 2. Remove any default list styling if the layout is applied to a list
      */
-/* line 86, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+/* line 83, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
 .gel-layout {
   margin-right: 0;
   /* [1] */
@@ -645,7 +643,7 @@ small, figcaption {
 }
 
 @media (min-width: 37.5em) {
-  /* line 86, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+  /* line 83, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
   .gel-layout {
     margin-left: -16px;
   }
@@ -654,7 +652,7 @@ small, figcaption {
 /**
          * Opera as of 12 on Windows needs word-spacing.
          */
-/* line 109, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+/* line 106, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
 .opera-only :-o-prefocus,
 .gel-layout {
   word-spacing: -0.43em;
@@ -666,7 +664,7 @@ small, figcaption {
      * 3. Space columns apart.
      * 4. Align columns to the tops of each other.
      */
-/* line 121, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+/* line 118, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
 .gel-layout__item {
   display: inline-block;
   /* [1] */
@@ -682,7 +680,7 @@ small, figcaption {
 }
 
 @media (min-width: 37.5em) {
-  /* line 121, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+  /* line 118, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
   .gel-layout__item {
     padding-left: 16px;
     /* [3] */
@@ -692,12 +690,12 @@ small, figcaption {
 /**
          * Make the layout items fill up from the right hand side.
          */
-/* line 220, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+/* line 217, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
 .gel-layout--right {
   text-align: right;
 }
 
-/* line 222, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+/* line 219, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
 .gel-layout--right > .gel-layout__item {
   text-align: left;
 }
@@ -705,12 +703,12 @@ small, figcaption {
 /**
          * Make the layout items fill up from the center outward.
          */
-/* line 237, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+/* line 234, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
 .gel-layout--center {
   text-align: center;
 }
 
-/* line 239, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
+/* line 236, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-layout/_layout.scss */
 .gel-layout--center > .gel-layout__item {
   text-align: left;
 }
@@ -1331,14 +1329,14 @@ body {
 @media (min-width: 56.25em) {
   /* line 61, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/components/_grid-controls.scss */
   .gel-grid-controls__group-name:after {
-    content: 'Group 4 - Large (900px+)';
+    content: 'Group 4 - Large (900px - 1008px)';
   }
 }
 
-@media (min-width: 75em) {
+@media (min-width: 80em) {
   /* line 67, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/components/_grid-controls.scss */
   .gel-grid-controls__group-name:after {
-    content: 'Group 5 - Extra Large (1200px+)';
+    content: 'Group 5 - Extra Large (1280px)';
   }
 }
 
@@ -1353,28 +1351,28 @@ body {
 @media (min-width: 25em) {
   /* line 85, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/components/_grid-controls.scss */
   .gel-grid-controls__margin-gutter-size:after {
-    content: 'Margins: 16px | Gutters: 8px';
+    content: '12 Column Grid | Margins: 16px | Gutters: 8px';
   }
 }
 
 @media (min-width: 37.5em) {
   /* line 91, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/components/_grid-controls.scss */
   .gel-grid-controls__margin-gutter-size:after {
-    content: 'Margins: 16px | Gutters: 16px';
+    content: '12 Column Grid | Margins: 16px | Gutters: 16px';
   }
 }
 
 @media (min-width: 56.25em) {
   /* line 97, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/components/_grid-controls.scss */
   .gel-grid-controls__margin-gutter-size:after {
-    content: 'Margins: 16px | Gutters: 16px';
+    content: '24 Column Grid | Margins: 16px | Gutters: 16px';
   }
 }
 
-@media (min-width: 75em) {
+@media (min-width: 80em) {
   /* line 103, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/components/_grid-controls.scss */
   .gel-grid-controls__margin-gutter-size:after {
-    content: 'Margins: 32px | Gutters: 16px';
+    content: '24 Column Grid | Margins: 16px | Gutters: 16px';
   }
 }
 
@@ -3332,7 +3330,7 @@ body {
   }
 }
 
-@media (min-width: 75em) {
+@media (min-width: 80em) {
   /* line 38, /Users/jonesa109/Sites/gel-grid/exploration/assets/sass/vendor/gel-widths/_tools.scss */
   .gel-bp-xl-1\/1 {
     width: 100% !important;

@@ -47,7 +47,7 @@ $gel-base-font-size: 16px !default;
 // major is customisable
 $gel-breakpoints: ();
 $gel-breakpoint-names: (gel-bp-xs, gel-bp-s, gel-bp-m, gel-bp-l, gel-bp-xl) !default;
-$gel-breakpoint-sizes: (240px, 400px, 600px, 900px, 1200px) !default;
+$gel-breakpoint-sizes: (240px, 400px, 600px, 900px, 1280px) !default;
 $gel-breakpoint-static: gel-bp-l !default;
 
 // Loop through each of our breakpoint-sizes, map this with the appropriate name

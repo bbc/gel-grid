@@ -59,13 +59,13 @@
 
         @include mq($from: gel-bp-l) {
             &:after {
-                content: 'Group 4 - Large (900px+)';
+                content: 'Group 4 - Large (900px - 1008px)';
             }
         }
 
         @include mq($from: gel-bp-xl) {
             &:after {
-                content: 'Group 5 - Extra Large (1200px+)';
+                content: 'Group 5 - Extra Large (1280px)';
             }
         }
     }
@@ -83,25 +83,25 @@
     @if $enhanced {
         @include mq($from: gel-bp-s) {
             &:after {
-                content: 'Margins: 16px | Gutters: 8px';
+                content: '12 Column Grid | Margins: 16px | Gutters: 8px';
             }
         }
 
         @include mq($from: gel-bp-m) {
             &:after {
-                content: 'Margins: 16px | Gutters: 16px';
+                content: '12 Column Grid | Margins: 16px | Gutters: 16px';
             }
         }
 
         @include mq($from: gel-bp-l) {
             &:after {
-                content: 'Margins: 16px | Gutters: 16px';
+                content: '24 Column Grid | Margins: 16px | Gutters: 16px';
             }
         }
 
         @include mq($from: gel-bp-xl) {
             &:after {
-                content: 'Margins: 32px | Gutters: 16px';
+                content: '24 Column Grid | Margins: 16px | Gutters: 16px';
             }
         }
     }
