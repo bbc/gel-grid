@@ -59,7 +59,7 @@
 
         @include mq($from: gel-bp-l) {
             &:after {
-                content: 'Group 4 - Large (900px+)';
+                content: 'Group 4 - Large (900px - 1008px+)';
             }
         }
     }

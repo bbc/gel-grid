@@ -1321,7 +1321,7 @@ body {
 @media (min-width: 56.25em) {
   /* line 61, /Users/jonesa109/Sites/gel-grid/assets/sass/components/_grid-controls.scss */
   .gel-grid-controls__group-name:after {
-    content: 'Group 4 - Large (900px+)';
+    content: 'Group 4 - Large (900px - 1008px+)';
   }
 }
 
