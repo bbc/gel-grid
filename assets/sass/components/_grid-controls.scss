@@ -53,13 +53,13 @@
 
         @include mq($from: gel-bp-m) {
             &:after {
-                content: 'Group 3 - Medium (600px - 899px)';
+                content: 'Group 3 - Medium (600px - 1007px)';
             }
         }
 
         @include mq($from: gel-bp-l) {
             &:after {
-                content: 'Group 4 - Large (900px - 1008px+)';
+                content: 'Group 4 - Large (1008px)';
             }
         }
     }
@@ -83,7 +83,7 @@
 
         @include mq($from: gel-bp-m) {
             &:after {
-                content: 'Margins: 16px | Gutters: 16px';
+                content: 'Margins: 16px | Gutters: 16px  |  For columns and advertising purposes a 900px breakpoint can also be used.';
             }
         }
 
