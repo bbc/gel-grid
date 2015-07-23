@@ -1343,7 +1343,7 @@ body {
 @media (min-width: 37.5em) {
   /* line 85, /Users/jonesa109/Sites/gel-grid/assets/sass/components/_grid-controls.scss */
   .gel-grid-controls__margin-gutter-size:after {
-    content: 'Margins: 16px | Gutters: 16px  |  For columns and advertising purposes a 900px breakpoint can also be used.';
+    content: 'Margins: 16px | Gutters: 16px  |  For layouts a 900px breakpoint can also be used.';
   }
 }
 
