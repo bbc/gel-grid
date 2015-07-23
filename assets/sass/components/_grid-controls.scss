@@ -83,7 +83,7 @@
 
         @include mq($from: gel-bp-m) {
             &:after {
-                content: 'Margins: 16px | Gutters: 16px  |  For columns and advertising purposes a 900px breakpoint can also be used.';
+                content: 'Margins: 16px | Gutters: 16px  |  For layout & advertising purposes a 900px breakpoint can also be used.';
             }
         }
 
