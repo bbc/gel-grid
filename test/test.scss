@@ -1,0 +1,25 @@
+///*------------------------------------*\
+//    # GEL GRID - TEST
+//\*------------------------------------*/
+
+// Include general GEL dependancies
+@import '../bower_components/gel-sass-tools/gel-sass-tools';
+@import '../bower_components/sass-mq/mq';
+
+
+// Lets declare a few varaibles to test the output
+$gel-grid-enable--markup-output: true !default;
+
+
+// Import the grid component
+@import '../grid';
+
+
+// Lets test our mixin
+// .my-component {
+// 	@include gel-typography('pica');
+// }
+//
+// .my-component__title {
+// 	@include gel-typography('canon-bold');
+// }
