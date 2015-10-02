@@ -1,0 +1,39 @@
+///*------------------------------------*\
+//    # GEL GRID
+//\*------------------------------------*/
+
+// We need to check that the GEL settings are available globally
+$gel-settings-available: false !default;
+@if ($gel-settings-available == false) {
+    @warn "Missing Dependency: Have you included the GEL settings?";
+}
+
+
+// import the local dependancies
+@import 'lib/settings';
+@import 'lib/tools';
+
+
+// define some output control variables
+$core: true !default;
+$enhanced: true !default;
+
+
+//  Create our width helper classes prefixed with any given alias.
+@if $gel-grid-enable--markup-output {
+    @include gel-output-grid;
+    @include gel-output-widths;
+
+    @if $core {
+        @include gel-widths($gel-grid-columns);
+    }
+
+    @if $enhanced {
+        @each $breakpoint in $gel-grid-breakpoints {
+            @include mq($from: '#{$gel-grid-breakpoint-namespace}#{$breakpoint}') {
+                @include gel-widths($gel-grid-columns, $breakpoint);
+            }
+        }
+    }
+
+}

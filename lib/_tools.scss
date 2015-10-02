@@ -1,0 +1,96 @@
+///*------------------------------------*\
+//    # GEL GRID - TOOLS
+//\*------------------------------------*/
+
+
+@mixin gel-wrap() {
+    @if $core {
+        max-width: $gel-grid-max-width;
+        margin: 0 auto;
+        padding-right: $gel-spacing-unit;
+        padding-left: $gel-spacing-unit;
+        width: #{$gel-grid-max-width}\9; /* [1] */
+    }
+    @if $enhanced {
+        @include mq($from: $gel-grid-margin-change) {
+            padding-left: double($gel-spacing-unit);
+            padding-right: double($gel-spacing-unit);
+        }
+
+        @if $gel-grid-max-width--larger {
+            @include mq($from: $gel-grid-max-width--larger) {
+                max-width: $gel-grid-max-width--larger;
+                width: #{$gel-grid-max-width--larger}\9; /* [1] */
+            }
+        }
+    }
+}
+
+// Output the grid
+@mixin gel-grid() {
+    .gel-wrap {
+        @include gel-wrap;
+    }
+}
+
+// Returns a percentage value for the required number of columns
+//
+// @param {Number}  $span - number of columns required to span
+// @param {Number}  $columns ($gel-grid-default-columns) - total number of columns available
+//
+// @return {Number} Percentage for the required number of columns
+//
+// @author          Shaun Bent
+//
+@function gel-columns($span, $columns: $gel-grid-default-columns) {
+	@if $span >= 1 {
+		// Convert the given span to a fraction of the columns
+		@return percentage($span / $columns);
+	} @else {
+		// A fraction has been supplied so lets just converting it to a percentage
+		@return percentage($span);
+	}
+}
+
+
+// Get a width for a specific number of columns
+//
+// @param {Number}  $span - number of columns required to span
+// @param {Number}  $columns ($gel-grid-default-columns) - total number of columns available
+//
+// @author          Shaun Bent
+//
+@mixin gel-columns($span, $columns: $gel-grid-default-columns) {
+	width: gel-columns($span, $columns);
+}
+
+
+// Generate width classes for the requested columns and breakpoint modifier
+//
+// @param {List}    $columns - a list of all the columns you'd like to be output
+// @param {String}  $breakpoint - any breakpoint suffix appended to the class
+//
+// @author          Shaun Bent
+//
+@mixin gel-widths($columns, $breakpoint: null) {
+    $breakpoint-suffix: '';
+
+    @if $breakpoint != null {
+        $breakpoint-suffix: \@#{$breakpoint};
+    }
+
+	@each $column in $columns {
+		@if $column == 1 {
+			// no point outputting 100% several times so lets just do it once
+			.#{$gel-grid-namespace}#{$column}\/#{$column}#{$breakpoint-suffix} {
+				width: 100% !important;
+			}
+		} @else {
+			@for $i from 1 to $column {
+				.#{$gel-grid-namespace}#{$i}\/#{$column}#{$breakpoint-suffix} {
+					width: gel-columns($i / $column) !important;
+				}
+			}
+		}
+	}
+}

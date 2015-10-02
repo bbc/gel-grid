@@ -1,0 +1,32 @@
+///*------------------------------------*\
+//    # GEL GRID - SETTINGS
+//\*------------------------------------*/
+
+// general configuration
+$gel-grid-namespace: $gel-namespace !default;
+$gel-grid-breakpoint-namespace: 'gel-bp-' !default;
+
+$gel-grid-max-width: 1008px !default;
+$gel-grid-max-width--larger: 1280px !default;
+
+$gel-grid-margin-change: 400px;
+$gel-grid-gutter-change: 600px;
+
+$gel-grid-breakpoints: (s, m, l) !default;
+$gel-grid-default-columns: 12 !default;
+$gel-grid-columns: (
+	1
+	2
+	3
+	4
+	5
+	8
+	10
+	12
+	24
+) !default;
+
+
+// output configuration
+$gel-grid-enable--wider-breakpoint: true !default;
+$gel-grid-enable--markup-output: false !default;
