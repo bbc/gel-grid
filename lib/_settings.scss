@@ -12,7 +12,7 @@ $gel-grid-max-width--larger: 1280px !default;
 $gel-grid-margin-change: 400px;
 $gel-grid-gutter-change: 600px;
 
-$gel-grid-breakpoints: (s, m, l) !default;
+$gel-grid-breakpoints: (s, m, l, xxl) !default;
 $gel-grid-default-columns: 12 !default;
 $gel-grid-columns: (
 	1
@@ -28,5 +28,14 @@ $gel-grid-columns: (
 
 
 // output configuration
-$gel-grid-enable--wider-breakpoint: true !default;
+$gel-grid-enable--1280-breakpoint: true !default;
 $gel-grid-enable--markup-output: false !default;
+$gel-grid-enable--box-sizing: false !default;
+$gel-grid-enable--whitespace-fix: false !default;
+$gel-grid-enable--flush: false !default;
+$gel-grid-enable--rev: false !default;
+$gel-grid-enable--middle: false !default;
+$gel-grid-enable--bottom: false !default;
+$gel-grid-enable--right: false !default;
+$gel-grid-enable--center: false !default;
+$gel-grid-enable--auto: false !default;
