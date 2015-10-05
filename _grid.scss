@@ -23,17 +23,4 @@ $enhanced: true !default;
 @if $gel-grid-enable--markup-output {
     @include gel-output-grid;
     @include gel-output-widths;
-
-    @if $core {
-        @include gel-widths($gel-grid-columns);
-    }
-
-    @if $enhanced {
-        @each $breakpoint in $gel-grid-breakpoints {
-            @include mq($from: '#{$gel-grid-breakpoint-namespace}#{$breakpoint}') {
-                @include gel-widths($gel-grid-columns, $breakpoint);
-            }
-        }
-    }
-
 }
