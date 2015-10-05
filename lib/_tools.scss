@@ -2,22 +2,29 @@
 //    # GEL GRID - TOOLS
 //\*------------------------------------*/
 
-
+// Grid container, used to wrap all grid elements and apply the correct maximum widths
+//
+// 1. IE8 doesn't apply border-box box-sizing logic correctly on (min|max)-(width|height) properties.
+//    As we serve IE8 a none responsive layout, lets just use the `width` property
+//
+// @author          Shaun Bent
+//
 @mixin gel-wrap() {
     @if $core {
         max-width: $gel-grid-max-width;
+        width: #{$gel-grid-max-width}\9; /* [1] */
         margin: 0 auto;
         padding-right: $gel-spacing-unit;
         padding-left: $gel-spacing-unit;
-        width: #{$gel-grid-max-width}\9; /* [1] */
     }
+
     @if $enhanced {
         @include mq($from: $gel-grid-margin-change) {
             padding-left: double($gel-spacing-unit);
             padding-right: double($gel-spacing-unit);
         }
 
-        @if $gel-grid-max-width--larger {
+        @if $gel-grid-enable--1280-breakpoint {
             @include mq($from: $gel-grid-max-width--larger) {
                 max-width: $gel-grid-max-width--larger;
                 width: #{$gel-grid-max-width--larger}\9; /* [1] */
@@ -26,12 +33,274 @@
     }
 }
 
-// Output the grid
-@mixin gel-grid() {
-    .gel-wrap {
-        @include gel-wrap;
+
+// A single layout group/row, this wraps individual layout items
+//
+// 1. Remove any margin and padding which may effect our layout
+// 2. Remove any default list styling if the layout is applied to a list
+//
+// @param {String}  $alignment - either 'left', 'center', 'right'
+//
+// @author          Shaun Bent
+//
+@mixin gel-layout($alignment: 'left') {
+    @if $enhanced {
+        margin-right: 0; /* [1] */
+        margin-left: -$gel-spacing-unit;
+        padding-right: 0; /* [1] */
+        padding-left: 0; /* [1] */
+
+        list-style: none; /* [2] */
+
+        @include mq($from: $gel-grid-gutter-change) {
+            margin-left: double(-$gel-spacing-unit);
+        }
+
+        // output horizontal alignment
+        @if ($alignment != 'left') {
+            text-align: #{$alignment};
+        } @else {
+            text-align: left;
+        }
+
+        @if $gel-grid-enable--whitespace-fix {
+            letter-spacing: -0.31em;
+            text-rendering: optimizespeed;
+
+            @at-root {
+                // Opera as of 12 on Windows needs word-spacing.
+                .opera-only :-o-prefocus,
+                #{&} {
+                    word-spacing: -0.43em;
+                }
+            }
+
+        }
     }
 }
+
+
+// A single layout group/row, this wraps individual layout items
+//
+// 1. Cause columns to stack side-by-side
+// 2. Space columns apart
+// 3. Ensure all text is aligned correctly
+// 4. Align columns to the tops of each other
+//
+// @param {String}  $width - either '100%', 'auto', or a fraction (e.g. '1/4')
+// @param {String}  $alignment - either 'left', 'center', 'right'
+//
+// @author          Shaun Bent
+//
+@mixin gel-layout-item($width: '100%', $alignment: 'top') {
+    display: inline-block; /* [1] */
+    padding-left: $gel-spacing-unit; /* [2] */
+
+    text-align: left; /* [3] */
+
+    @include mq($from: $gel-grid-gutter-change) {
+        padding-left: double($gel-spacing-unit); /* [2] */
+    }
+
+    // output the required width
+    @if ($width == '100%') {
+        width: 100%;
+    } @else if ($width == 'auto') {
+        width: auto;
+    } @else {
+        @include gel-columns($width);
+    }
+
+    // output vertical alignment
+    @if ($alignment != 'top') {
+        vertical-align: #{$alignment};
+    } @else {
+        vertical-align: top; /* [4] */
+    }
+
+    @if $gel-grid-enable--box-sizing {
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+    }
+
+    @if $gel-grid-enable--whitespace-fix {
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-rendering: auto;
+    }
+}
+
+
+// Outputs a collection of generic grid classes
+//
+// @author          Shaun Bent
+//
+@mixin gel-output-grid() {
+    /**
+     * Grid containing element
+     */
+    .#{$gel-grid-namespace}wrap,
+    %#{$gel-grid-namespace}wrap {
+        @include gel-wrap;
+    }
+
+    /**
+     * A grid row
+     */
+    .#{$gel-grid-namespace}layout,
+    %#{$gel-grid-namespace}layout {
+        @include gel-layout;
+    }
+
+    /**
+     * A single grid item
+     */
+    .#{$gel-grid-namespace}layout__item,
+    %#{$gel-grid-namespace}layout__item {
+        @include gel-layout-item;
+    }
+
+    @if $gel-grid-enable--flush {
+
+        /**
+         * Layouts with no gutters.
+         */
+        .#{$gel-grid-namespace}layout--flush,
+        %#{$gel-grid-namespace}layout--flush {
+            margin-left: 0;
+
+            > .#{$gel-grid-namespace}layout__item,
+            > %#{$gel-grid-namespace}layout__item {
+                padding-left: 0;
+            }
+        }
+
+    }
+
+    @if $gel-grid-enable--rev {
+
+        /**
+         * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+         * markup will display in order 4, 3, 2, 1 on your page
+         */
+        .#{$gel-grid-namespace}layout--rev,
+        %#{$gel-grid-namespace}layout--rev {
+            direction: rtl;
+            text-align: left;
+
+            > .#{$gel-grid-namespace}layout__item,
+            > %#{$gel-grid-namespace}layout__item {
+                direction: ltr;
+                text-align: left;
+            }
+        }
+
+    }
+
+    @if $gel-grid-enable--middle {
+
+        /**
+         * Align layout items to the vertical centers of each other
+         */
+        .#{$gel-grid-namespace}layout--middle,
+        %#{$gel-grid-namespace}layout--middle {
+
+            > .#{$gel-grid-namespace}layout__item,
+            > %#{$gel-grid-namespace}layout__item {
+                vertical-align: middle;
+            }
+        }
+
+    }
+
+    @if $gel-grid-enable--bottom {
+
+        /**
+         * Align layout items to the vertical bottoms of each other
+         */
+        .#{$gel-grid-namespace}layout--bottom,
+        %#{$gel-grid-namespace}layout--bottom {
+
+            > .#{$gel-grid-namespace}layout__item,
+            > %#{$gel-grid-namespace}layout__item {
+                vertical-align: bottom;
+            }
+        }
+
+    }
+
+    @if $gel-grid-enable--right {
+
+        /**
+         * Make the layout items fill up from the right hand side
+         */
+        .#{$gel-grid-namespace}layout--right,
+        %#{$gel-grid-namespace}layout--right {
+            text-align: right;
+
+            > .#{$gel-grid-namespace}layout__item,
+            > %#{$gel-grid-namespace}layout__item {
+                text-align: left;
+            }
+        }
+
+    }
+
+    @if $gel-grid-enable--center {
+
+        /**
+         * Make the layout items fill up from the center outward
+         */
+        .#{$gel-grid-namespace}layout--center,
+        %#{$gel-grid-namespace}layout--center {
+            text-align: center;
+
+            > .#{$gel-grid-namespace}layout__item,
+            > %#{$gel-grid-namespace}layout__item {
+                text-align: left;
+            }
+        }
+
+    }
+
+    @if $gel-grid-enable--auto {
+
+        /**
+         * Cause layout items to take up a non-explicit amount of width
+         */
+        .#{$gel-grid-namespace}layout--auto,
+        %#{$gel-grid-namespace}layout--auto {
+
+            > .#{$gel-grid-namespace}layout__item,
+            > %#{$gel-grid-namespace}layout__item {
+                width: auto;
+            }
+        }
+
+    }
+}
+
+
+// Outputs a collection of grid-agnostic width trumps which can be applied be combined with a
+// layout system or applied to any element to give it a percentage based with.
+//
+// @author          Shaun Bent
+//
+@mixin gel-output-widths() {
+    @if $core {
+        @include gel-widths($gel-grid-columns);
+    }
+
+    @if $enhanced {
+        @each $breakpoint in $gel-grid-breakpoints {
+            @include mq($from: '#{$gel-grid-breakpoint-namespace}#{$breakpoint}') {
+                @include gel-widths($gel-grid-columns, $breakpoint);
+            }
+        }
+    }
+}
+
 
 // Returns a percentage value for the required number of columns
 //
