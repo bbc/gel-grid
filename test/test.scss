@@ -3,12 +3,22 @@
 //\*------------------------------------*/
 
 // Include general GEL dependancies
-@import '../bower_components/gel-sass-tools/gel-sass-tools';
+@import '../bower_components/gel-sass-tools/sass-tools';
 @import '../bower_components/sass-mq/mq';
 
 
 // Lets declare a few varaibles to test the output
+$gel-grid-enable--1280-breakpoint: true !default;
 $gel-grid-enable--markup-output: true !default;
+$gel-grid-enable--box-sizing: true !default;
+$gel-grid-enable--whitespace-fix: true !default;
+$gel-grid-enable--flush: true !default;
+$gel-grid-enable--rev: true !default;
+$gel-grid-enable--middle: true !default;
+$gel-grid-enable--bottom: true !default;
+$gel-grid-enable--right: true !default;
+$gel-grid-enable--center: true !default;
+$gel-grid-enable--auto: true !default;
 
 
 // Import the grid component
@@ -16,10 +26,38 @@ $gel-grid-enable--markup-output: true !default;
 
 
 // Lets test our mixin
-// .my-component {
-// 	@include gel-typography('pica');
-// }
-//
-// .my-component__title {
-// 	@include gel-typography('canon-bold');
-// }
+.my-page {
+	@include gel-wrap;
+}
+
+.my-component {
+	@include gel-layout;
+}
+
+.my-component--align-center {
+	@include gel-layout($align: 'center');
+}
+
+.my-component--align-right {
+	@include gel-layout($align: 'right');
+}
+
+.my-component__item {
+	@include gel-layout-item;
+}
+
+.my-component__item--with-width {
+	@include gel-layout-item($width: 2/5);
+}
+
+.my-component__item--auto {
+	@include gel-layout-item($width: 'auto');
+}
+
+.my-component__item--align-middle {
+	@include gel-layout-item($width: 1/4, $align: 'middle');
+}
+
+.my-component__item--align-bottom {
+	@include gel-layout-item($width: 1/4, $align: 'bottom');
+}

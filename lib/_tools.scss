@@ -12,7 +12,7 @@
 @mixin gel-wrap() {
     @if $core {
         max-width: $gel-grid-max-width;
-        width: #{$gel-grid-max-width}\9; /* [1] */
+        width: #{$gel-grid-max-width}\9; // [1]
         margin: 0 auto;
         padding-right: $gel-spacing-unit;
         padding-left: $gel-spacing-unit;
@@ -27,7 +27,7 @@
         @if $gel-grid-enable--1280-breakpoint {
             @include mq($from: $gel-grid-max-width--larger) {
                 max-width: $gel-grid-max-width--larger;
-                width: #{$gel-grid-max-width--larger}\9; /* [1] */
+                width: #{$gel-grid-max-width--larger}\9; // [1]
             }
         }
     }
@@ -39,26 +39,26 @@
 // 1. Remove any margin and padding which may effect our layout
 // 2. Remove any default list styling if the layout is applied to a list
 //
-// @param {String}  $alignment - either 'left', 'center', 'right'
+// @param {String}  $align - either 'left', 'center', 'right'
 //
 // @author          Shaun Bent
 //
-@mixin gel-layout($alignment: 'left') {
+@mixin gel-layout($align: 'left') {
     @if $enhanced {
-        margin-right: 0; /* [1] */
+        margin-right: 0; // [1]
         margin-left: -$gel-spacing-unit;
-        padding-right: 0; /* [1] */
-        padding-left: 0; /* [1] */
+        padding-right: 0; // [1]
+        padding-left: 0; // [1]
 
-        list-style: none; /* [2] */
+        list-style: none; // [2]
 
         @include mq($from: $gel-grid-gutter-change) {
             margin-left: double(-$gel-spacing-unit);
         }
 
         // output horizontal alignment
-        @if ($alignment != 'left') {
-            text-align: #{$alignment};
+        @if ($align != 'left') {
+            text-align: #{$align};
         } @else {
             text-align: left;
         }
@@ -88,18 +88,18 @@
 // 4. Align columns to the tops of each other
 //
 // @param {String}  $width - either '100%', 'auto', or a fraction (e.g. '1/4')
-// @param {String}  $alignment - either 'left', 'center', 'right'
+// @param {String}  $align - either 'left', 'center', 'right'
 //
 // @author          Shaun Bent
 //
-@mixin gel-layout-item($width: '100%', $alignment: 'top') {
-    display: inline-block; /* [1] */
-    padding-left: $gel-spacing-unit; /* [2] */
+@mixin gel-layout-item($width: '100%', $align: 'top') {
+    display: inline-block; // [1]
+    padding-left: $gel-spacing-unit; // [2]
 
-    text-align: left; /* [3] */
+    text-align: left; // [3]
 
     @include mq($from: $gel-grid-gutter-change) {
-        padding-left: double($gel-spacing-unit); /* [2] */
+        padding-left: double($gel-spacing-unit); // [2]
     }
 
     // output the required width
@@ -108,14 +108,15 @@
     } @else if ($width == 'auto') {
         width: auto;
     } @else {
+        @debug $width;
         @include gel-columns($width);
     }
 
     // output vertical alignment
-    @if ($alignment != 'top') {
-        vertical-align: #{$alignment};
+    @if ($align != 'top') {
+        vertical-align: #{$align};
     } @else {
-        vertical-align: top; /* [4] */
+        vertical-align: top; // [4]
     }
 
     @if $gel-grid-enable--box-sizing {
