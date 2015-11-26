@@ -9,6 +9,13 @@
 //
 // @author          Shaun Bent
 //
+@mixin gel-wrap-1280-breakpoint() {
+    @include mq($from: $gel-grid-max-width--larger) {
+        max-width: $gel-grid-max-width--larger;
+        width: #{$gel-grid-max-width--larger}\9; // [1]
+    }
+}
+
 @mixin gel-wrap() {
     @if $core {
         max-width: $gel-grid-max-width;
@@ -25,11 +32,12 @@
         }
 
         @if $gel-grid-enable--1280-breakpoint {
-            .b-pw-1280 & { // http://www.bbc.co.uk/frameworks/orb/css#orb-1280
-                @include mq($from: $gel-grid-max-width--larger) {
-                    max-width: $gel-grid-max-width--larger;
-                    width: #{$gel-grid-max-width--larger}\9; // [1]
+            @if $gel-grid-enable--1280-style-class {
+                .b-pw-1280 & { // http://www.bbc.co.uk/frameworks/orb/css#orb-1280
+                    @include gel-wrap-1280-breakpoint;
                 }
+            } @else {
+                @include gel-wrap-1280-breakpoint;
             }
         }
     }

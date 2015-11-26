@@ -29,6 +29,8 @@ $gel-grid-columns: (
 
 // output configuration
 $gel-grid-enable--1280-breakpoint: true !default;
+// Only enable 1280 styling when 'b-pw-1280' style class is present (see: http://www.bbc.co.uk/frameworks/orb/css#orb-1280)
+$gel-grid-enable--1280-style-class: true !default;
 $gel-grid-enable--markup-output: false !default;
 $gel-grid-enable--box-sizing: false !default;
 $gel-grid-enable--whitespace-fix: false !default;
