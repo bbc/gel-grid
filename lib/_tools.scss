@@ -32,8 +32,8 @@
         }
 
         @if $gel-grid-enable--1280-breakpoint {
-            @if $gel-grid-enable--1280-style-class {
-                .b-pw-1280 & { // http://www.bbc.co.uk/frameworks/orb/css#orb-1280
+            @if $gel-grid-1280-toggle-class != null {
+                .#{$gel-grid-1280-toggle-class} & {
                     @include gel-wrap-1280-breakpoint;
                 }
             } @else {

@@ -12,6 +12,4 @@ The GEL Grid has been established to work on all devices and is independent of d
 
 ## How to enable the 1280px grid
 
-Ensure the scss configuration option `$gel-grid-enable--1280-breakpoint` is set to true and ensure the presence of the class `"b-pw-1280"` on a parent element (see: [http://www.bbc.co.uk/frameworks/orb/css#orb-1280]), this will also ensure that the navigation bar and footer bar are also displayed in 1280px width.
-
-To disable checking for the presence of the 'b-pw-1280' set the configuration option `$gel-grid-enable--1280-style-class` to false.
+Ensure the scss configuration option `$gel-grid-enable--1280-breakpoint` is set to true. You can also optionally choose to only enable 1280 styling in the presence of a class specified by `$gel-grid-1280-toggle-class`.
