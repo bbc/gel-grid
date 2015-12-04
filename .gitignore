@@ -6,6 +6,7 @@ node_modules/*
 
 # Testing - Ignore css files except those ending in -expected
 test/*.css
+test/*.css.map
 !test/*-expected.css
 
 # Misc
