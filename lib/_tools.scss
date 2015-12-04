@@ -12,17 +12,23 @@
 @mixin gel-wrap-1280-breakpoint() {
     @include mq($from: $gel-grid-max-width--larger) {
         max-width: $gel-grid-max-width--larger;
-        width: #{$gel-grid-max-width--larger}\9; // [1]
+
+        .lt-ie9 & {
+            width: #{$gel-grid-max-width--larger}; // [1]
+        }
     }
 }
 
 @mixin gel-wrap() {
     @if $core {
         max-width: $gel-grid-max-width;
-        width: #{$gel-grid-max-width}\9; // [1]
         margin: 0 auto;
         padding-right: $gel-spacing-unit;
         padding-left: $gel-spacing-unit;
+
+        .lt-ie9 & {
+            width: #{$gel-grid-max-width}; // [1]
+        }
     }
 
     @if $enhanced {
