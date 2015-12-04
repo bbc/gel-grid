@@ -13,7 +13,7 @@
     @include mq($from: $gel-grid-max-width--larger) {
         max-width: $gel-grid-max-width--larger;
 
-        .lt-ie9 & {
+        @if $fixed {
             width: #{$gel-grid-max-width--larger}; // [1]
         }
     }
@@ -26,7 +26,7 @@
         padding-right: $gel-spacing-unit;
         padding-left: $gel-spacing-unit;
 
-        .lt-ie9 & {
+        @if $fixed {
             width: #{$gel-grid-max-width}; // [1]
         }
     }
