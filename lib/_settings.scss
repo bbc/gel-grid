@@ -8,6 +8,7 @@ $gel-grid-breakpoint-namespace: 'gel-bp-' !default;
 
 $gel-grid-max-width: 1008px !default;
 $gel-grid-max-width--larger: 1280px !default;
+$gel-grid-1280-toggle-class: null !default;
 
 $gel-grid-margin-change: 400px;
 $gel-grid-gutter-change: 600px;
@@ -29,8 +30,6 @@ $gel-grid-columns: (
 
 // output configuration
 $gel-grid-enable--1280-breakpoint: true !default;
-// Only enable 1280 styling when the specified class is present http://www.bbc.co.uk/frameworks/orb/css#orb-1280
-$gel-grid-1280-toggle-class: null !default;
 $gel-grid-enable--markup-output: false !default;
 $gel-grid-enable--box-sizing: false !default;
 $gel-grid-enable--whitespace-fix: false !default;
@@ -41,3 +40,6 @@ $gel-grid-enable--bottom: false !default;
 $gel-grid-enable--right: false !default;
 $gel-grid-enable--center: false !default;
 $gel-grid-enable--auto: false !default;
+
+
+// grid breakpoint setup
