@@ -1,0 +1,40 @@
+{
+  "name": "gel-grid",
+  "version": "0.0.0",
+  "description": "A flexible code implementation of the GEL Grid",
+  "main": "_grid.scss",
+  "scripts": {
+    "test": "node-sass test/test.scss test/test.css --output-style=expanded --sourcemap=none && diff -u test/test-expected.css test/test.css",
+    "dist": "node-sass src/gel-typography.scss dist/gel-typography.min.css --output-style=compressed --sourcemap=none && node-sass src/gel-typography.scss dist/gel-typography.css --output-style=expanded --sourcemap=none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbc/gel-grid.git"
+  },
+  "keywords": [
+    "bbc",
+    "gel",
+    "grid"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "dist"
+  ],
+  "author": "BBC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bbc/gel-grid/issues"
+  },
+  "homepage": "https://github.com/bbc/gel-grid",
+  "devDependencies": {
+    "node-sass": "^3.2.0",
+    "sass-mq": "^3.2.2"
+  },
+  "dependencies": {
+    "gel-sass-tools": "git+ssh://git@github.com:bbc/gel-sass-tools.git#1.1.0"
+  }
+}
