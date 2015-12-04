@@ -5,7 +5,7 @@
   "main": "_grid.scss",
   "scripts": {
     "test": "node-sass test/test.scss test/test.css --output-style=expanded --sourcemap=none && diff -u test/test-expected.css test/test.css",
-    "dist": "node-sass src/gel-typography.scss dist/gel-typography.min.css --output-style=compressed --sourcemap=none && node-sass src/gel-typography.scss dist/gel-typography.css --output-style=expanded --sourcemap=none"
+    "dist": "node-sass src/gel-grid.scss dist/gel-grid.min.css --output-style=compressed --sourcemap=none && node-sass src/gel-grid.scss dist/gel-grid.css --output-style=expanded --sourcemap=none"
   },
   "repository": {
     "type": "git",
