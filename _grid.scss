@@ -17,6 +17,7 @@ $gel-settings-available: false !default;
 // define some output control variables
 $core: true !default;
 $enhanced: true !default;
+$fixed: false !default;
 
 
 //  Create our width helper classes prefixed with any given alias.
