@@ -299,20 +299,33 @@
 }
 
 
-// Outputs a collection of grid-agnostic width trumps which can be applied be combined with a
-// layout system or applied to any element to give it a percentage based with.
+// Outputs a collection of grid-agnostic width utility classes which can be applied be
+// combined with the grid system or applied to any element to give it a percentage based with.
+//
+// If the optional 1280 toggle class is defined then all 1280 width classes will be wrapped
+// in the specified toggle class
 //
 // @author          Shaun Bent
 //
 @mixin gel-output-widths() {
     @if $core {
-        @include gel-widths($gel-grid-columns);
+        @include _gel-widths($gel-grid-columns);
     }
 
     @if $enhanced {
         @each $breakpoint in $gel-grid-breakpoints {
             @include mq($from: '#{$gel-grid-breakpoint-namespace}#{$breakpoint}') {
-                @include gel-widths($gel-grid-columns, $breakpoint);
+                @include _gel-widths($gel-grid-columns, $breakpoint);
+            }
+        }
+
+        @if $gel-grid-1280-toggle-class != null {
+            .#{$gel-grid-1280-toggle-class} {
+                @each $breakpoint in $gel-grid-breakpoints--1280 {
+                    @include mq($from: '#{$gel-grid-breakpoint-namespace}#{$breakpoint}') {
+                        @include _gel-widths($gel-grid-columns, $breakpoint);
+                    }
+                }
             }
         }
     }
@@ -358,7 +371,7 @@
 //
 // @author          Shaun Bent
 //
-@mixin gel-widths($columns, $breakpoint: null) {
+@mixin _gel-widths($columns, $breakpoint: null) {
     $breakpoint-suffix: '';
 
     @if $breakpoint != null {
