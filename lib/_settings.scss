@@ -2,12 +2,47 @@
 //    # GEL GRID - SETTINGS
 //\*------------------------------------*/
 
-// general configuration
-$gel-grid-namespace: $gel-namespace !default;
-$gel-grid-breakpoint-namespace: 'gel-bp-' !default;
+// The following variables are used to configure the GEL Grid component.
+// These variables should not be modified or adjusted directly; you should
+// predefine the variables in your own project, to overide these default settings.
 
-$gel-grid-max-width: 1008px !default;
-$gel-grid-max-width--larger: 1280px !default;
+
+/// General configuration
+//
+// The default namespace applied to all grid classes output is inherited
+// from the default gel-namespace: `gel-`.
+//
+// @link http://bit.ly/1Z6hPfd
+//
+// @type String
+//
+$gel-grid-namespace: $gel-namespace !default;
+
+// The prefix applied to all GEL breakpoints used by Sass MQ. By default this
+// inherits from the default gel-breakpoint-prefix: `gel-bp-`.
+//
+// @link http://bit.ly/1nxxE0p
+//
+// @type String
+//
+$gel-grid-breakpoint-namespace: $gel-breakpoint-prefix !default;
+
+// The max-width applied to the grid
+//
+// @type String
+//
+$gel-grid-max-width-1008: 1008px !default;
+
+// The max-width applied to the grid
+//
+// @type String
+//
+$gel-grid-max-width-1280: 1280px !default;
+
+// The max-width applied to the grid
+//
+// @type String
+//
 $gel-grid-1280-toggle-class: null !default;
 
 $gel-grid-margin-change: 400px;
