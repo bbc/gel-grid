@@ -9,25 +9,15 @@
 //
 // @author          Shaun Bent
 //
-@mixin gel-wrap-1280-breakpoint() {
-    @include mq($from: $gel-grid-max-width--larger) {
-        max-width: $gel-grid-max-width--larger;
-
-        @if $fixed {
-            width: #{$gel-grid-max-width--larger}; // [1]
-        }
-    }
-}
-
 @mixin gel-wrap() {
     @if $core {
-        max-width: $gel-grid-max-width;
+        max-width: $gel-grid-max-width-1008;
         margin: 0 auto;
         padding-right: $gel-spacing-unit;
         padding-left: $gel-spacing-unit;
 
         @if $fixed {
-            width: #{$gel-grid-max-width}; // [1]
+            width: #{$gel-grid-max-width-1008}; // [1]
         }
     }
 
@@ -45,6 +35,17 @@
             } @else {
                 @include gel-wrap-1280-breakpoint;
             }
+        }
+    }
+}
+
+
+@mixin gel-wrap-1280-breakpoint() {
+    @include mq($from: $gel-grid-max-width-1280) {
+        max-width: $gel-grid-max-width-1280;
+
+        @if $fixed {
+            width: #{$gel-grid-max-width-1280}; // [1]
         }
     }
 }
@@ -125,7 +126,6 @@
         } @else if ($width == 'auto') {
             width: auto;
         } @else {
-            @debug $width;
             @include gel-columns($width);
         }
 
