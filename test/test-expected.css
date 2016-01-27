@@ -8,10 +8,6 @@
   padding-left: 8px;
 }
 
-.lt-ie9 .gel-wrap {
-  width: 1008px;
-}
-
 @media (min-width: 25em) {
   .gel-wrap {
     padding-left: 16px;
@@ -22,9 +18,6 @@
 @media (min-width: 80em) {
   .gel-wrap {
     max-width: 1280px;
-  }
-  .lt-ie9 .gel-wrap {
-    width: 1280px;
   }
 }
 
@@ -1320,10 +1313,6 @@
   padding-left: 8px;
 }
 
-.lt-ie9 .my-page {
-  width: 1008px;
-}
-
 @media (min-width: 25em) {
   .my-page {
     padding-left: 16px;
@@ -1334,9 +1323,6 @@
 @media (min-width: 80em) {
   .my-page {
     max-width: 1280px;
-  }
-  .lt-ie9 .my-page {
-    width: 1280px;
   }
 }
 
