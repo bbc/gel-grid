@@ -180,123 +180,95 @@
         @include gel-layout-item;
     }
 
-    @if $gel-grid-enable--flush {
+    /**
+     * Layouts with no gutters.
+     */
+    .#{$gel-grid-namespace}layout--flush,
+    %#{$gel-grid-namespace}layout--flush {
+        margin-left: 0;
 
-        /**
-         * Layouts with no gutters.
-         */
-        .#{$gel-grid-namespace}layout--flush,
-        %#{$gel-grid-namespace}layout--flush {
-            margin-left: 0;
-
-            > .#{$gel-grid-namespace}layout__item,
-            > %#{$gel-grid-namespace}layout__item {
-                padding-left: 0;
-            }
+        > .#{$gel-grid-namespace}layout__item,
+        > %#{$gel-grid-namespace}layout__item {
+            padding-left: 0;
         }
-
     }
 
-    @if $gel-grid-enable--rev {
+    /**
+     * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+     * markup will display in order 4, 3, 2, 1 on your page
+     */
+    .#{$gel-grid-namespace}layout--rev,
+    %#{$gel-grid-namespace}layout--rev {
+        direction: rtl;
+        text-align: left;
 
-        /**
-         * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
-         * markup will display in order 4, 3, 2, 1 on your page
-         */
-        .#{$gel-grid-namespace}layout--rev,
-        %#{$gel-grid-namespace}layout--rev {
-            direction: rtl;
+        > .#{$gel-grid-namespace}layout__item,
+        > %#{$gel-grid-namespace}layout__item {
+            direction: ltr;
             text-align: left;
-
-            > .#{$gel-grid-namespace}layout__item,
-            > %#{$gel-grid-namespace}layout__item {
-                direction: ltr;
-                text-align: left;
-            }
         }
-
     }
 
-    @if $gel-grid-enable--middle {
+    /**
+     * Align layout items to the vertical centers of each other
+     */
+    .#{$gel-grid-namespace}layout--middle,
+    %#{$gel-grid-namespace}layout--middle {
 
-        /**
-         * Align layout items to the vertical centers of each other
-         */
-        .#{$gel-grid-namespace}layout--middle,
-        %#{$gel-grid-namespace}layout--middle {
-
-            > .#{$gel-grid-namespace}layout__item,
-            > %#{$gel-grid-namespace}layout__item {
-                vertical-align: middle;
-            }
+        > .#{$gel-grid-namespace}layout__item,
+        > %#{$gel-grid-namespace}layout__item {
+            vertical-align: middle;
         }
-
     }
 
-    @if $gel-grid-enable--bottom {
+    /**
+     * Align layout items to the vertical bottoms of each other
+     */
+    .#{$gel-grid-namespace}layout--bottom,
+    %#{$gel-grid-namespace}layout--bottom {
 
-        /**
-         * Align layout items to the vertical bottoms of each other
-         */
-        .#{$gel-grid-namespace}layout--bottom,
-        %#{$gel-grid-namespace}layout--bottom {
-
-            > .#{$gel-grid-namespace}layout__item,
-            > %#{$gel-grid-namespace}layout__item {
-                vertical-align: bottom;
-            }
+        > .#{$gel-grid-namespace}layout__item,
+        > %#{$gel-grid-namespace}layout__item {
+            vertical-align: bottom;
         }
-
     }
 
-    @if $gel-grid-enable--right {
+    /**
+     * Make the layout items fill up from the right hand side
+     */
+    .#{$gel-grid-namespace}layout--right,
+    %#{$gel-grid-namespace}layout--right {
+        text-align: right;
 
-        /**
-         * Make the layout items fill up from the right hand side
-         */
-        .#{$gel-grid-namespace}layout--right,
-        %#{$gel-grid-namespace}layout--right {
-            text-align: right;
-
-            > .#{$gel-grid-namespace}layout__item,
-            > %#{$gel-grid-namespace}layout__item {
-                text-align: left;
-            }
+        > .#{$gel-grid-namespace}layout__item,
+        > %#{$gel-grid-namespace}layout__item {
+            text-align: left;
         }
-
     }
 
-    @if $gel-grid-enable--center {
+    /**
+     * Make the layout items fill up from the center outward
+     */
+    .#{$gel-grid-namespace}layout--center,
+    %#{$gel-grid-namespace}layout--center {
+        text-align: center;
 
-        /**
-         * Make the layout items fill up from the center outward
-         */
-        .#{$gel-grid-namespace}layout--center,
-        %#{$gel-grid-namespace}layout--center {
-            text-align: center;
-
-            > .#{$gel-grid-namespace}layout__item,
-            > %#{$gel-grid-namespace}layout__item {
-                text-align: left;
-            }
+        > .#{$gel-grid-namespace}layout__item,
+        > %#{$gel-grid-namespace}layout__item {
+            text-align: left;
         }
-
     }
 
-    @if $gel-grid-enable--auto {
+    /**
+     * Cause layout items to take up a non-explicit amount of width
+     */
+    .#{$gel-grid-namespace}layout--auto,
+    %#{$gel-grid-namespace}layout--auto {
 
-        /**
-         * Cause layout items to take up a non-explicit amount of width
-         */
-        .#{$gel-grid-namespace}layout--auto,
-        %#{$gel-grid-namespace}layout--auto {
-
-            > .#{$gel-grid-namespace}layout__item,
-            > %#{$gel-grid-namespace}layout__item {
-                width: auto;
-            }
+        > .#{$gel-grid-namespace}layout__item,
+        > %#{$gel-grid-namespace}layout__item {
+            width: auto;
         }
-
     }
 }
 
