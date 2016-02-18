@@ -7,7 +7,7 @@
 // 1. IE8 doesn't apply border-box box-sizing logic correctly on (min|max)-(width|height) properties.
 //    As we serve IE8 a none responsive layout, lets just use the `width` property
 //
-// @author          Shaun Bent
+// @author Shaun Bent
 //
 @mixin gel-wrap() {
     @if $core {
@@ -56,9 +56,9 @@
 // 1. Remove any margin and padding which may effect our layout
 // 2. Remove any default list styling if the layout is applied to a list
 //
-// @param {String}  $align - either 'left', 'center', 'right'
+// @param {String} $align - either 'left', 'center', 'right'
 //
-// @author          Shaun Bent
+// @author Shaun Bent
 //
 @mixin gel-layout($align: 'left') {
     @if $enhanced {
@@ -104,10 +104,10 @@
 // 3. Ensure all text is aligned correctly
 // 4. Align columns to the tops of each other
 //
-// @param {String}  $width - either '100%', 'auto', or a fraction (e.g. '1/4')
-// @param {String}  $align - either 'left', 'center', 'right'
+// @param {String} $width - either '100%', 'auto', or a fraction (e.g. '1/4')
+// @param {String} $align - either 'left', 'center', 'right'
 //
-// @author          Shaun Bent
+// @author  Shaun Bent
 //
 @mixin gel-layout-item($width: '100%', $align: 'top') {
     @if $enhanced {
@@ -153,7 +153,7 @@
 
 // Outputs a collection of generic grid classes
 //
-// @author          Shaun Bent
+// @author Shaun Bent
 //
 @mixin gel-output-grid() {
     /**
@@ -279,7 +279,7 @@
 // If the optional 1280 toggle class is defined then all 1280 width classes will be wrapped
 // in the specified toggle class
 //
-// @author          Shaun Bent
+// @author Shaun Bent
 //
 @mixin gel-output-widths() {
     @if $core {
@@ -328,10 +328,10 @@
 
 // Get a width for a specific number of columns
 //
-// @param {Number}  $span - number of columns required to span
-// @param {Number}  $columns ($gel-grid-default-columns) - total number of columns available
+// @param {Number} $span - number of columns required to span
+// @param {Number} $columns ($gel-grid-default-columns) - total number of columns available
 //
-// @author          Shaun Bent
+// @author Shaun Bent
 //
 @mixin gel-columns($span, $columns: $gel-grid-default-columns) {
 	width: gel-columns($span, $columns);
@@ -340,10 +340,10 @@
 
 // Generate width classes for the requested columns and breakpoint modifier
 //
-// @param {List}    $columns - a list of all the columns you'd like to be output
-// @param {String}  $breakpoint - any breakpoint suffix appended to the class
+// @param {List} $columns - a list of all the columns you'd like to be output
+// @param {String} $breakpoint - any breakpoint suffix appended to the class
 //
-// @author          Shaun Bent
+// @author Shaun Bent
 //
 @mixin _gel-widths($columns, $breakpoint: null) {
     $breakpoint-suffix: '';
