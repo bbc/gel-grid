@@ -12,45 +12,72 @@
 // The default namespace applied to all grid classes output is inherited
 // from the default gel-namespace: `gel-`.
 //
-// @link http://bit.ly/1Z6hPfd
-//
 // @type String
+// @link http://bit.ly/1Z6hPfd
 //
 $gel-grid-namespace: $gel-namespace !default;
 
 // The prefix applied to all GEL breakpoints used by Sass MQ. By default this
 // inherits from the default gel-breakpoint-prefix: `gel-bp-`.
 //
-// @link http://bit.ly/1nxxE0p
-//
 // @type String
+// @link http://bit.ly/1nxxE0p
 //
 $gel-grid-breakpoint-namespace: $gel-breakpoint-prefix !default;
 
-// The max-width applied to the grid
+// Not all pages or products will be using 1280px grid, you can conditional
+// wrap 1280px grid styles in a class so they only apply if 1280px is required
 //
-// @type String
-//
-$gel-grid-max-width-1008: 1008px;
-
-// The max-width applied to the grid
-//
-// @type String
-//
-$gel-grid-max-width-1280: 1280px;
-
-// The max-width applied to the grid
+// For example: ORB provides a class of `b-pw-1280` if 1280 ORB is enabled
 //
 // @type String
 //
 $gel-grid-1280-toggle-class: null !default;
 
+
+/// Grid configuration
+//
+// Grid max-width points
+//
+// @type String
+//
+$gel-grid-max-width-1008: 1008px;
+$gel-grid-max-width-1280: 1280px;
+
+// The fixed margins and gutters increase in size for larger screens
+//
+// @type String
+//
 $gel-grid-margin-change: 400px;
 $gel-grid-gutter-change: 600px;
 
+// Which GEL breakpoints should width classes be output for?
+//
+// @type List
+// @link http://bit.ly/1PjPdLz
+//
 $gel-grid-breakpoints: (s, m, l) !default;
+
+// Which GEL breakpoints relate specifically to the 1280 breakpoint?
+//
+// These are specifically divided incase the optional `toggle-class`
+// is being used?
+//
+// @type List
+//
 $gel-grid-breakpoints--1280: (xl, xxl) !default;
+
+// The default number of columns width calucations should be based upon
+// if no other number has been provided
+//
+// @type Int
+//
 $gel-grid-default-columns: 12 !default;
+
+// A list of all the columns width classes should be generated for
+//
+// @type List
+//
 $gel-grid-columns: (
 	1
 	2
@@ -64,18 +91,35 @@ $gel-grid-columns: (
 ) !default;
 
 
-// output configuration
+/// Output configuration
+//
+// Should 1280px breakpoint styles be output?
+//
+// @type Boolean
+//
 $gel-grid-enable--1280-breakpoint: true !default;
+
+// Should grid CSS classes be output?
+//
+// @type Boolean
+//
 $gel-grid-enable--markup-output: false !default;
+
+// Enable the bundled `box-sizing: border-box;` if not
+// already applied globally
+//
+// @type Boolean
+// @link http://bit.ly/1bfMrhO
+//
 $gel-grid-enable--box-sizing: false !default;
+
+// Apply a CSS fix to remove the whitespace between `inline-block`
+// items. Note: This fix is not 100% to work.
+//
+// @type Boolean
+// @link http://bit.ly/1bfMrhO
+//
 $gel-grid-enable--whitespace-fix: false !default;
-$gel-grid-enable--flush: false !default;
-$gel-grid-enable--rev: false !default;
-$gel-grid-enable--middle: false !default;
-$gel-grid-enable--bottom: false !default;
-$gel-grid-enable--right: false !default;
-$gel-grid-enable--center: false !default;
-$gel-grid-enable--auto: false !default;
 
 
 // grid breakpoint setup
