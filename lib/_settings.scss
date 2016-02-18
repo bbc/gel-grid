@@ -122,7 +122,9 @@ $gel-grid-enable--box-sizing: false !default;
 $gel-grid-enable--whitespace-fix: false !default;
 
 
-// grid breakpoint setup
+// If the optional 1280 toggle class it not enabled we need to merge
+// all the breakpoints into a single map
+//
 @if $gel-grid-1280-toggle-class == null {
 	$gel-grid-breakpoints: join($gel-grid-breakpoints, $gel-grid-breakpoints--1280);
 }
