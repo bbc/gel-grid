@@ -93,17 +93,17 @@ $gel-grid-columns: (
 
 /// Output configuration
 //
-// Should 1280px breakpoint styles be output?
-//
-// @type Boolean
-//
-$gel-grid-enable--1280-breakpoint: true !default;
-
 // Should grid CSS classes be output?
 //
 // @type Boolean
 //
 $gel-grid-enable--markup-output: false !default;
+
+// Should 1280px breakpoint styles be output?
+//
+// @type Boolean
+//
+$gel-grid-enable--1280-breakpoint: true !default;
 
 // Enable the bundled `box-sizing: border-box;` if not
 // already applied globally
