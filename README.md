@@ -110,9 +110,11 @@ This would create a grid with item being 50% wide. At the medium GEL breakpoint 
 
 **Core Grid Classes**
 
+| Class | Usage |
+|---|---|
 | `gel-wrap` | creates the outer wrapper, defines the maximum width of the grid (1008px & 1280px) and sets the correct page margins |
 | `gel-layout` | a grid row |
-| `gel-layout__item` | an item within the grid, applies the correct gutters between items. Item widths can be controlled using width classes. |
+| `gel-layout__item` | an item within the grid, applies the correct gutters between items. Item widths can be controlled using width classes |
 
 **Modifier Classes**
 
