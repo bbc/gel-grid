@@ -83,7 +83,46 @@ In order to use the component you will need the following components available:
 
 ## Usage
 
-By the GEL grid component exposes a Sass Mixin which can be called within your Sass.
+A collection of grid utility classes can be output by defining `$gel-grid-enable--markup-output: true;` before you `@import` the main grid partial.
+
+**Example:**
+
+```scss
+$gel-grid-enable--markup-output: true;
+
+@import "gel-grid/grid";
+```
+
+This will allow you to create grids using specific markup within your page. With the grid markup enabled, its possible to create grids like so:
+
+```html
+<div class="gel-wrap">
+    <div class="gel-layout">
+        <div class="gel-layout__item gel-1/2 gel-1/4@m"></div>
+        <div class="gel-layout__item gel-1/2 gel-1/4@m"></div>
+        <div class="gel-layout__item gel-1/2 gel-1/4@m"></div>
+        <div class="gel-layout__item gel-1/2 gel-1/4@m"></div>
+    </div>
+</div>
+```
+
+This would create a grid with item being 50% wide. At the medium GEL breakpoint (600px), each item changes to 25%.
+
+**Core Grid Classes**
+
+| `gel-wrap` | creates the outer wrapper, defines the maximum width of the grid (1008px & 1280px) and sets the correct page margins |
+| `gel-layout` | a grid row |
+| `gel-layout__item` | an item within the grid, applies the correct gutters between items. Item widths can be controlled using width classes. |
+
+**Modifier Classes**
+
+[TO DO]
+
+### Widths
+[TO DO]
+
+### Sass Mixins
+By default the GEL grid component exposes a Sass Mixin which can be called within your Sass.
 
 **Example**
 
@@ -103,38 +142,6 @@ By the GEL grid component exposes a Sass Mixin which can be called within your S
     }
 }
 ```
-
-A collection of grid classes can be output by defining `$gel-grid-enable--markup-output: true;` before you `@import` the main grid partial.
-
-**Example:**
-
-```scss
-$gel-grid-enable--markup-output: true;
-
-@import "gel-grid/grid";
-```
-
-With the grid markup enabled, its possible to create grids like so:
-
-```html
-<div class="gel-wrap">
-    <div class="gel-layout">
-        <div class="gel-layout__item gel-1/2 gel-1/4@m"></div>
-        <div class="gel-layout__item gel-1/2 gel-1/4@m"></div>
-        <div class="gel-layout__item gel-1/2 gel-1/4@m"></div>
-        <div class="gel-layout__item gel-1/2 gel-1/4@m"></div>
-    </div>
-</div>
-```
-
-**The Classes**
-
-- `gel-wrap` -
-- `gel-layout` -
-- `gel-layout__item` -
-
-### Widths
-[TO DO]
 
 ### 1280px Grid
 
