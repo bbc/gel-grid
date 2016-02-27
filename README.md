@@ -110,23 +110,19 @@ This would create a grid with item being 50% wide. At the medium GEL breakpoint 
 
 **Core Grid Classes**
 
-| Class | Usage |
-|-------|---|
-| `gel-wrap` | the outer grid wrapper, defines the maximum width of the grid and page margins |
-| `gel-layout` | a grid row |
-| `gel-layout__item` | an item within the grid, applies gutters between items. Width can be controlled using width classes |
+- `gel-wrap` - the outer grid wrapper, defines the maximum width of the grid and page margins
+- `gel-layout` - a grid row
+- `gel-layout__item` - an item within the grid, applies gutters between items. Width can be controlled using width classes
 
 **Modifier Classes**
 
-| Class | Usage |
-|-------|---|
-| `gel-layout--flush` | removes gutters between items |
-| `gel-layout--rev` | reversed order of layout items, e.g. items 1, 2, 3, 4 in your markup will display in order 4, 3, 2, 1 on your page |
-| `gel-layout--middle` | align layout items to the vertical centers of each other |
-| `gel-layout--bottom` | align layout items to the vertical bottoms of each other |
-| `gel-layout--right` | make the layout items fill up from the right hand side |
-| `gel-layout--center` | make the layout items fill up from the center outward |
-| `gel-layout--auto` | cause layout items to take up a non-explicit amount of width |
+- `gel-layout--flush` - removes gutters between items
+- `gel-layout--rev` - reversed order of layout items, e.g. items 1, 2, 3, 4 in your markup will display in order 4, 3, 2, 1 on your page
+- `gel-layout--middle` - align layout items to the vertical centers of each other
+- `gel-layout--bottom` - align layout items to the vertical bottoms of each other
+- `gel-layout--right` - make the layout items fill up from the right hand side
+- `gel-layout--center` - make the layout items fill up from the center outward
+- `gel-layout--auto` - cause layout items to take up a non-explicit amount of width
 
 ### Widths
 [TO DO]
