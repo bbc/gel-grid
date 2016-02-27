@@ -128,7 +128,7 @@ This would create a grid with item being 50% wide. At the medium GEL breakpoint 
 [TO DO]
 
 ### Sass Mixins
-By default the GEL grid component exposes a Sass Mixin which can be called within your Sass.
+The GEL grid component exposes a Sass Mixin which can be called within your Sass.
 
 **Example**
 
@@ -138,7 +138,7 @@ By default the GEL grid component exposes a Sass Mixin which can be called withi
 }
 
 .my-component__item {
-    @include gel-layout-item();
+    @include gel-layout-item;
     @include gel-columns(1/2);
 
     @if $enhanced {
@@ -148,6 +148,17 @@ By default the GEL grid component exposes a Sass Mixin which can be called withi
     }
 }
 ```
+
+**Available Mixins**
+
+- `@include gel-wrap` - create the outer grid wrapper
+- `@include gel-layout` - defines a single grid row
+- `@include gel-layout-item` - a single grid item
+- `@include gel-columns({number of columns})` - outputs a width for the requested number of columns, accepts either a fraction or number of columns
+
+**Available Functions:**
+
+- `gel-columns({number of columns})` - returns a width value for the requested number of columns, accepts either a fraction or number of columns
 
 ### 1280px Grid
 
@@ -191,6 +202,8 @@ If your team is using this component, let us know and we'll add you to the list.
 
 - [Shaun Bent](https://twitter.com/shaunbent)
 - [Al Jones](https://twitter.com/Itsaljones)
+
+The foundations of this grid is based on the great work of [Harry Roberts](https://twitter.com/csswizardry) and his [Inuit CSS Grid](https://github.com/inuitcss/objects.layout)
 
 ## License
 
