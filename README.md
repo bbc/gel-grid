@@ -154,11 +154,11 @@ The GEL grid component exposes a Sass Mixin which can be called within your Sass
 - `@include gel-wrap` - create the outer grid wrapper
 - `@include gel-layout` - defines a single grid row
 - `@include gel-layout-item` - a single grid item
-- `@include gel-columns({number of columns})` - outputs a width for the requested number of columns, accepts either a fraction or number of columns
+- `@include gel-columns($span, $columns)` - outputs a width for the requested number of columns, accepts either a fraction or number of columns
 
 **Available Functions:**
 
-- `gel-columns({number of columns})` - returns a width value for the requested number of columns, accepts either a fraction or number of columns
+- `gel-columns($span, $columns)` - returns a width value for the requested number of columns, accepts either a fraction or number of columns
 
 ### 1280px Grid
 
@@ -177,20 +177,19 @@ The following configurable options are available:
 ### General Configuration
 
 - `$gel-grid-namespace: 'gel-';` - the default namespace applied to all grid classes
-- `$gel-grid-breakpoint-namespace: 'gel-bp-';` -
-- `$gel-grid-1280-toggle-class: null` -
-- `$gel-grid-breakpoints` -
-- `$gel-grid-breakpoints--1280` -
-- `$gel-grid-default-columns` -
-- `$gel-grid-columns` -
-- `` -
+- `$gel-grid-breakpoint-namespace: 'gel-bp-';` - the default namespace applied to breakpoint variables from [GEL Sass Tools](https://github.com/bbc/gel-sass-tools/blob/master/lib/settings/_globals.scss#L68)
+- `$gel-grid-1280-toggle-class: null` - an optional scoping class to wrap all 1280px grid style in. Allows the wider grid to be used in a products that do not fully support the wider grid yet
+- `$gel-grid-breakpoints` - a Sass map containing a list of breakpoints width classes should be generated for
+- `$gel-grid-breakpoints--1280` - a Sass map containing a list of breakpoints which relate specifically to the 1280 breakpoint
+- `$gel-grid-default-columns: 12` - the default number of columns the grid should be based on
+- `$gel-grid-columns` - a Sass list containing a list of which fractions utility classes will be generated for
 
 ### Output Configuration
 
-- `$gel-grid-enable--markup-output: false;` - output a collection of classes
-- `$gel-grid-enable--1280-breakpoint: true;` -
-- `$gel-grid-enable--box-sizing: false;` -
-- `$gel-grid-enable--whitespace-fix: false;` -
+- `$gel-grid-enable--markup-output: false;` - output a collection of utility classes
+- `$gel-grid-enable--1280-breakpoint: true;` - toggle the support for the wider 1280px grid
+- `$gel-grid-enable--box-sizing: false;` - enable built in `box-sizing` rules if `box-sizing: border-box;` is not already defined
+- `$gel-grid-enable--whitespace-fix: false;` - enable a built CSS fix to collapse the whitespace between `inline-block` items, this fix is not guaranteed to work 100% of the time
 
 ## Who is using this?
 
