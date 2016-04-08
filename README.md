@@ -163,7 +163,7 @@ Utility classes like these width classes always need to win when it comes to spe
 To help enforce this way of thinking all width utilities classes proactively carry the `!important` keyword to boost their specificity.
 
 ### Sass Mixins
-The GEL grid component exposes a Sass Mixin which can be called within your Sass.
+The GEL grid component exposes a collection of Sass Mixins which can be called within your Sass. Should you need to create a more bespoke component which is not possible using the standard utility classes.
 
 **Example**
 
@@ -200,13 +200,18 @@ The GEL Grid guideline has been updated to include a wider 1280px breakpoint. By
 
 It is also possible to toggle the 1280px breakpoint on and off based on the presence of a specific class. If a class name is supplied e.g. `$gel-grid-1280-toggle-class: 'b-pw-1280';` then all wider 1280px styles will be scoped in this class.
 
-More information:
+**More information:**
+
 - [http://www.bbc.co.uk/frameworks/orb/css#orb-1280](http://www.bbc.co.uk/frameworks/orb/css#orb-1280)
 
 ### Box Sizing
 The GEL Grid consistences of a combination of fixed gutters and margins with fluid width columns. This combination of fixed and fluid units is achieved using `box-sizing: border-box`.
 
-If you do not have `border-box` defined [globally on your project](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) you will need to enable the `$gel-grid-enable--box-sizing` flag to enable a bundled fix.
+If you do not have `border-box` defined globally on your project you will need to enable the `$gel-grid-enable--box-sizing` flag to enable a bundled fix.
+
+**More information:**
+
+- [Box Sizing Border Box FTW](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
 
 ### inline-block & white-space
 The GEL Grid is constructed using `display: inline-block;`. This technique allows us to create a more powerful and flexible grid than is possible with more traditional techniques likes the use of floats.
