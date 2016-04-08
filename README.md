@@ -31,7 +31,7 @@ Or using a Sass mixin:
 }
 
 .my-component__item {
-    @include gel-layout-item();
+    @include gel-layout-item;
     @include gel-columns(1/2);
 }
 ```
@@ -128,7 +128,7 @@ This would create a grid with each item being 50% wide. At the medium GEL breakp
 
 Widths can be applied to grid items using a collection of utility classes which are automatically generated when the grid markup is enabled. The utility classes allow widths to be changed at different breakpoints.
 
-The width utility classes are entirely fraction based allowing you to size grid elements proportionally. By default the following fractional groups are output: `1`, `2`, `3`, `4`, `5`, `8`, `10`, `12` and `24`.
+The width utility classes are entirely fraction based allowing you to size grid elements proportionally. By default the following fractional groups are output: whole, halves, thirds, quarters, fifths, eighths, tenths, twelfths and twenty-fourths.
 
 The class structure is as follows:
 
@@ -137,22 +137,19 @@ The class structure is as follows:
 - `.gel-2/3` - 66.666666667%
 - `.gel-10/12` - 83.333333333%
 
-In order to reduce page weight we do not output whole fractions for each group as this can be simple normalised to one whole (`.gel-1/1`).
+In order to reduce page weight we do not output whole fractions for each group as this can be simply normalised to one whole (`.gel-1/1`).
 
 #### Breakpoints
 
-It is possible to only apply width classes at specific breakpoints by applying a breakpoint specific suffix to the end of the class. That might look something like this:
+It is possible to apply width classes at specific breakpoints by applying a breakpoint specific suffix to the end of the class. That might look something like this:
 
 ```html
 <div class="gel-layout">
     <div class="gel-layout__item gel-1/1 gel-1/2@m gel-1/4@l"></div>
-    <div class="gel-layout__item gel-1/1 gel-1/2@m gel-1/4@l"></div>
-    <div class="gel-layout__item gel-1/1 gel-1/2@m gel-1/4@l"></div>
-    <div class="gel-layout__item gel-1/1 gel-1/2@m gel-1/4@l"></div>
 </div>
 ```
 
-Here each item would be 100% wide by default, then 50% wide from 600px and 25% for anything beyond 900px.
+Here the item would be 100% wide by default, then 50% wide from 600px and 25% for anything beyond 900px.
 
 The following breakpoint suffixes are available by default:
 
