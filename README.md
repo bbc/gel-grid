@@ -156,6 +156,10 @@ The following breakpoint suffixes are available by default:
 - `@xl` - 1008px
 - `@xxl` - 1280px
 
+**More information:**
+
+- [Responsive suffixes](http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/#responsive-suffixes)
+
 #### Specificity
 
 Utility classes like these width classes always need to win when it comes to specificity, otherwise they're not doing their job correctly. You should never need to override a utility class, if you do you're doing something wrong. E.g. if you'd used a class of `gel-1/2` you would never want it to be anything other than 50%. If you want something other than 50% you should have used a different class.
@@ -202,7 +206,7 @@ It is also possible to toggle the 1280px breakpoint on and off based on the pres
 
 **More information:**
 
-- [http://www.bbc.co.uk/frameworks/orb/css#orb-1280](http://www.bbc.co.uk/frameworks/orb/css#orb-1280)
+- [ORB 1280px Documentation](http://www.bbc.co.uk/frameworks/orb/css#orb-1280)
 
 ### Box Sizing
 The GEL Grid consistences of a combination of fixed gutters and margins with fluid width columns. This combination of fixed and fluid units is achieved using `box-sizing: border-box`.
