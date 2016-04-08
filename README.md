@@ -14,7 +14,16 @@ The Grid provides a way of creating flexible and unique layouts whilst also main
 
 The GEL Grid has been established to work on all devices and is independent of device size and resolution.
 
-It can used in two forms, using a Sass mixin:
+It can used in two forms, by simply adding the relevant classes to your markup:
+
+```html
+<div class="gel-layout">
+    <div class="gel-layout__item gel-1/2"></div>
+    <div class="gel-layout__item gel-1/2"></div>
+</div>
+```
+
+Or using a Sass mixin:
 
 ```sass
 .my-component {
@@ -25,15 +34,6 @@ It can used in two forms, using a Sass mixin:
     @include gel-layout-item();
     @include gel-columns(1/2);
 }
-```
-
-Or by simply adding the relevant classes to your markup:
-
-```html
-<div class="gel-layout">
-    <div class="gel-layout__item gel-1/2"></div>
-    <div class="gel-layout__item gel-1/2"></div>
-</div>
 ```
 
 ## Installation
@@ -106,11 +106,11 @@ This will allow you to create grids using specific markup within your page. With
 </div>
 ```
 
-This would create a grid with item being 50% wide. At the medium GEL breakpoint (600px), each item changes to 25%.
+This would create a grid with each item being 50% wide. At the medium GEL breakpoint (600px), the width of each item changes to 25%.
 
 **Core Grid Classes**
 
-- `gel-wrap` - the outer grid wrapper, defines the maximum width of the grid and page margins
+- `gel-wrap` - the outer grid wrapper, defines the maximum width of the grid and applies page margins
 - `gel-layout` - a grid row
 - `gel-layout__item` - an item within the grid, applies gutters between items. Width can be controlled using width classes
 
@@ -125,7 +125,48 @@ This would create a grid with item being 50% wide. At the medium GEL breakpoint 
 - `gel-layout--auto` - cause layout items to take up a non-explicit amount of width
 
 ### Widths
-[TO DO]
+
+Widths can be applied to grid items using a collection of utility classes which are automatically generated when the grid markup is enabled. The utility classes allow widths to be changed at different breakpoints.
+
+The width utility classes are entirely fraction based allowing you to size grid elements proportionally. By default the following fractional groups are output: `1`, `2`, `3`, `4`, `5`, `8`, `10`, `12` and `24`.
+
+The class structure is as follows:
+
+- `.gel-1/1` - 100%
+- `.gel-1/2` - 50%
+- `.gel-2/3` - 66.666666667%
+- `.gel-10/12` - 83.333333333%
+
+In order to reduce page weight we do not output whole fractions for each group as this can be simple normalised to one whole (`.gel-1/1`).
+
+#### Breakpoints
+
+It is possible to only apply width classes at specific breakpoints by applying a breakpoint specific suffix to the end of the class. That might look something like this:
+
+```html
+<div class="gel-layout">
+    <div class="gel-layout__item gel-1/1 gel-1/2@m gel-1/4@l"></div>
+    <div class="gel-layout__item gel-1/1 gel-1/2@m gel-1/4@l"></div>
+    <div class="gel-layout__item gel-1/1 gel-1/2@m gel-1/4@l"></div>
+    <div class="gel-layout__item gel-1/1 gel-1/2@m gel-1/4@l"></div>
+</div>
+```
+
+Here each item would be 100% wide by default, then 50% wide from 600px and 25% for anything beyond 900px.
+
+The following breakpoint suffixes are available by default:
+
+- `@s` - 400px
+- `@m` - 600px
+- `@l` - 900px
+- `@xl` - 1008px
+- `@xxl` - 1280px
+
+#### Specificity
+
+Utility classes like these width classes always need to win when it comes to specificity, otherwise they're not doing their job correctly. You should never need to override a utility class, if you do you're doing something wrong. E.g. if you'd used a class of `gel-1/2` you would never want it to be anything other than 50%. If you want something other than 50% you should have used a different class.
+
+To help enforce this way of thinking all width utilities classes proactively carry the `!important` keyword to boost their specificity.
 
 ### Sass Mixins
 The GEL grid component exposes a Sass Mixin which can be called within your Sass.
