@@ -128,7 +128,7 @@ This would create a grid with each item being 50% wide. At the medium GEL breakp
 
 Widths can be applied to grid items using a collection of utility classes which are automatically generated when the grid markup is enabled. The utility classes allow widths to be changed at different breakpoints.
 
-The width utility classes are entirely fraction based allowing you to size grid elements proportionally. By default the following fractional groups are output: whole, halves, thirds, quarters, fifths, eighths, tenths, twelfths and twenty-fourths.
+The width utility classes are entirely fraction based allowing you to size grid elements proportionally. By default the following fractional groups are output: `whole`, `halves`, `thirds`, `quarters`, `fifths`, `eighths`, `tenths`, `twelfths` and `twenty-fourths`.
 
 The class structure is as follows:
 
