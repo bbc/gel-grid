@@ -220,7 +220,7 @@ If you do not have `border-box` defined globally on your project you will need t
 ### inline-block & white-space
 The GEL Grid is constructed using `display: inline-block;`. This technique allows us to create a more powerful and flexible grid than is possible with more traditional techniques likes the use of floats.
 
-One downside to the use of `display: inline-block;` is the white-space which is introduce between `inline-block` elements. This space is a representation of the space between elements in the HTML. In order for the grid to work correctly this space needs to be removed.
+One downside to the use of `display: inline-block;` is the white-space which is introduced between `inline-block` elements. This space is a representation of the space between elements in the HTML. In order for the grid to work correctly this space needs to be removed.
 
 There are a few ways you can do this:
 
