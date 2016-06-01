@@ -2,10 +2,10 @@
 //    # GEL GRID
 //\*------------------------------------*/
 
-// We need to check that the GEL settings are available globally
+// We need to check that the GEL Sass Tools are available globally
 $gel-settings-available: false !default;
 @if ($gel-settings-available == false) {
-    @warn "Missing Dependency: Have you included the GEL settings?";
+    @warn "Missing Dependency: Have you included the gel-sass-tools?";
 }
 
 
