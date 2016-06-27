@@ -17,4 +17,5 @@ test/*.css.map
 # Demo
 demo/dist/*
 demo/src/bower_components/*
+demo/src/assets/css/*
 demo/.publish
