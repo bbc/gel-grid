@@ -5,7 +5,9 @@
  .gel-c-demo-controls {
     position: relative;
 
-    margin: 0 double($gel-alt-spacing-unit) double($gel-alt-spacing-unit);
+    margin-top: 0;
+    margin-right: -$gel-spacing-unit;
+    margin-left: -$gel-spacing-unit;
     padding: $gel-spacing-unit;
 
     background-color: $gel-color--orange;
@@ -25,6 +27,8 @@
 }
 
 .gel-c-demo-controls__options {
+    margin-top: $gel-spacing-unit;
+
     @if $enhanced {
         @include mq($from: gel-bp-m) {
             margin-bottom: 0;
