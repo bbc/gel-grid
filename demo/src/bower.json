@@ -1,0 +1,27 @@
+{
+  "name": "gel-grid-demo",
+  "description": "A demo of the GEL Grid",
+  "main": "index.html",
+  "authors": [
+    "Shaun Bent <shaun.bent@bbc.co.uk> (http://www.bbc.co.uk)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "GEL",
+    "Grid",
+    "Responsive",
+    "Flexbox"
+  ],
+  "homepage": "https://github.com/bbc/gel-grid",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bbc-grandstand": "git@github.com:bbc/bbc-grandstand.git#^3.0.0"
+  }
+}
