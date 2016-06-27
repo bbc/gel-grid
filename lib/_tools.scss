@@ -2,6 +2,8 @@
 //    # GEL GRID - TOOLS
 //\*------------------------------------*/
 
+/* autoprefixer: off */
+
 // Grid container, used to wrap all grid elements and apply the correct maximum widths
 //
 // 1. IE8 doesn't apply border-box box-sizing logic correctly on (min|max)-(width|height) properties.
@@ -53,6 +55,9 @@
 
 // A single layout group/row, this wraps individual layout items
 //
+// We want fine-grain control over which implementations of flexbox we support
+// so we will manually handle prefixes
+//
 // 1. Remove any margin and padding which may effect our layout
 // 2. Remove any default list styling if the layout is applied to a list
 //
@@ -60,7 +65,11 @@
 //
 @mixin gel-layout() {
     @if $enhanced {
+        display: -webkit-flex;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
         flex-flow: row wrap;
 
         margin-right: 0; // [1]
@@ -105,6 +114,8 @@
     @if $enhanced {
         width: 100%;
         display: inline-block; // [1]
+        -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
         flex: 0 0 auto;
         padding-left: $gel-spacing-unit; // [2]
 
@@ -172,6 +183,8 @@
      * markup will display in order 4, 3, 2, 1 on your page
      */
     .#{$gel-grid-namespace}layout--rev {
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
         /*direction: rtl;
         text-align: left;
@@ -187,6 +200,9 @@
      * Align layout items to the vertical centers of each other
      */
     .#{$gel-grid-namespace}layout--middle {
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        -ms-grid-row-align: center;
         align-items: center;
 
         > .#{$gel-grid-namespace}layout__item {
@@ -198,6 +214,9 @@
      * Align layout items to the vertical bottoms of each other
      */
     .#{$gel-grid-namespace}layout--bottom {
+        -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+        -ms-grid-row-align: flex-end;
         align-items: flex-end;
 
         > .#{$gel-grid-namespace}layout__item {
@@ -210,6 +229,8 @@
      */
     .#{$gel-grid-namespace}layout--right {
         text-align: right;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
         justify-content: flex-end;
 
         > .#{$gel-grid-namespace}layout__item {
@@ -222,6 +243,8 @@
      */
     .#{$gel-grid-namespace}layout--center {
         text-align: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
         justify-content: center;
 
         > .#{$gel-grid-namespace}layout__item {
@@ -243,7 +266,9 @@
      */
     .#{$gel-grid-namespace}layout--equal {
         > .#{$gel-grid-namespace}layout__item {
-            display: flex;
+            display: -webkit-flex;
+    		display: -ms-flexbox;
+    		display: flex;
         }
     }
 
@@ -252,7 +277,9 @@
      */
     .#{$gel-grid-namespace}layout--fit {
         > .#{$gel-grid-namespace}layout__item {
-            flex: 1 1 0%;
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
         }
     }
 }
