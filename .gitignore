@@ -13,3 +13,6 @@ test/*.css.map
 .DS_Store
 .DS_Store?
 .sass-cache/
+
+# Demo
+demo/dist/*
