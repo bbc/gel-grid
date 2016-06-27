@@ -56,28 +56,23 @@
 // 1. Remove any margin and padding which may effect our layout
 // 2. Remove any default list styling if the layout is applied to a list
 //
-// @param {String} $align - either 'left', 'center', 'right'
-//
 // @author Shaun Bent
 //
-@mixin gel-layout($align: 'left') {
+@mixin gel-layout() {
     @if $enhanced {
+        display: flex;
+        flex-flow: row wrap;
+
         margin-right: 0; // [1]
         margin-left: -$gel-spacing-unit;
         padding-right: 0; // [1]
         padding-left: 0; // [1]
 
         list-style: none; // [2]
+        text-align: left;
 
         @include mq($from: $gel-grid-gutter-change) {
             margin-left: double(-$gel-spacing-unit);
-        }
-
-        // output horizontal alignment
-        @if ($align != 'left') {
-            text-align: #{$align};
-        } @else {
-            text-align: left;
         }
 
         @if $gel-grid-enable--whitespace-fix {
@@ -104,36 +99,20 @@
 // 3. Ensure all text is aligned correctly
 // 4. Align columns to the tops of each other
 //
-// @param {String} $width - either '100%', 'auto', or a fraction (e.g. '1/4')
-// @param {String} $align - either 'left', 'center', 'right'
-//
 // @author  Shaun Bent
 //
-@mixin gel-layout-item($width: '100%', $align: 'top') {
+@mixin gel-layout-item() {
     @if $enhanced {
+        width: 100%;
         display: inline-block; // [1]
+        flex: 0 0 auto;
         padding-left: $gel-spacing-unit; // [2]
 
         text-align: left; // [3]
+        vertical-align: top; // [4]
 
         @include mq($from: $gel-grid-gutter-change) {
             padding-left: double($gel-spacing-unit); // [2]
-        }
-
-        // output the required width
-        @if ($width == '100%') {
-            width: 100%;
-        } @else if ($width == 'auto') {
-            width: auto;
-        } @else {
-            @include gel-columns($width);
-        }
-
-        // output vertical alignment
-        @if ($align != 'top') {
-            vertical-align: #{$align};
-        } @else {
-            vertical-align: top; // [4]
         }
 
         @if $gel-grid-enable--box-sizing {
@@ -159,36 +138,31 @@
     /**
      * Grid containing element
      */
-    .#{$gel-grid-namespace}wrap,
-    %#{$gel-grid-namespace}wrap {
+    .#{$gel-grid-namespace}wrap {
         @include gel-wrap;
     }
 
     /**
      * A grid row
      */
-    .#{$gel-grid-namespace}layout,
-    %#{$gel-grid-namespace}layout {
+    .#{$gel-grid-namespace}layout {
         @include gel-layout;
     }
 
     /**
      * A single grid item
      */
-    .#{$gel-grid-namespace}layout__item,
-    %#{$gel-grid-namespace}layout__item {
+    .#{$gel-grid-namespace}layout__item {
         @include gel-layout-item;
     }
 
     /**
      * Layouts with no gutters.
      */
-    .#{$gel-grid-namespace}layout--flush,
-    %#{$gel-grid-namespace}layout--flush {
+    .#{$gel-grid-namespace}layout--flush {
         margin-left: 0;
 
-        > .#{$gel-grid-namespace}layout__item,
-        > %#{$gel-grid-namespace}layout__item {
+        > .#{$gel-grid-namespace}layout__item {
             padding-left: 0;
         }
     }
@@ -197,26 +171,25 @@
      * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
      * markup will display in order 4, 3, 2, 1 on your page
      */
-    .#{$gel-grid-namespace}layout--rev,
-    %#{$gel-grid-namespace}layout--rev {
-        direction: rtl;
+    .#{$gel-grid-namespace}layout--rev {
+        flex-direction: row-reverse;
+        /*direction: rtl;
         text-align: left;
 
         > .#{$gel-grid-namespace}layout__item,
         > %#{$gel-grid-namespace}layout__item {
             direction: ltr;
             text-align: left;
-        }
+        }*/
     }
 
     /**
      * Align layout items to the vertical centers of each other
      */
-    .#{$gel-grid-namespace}layout--middle,
-    %#{$gel-grid-namespace}layout--middle {
+    .#{$gel-grid-namespace}layout--middle {
+        align-items: center;
 
-        > .#{$gel-grid-namespace}layout__item,
-        > %#{$gel-grid-namespace}layout__item {
+        > .#{$gel-grid-namespace}layout__item {
             vertical-align: middle;
         }
     }
@@ -224,11 +197,10 @@
     /**
      * Align layout items to the vertical bottoms of each other
      */
-    .#{$gel-grid-namespace}layout--bottom,
-    %#{$gel-grid-namespace}layout--bottom {
+    .#{$gel-grid-namespace}layout--bottom {
+        align-items: flex-end;
 
-        > .#{$gel-grid-namespace}layout__item,
-        > %#{$gel-grid-namespace}layout__item {
+        > .#{$gel-grid-namespace}layout__item {
             vertical-align: bottom;
         }
     }
@@ -236,12 +208,11 @@
     /**
      * Make the layout items fill up from the right hand side
      */
-    .#{$gel-grid-namespace}layout--right,
-    %#{$gel-grid-namespace}layout--right {
+    .#{$gel-grid-namespace}layout--right {
         text-align: right;
+        justify-content: flex-end;
 
-        > .#{$gel-grid-namespace}layout__item,
-        > %#{$gel-grid-namespace}layout__item {
+        > .#{$gel-grid-namespace}layout__item {
             text-align: left;
         }
     }
@@ -249,12 +220,11 @@
     /**
      * Make the layout items fill up from the center outward
      */
-    .#{$gel-grid-namespace}layout--center,
-    %#{$gel-grid-namespace}layout--center {
+    .#{$gel-grid-namespace}layout--center {
         text-align: center;
+        justify-content: center;
 
-        > .#{$gel-grid-namespace}layout__item,
-        > %#{$gel-grid-namespace}layout__item {
+        > .#{$gel-grid-namespace}layout__item {
             text-align: left;
         }
     }
@@ -262,12 +232,27 @@
     /**
      * Cause layout items to take up a non-explicit amount of width
      */
-    .#{$gel-grid-namespace}layout--auto,
-    %#{$gel-grid-namespace}layout--auto {
-
-        > .#{$gel-grid-namespace}layout__item,
-        > %#{$gel-grid-namespace}layout__item {
+    .#{$gel-grid-namespace}layout--auto {
+        > .#{$gel-grid-namespace}layout__item {
             width: auto;
+        }
+    }
+
+    /**
+     * Force items to be of equal height
+     */
+    .#{$gel-grid-namespace}layout--equal {
+        > .#{$gel-grid-namespace}layout__item {
+            display: flex;
+        }
+    }
+
+    /**
+     * Allow items to devide the space equally between the number of items
+     */
+    .#{$gel-grid-namespace}layout--fit {
+        > .#{$gel-grid-namespace}layout__item {
+            flex: 1 1 0%;
         }
     }
 }
