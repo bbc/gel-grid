@@ -1,18 +1,19 @@
 {
-  "name": "gel-demos",
-  "version": "0.0.1",
-  "homepage": "https://github.com/bbc/gel-demos",
-  "authors": [
-    "shaun.bent@bbc.co.uk"
-  ],
-  "description": "A boilerplate for creating GEL Demos",
+  "name": "gel-grid-demo",
+  "description": "A demo of the GEL Grid",
   "main": "index.html",
-  "keywords": [
-    "gel",
-    "bbc",
-    "demo"
+  "authors": [
+    "Shaun Bent <shaun.bent@bbc.co.uk> (http://www.bbc.co.uk)"
   ],
   "license": "MIT",
+  "keywords": [
+    "GEL",
+    "Grid",
+    "Responsive",
+    "Flexbox"
+  ],
+  "homepage": "https://github.com/bbc/gel-grid",
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -21,8 +22,6 @@
     "tests"
   ],
   "dependencies": {
-    "gel-typography": "https://github.com/bbc-gel/gel-typography.git#~0.5.0",
-    "gel-layout": "https://github.com/bbc-gel/gel-layout.git#~0.0.5",
-    "gel-widths": "https://github.com/bbc/gel-widths.git#~0.1.1-beta"
+    "bbc-grandstand": "git@github.com:bbc/bbc-grandstand.git#^3.0.0"
   }
 }
