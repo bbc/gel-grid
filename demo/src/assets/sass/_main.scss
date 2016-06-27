@@ -11,6 +11,9 @@
 
 @import '../../bower_components/bbc-grandstand/grandstand';
 
+$gel-grid-enable--markup-output: true;
+@import '../../../../grid';
+
 @import 'object.button';
 
 @import 'component.demo-header';
