@@ -2,8 +2,10 @@
     # GLOBAL
 \*------------------------------------*/
 
-// Colours pallette
+// Disable grandstand grid output
+$gel-grid-enable--markup-output: false;
 
+// Colours pallette
 $gel-color--white: #fff;
 $gel-color--orange: #e6711b;
 $gel-color--cod-gray: #767676;
