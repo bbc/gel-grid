@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    # GEL DEMO
+\*------------------------------------*/
+
+@import 'settings.global';
+
+@import 'base.box-sizing';
+@import 'base.normalize';
+@import 'base.reset';
+@import 'base.page';
+
+@import '../../bower_components/bbc-grandstand/grandstand';
+
+@import 'object.button';
+
+@import 'component.demo-header';
+@import 'component.demo-controls';
+@import 'component.grid-controls';
+@import 'component.grid-demo';

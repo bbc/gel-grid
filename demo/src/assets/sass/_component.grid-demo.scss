@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    # GRID DEMO
+\*------------------------------------*/
+
+.gel-c-grid-demo-section {
+    margin-top: double($gel-spacing-unit);
+    border-top: 1px solid $gel-color--alto;
+    padding-top: double($gel-spacing-unit);
+}
+
+.gel-c-grid-demo__summary {
+    margin-top: halve($gel-spacing-unit);
+    color: $gel-color--cod-gray;
+}
+
+.gel-c-grid-demo-item {
+    background: repeating-linear-gradient(180deg, #d4e7eb, #d4e7eb 8px, #aec4cc 8px, #aec4cc 16px);
+    height: 48px;
+}
+
+.gel-c-grid-demo-item--large {
+    height: 144px;
+}

@@ -1,0 +1,55 @@
+/*------------------------------------*\
+    # DEMO CONTROLS
+\*------------------------------------*/
+
+ .gel-c-demo-controls {
+    position: relative;
+
+    margin-top: 0;
+    margin-right: -$gel-spacing-unit;
+    margin-left: -$gel-spacing-unit;
+    padding: $gel-spacing-unit;
+
+    background-color: $gel-color--orange;
+    color: $gel-color--white;
+
+    @if $enhanced {
+        @include mq($from: gel-bp-s) {
+            margin-right: double(-$gel-spacing-unit);
+            margin-left: double(-$gel-spacing-unit);
+            padding: double($gel-spacing-unit);
+        }
+
+        @include mq($from: gel-bp-l) {
+            margin: 0 0 quadruple($gel-spacing-unit);
+        }
+    }
+}
+
+.gel-c-demo-controls__options {
+    margin-top: $gel-spacing-unit;
+
+    @if $enhanced {
+        @include mq($from: gel-bp-m) {
+            margin-bottom: 0;
+            position: absolute;
+            bottom: double($gel-spacing-unit);
+            right: double($gel-spacing-unit);
+        }
+    }
+}
+
+.gel-c-demo-controls__option {
+    padding: 0;
+    border: 0;
+    outline: 0;
+
+    color: #fff;
+
+    background: none;
+
+    &:focus,
+    &:hover {
+        text-decoration: underline;
+    }
+}

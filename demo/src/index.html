@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="no-js b-pw-1280">
+<head>
+    <meta charset="utf-8" />
+    <title>GEL Grid Demo | BBC GEL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>var GEL = { mustard: false };</script>
+    <script>
+        GEL.mustard = (function () {
+            return (
+                'addEventListener' in window &&
+                'querySelector' in window.document &&
+                'localStorage' in window
+            );
+        })();
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script>
+        if (GEL.mustard) {
+            document.write('<link rel="stylesheet" href="assets/css/gel-demo-enhanced.css" />');
+        } else {
+            document.write('<link rel="stylesheet" href="assets/css/gel-demo-base.css" />');
+        }
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/gel-demo-base.css" />>
+    </noscript>
+</head>
+<body>
+
+	<!-- GEL Demos Header -->
+    <div class="gel-demo">
+		<header role="banner" class="gel-c-demo-header">
+		    <div class="gel-c-demo-header__banner">
+                <div class="gel-wrap gs-u-clearfix">
+					<div class="gel-c-demo-header__brand">
+                        <a class="gel-c-demo-header__brand-logo" href="http://www.bbc.co.uk/gel">
+                            <svg aria-label="BBC GEL Logo" width="164" height="39">
+                                <title>BBC GEL Logo</title>
+                                <image xlink:href="assets/images/bbc-gel-logo.svg" src="assets/images/bbc-gel-logo.png" width="100%" height="100%"></image>
+                            </svg>
+    					</a>
+                        <i class="gel-c-demo-header__brand-beta gel-minion-bold">Beta</i>
+                    </div>
+
+					<a class="gel-c-demo-header__banner-button gel-o-button gel-long-primer-bold" href="http://www.bbc.co.uk/gel/guidelines/typography">
+						Go to BBC GEL
+					</a>
+                </div>
+            </div>
+            <div class="gel-c-demo-header__intro">
+                <div class="gel-wrap">
+                    <div class="gel-layout">
+                        <div class="gel-layout__item gel-3/4@l">
+                            <h1 class="gs-u-mb gel-canon-bold">Grid</h1>
+                            <p>This is a working demo of the <a href="http://www.bbc.co.uk/gel/guidelines/grid">GEL Grid Guidelines</a>. The demo shows how our flexible, percentage-based grid works and how you can use it to create a BBC website.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</header>
+        <main role="main" class="gs-u-pb++">
+            <div class="gel-wrap">
+                <div class="gel-layout gel-layout--center">
+                    <div class="gel-layout__item gel-10/12@xxl">
+                        <div class="gel-c-demo-controls gel-grid-controls">
+                            <p class="gel-double-pica gs-u-mb">Your device is currently using:</p>
+                            <p class="gel-c-grid-controls__group-name gel-great-primer gs-u-mb-"></p>
+                            <p class="gel-c-grid-controls__margin-gutter-size gel-brevier"></p>
+                            <div class="gel-c-demo-controls__options gel-brevier-bold">
+                                <button class="gel-c-demo-controls__option gel-c-grid-controls__option-toggle" id="overlay-toggle">Toggle Grid Overlay On</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gel-c-grid-demo-section">
+                    <h2 class="gel-double-pica-bold">Sizes</h2>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">100% (Whole)</p>
+                        </div><!--
+                     --><div class="gel-layout__item">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">50% (Halves)</p>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/2">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/2">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">33.333% (Thirds)</p>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">25% (Quarters)</p>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">20% (Fifths)</p>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/5">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/5">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/5">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/5">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/5">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">12.5% (Eighths)</p>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gel-c-grid-demo-section">
+                    <h2 class="gel-double-pica-bold">Example grid combinations</h2>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">Quarter / Three Quarters</p>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4@xs">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-3/4@xs">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+                    <p class="gel-c-grid-demo__summary gel-brevier">Applied at extra small (240px) devices and above.</p>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">Half / Quarter / Two Eighths</p>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/2@s">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4@s">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8@s">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/8@s">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+                    <p class="gel-c-grid-demo__summary gel-brevier">Applied at small (400px) devices and above.</p>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">Two Thirds / Third</p>
+                        </div><!--
+                     --><div class="gel-layout__item gel-2/3@m">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3@m">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+                    <p class="gel-c-grid-demo__summary gel-brevier">Applied at medium (600px) devices and above.</p>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item">
+                            <p class="gel-pica gs-u-mb">Half / Three Sixths</p>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/2@l">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/2@l">
+                            <div class="gel-layout gs-u-mt+ gs-u-mt0@l">
+                               <div class="gel-layout__item gel-1/3@s">
+                                   <div class="gel-c-grid-demo-item"></div>
+                               </div><!--
+                            --><div class="gel-layout__item gel-1/3@s">
+                                   <div class="gel-c-grid-demo-item"></div>
+                               </div><!--
+                            --><div class="gel-layout__item gel-1/3@s">
+                                   <div class="gel-c-grid-demo-item"></div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="gel-c-grid-demo__summary gel-brevier">Applied at large (900px) devices and above.</p>
+                </div>
+
+                <div class="gel-c-grid-demo-section">
+                    <h2 class="gel-double-pica-bold">Horizontal Alignment</h2>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item gel-1/2">
+                            <p class="gel-pica gs-u-mb-">Left</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+
+                    <div class="gel-layout gel-layout--center gs-u-mt+">
+                        <div class="gel-layout__item gel-1/2">
+                            <p class="gel-pica gs-u-mb-">Centre</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                            <p class="gel-c-grid-demo__summary gel-brevier">Applied with the class: <code>gel-layout--center</code></p>
+                        </div>
+                    </div>
+
+                    <div class="gel-layout gel-layout--right gs-u-mt+">
+                        <div class="gel-layout__item gel-1/2">
+                            <p class="gel-pica gs-u-mb-">Right</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                            <p class="gel-c-grid-demo__summary gel-brevier">Applied with the class: <code>gel-layout--right</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gel-c-grid-demo-section">
+                    <h2 class="gel-double-pica-bold">Top Alignment</h2>
+
+                    <div class="gel-layout gs-u-mt+">
+                        <div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item gel-c-grid-demo-item--large"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gel-c-grid-demo-section">
+                    <h2 class="gel-double-pica-bold">Middle Alignment</h2>
+
+                    <div class="gel-layout gel-layout--middle gs-u-mt+">
+                        <div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item gel-c-grid-demo-item--large"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+                    <p class="gel-c-grid-demo__summary gel-brevier">Applied with the class: <code>gel-layout--middle</code></p>
+                </div>
+
+                <div class="gel-c-grid-demo-section">
+                    <h2 class="gel-double-pica-bold">Bottom Alignment</h2>
+
+                    <div class="gel-layout gel-layout--bottom gs-u-mt+">
+                        <div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item gel-c-grid-demo-item--large"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/3">
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+                    <p class="gel-c-grid-demo__summary gel-brevier">Applied with the class: <code>gel-layout--bottom</code></p>
+                </div>
+
+                <div class="gel-c-grid-demo-section">
+                    <h2 class="gel-double-pica-bold">Reversed</h2>
+
+                    <div class="gel-layout gel-layout--rev gs-u-mt+">
+                        <div class="gel-layout__item gel-1/4">
+                            <p class="gel-pica gs-u-mb-">1</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <p class="gel-pica gs-u-mb-">2</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <p class="gel-pica gs-u-mb-">3</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <p class="gel-pica gs-u-mb-">4</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+                    <p class="gel-c-grid-demo__summary gel-brevier">Applied with the class: <code>gel-layout--rev</code></p>
+                </div>
+
+                <div class="gel-c-grid-demo-section">
+                    <h2 class="gel-double-pica-bold">Flush</h2>
+
+                    <div class="gel-layout gel-layout--flush gs-u-mt+">
+                        <div class="gel-layout__item gel-1/4">
+                            <p class="gel-pica gs-u-mb-">1</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <p class="gel-pica gs-u-mb-">2</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <p class="gel-pica gs-u-mb-">3</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div><!--
+                     --><div class="gel-layout__item gel-1/4">
+                            <p class="gel-pica gs-u-mb-">4</p>
+                            <div class="gel-c-grid-demo-item"></div>
+                        </div>
+                    </div>
+                    <p class="gel-c-grid-demo__summary gel-brevier">Applied with the class: <code>gel-layout--flush</code></p>
+                </div>
+
+            </div>
+        </main>
+	</div>
+
+<script>
+function overlayTextToggle() {
+    var overlayToggle = document.getElementById('overlay-toggle');
+    overlayToggle.innerHTML === 'Toggle Grid Overlay On' ?
+        overlayToggle.innerHTML = 'Toggle Grid Overlay Off' : overlayToggle.innerHTML = 'Toggle Grid Overlay On';
+}
+
+function gridOverlay() {
+    if (document.getElementsByClassName("gel-grid-overlay").length) {
+        document.getElementsByClassName("gel-grid-overlay")[0].remove()
+    }
+    var e = "<div class=\"gel-grid-overlay__grid\"><div class=\"gel-grid-overlay__margin\" style=\"left: 0;\"></div>";
+    for (i = 0; i < 12; i++) {
+        e += "<div class=\"gel-grid-overlay__column\"><div class=\"gel-grid-overlay__column-fill\"></div></div>"
+    }
+    e += "<div class=\"gel-grid-overlay__margin\" style=\"right: 0;\"></div>";
+    e += "</div>";
+    var t = document.createElement("div");
+    t.className = "gel-grid-overlay";
+    t.innerHTML = e;
+    var n = document.createElement("style");
+    n.innerHTML = ".gel-grid-overlay * {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;);}.gel-grid-overlay {z-index: 2147483647; position: fixed; height: 100%; width: 100%; left: 0; top: 0;}.gel-grid-overlay__grid {position: relative; width: 100%; height: 100%; max-width: 1008px; margin: 0 auto; padding: 0 4px;}.gel-grid-overlay__column {display: inline-block; height: 100%; width: 8.33333%; padding: 0 4px;}.gel-grid-overlay__column-fill {background: rgba(255,0,0,0.1); height: 100%;}.gel-grid-overlay__margin {display: inline-block; height: 100%; width: 8px; position: absolute; top: 0; background: rgba(0,255,0,0.1);}@media screen and (min-width: 400px) {.gel-grid-overlay__grid {padding: 0 12px;}.gel-grid-overlay__margin {width: 16px;}@media screen and (min-width: 600px) {.gel-grid-overlay__grid {padding: 0 8px;}.gel-grid-overlay__column {padding: 0 8px;}}@media screen and (min-width: 1280px) {.gel-grid-overlay__grid {max-width: 1280px;}}";
+    document.getElementsByTagName("head")[0].appendChild(n);
+    document.getElementsByTagName("body")[0].appendChild(t);
+    t.addEventListener("click", function() {
+        document.getElementsByClassName("gel-grid-overlay")[0].remove();
+        overlayTextToggle();
+    });
+}
+
+(function() {
+    var overlayToggle = document.getElementById('overlay-toggle');
+    overlayToggle.addEventListener('click', function() {
+        gridOverlay();
+        overlayTextToggle();
+    });
+}());
+</script>
+</body>
+</html>
