@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js b-pw-1280">
+<html class="no-js b-pw-1280" dir="ltr">
 <head>
     <meta charset="utf-8" />
     <title>GEL Grid Demo | BBC GEL</title>
@@ -18,13 +18,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script>
         if (GEL.mustard) {
-            document.write('<link rel="stylesheet" href="assets/css/gel-demo-enhanced.css" />');
+            document.write('<link rel="stylesheet" id="stylesheet" href="assets/css/gel-demo-enhanced.css" />');
         } else {
-            document.write('<link rel="stylesheet" href="assets/css/gel-demo-base.css" />');
+            document.write('<link rel="stylesheet" id="stylesheet" href="assets/css/gel-demo-base.css" />');
         }
     </script>
     <noscript>
-        <link rel="stylesheet" href="assets/css/gel-demo-base.css" />>
+        <link rel="stylesheet" href="assets/css/gel-demo-base.css" />
     </noscript>
 </head>
 <body>
@@ -69,6 +69,7 @@
                             <p class="gel-c-grid-controls__group-name gel-great-primer gs-u-mb-"></p>
                             <p class="gel-c-grid-controls__margin-gutter-size gel-brevier"></p>
                             <div class="gel-c-demo-controls__options gel-brevier-bold">
+                                <button class="gel-c-demo-controls__option gel-c-grid-controls__option-toggle" id="rtl-toggle">Toggle RTL On</button>
                                 <button class="gel-c-demo-controls__option gel-c-grid-controls__option-toggle" id="overlay-toggle">Toggle Grid Overlay On</button>
                             </div>
                         </div>
@@ -415,11 +416,43 @@ function gridOverlay() {
     });
 }
 
+function toggleStyles() {
+    var html = document.querySelector('html');
+    var stylesheet = document.getElementById('stylesheet');
+    var rtlToggle = document.getElementById('rtl-toggle');
+
+    rtlToggle.innerHTML = (rtlToggle.innerHTML === 'Toggle RTL On') ?
+        'Toggle RTL Off' : 'Toggle RTL On';
+
+    if (stylesheet.getAttribute('href').indexOf('-rtl') > -1) {
+        if (GEL.mustard) {
+            stylesheet.setAttribute('href', 'assets/css/gel-demo-enhanced.css');
+        } else {
+            stylesheet.setAttribute('href', 'assets/css/gel-demo-base.css');
+        }
+
+        html.setAttribute('dir', 'ltr');
+    } else {
+        if (GEL.mustard) {
+            stylesheet.setAttribute('href', 'assets/css/gel-demo-enhanced-rtl.css');
+        } else {
+            stylesheet.setAttribute('href', 'assets/css/gel-demo-base-rtl.css');
+        }
+
+        html.setAttribute('dir', 'rtl');
+    }
+}
+
 (function() {
     var overlayToggle = document.getElementById('overlay-toggle');
     overlayToggle.addEventListener('click', function() {
         gridOverlay();
         overlayTextToggle();
+    });
+
+    var rtlToggle = document.getElementById('rtl-toggle');
+    rtlToggle.addEventListener('click', function() {
+        toggleStyles();
     });
 }());
 </script>
