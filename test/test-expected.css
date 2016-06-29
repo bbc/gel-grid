@@ -1,3 +1,4 @@
+/* autoprefixer: off */
 /**
      * Grid containing element
      */
@@ -25,12 +26,19 @@
      * A grid row
      */
 .gel-layout {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   margin-right: 0;
   margin-left: -8px;
   padding-right: 0;
   padding-left: 0;
   list-style: none;
-  text-align: left;
+  direction: flip(ltr, rtl);
+  text-align: flip(left, right);
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
@@ -41,14 +49,22 @@
   }
 }
 
+.opera-only :-o-prefocus,
+.gel-layout {
+  word-spacing: -0.43em;
+}
+
 /**
      * A single grid item
      */
 .gel-layout__item {
-  display: inline-block;
-  padding-left: 8px;
-  text-align: left;
   width: 100%;
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 8px;
+  text-align: flip(left, right);
   vertical-align: top;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -65,8 +81,8 @@
 }
 
 /**
-         * Layouts with no gutters.
-         */
+     * Layouts with no gutters.
+     */
 .gel-layout--flush {
   margin-left: 0;
 }
@@ -76,60 +92,102 @@
 }
 
 /**
-         * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
-         * markup will display in order 4, 3, 2, 1 on your page
-         */
+     * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+     * markup will display in order 4, 3, 2, 1 on your page
+     */
 .gel-layout--rev {
-  direction: rtl;
-  text-align: left;
-}
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  /*direction: rtl;
+        text-align: left;
 
-.gel-layout--rev > .gel-layout__item {
-  direction: ltr;
-  text-align: left;
+        > .gel-layout__item,
+        > %gel-layout__item {
+            direction: ltr;
+            text-align: left;
+        }*/
 }
 
 /**
-         * Align layout items to the vertical centers of each other
-         */
+     * Align layout items to the vertical centers of each other
+     */
+.gel-layout--middle {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
 .gel-layout--middle > .gel-layout__item {
   vertical-align: middle;
 }
 
 /**
-         * Align layout items to the vertical bottoms of each other
-         */
+     * Align layout items to the vertical bottoms of each other
+     */
+.gel-layout--bottom {
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  -ms-grid-row-align: flex-end;
+  align-items: flex-end;
+}
+
 .gel-layout--bottom > .gel-layout__item {
   vertical-align: bottom;
 }
 
 /**
-         * Make the layout items fill up from the right hand side
-         */
+     * Make the layout items fill up from the right hand side
+     */
 .gel-layout--right {
   text-align: right;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 .gel-layout--right > .gel-layout__item {
-  text-align: left;
+  text-align: flip(left, right);
 }
 
 /**
-         * Make the layout items fill up from the center outward
-         */
+     * Make the layout items fill up from the center outward
+     */
 .gel-layout--center {
   text-align: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .gel-layout--center > .gel-layout__item {
-  text-align: left;
+  text-align: flip(left, right);
 }
 
 /**
-         * Cause layout items to take up a non-explicit amount of width
-         */
+     * Cause layout items to take up a non-explicit amount of width
+     */
 .gel-layout--auto > .gel-layout__item {
   width: auto;
+}
+
+/**
+     * Force items to be of equal height
+     */
+.gel-layout--equal > .gel-layout__item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/**
+     * Allow items to devide the space equally between the number of items
+     */
+.gel-layout--fit > .gel-layout__item {
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .gel-1\/1 {
@@ -1327,12 +1385,19 @@
 }
 
 .my-component {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
   margin-right: 0;
   margin-left: -8px;
   padding-right: 0;
   padding-left: 0;
   list-style: none;
-  text-align: left;
+  direction: flip(ltr, rtl);
+  text-align: flip(left, right);
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
@@ -1343,45 +1408,19 @@
   }
 }
 
-.my-component--align-center {
-  margin-right: 0;
-  margin-left: -8px;
-  padding-right: 0;
-  padding-left: 0;
-  list-style: none;
-  text-align: center;
-  letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
-}
-
-@media (min-width: 37.5em) {
-  .my-component--align-center {
-    margin-left: -16px;
-  }
-}
-
-.my-component--align-right {
-  margin-right: 0;
-  margin-left: -8px;
-  padding-right: 0;
-  padding-left: 0;
-  list-style: none;
-  text-align: right;
-  letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
-}
-
-@media (min-width: 37.5em) {
-  .my-component--align-right {
-    margin-left: -16px;
-  }
+.opera-only :-o-prefocus,
+.my-component {
+  word-spacing: -0.43em;
 }
 
 .my-component__item {
-  display: inline-block;
-  padding-left: 8px;
-  text-align: left;
   width: 100%;
+  display: inline-block;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding-left: 8px;
+  text-align: flip(left, right);
   vertical-align: top;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1393,86 +1432,6 @@
 
 @media (min-width: 37.5em) {
   .my-component__item {
-    padding-left: 16px;
-  }
-}
-
-.my-component__item--with-width {
-  display: inline-block;
-  padding-left: 8px;
-  text-align: left;
-  width: 40%;
-  vertical-align: top;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-rendering: auto;
-}
-
-@media (min-width: 37.5em) {
-  .my-component__item--with-width {
-    padding-left: 16px;
-  }
-}
-
-.my-component__item--auto {
-  display: inline-block;
-  padding-left: 8px;
-  text-align: left;
-  width: auto;
-  vertical-align: top;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-rendering: auto;
-}
-
-@media (min-width: 37.5em) {
-  .my-component__item--auto {
-    padding-left: 16px;
-  }
-}
-
-.my-component__item--align-middle {
-  display: inline-block;
-  padding-left: 8px;
-  text-align: left;
-  width: 25%;
-  vertical-align: middle;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-rendering: auto;
-}
-
-@media (min-width: 37.5em) {
-  .my-component__item--align-middle {
-    padding-left: 16px;
-  }
-}
-
-.my-component__item--align-bottom {
-  display: inline-block;
-  padding-left: 8px;
-  text-align: left;
-  width: 25%;
-  vertical-align: bottom;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-rendering: auto;
-}
-
-@media (min-width: 37.5em) {
-  .my-component__item--align-bottom {
     padding-left: 16px;
   }
 }
