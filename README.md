@@ -1,5 +1,8 @@
 <h1 align="center">GEL Grid</h1>
 <p align="center">
+  <a href="https://travis-ci.org/bbc/gel-grid" target="_blank"><img src="https://travis-ci.org/bbc/gel-grid.svg?branch=master"></a>
+</p>
+<p align="center">
     A flexible code implementation of the GEL Grid.<br />
     Forms part of the <a href="https://github.com/bbc/gel-foundations" target="_blank"><b>GEL Foundations</b></a>
 </p>
