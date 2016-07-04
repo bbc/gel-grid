@@ -32,6 +32,9 @@
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   margin-right: 0;
   margin-left: -8px;
   padding-right: 0;
@@ -39,8 +42,6 @@
   list-style: none;
   direction: flip(ltr, rtl);
   text-align: flip(left, right);
-  letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
 }
 
 @media (min-width: 37.5em) {
@@ -49,8 +50,13 @@
   }
 }
 
-.opera-only :-o-prefocus,
-.gel-layout {
+.no-flexbox .gel-layout {
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+}
+
+.gel-layout .opera-only :-o-prefocus,
+.no-flexbox .gel-layout {
   word-spacing: -0.43em;
 }
 
@@ -99,14 +105,16 @@
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
-  /*direction: rtl;
-        text-align: left;
+}
 
-        > .gel-layout__item,
-        > %gel-layout__item {
-            direction: ltr;
-            text-align: left;
-        }*/
+.no-flexbox .gel-layout--rev {
+  direction: rtl;
+  text-align: left;
+}
+
+.no-flexbox .gel-layout--rev > .gel-layout__item {
+  direction: ltr;
+  text-align: left;
 }
 
 /**
@@ -179,12 +187,16 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
 
 /**
      * Allow items to devide the space equally between the number of items
      */
 .gel-layout--fit > .gel-layout__item {
+  width: auto;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -1391,6 +1403,9 @@
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   margin-right: 0;
   margin-left: -8px;
   padding-right: 0;
@@ -1398,8 +1413,6 @@
   list-style: none;
   direction: flip(ltr, rtl);
   text-align: flip(left, right);
-  letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
 }
 
 @media (min-width: 37.5em) {
@@ -1408,8 +1421,13 @@
   }
 }
 
-.opera-only :-o-prefocus,
-.my-component {
+.no-flexbox .my-component {
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
+}
+
+.my-component .opera-only :-o-prefocus,
+.no-flexbox .my-component {
   word-spacing: -0.43em;
 }
 
