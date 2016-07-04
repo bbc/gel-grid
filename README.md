@@ -12,7 +12,7 @@
 An implementation of the [GEL Grid Guidelines](http://www.bbc.co.uk/gel/guidelines/grid).
 The Grid provides a way of creating flexible and unique layouts whilst also maintaining consistent margins, gutters and containing widths across the BBC, online.
 
-The GEL Grid has been established to work on all devices and is independent of device size and resolution.
+This is implementation of the grid is built using `flexbox` with an `inline-block` fallback older browsers. This allows us to support browsers IE8 and above.
 
 It can used in two forms, by simply adding the relevant classes to your markup:
 
@@ -124,6 +124,10 @@ This would create a grid with each item being 50% wide. At the medium GEL breakp
 - `gel-layout--center` - make the layout items fill up from the center outward
 - `gel-layout--auto` - cause layout items to take up a non-explicit amount of width
 
+*Flexbox Only*
+- `gel-layout--equal` - cause each layout item to be of equal height
+- `gel-layout--fit` - allows each layout items to size itself automatically by dividing the space equally between the total number of items
+
 ### Widths
 
 Widths can be applied to grid items using a collection of utility classes which are automatically generated when the grid markup is enabled. The utility classes allow widths to be changed at different breakpoints.
@@ -168,6 +172,10 @@ The following breakpoint suffixes are available by default:
 Utility classes like these width classes always need to win when it comes to specificity, otherwise they're not doing their job correctly. You should never need to override a utility class, if you do you're doing something wrong. E.g. if you'd used a class of `gel-1/2` you would never want it to be anything other than 50%. If you want something other than 50% you should have used a different class.
 
 To help enforce this way of thinking all width utilities classes proactively carry the `!important` keyword to boost their specificity.
+
+**More information:**
+
+- [The Importance of !important(http://csswizardry.com/2016/05/the-importance-of-important/)
 
 ### Sass Mixins
 The GEL grid component exposes a collection of Sass Mixins which can be called within your Sass. Should you need to create a more bespoke component which is not possible using the standard utility classes.
