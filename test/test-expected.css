@@ -42,6 +42,8 @@
   list-style: none;
   direction: flip(ltr, rtl);
   text-align: flip(left, right);
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
 }
 
 @media (min-width: 37.5em) {
@@ -50,13 +52,8 @@
   }
 }
 
-.no-flexbox .gel-layout {
-  letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
-}
-
-.gel-layout .opera-only :-o-prefocus,
-.no-flexbox .gel-layout {
+.opera-only :-o-prefocus,
+.gel-layout {
   word-spacing: -0.43em;
 }
 
@@ -66,9 +63,6 @@
 .gel-layout__item {
   width: 100%;
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding-left: 8px;
   text-align: flip(left, right);
   vertical-align: top;
@@ -1413,6 +1407,8 @@
   list-style: none;
   direction: flip(ltr, rtl);
   text-align: flip(left, right);
+  letter-spacing: -0.31em;
+  text-rendering: optimizespeed;
 }
 
 @media (min-width: 37.5em) {
@@ -1421,22 +1417,14 @@
   }
 }
 
-.no-flexbox .my-component {
-  letter-spacing: -0.31em;
-  text-rendering: optimizespeed;
-}
-
-.my-component .opera-only :-o-prefocus,
-.no-flexbox .my-component {
+.opera-only :-o-prefocus,
+.my-component {
   word-spacing: -0.43em;
 }
 
 .my-component__item {
   width: 100%;
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding-left: 8px;
   text-align: flip(left, right);
   vertical-align: top;
