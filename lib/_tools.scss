@@ -272,8 +272,8 @@
     .#{$gel-grid-namespace}layout--equal {
         > .#{$gel-grid-namespace}layout__item {
             display: -webkit-flex;
-    		display: -ms-flexbox;
-    		display: flex;
+            display: -ms-flexbox;
+            display: flex;
             -webkit-flex-flow: row wrap;
             -ms-flex-flow: row wrap;
             flex-flow: row wrap;
