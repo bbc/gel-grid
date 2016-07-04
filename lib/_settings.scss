@@ -90,6 +90,13 @@ $gel-grid-columns: (
 	24
 ) !default;
 
+// The class applied by a feature detection script to signify there the
+// current browser doesn't support Flexbox
+//
+// @type String
+//
+$gel-grid-flexbox-feature-detection-class: 'no-flexbox' !default;
+
 
 /// Output configuration
 //

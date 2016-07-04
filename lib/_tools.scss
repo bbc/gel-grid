@@ -189,7 +189,7 @@
         -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
 
-        .no-flexbox & {
+        .#{$gel-grid-flexbox-feature-detection-class} & {
             direction: rtl;
             text-align: left;
 
