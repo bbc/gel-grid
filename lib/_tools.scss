@@ -58,6 +58,7 @@
 // We want fine-grain control over which implementations of flexbox we support
 // so we will manually handle prefixes
 //
+// 1.
 // 1. Remove any margin and padding which may effect our layout
 // 2. Remove any default list styling if the layout is applied to a list
 //
@@ -71,6 +72,9 @@
         -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
         flex-flow: row wrap;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
 
         margin-right: 0; // [1]
         margin-left: -$gel-spacing-unit;
@@ -115,9 +119,6 @@
     @if $enhanced {
         width: 100%;
         display: inline-block; // [1]
-        -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
         padding-left: $gel-spacing-unit; // [2]
 
         text-align: flip(left, right); // [3]
@@ -187,14 +188,17 @@
         -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
-        /*direction: rtl;
-        text-align: left;
 
-        > .#{$gel-grid-namespace}layout__item,
-        > %#{$gel-grid-namespace}layout__item {
-            direction: ltr;
+        .no-flexbox & {
+            direction: rtl;
             text-align: left;
-        }*/
+
+            > .#{$gel-grid-namespace}layout__item,
+            > %#{$gel-grid-namespace}layout__item {
+                direction: ltr;
+                text-align: left;
+            }
+        }
     }
 
     /**
@@ -270,6 +274,9 @@
             display: -webkit-flex;
     		display: -ms-flexbox;
     		display: flex;
+            -webkit-flex-flow: row wrap;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
         }
     }
 
@@ -278,6 +285,7 @@
      */
     .#{$gel-grid-namespace}layout--fit {
         > .#{$gel-grid-namespace}layout__item {
+            width: auto;
             -webkit-flex: 1 1 auto;
             -ms-flex: 1 1 auto;
             flex: 1 1 auto;
