@@ -210,6 +210,24 @@ The GEL grid component exposes a collection of Sass Mixins which can be called w
 
 - `gel-columns($span, $columns)` - returns a width value for the requested number of columns, accepts either a fraction or number of columns
 
+### Flexbox
+The grid is developed using `flexbox` giving us a flexible, powerful grid solution. Flexbox is not fully supported in all browsers and has seen a number of development iterations. With this in mind we have intentionally targeted specific implementations of flexbox and avoided some older more troublesome implementations.
+
+For browsers which do not support flexbox we fallback to an `inline-block` grid which offers ~80% of the features available in the flexbox grid.
+
+We recommend you include some JavaScript based [Feature Detection](https://modernizr.com/) which can apply a top level class to signify if flexbox is supported or not. This will increase the features available to older browsers. The specific class applied can be controlled using the `$gel-grid-flexbox-feature-detection-class` option.
+
+The following features are only supported by the flexbox grid and will degrade gracefully:
+
+- [Equal Height Columns]()
+- [Pair Item Alignment]()
+- [Automatic Grids]()
+
+**More information:**
+
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Can I Use: Flexbox](http://caniuse.com/#feat=flexbox)
+
 ### 1280px
 The GEL Grid guideline has been updated to include a wider 1280px breakpoint. By default the grid supports this breakpoint. It can be displayed by setting the `$gel-grid-enable--1280-breakpoint` to `false`.
 
@@ -227,11 +245,12 @@ If you do not have `border-box` defined globally on your project you will need t
 **More information:**
 
 - [Box Sizing Border Box FTW](http://www.paulirish.com/2012/box-sizing-border-box-ftw/)
+- [ORB Box Sizing Reset](https://gist.github.com/shaunbent/ca6dc58305ae3e434615acf1ef368fe8)
 
 ### inline-block & white-space
-The GEL Grid is constructed using `display: inline-block;`. This technique allows us to create a more powerful and flexible grid than is possible with more traditional techniques likes the use of floats.
+The GEL Grid is constructed using `flexbox` with an `inline-block` fallback for older browsers. Using `inline-block` allows us to achieve a lot of the same complex layout technique that flexbox offers and provides a more powerful and flexible grid than is possible with more traditional techniques likes the use of floats.
 
-One downside to the use of `display: inline-block;` is the white-space which is introduced between `inline-block` elements. This space is a representation of the space between elements in the HTML. In order for the grid to work correctly this space needs to be removed.
+One challenge to the using of `display: inline-block;` is the white-space which is introduced between `inline-block` elements. This space is a representation of the space between elements in the HTML. In order for the grid to work correctly this space needs to be removed.
 
 There are a few ways you can do this:
 
@@ -265,6 +284,7 @@ The following configurable options are available:
 - `$gel-grid-breakpoints--1280` - a Sass map containing a list of breakpoints which relate specifically to the 1280 breakpoint
 - `$gel-grid-default-columns: 12` - the default number of columns the grid should be based on
 - `$gel-grid-columns` - a Sass list containing a list of which fractions utility classes will be generated for
+- `$gel-grid-flexbox-feature-detection-class: 'no-flexbox'` - The class applied by a feature detection script to signify there the current browser doesn't support Flexbox
 
 ### Output Configuration
 
