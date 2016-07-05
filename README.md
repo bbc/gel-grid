@@ -219,9 +219,9 @@ We recommend you include some JavaScript based [Feature Detection](https://moder
 
 The following features are only supported by the flexbox grid and will degrade gracefully:
 
-- [Equal Height Columns]()
-- [Pair Item Alignment]()
-- [Automatic Grids]()
+- [Equal Height Columns](http://bbc.github.io/gel-grid/#equal-height)
+- [Independent Alignment](http://bbc.github.io/gel-grid/#independent-alignment)
+- [Automatic Grids](http://bbc.github.io/gel-grid/#fit)
 
 **More information:**
 
