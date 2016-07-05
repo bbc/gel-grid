@@ -291,6 +291,33 @@
             flex: 1 1 auto;
         }
     }
+
+    /**
+     * Align a single grid item to the top
+     */
+    .#{$gel-grid-namespace}layout__item--top {
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+
+    /**
+     * Align a single grid item to the center
+     */
+    .#{$gel-grid-namespace}layout__item--center {
+        -webkit-align-self: center;
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+
+    /**
+     * Align a single grid item to the bottom
+     */
+    .#{$gel-grid-namespace}layout__item--bottom {
+        -webkit-align-self: flex-end;
+        -ms-flex-item-align: end;
+        align-self: flex-end;
+    }
 }
 
 
