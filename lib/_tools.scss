@@ -58,9 +58,9 @@
 // We want fine-grain control over which implementations of flexbox we support
 // so we will manually handle prefixes
 //
-// 1.
-// 1. Remove any margin and padding which may effect our layout
-// 2. Remove any default list styling if the layout is applied to a list
+// 1. Force a single to fill the avaiable space, required for nested grids
+// 2. Remove any margin and padding which may effect our layout
+// 3. Remove any default list styling if the layout is applied to a list
 //
 // @author Shaun Bent
 //
@@ -72,16 +72,16 @@
         -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
         flex-flow: row wrap;
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
+        -webkit-flex: 1 1 auto; // [1]
+        -ms-flex: 1 1 auto; // [1]
+        flex: 1 1 auto; // [1]
 
-        margin-right: 0; // [1]
+        margin-right: 0; // [2]
         margin-left: -$gel-spacing-unit;
-        padding-right: 0; // [1]
-        padding-left: 0; // [1]
+        padding-right: 0; // [2]
+        padding-left: 0; // [2]
 
-        list-style: none; // [2]
+        list-style: none; // [3]
         direction: flip(ltr, rtl);
         text-align: flip(left, right);
 
