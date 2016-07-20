@@ -293,6 +293,13 @@
     }
 
     /**
+     * Disable the flexbox grid
+     */
+    .#{$gel-grid-namespace}layout--no-flex {
+        display: initial;
+    }
+
+    /**
      * Align a single grid item to the top
      */
     .#{$gel-grid-namespace}layout__item--top {
