@@ -56,7 +56,7 @@ $gel-grid-gutter-change: 600px;
 // @type List
 // @link http://bit.ly/1PjPdLz
 //
-$gel-grid-breakpoints: (s, m, l) !default;
+$gel-grid-breakpoints: (s, m, l, xl) !default;
 
 // Which GEL breakpoints relate specifically to the 1280 breakpoint?
 //
@@ -65,7 +65,7 @@ $gel-grid-breakpoints: (s, m, l) !default;
 //
 // @type List
 //
-$gel-grid-breakpoints--1280: (xl, xxl) !default;
+$gel-grid-breakpoints--1280: (xxl) !default;
 
 // The default number of columns width calucations should be based upon
 // if no other number has been provided
@@ -89,6 +89,13 @@ $gel-grid-columns: (
 	12
 	24
 ) !default;
+
+// The class applied by a feature detection script to signify there the
+// current browser doesn't support Flexbox
+//
+// @type String
+//
+$gel-grid-flexbox-feature-detection-class: 'no-flexbox' !default;
 
 
 /// Output configuration

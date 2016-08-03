@@ -3,8 +3,8 @@
 //\*------------------------------------*/
 
 // Include general GEL dependancies
-@import '../bower_components/gel-sass-tools/sass-tools';
-@import '../bower_components/sass-mq/mq';
+@import '../node_modules/gel-sass-tools/sass-tools';
+@import '../node_modules/sass-mq/mq';
 
 
 // Lets declare a few varaibles to test the output
@@ -34,30 +34,6 @@ $gel-grid-enable--auto: true !default;
 	@include gel-layout;
 }
 
-.my-component--align-center {
-	@include gel-layout($align: 'center');
-}
-
-.my-component--align-right {
-	@include gel-layout($align: 'right');
-}
-
 .my-component__item {
 	@include gel-layout-item;
-}
-
-.my-component__item--with-width {
-	@include gel-layout-item($width: 2/5);
-}
-
-.my-component__item--auto {
-	@include gel-layout-item($width: 'auto');
-}
-
-.my-component__item--align-middle {
-	@include gel-layout-item($width: 1/4, $align: 'middle');
-}
-
-.my-component__item--align-bottom {
-	@include gel-layout-item($width: 1/4, $align: 'bottom');
 }

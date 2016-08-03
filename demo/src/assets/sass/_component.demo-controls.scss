@@ -34,7 +34,7 @@
             margin-bottom: 0;
             position: absolute;
             bottom: double($gel-spacing-unit);
-            right: double($gel-spacing-unit);
+            #{$right}: double($gel-spacing-unit);
         }
     }
 }
@@ -52,4 +52,8 @@
     &:hover {
         text-decoration: underline;
     }
+}
+
+.gel-c-demo-controls__option + .gel-c-demo-controls__option {
+    #{$margin-left}: $gel-spacing-unit;
 }

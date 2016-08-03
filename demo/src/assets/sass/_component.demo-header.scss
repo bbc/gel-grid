@@ -28,7 +28,7 @@
 
     @if $enhanced {
         @include mq($from: 460px) {
-            float: left;
+            float: flip(left, right);
             margin-bottom: 0;
             padding: halve($gel-alt-spacing-unit) 0;
         }
@@ -67,7 +67,7 @@
 
     @if $enhanced {
         @include mq($from: 460px) {
-            float: right;
+            float: flip(right, left);
             width: auto;
         }
     }
