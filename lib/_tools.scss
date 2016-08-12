@@ -58,13 +58,17 @@
 // We want fine-grain control over which implementations of flexbox we support
 // so we will manually handle prefixes
 //
-// 1. Force a single to fill the avaiable space, required for nested grids
-// 2. Remove any margin and padding which may effect our layout
-// 3. Remove any default list styling if the layout is applied to a list
+// 1. Remove any default list styling if the layout is applied to a list
+// 2. Force a single to fill the avaiable space, required for nested grids
+// 3. Remove any margin and padding which may effect our layout
 //
 // @author Shaun Bent
 //
 @mixin gel-layout() {
+    list-style: none; // [1]
+    direction: flip(ltr, rtl);
+    text-align: flip(left, right);
+
     @if $enhanced {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -72,18 +76,14 @@
         -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
         flex-flow: row wrap;
-        -webkit-flex: 1 1 auto; // [1]
-        -ms-flex: 1 1 auto; // [1]
-        flex: 1 1 auto; // [1]
+        -webkit-flex: 1 1 auto; // [2]
+        -ms-flex: 1 1 auto; // [2]
+        flex: 1 1 auto; // [2]
 
-        margin-right: 0; // [2]
+        margin-right: 0; // [3]
         margin-left: -$gel-spacing-unit;
-        padding-right: 0; // [2]
-        padding-left: 0; // [2]
-
-        list-style: none; // [3]
-        direction: flip(ltr, rtl);
-        text-align: flip(left, right);
+        padding-right: 0; // [3]
+        padding-left: 0; // [3]
 
         @include mq($from: $gel-grid-gutter-change) {
             margin-left: double(-$gel-spacing-unit);
