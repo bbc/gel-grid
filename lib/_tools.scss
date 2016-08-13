@@ -58,13 +58,16 @@
 // We want fine-grain control over which implementations of flexbox we support
 // so we will manually handle prefixes
 //
-// 1. Force a single to fill the avaiable space, required for nested grids
+// 1. Remove any default list styling if the layout is applied to a list
 // 2. Remove any margin and padding which may effect our layout
-// 3. Remove any default list styling if the layout is applied to a list
 //
 // @author Shaun Bent
 //
 @mixin gel-layout() {
+    list-style: none; // [1]
+    direction: flip(ltr, rtl);
+    text-align: flip(left, right);
+
     @if $enhanced {
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -72,18 +75,11 @@
         -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
         flex-flow: row wrap;
-        -webkit-flex: 1 1 auto; // [1]
-        -ms-flex: 1 1 auto; // [1]
-        flex: 1 1 auto; // [1]
 
         margin-right: 0; // [2]
         margin-left: -$gel-spacing-unit;
         padding-right: 0; // [2]
         padding-left: 0; // [2]
-
-        list-style: none; // [3]
-        direction: flip(ltr, rtl);
-        text-align: flip(left, right);
 
         @include mq($from: $gel-grid-gutter-change) {
             margin-left: double(-$gel-spacing-unit);
@@ -109,9 +105,10 @@
 // A single layout group/row, this wraps individual layout items
 //
 // 1. Cause columns to stack side-by-side
-// 2. Space columns apart
-// 3. Ensure all text is aligned correctly
-// 4. Align columns to the tops of each other
+// 2. Items shouldn't grow or shrink in size
+// 3. Space columns apart
+// 4. Ensure all text is aligned correctly
+// 5. Align columns to the tops of each other
 //
 // @author  Shaun Bent
 //
@@ -119,13 +116,16 @@
     @if $enhanced {
         width: 100%;
         display: inline-block; // [1]
-        padding-left: $gel-spacing-unit; // [2]
+        -webkit-flex: 0 0 auto; // [2]
+        -ms-flex: 0 0 auto; // [2]
+        flex: 0 0 auto; // [2]
+        padding-left: $gel-spacing-unit; // [3]
 
-        text-align: flip(left, right); // [3]
-        vertical-align: top; // [4]
+        text-align: flip(left, right); // [4]
+        vertical-align: top; // [5]
 
         @include mq($from: $gel-grid-gutter-change) {
-            padding-left: double($gel-spacing-unit); // [2]
+            padding-left: double($gel-spacing-unit); // [3]
         }
 
         @if $gel-grid-enable--box-sizing {
@@ -274,9 +274,6 @@
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
-            -webkit-flex-flow: row wrap;
-            -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
         }
     }
 
@@ -296,7 +293,10 @@
      * Disable the flexbox grid
      */
     .#{$gel-grid-namespace}layout--no-flex {
-        display: initial;
+        &,
+        > .#{$gel-grid-namespace}layout__item {
+            display: initial;
+        }
     }
 
     /**
