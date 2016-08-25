@@ -66,8 +66,9 @@
         margin-left: -$gel-spacing-unit;
         padding-right: 0; // [1]
         padding-left: 0; // [1]
-
         list-style: none; // [2]
+        direction: flip(ltr, rtl);
+        text-align: flip(left, right);
 
         @include mq($from: $gel-grid-gutter-change) {
             margin-left: double(-$gel-spacing-unit);
@@ -113,9 +114,8 @@
     @if $enhanced {
         display: inline-block; // [1]
         padding-left: $gel-spacing-unit; // [2]
-
-        text-align: left; // [3]
-
+        text-align: flip(left, right); // [3]
+        vertical-align: top; // [4]
         @include mq($from: $gel-grid-gutter-change) {
             padding-left: double($gel-spacing-unit); // [2]
         }
@@ -242,7 +242,7 @@
 
         > .#{$gel-grid-namespace}layout__item,
         > %#{$gel-grid-namespace}layout__item {
-            text-align: left;
+            text-align: flip(left, right);
         }
     }
 
@@ -255,7 +255,7 @@
 
         > .#{$gel-grid-namespace}layout__item,
         > %#{$gel-grid-namespace}layout__item {
-            text-align: left;
+            text-align: flip(left, right);
         }
     }
 

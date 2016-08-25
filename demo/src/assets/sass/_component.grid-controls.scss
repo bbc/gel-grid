@@ -1,0 +1,73 @@
+/*------------------------------------*\
+    # GRID CONTROLS
+\*------------------------------------*/
+
+/**
+* Change the group name based on the current media-query
+*/
+.gel-c-grid-controls__group-name {
+   &:after {
+       content: flip('Group 1 - Extra Small (0 - 399px)', 'Group 1 - Extra Small \200F(0 - 399px)');
+   }
+
+   @if $enhanced {
+       @include mq($from: gel-bp-s) {
+           &:after {
+               content: flip('Group 2 - Small (400px - 599px)', 'Group 2 - Small \200F(400px - 599px)');
+           }
+       }
+
+       @include mq($from: gel-bp-m) {
+           &:after {
+               content: flip('Group 3 - Medium (600px - 899px)', 'Group 3 - Medium \200F(600px - 899px)');
+           }
+       }
+
+       @include mq($from: gel-bp-l) {
+           &:after {
+               content: flip('Group 4 - Large (900px)', 'Group 4 - Large \200F(900px)');
+           }
+       }
+
+       @include mq($from: gel-bp-xl) {
+           &:after {
+               content: flip('Group 5 - Extra Large (1008px)', 'Group 5 - Extra Large \200F(1008px)');
+           }
+       }
+
+       @include mq($from: gel-bp-xxl) {
+           &:after {
+               content: flip('Group 6 - Extra Extra Large (1280px)', 'Group 6 - Extra Extra Large \200F(1280px)');
+           }
+       }
+   }
+}
+
+/**
+* Change the margin's and gutter's based on the breakpoint
+*/
+.gel-c-grid-controls__margin-gutter-size {
+   &:after {
+       content: 'Margins: 8px | Gutters: 8px';
+   }
+
+   @if $enhanced {
+       @include mq($from: gel-bp-s) {
+           &:after {
+               content: 'Margins: 16px | Gutters: 8px';
+           }
+       }
+
+       @include mq($from: gel-bp-m) {
+           &:after {
+               content: 'Margins: 16px | Gutters: 16px  |  For layouts a 900px breakpoint can also be used.';
+           }
+       }
+
+       @include mq($from: gel-bp-l) {
+           &:after {
+               content: 'Margins: 16px | Gutters: 16px';
+           }
+       }
+   }
+}

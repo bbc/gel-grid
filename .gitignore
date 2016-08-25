@@ -13,3 +13,9 @@ test/*.css.map
 .DS_Store
 .DS_Store?
 .sass-cache/
+
+# Demo
+demo/dist/*
+demo/src/bower_components/*
+demo/src/assets/css/*
+demo/.publish
