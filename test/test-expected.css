@@ -26,6 +26,9 @@
      * A grid row
      */
 .gel-layout {
+  list-style: none;
+  direction: flip(ltr, rtl);
+  text-align: flip(left, right);
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -39,9 +42,6 @@
   margin-left: -8px;
   padding-right: 0;
   padding-left: 0;
-  list-style: none;
-  direction: flip(ltr, rtl);
-  text-align: flip(left, right);
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
@@ -1425,6 +1425,9 @@
 }
 
 .my-component {
+  list-style: none;
+  direction: flip(ltr, rtl);
+  text-align: flip(left, right);
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1438,9 +1441,6 @@
   margin-left: -8px;
   padding-right: 0;
   padding-left: 0;
-  list-style: none;
-  direction: flip(ltr, rtl);
-  text-align: flip(left, right);
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
