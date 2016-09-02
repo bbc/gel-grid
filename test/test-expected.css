@@ -200,7 +200,7 @@
      * Disable the flexbox grid
      */
 .gel-layout--no-flex {
-  display: initial;
+  display: block;
 }
 
 /**
