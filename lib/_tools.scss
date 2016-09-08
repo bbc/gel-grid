@@ -75,7 +75,6 @@
         -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
         flex-flow: row wrap;
-
         margin-right: 0; // [2]
         margin-left: -$gel-spacing-unit;
         padding-right: 0; // [2]
@@ -295,7 +294,7 @@
     .#{$gel-grid-namespace}layout--no-flex {
         &,
         > .#{$gel-grid-namespace}layout__item {
-            display: initial;
+            display: block;
         }
     }
 
