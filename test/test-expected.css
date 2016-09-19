@@ -60,9 +60,6 @@
 .gel-layout__item {
   width: 100%;
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding-left: 8px;
   text-align: flip(left, right);
   vertical-align: top;
@@ -1454,9 +1451,6 @@
 .my-component__item {
   width: 100%;
   display: inline-block;
-  -webkit-flex: 0 0 auto;
-  -ms-flex: 0 0 auto;
-  flex: 0 0 auto;
   padding-left: 8px;
   text-align: flip(left, right);
   vertical-align: top;
