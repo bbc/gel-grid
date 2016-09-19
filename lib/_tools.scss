@@ -266,29 +266,6 @@
     }
 
     /**
-     * Force items to be of equal height
-     */
-    .#{$gel-grid-namespace}layout--equal {
-        > .#{$gel-grid-namespace}layout__item {
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-        }
-    }
-
-    /**
-     * Allow items to devide the space equally between the number of items
-     */
-    .#{$gel-grid-namespace}layout--fit {
-        > .#{$gel-grid-namespace}layout__item {
-            width: auto;
-            -webkit-flex: 1 1 auto;
-            -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-        }
-    }
-
-    /**
      * Disable the flexbox grid
      */
     .#{$gel-grid-namespace}layout--no-flex {
@@ -298,31 +275,57 @@
         }
     }
 
-    /**
-     * Align a single grid item to the top
-     */
-    .#{$gel-grid-namespace}layout__item--top {
-        -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-        align-self: flex-start;
-    }
+    @if $enhanced {
 
-    /**
-     * Align a single grid item to the center
-     */
-    .#{$gel-grid-namespace}layout__item--center {
-        -webkit-align-self: center;
-        -ms-flex-item-align: center;
-        align-self: center;
-    }
+        /**
+         * Force items to be of equal height
+         */
+        .#{$gel-grid-namespace}layout--equal {
+            > .#{$gel-grid-namespace}layout__item {
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+            }
+        }
 
-    /**
-     * Align a single grid item to the bottom
-     */
-    .#{$gel-grid-namespace}layout__item--bottom {
-        -webkit-align-self: flex-end;
-        -ms-flex-item-align: end;
-        align-self: flex-end;
+        /**
+         * Allow items to devide the space equally between the number of items
+         */
+        .#{$gel-grid-namespace}layout--fit {
+            > .#{$gel-grid-namespace}layout__item {
+                width: auto;
+                -webkit-flex: 1 1 auto;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+            }
+        }
+
+        /**
+         * Align a single grid item to the top
+         */
+        .#{$gel-grid-namespace}layout__item--top {
+            -webkit-align-self: flex-start;
+            -ms-flex-item-align: start;
+            align-self: flex-start;
+        }
+
+        /**
+         * Align a single grid item to the center
+         */
+        .#{$gel-grid-namespace}layout__item--center {
+            -webkit-align-self: center;
+            -ms-flex-item-align: center;
+            align-self: center;
+        }
+
+        /**
+         * Align a single grid item to the bottom
+         */
+        .#{$gel-grid-namespace}layout__item--bottom {
+            -webkit-align-self: flex-end;
+            -ms-flex-item-align: end;
+            align-self: flex-end;
+        }
     }
 }
 
