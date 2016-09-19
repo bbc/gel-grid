@@ -104,10 +104,9 @@
 // A single layout group/row, this wraps individual layout items
 //
 // 1. Cause columns to stack side-by-side
-// 2. Items shouldn't grow or shrink in size
-// 3. Space columns apart
-// 4. Ensure all text is aligned correctly
-// 5. Align columns to the tops of each other
+// 2. Space columns apart
+// 3. Ensure all text is aligned correctly
+// 4. Align columns to the tops of each other
 //
 // @author  Shaun Bent
 //
@@ -115,16 +114,13 @@
     @if $enhanced {
         width: 100%;
         display: inline-block; // [1]
-        -webkit-flex: 0 0 auto; // [2]
-        -ms-flex: 0 0 auto; // [2]
-        flex: 0 0 auto; // [2]
-        padding-left: $gel-spacing-unit; // [3]
+        padding-left: $gel-spacing-unit; // [2]
 
-        text-align: flip(left, right); // [4]
-        vertical-align: top; // [5]
+        text-align: flip(left, right); // [3]
+        vertical-align: top; // [4]
 
         @include mq($from: $gel-grid-gutter-change) {
-            padding-left: double($gel-spacing-unit); // [3]
+            padding-left: double($gel-spacing-unit); // [2]
         }
 
         @if $gel-grid-enable--box-sizing {
