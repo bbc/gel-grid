@@ -30,6 +30,10 @@
     }
 }
 
+.gel-c-grid-demo-item--fill {
+    background: repeating-linear-gradient(180deg, #d4e7eb, #d4e7eb 8px, #aec4cc 8px, #aec4cc 16px);
+}
+
 .gel-c-grid-demo-item--auto {
     height: auto;
 }
