@@ -59,8 +59,7 @@
 // so we will manually handle prefixes
 //
 // 1. Remove any default list styling if the layout is applied to a list
-// 2. Force a single to fill the avaiable space, required for nested grids
-// 3. Remove any margin and padding which may effect our layout
+// 2. Remove any margin and padding which may effect our layout
 //
 // @author Shaun Bent
 //
@@ -76,14 +75,10 @@
         -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
         flex-flow: row wrap;
-        -webkit-flex: 1 1 auto; // [2]
-        -ms-flex: 1 1 auto; // [2]
-        flex: 1 1 auto; // [2]
-
-        margin-right: 0; // [3]
+        margin-right: 0; // [2]
         margin-left: -$gel-spacing-unit;
-        padding-right: 0; // [3]
-        padding-left: 0; // [3]
+        padding-right: 0; // [2]
+        padding-left: 0; // [2]
 
         @include mq($from: $gel-grid-gutter-change) {
             margin-left: double(-$gel-spacing-unit);
@@ -267,63 +262,66 @@
     }
 
     /**
-     * Force items to be of equal height
-     */
-    .#{$gel-grid-namespace}layout--equal {
-        > .#{$gel-grid-namespace}layout__item {
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-flex-flow: row wrap;
-            -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-        }
-    }
-
-    /**
-     * Allow items to devide the space equally between the number of items
-     */
-    .#{$gel-grid-namespace}layout--fit {
-        > .#{$gel-grid-namespace}layout__item {
-            width: auto;
-            -webkit-flex: 1 1 auto;
-            -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-        }
-    }
-
-    /**
      * Disable the flexbox grid
      */
     .#{$gel-grid-namespace}layout--no-flex {
-        display: block;
+        &,
+        > .#{$gel-grid-namespace}layout__item {
+            display: block;
+        }
     }
 
-    /**
-     * Align a single grid item to the top
-     */
-    .#{$gel-grid-namespace}layout__item--top {
-        -webkit-align-self: flex-start;
-        -ms-flex-item-align: start;
-        align-self: flex-start;
-    }
+    @if $enhanced {
 
-    /**
-     * Align a single grid item to the center
-     */
-    .#{$gel-grid-namespace}layout__item--center {
-        -webkit-align-self: center;
-        -ms-flex-item-align: center;
-        align-self: center;
-    }
+        /**
+         * Force items to be of equal height
+         */
+        .#{$gel-grid-namespace}layout--equal {
+            > .#{$gel-grid-namespace}layout__item {
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+            }
+        }
 
-    /**
-     * Align a single grid item to the bottom
-     */
-    .#{$gel-grid-namespace}layout__item--bottom {
-        -webkit-align-self: flex-end;
-        -ms-flex-item-align: end;
-        align-self: flex-end;
+        /**
+         * Allow items to devide the space equally between the number of items
+         */
+        .#{$gel-grid-namespace}layout--fit {
+            > .#{$gel-grid-namespace}layout__item {
+                width: auto;
+                -webkit-flex: 1 1 auto;
+                -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+            }
+        }
+
+        /**
+         * Align a single grid item to the top
+         */
+        .#{$gel-grid-namespace}layout__item--top {
+            -webkit-align-self: flex-start;
+            -ms-flex-item-align: start;
+            align-self: flex-start;
+        }
+
+        /**
+         * Align a single grid item to the center
+         */
+        .#{$gel-grid-namespace}layout__item--center {
+            -webkit-align-self: center;
+            -ms-flex-item-align: center;
+            align-self: center;
+        }
+
+        /**
+         * Align a single grid item to the bottom
+         */
+        .#{$gel-grid-namespace}layout__item--bottom {
+            -webkit-align-self: flex-end;
+            -ms-flex-item-align: end;
+            align-self: flex-end;
+        }
     }
 }
 
