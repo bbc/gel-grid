@@ -172,16 +172,13 @@
 }
 
 /**
-     * Disable the flexbox grid on core with display block
+     * Disable the flexbox grid
      */
 .gel-layout--no-flex,
 .gel-layout--no-flex > .gel-layout__item {
   display: block;
 }
 
-/**
-        * Disable the flexbox grid on enhanced with display inline-block
-        */
 .gel-layout--no-flex,
 .gel-layout--no-flex > .gel-layout__item {
   display: inline-block;
