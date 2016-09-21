@@ -267,10 +267,10 @@
     .#{$gel-grid-namespace}layout--no-flex {
         &,
         > .#{$gel-grid-namespace}layout__item {
-            display: inline-block;
+            display: block;
 
             @if $enhanced {
-                display: block;
+                display: inline-block;
             }
         }
     }
