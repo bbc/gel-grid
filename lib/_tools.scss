@@ -267,7 +267,7 @@
     .#{$gel-grid-namespace}layout--no-flex {
         &,
         > .#{$gel-grid-namespace}layout__item {
-            display: block;
+            display: inline-block;
         }
     }
 
