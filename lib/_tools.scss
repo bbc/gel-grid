@@ -262,16 +262,26 @@
     }
 
     /**
-     * Disable the flexbox grid
+     * Disable the flexbox grid on core with display block
      */
     .#{$gel-grid-namespace}layout--no-flex {
         &,
         > .#{$gel-grid-namespace}layout__item {
-            display: inline-block;
+            display: block;
         }
     }
 
     @if $enhanced {
+    
+        /**
+        * Disable the flexbox grid on enhanced with display inline-block
+        */
+        .#{$gel-grid-namespace}layout--no-flex {
+            &,
+            > .#{$gel-grid-namespace}layout__item {
+                display: inline-block;
+            }
+        }
 
         /**
          * Force items to be of equal height
