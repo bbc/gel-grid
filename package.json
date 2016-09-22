@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node-sass test/test.scss test/test.css --output-style=expanded --sourcemap=none && diff -u test/test-expected.css test/test.css",
-    "dist": "node-sass src/gel-grid.scss dist/gel-grid.min.css --output-style=compressed --sourcemap=none && node-sass src/gel-grid.scss dist/gel-grid.css --output-style=expanded --sourcemap=none"
+    "dist": "node dist.js"
   },
   "repository": {
     "type": "git",
@@ -30,11 +30,9 @@
     "url": "https://github.com/bbc/gel-grid/issues"
   },
   "homepage": "https://github.com/bbc/gel-grid",
-  "devDependencies": {
-    "node-sass": "^3.2.0",
-    "sass-mq": "^3.2.2"
-  },
   "dependencies": {
+    "sass-mq": "^3.2.2",
+    "node-sass": "^3.2.0",
     "gel-sass-tools": "^1.0.0"
   }
 }
