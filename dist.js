@@ -1,0 +1,5 @@
+var fs = require('fs')
+var gelGrid = require('./')
+var generated = gelGrid.generate()
+fs.writeFileSync('./dist/gel-grid.css', generated.css)
+fs.writeFileSync('./dist/gel-grid.min.css', generated.min)

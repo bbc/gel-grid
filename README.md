@@ -70,16 +70,15 @@ $ npm install --save gel-grid
 
 ### Install manually
 
-You can install this component manually by downloading the content of this Git repo into your project and use a Sass @import to include it in your project.
+If you just want the css dist file, don't use that do this.
 
-> **Note:** you will manually need to manage the dependencies below, without these this component will fail to compile.
-
-## Dependencies
-
-In order to use the component you will need the following components available:
-
-- [GEL Sass Tools](https://github.com/bbc/gel-sass-tools)
-- [Sass MQ](https://github.com/sass-mq/sass-mq)
+```js
+const fs = require('fs')
+const gelGrid = require('gel-grid')
+let generated = gelGrid.generate()
+fs.writeFileSync('gel-grid.css', generated.css)
+fs.writeFileSync('gel-grid.min.css', generated.min)
+```
 
 ## Usage
 

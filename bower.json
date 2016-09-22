@@ -6,7 +6,7 @@
     "Shaun Bent <shaun.bent@bbc.co.uk>"
   ],
   "description": "A flexible code implementation of the GEL Grid",
-  "main": "_gel-grid.scss",
+  "main": "index.js",
   "keywords": [
     "Sass",
     "Grid",

@@ -26,22 +26,19 @@
      * A grid row
      */
 .gel-layout {
+  list-style: none;
+  direction: flip(ltr, rtl);
+  text-align: flip(left, right);
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-flow: row wrap;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
   margin-right: 0;
   margin-left: -8px;
   padding-right: 0;
   padding-left: 0;
-  list-style: none;
-  direction: flip(ltr, rtl);
-  text-align: flip(left, right);
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
@@ -175,25 +172,57 @@
 }
 
 /**
-     * Force items to be of equal height
+     * Disable the flexbox grid
      */
+.gel-layout--no-flex,
+.gel-layout--no-flex > .gel-layout__item {
+  display: inline-block;
+}
+
+/**
+         * Force items to be of equal height
+         */
 .gel-layout--equal > .gel-layout__item {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
 }
 
 /**
-     * Allow items to devide the space equally between the number of items
-     */
+         * Allow items to devide the space equally between the number of items
+         */
 .gel-layout--fit > .gel-layout__item {
   width: auto;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
+}
+
+/**
+         * Align a single grid item to the top
+         */
+.gel-layout__item--top {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+/**
+         * Align a single grid item to the center
+         */
+.gel-layout__item--center {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+/**
+         * Align a single grid item to the bottom
+         */
+.gel-layout__item--bottom {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
 }
 
 .gel-1\/1 {
