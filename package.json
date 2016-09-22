@@ -2,7 +2,7 @@
   "name": "gel-grid",
   "version": "2.0.4",
   "description": "A flexible code implementation of the GEL Grid",
-  "main": "_grid.scss",
+  "main": "index.js",
   "scripts": {
     "test": "node-sass test/test.scss test/test.css --output-style=expanded --sourcemap=none && diff -u test/test-expected.css test/test.css",
     "dist": "node-sass src/gel-grid.scss dist/gel-grid.min.css --output-style=compressed --sourcemap=none && node-sass src/gel-grid.scss dist/gel-grid.css --output-style=expanded --sourcemap=none"
