@@ -5,17 +5,23 @@ before_script:
 - npm install
 script:
 - npm test
+before_deploy:
 - npm run dist
 deploy:
   provider: releases
-  api_key: "${DEPLOY_KEY}"
-  file:
-    - "dist/gel-grid.css"
+  api_key:
+    secure: S70aTmHXM8zWXSpL0dcwVmXrXtV5HQ3bfobTfCrrgkR07nAaYHiz+DIwCmthIpB2PpRFgg2yjWfXtkOz7BbcUCi4eQn9+op+ij9O2mLtGYuNIIwYXCvfHWGO/giGA85ZAcXIubIvordU0Tma01PxyE/kBuImyD/TcxH3VkeEak9zjC0HWPwn1qfJTGOQlhf7DKnskZCaNMgZluVBMSAaMH3mvMfSUL4+cfRWGsodFlascJQ1vMBlXG6qPhmNlK1fRBu6dAwaMt66hKF4s7GXymi9PR7J+gNyWRUCFIcuWvLeQpfPdvsXwqDKnZlUz1OtrX5j20eXBQW/XjMELhSzyjkGLZ/4uqRwFrPCrtmg9Cgn7jNZKc7CgU5UQ27EpbgUreJIH6r5Dw+/cIO02eNz/K+bsazsQzMnnI9isQCNTzl37ivzO2t5hFVeBaWUK4kDRQ5Vkb0OcLX9coKHnkH0S9Ywt8lMTgS/eENcbIYjy+oiA2IyCxqXg1LqxZQEtTG1yrt8OhtwSKYo5s2IPhWFK132JfCa3er1BQNYFdfhM/LpTPrXydPlLjT/+d/UCt+d7XAzuA86QDVXqqQos3y1bzzUqbL6WlsfKOAdxHsu2/w1bCC1fOqE5DOaxllCBB/0aLEpKvEn2832Il6ZSx9vbjbVJaxHLaDAtk/tqodQTnc=
+  file: 
     - "dist/gel-grid.min.css"
-  skip_cleanup: true
+    - "dist/gel-grid.css"
+    - "_grid.scss"
+    - "bower.json"
+    - "package.json"
+    - "lib/_settings.scss"
+    - "lib/_tools.scss"
+    - "src/gel-grid.scss"
+    - "LICENSE.md"
+    - "README.md"
   on:
+    repo: bbc/gel-grid
     branch: master
-  global:
-  - GITHUB_REPO: github.com/bbc/gel-grid.git
-  - secure: KgRyJjD8Eqn9gbdMkGLp2RgCoIclBrQ3iaKCA4u2hdBPBPCHdz07jP0Wdsd4pOEFblDhEcj86KW7PD/QT9G9+wUJIrih3/c3EyIRN1ypUHi8bkjzrTcfMISFS5oi3bVjVlwgKOfy773RM+GmMmtiziJ87yVOn02SrekrmzXbh2StP+ywDqYHiOzWVLPg2GHf0OVT/g9VrGxs92Vch8Gwkm3yRaJ4jHR67s80RjaoJEfPiM5BBkGZCa3elwxjKtsblKaxLIQBm9O/ihAooXUfUg/Y3FCieUbhU2kZdKS7+tv3l2R6q1HfxNGUKhlZYKaiCCpBl2LEmgc9QAZU0oaMfGMuBWIBtY+cV/NDWBdqyveEbg6z79KQG9IcDnQnFqq4FFIeGsfgZHmsEaFuCbdA/BgXIJ1qKcB2gBn+uD49/snd1KYiTPSKB6eWV43JgnmpC+nHSl41Ei5oPiFaToCAEaOTtDCbcLSYCCdejcbIntMTl9gocO62PF7RfZX94akrsM3xiL/4LE0EYkLTbSKA6nm5+GrBaMkGxpF9GZyiD8fTvuCYXHVxDFeO1xZ1c5worCb+dy03ER676QkR/Ur0FPQEFqRi3tx3LgQNIcF1gqqZgU5o2LSaKQ+B3B9spsptpMjVnU3R7v3df2G4nRmnOQ+I3AKTlhkwlNeLfXGTcK4=
-  - secure: aEWjJSlhANWEavAtoahCelwvTBO59LDuRjTHm64w9auf8iLDF4PfCvz4LZCHJOJmNmD8qOxnPYYlh4nvJK5fIElZgpt1R8kzVjGgxaG9RxhnQepUxCPz6V9KPZkfCyY2tErhhhxRloEfMhnt+Igy/8fXsNDqt1wLRXln/HiEhSVFW02cHRBSZmDOdZHN9Kyhv27HGvoMAzZHqEHLL4jMJFYbQ6fKqM8P1I49gBAAK2Uo/c+zSFu7pMNFeA4l5QZk3Q3Mz6eFNKmjmIIJquaa2hsxoCsIo2oinZ0tRgYTSiLrsMSCbEEYwJkv2w+DyYIv3Flqni5ImhrZ04Gi6o/gIh6hkJFPemYp+42XO85kh/zo0yOVN2ahd+cOSoMqaF259W2ckpoG2gxn4oNbwCnlCVNHCw7Zk9OZA+vk7oSbVxoHAv0FsC+kbXQaOcEgdcOjOd0iRAhn078YT1WabSinO+Yy7SA5X7k8tfCTEcEJIclsZBgFTRnuu8tORiO9GlmbYAVuEHz/la4/nyBfpoMqmHWJ+mTaxsD9GW4dn++4sswiC2GyKkGyJfcgJpj8iklJIuKeKb7HU0yUnKa4NRWN0QIEFthHKruQzub+J2qkWhm3GsTP1PO9lBQPfBQ+gkFLjVN8To9FLwDMhVdggN6ip5gIYQfO/UgZ+e63ed45CQ0=
