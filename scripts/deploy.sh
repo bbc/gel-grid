@@ -9,8 +9,8 @@ then
 fi
 
 git clone https://$GH_TOKEN@github.com/bbc/gel-grid.css.git
-git config user.name "Travis CI"
-git config user.email $EMAIL
+git config --global user.name "Travis CI"
+git config --global user.email "$EMAIL"
 
 npm run dist
 mv dist/gel-grid.css gel-grid.css/gel-grid.css
