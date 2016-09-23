@@ -6,8 +6,7 @@ before_script:
 script:
 - npm test
 after_success:
-- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash
-- scripts/deploy.sh
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash scripts/deploy.sh
 env:
   global:
   - secure: mqeRUD7ryRU1fo8VLVa8VZDWP0MFyB0bjZ2naly8KbkHgRIu+o+m5ruvW4wdLr/I9bCWj13YtF244TrahekiYOAEzHo4j9232EpeXhQ6m+53DubcFYg6yairAnzxJ9A2YoUunnjEaf8LIigKY9eCDHUyHkgaUT8nnbVTt1CUPCra1luqGtYKiSABNc9We+incVtqdqUGRpUKb479k9krneW8qn2bRz1hgpvd6aHriO4Anj6E1ON8eBHi+tXCRliX3RZs7xWrtS5cwyYL+I4b6JQw5hHxH9h/iogG41ID0NO7SpWQ9cF09SI5bJrQAbH3Jy8YqJxQRow2kpxKOpkz/KmWIhh6OlIz1Ele8o8A4mgjuX4Ny+fye2JIY2zt08DpXS8wi357Q3vKM1pW1pHeoCIkNdc60zvFi81DdLR4hf1qU9ywcV8yxKSTHAIuKQ150GHrQeLioCMcaVaVEAZOFPBq6ne9CLMM034n0KhbiWkZjdXB4TlCxSVtxv5rPskr5d4dmWUOOSVqZ72D75MVWtAPDHdHzgpjoo9tNbWAPZi8aUa47Vqhyxtb5bUPkj7aglUEzEgr9tvYjAqA4okf7XPLl81YUMh/rPDOf1vyGZNjZLi8/kHcn4aJYlYo6jYfdXVlYo9nKB6yp5ZxQgF4J66miAK6xaQacFzfCtetYkU=
