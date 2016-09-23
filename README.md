@@ -74,6 +74,10 @@ You can install this component manually by downloading the content of this Git r
 
 > **Note:** you will manually need to manage the dependencies below, without these this component will fail to compile.
 
+### Compiled CSS
+
+If you require just the built css, you can get it by downloading our latest [release](https://github.com/bbc/gel-grid/releases)
+
 ## Dependencies
 
 In order to use the component you will need the following components available:

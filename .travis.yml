@@ -1,7 +1,27 @@
 language: node_js
 node_js:
-  - "0.12"
+- '6'
 before_script:
-  - npm install
+- npm install
 script:
-  - npm test
+- npm test
+before_deploy:
+- npm run dist
+deploy:
+  provider: releases
+  api_key:
+    secure: S70aTmHXM8zWXSpL0dcwVmXrXtV5HQ3bfobTfCrrgkR07nAaYHiz+DIwCmthIpB2PpRFgg2yjWfXtkOz7BbcUCi4eQn9+op+ij9O2mLtGYuNIIwYXCvfHWGO/giGA85ZAcXIubIvordU0Tma01PxyE/kBuImyD/TcxH3VkeEak9zjC0HWPwn1qfJTGOQlhf7DKnskZCaNMgZluVBMSAaMH3mvMfSUL4+cfRWGsodFlascJQ1vMBlXG6qPhmNlK1fRBu6dAwaMt66hKF4s7GXymi9PR7J+gNyWRUCFIcuWvLeQpfPdvsXwqDKnZlUz1OtrX5j20eXBQW/XjMELhSzyjkGLZ/4uqRwFrPCrtmg9Cgn7jNZKc7CgU5UQ27EpbgUreJIH6r5Dw+/cIO02eNz/K+bsazsQzMnnI9isQCNTzl37ivzO2t5hFVeBaWUK4kDRQ5Vkb0OcLX9coKHnkH0S9Ywt8lMTgS/eENcbIYjy+oiA2IyCxqXg1LqxZQEtTG1yrt8OhtwSKYo5s2IPhWFK132JfCa3er1BQNYFdfhM/LpTPrXydPlLjT/+d/UCt+d7XAzuA86QDVXqqQos3y1bzzUqbL6WlsfKOAdxHsu2/w1bCC1fOqE5DOaxllCBB/0aLEpKvEn2832Il6ZSx9vbjbVJaxHLaDAtk/tqodQTnc=
+  file: 
+    - "dist/gel-grid.min.css"
+    - "dist/gel-grid.css"
+    - "_grid.scss"
+    - "bower.json"
+    - "package.json"
+    - "lib/_settings.scss"
+    - "lib/_tools.scss"
+    - "src/gel-grid.scss"
+    - "LICENSE.md"
+    - "README.md"
+  on:
+    repo: bbc/gel-grid
+    branch: master
