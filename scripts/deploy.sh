@@ -19,4 +19,4 @@ mv dist/gel-grid.min.css gel-grid.css/gel-grid.min.css
 cd gel-grid.css
 git add -A .
 git commit -m "Built dist from bbc/gel-grid $TRAVIS_COMMIT"
-git push -q upstream HEAD:master
+git push -q https://$GH_TOKEN@github.com/bbc/gel-grid.css.git master
