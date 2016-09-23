@@ -7,6 +7,7 @@ script:
 - npm test
 before_deploy:
 - npm run dist
+- git commit -A dist
 deploy:
   provider: releases
   api_key:
