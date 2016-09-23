@@ -6,14 +6,15 @@ before_script:
 script:
 - npm test
 - npm run dist
-after_success:
-- git config user.name "Travis CI"
-- git config user.email ${EMAIL}
-- git checkout ${TRAVIS_BRANCH}
-- git add -A dist/gel-grid.min.css dist/gel-grid.css
-- git commit -m "Generated dist css by Travis CI - ${TRAVIS_BUILD_NUMBER}"
-- git push --force "https://${DEPLOY_KEY}@${GITHUB_REPO}" HEAD:${TRAVIS_BRANCH}
-env:
+deploy:
+  provider: releases
+  api_key: "${DEPLOY_KEY}"
+  file:
+    - "dist/gel-grid.css"
+    - "dist/gel-grid.min.css"
+  skip_cleanup: true
+  on:
+    branch: master
   global:
   - GITHUB_REPO: github.com/bbc/gel-grid.git
   - secure: KgRyJjD8Eqn9gbdMkGLp2RgCoIclBrQ3iaKCA4u2hdBPBPCHdz07jP0Wdsd4pOEFblDhEcj86KW7PD/QT9G9+wUJIrih3/c3EyIRN1ypUHi8bkjzrTcfMISFS5oi3bVjVlwgKOfy773RM+GmMmtiziJ87yVOn02SrekrmzXbh2StP+ywDqYHiOzWVLPg2GHf0OVT/g9VrGxs92Vch8Gwkm3yRaJ4jHR67s80RjaoJEfPiM5BBkGZCa3elwxjKtsblKaxLIQBm9O/ihAooXUfUg/Y3FCieUbhU2kZdKS7+tv3l2R6q1HfxNGUKhlZYKaiCCpBl2LEmgc9QAZU0oaMfGMuBWIBtY+cV/NDWBdqyveEbg6z79KQG9IcDnQnFqq4FFIeGsfgZHmsEaFuCbdA/BgXIJ1qKcB2gBn+uD49/snd1KYiTPSKB6eWV43JgnmpC+nHSl41Ei5oPiFaToCAEaOTtDCbcLSYCCdejcbIntMTl9gocO62PF7RfZX94akrsM3xiL/4LE0EYkLTbSKA6nm5+GrBaMkGxpF9GZyiD8fTvuCYXHVxDFeO1xZ1c5worCb+dy03ER676QkR/Ur0FPQEFqRi3tx3LgQNIcF1gqqZgU5o2LSaKQ+B3B9spsptpMjVnU3R7v3df2G4nRmnOQ+I3AKTlhkwlNeLfXGTcK4=
