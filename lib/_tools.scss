@@ -75,6 +75,9 @@
         -webkit-flex-flow: row wrap;
         -ms-flex-flow: row wrap;
         flex-flow: row wrap;
+        -webkit-flex-grow: 1;
+        -ms-flex-grow: 1;
+        flex-grow: 1;
         margin-right: 0; // [2]
         margin-left: -$gel-spacing-unit;
         padding-right: 0; // [2]
