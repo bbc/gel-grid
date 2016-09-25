@@ -27,8 +27,8 @@
      */
 .gel-layout {
   list-style: none;
-  direction: flip(ltr, rtl);
-  text-align: flip(left, right);
+  direction: ltr;
+  text-align: left;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -64,7 +64,7 @@
   width: 100%;
   display: inline-block;
   padding-left: 8px;
-  text-align: flip(left, right);
+  text-align: left;
   vertical-align: top;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -150,7 +150,7 @@
 }
 
 .gel-layout--right > .gel-layout__item {
-  text-align: flip(left, right);
+  text-align: left;
 }
 
 /**
@@ -164,7 +164,7 @@
 }
 
 .gel-layout--center > .gel-layout__item {
-  text-align: flip(left, right);
+  text-align: left;
 }
 
 /**
@@ -1425,8 +1425,8 @@
 
 .my-component {
   list-style: none;
-  direction: flip(ltr, rtl);
-  text-align: flip(left, right);
+  direction: ltr;
+  text-align: left;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1459,7 +1459,7 @@
   width: 100%;
   display: inline-block;
   padding-left: 8px;
-  text-align: flip(left, right);
+  text-align: left;
   vertical-align: top;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
