@@ -286,7 +286,6 @@
         .#{$gel-grid-namespace}layout--equal {
             > .#{$gel-grid-namespace}layout__item {
                 display: -webkit-flex;
-                display: -ms-flexbox;
                 display: flex;
             }
         }

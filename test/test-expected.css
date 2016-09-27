@@ -188,7 +188,6 @@
          */
 .gel-layout--equal > .gel-layout__item {
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 
