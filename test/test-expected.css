@@ -7,6 +7,9 @@
   margin: 0 auto;
   padding-right: 8px;
   padding-left: 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @media (min-width: 25em) {
@@ -1407,6 +1410,9 @@
   margin: 0 auto;
   padding-right: 8px;
   padding-left: 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @media (min-width: 25em) {
