@@ -29,6 +29,12 @@
             padding-right: double($gel-spacing-unit);
         }
 
+        @if $gel-grid-enable--box-sizing {
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+
         @if $gel-grid-enable--1280-breakpoint {
             @if $gel-grid-1280-toggle-class != null {
                 .#{$gel-grid-1280-toggle-class} & {
