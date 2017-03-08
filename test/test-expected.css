@@ -179,7 +179,13 @@
 
 /**
      * Disable the flexbox grid
+     * 
+     * 1. Prevents floated layout items from shrinking the layout
      */
+.gel-layout--no-flex {
+  width: 100%;
+}
+
 .gel-layout--no-flex,
 .gel-layout--no-flex > .gel-layout__item {
   display: block;
