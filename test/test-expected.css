@@ -179,7 +179,7 @@
 
 /**
      * Disable the flexbox grid
-     * 
+     *
      * 1. Prevents floated layout items from shrinking the layout
      */
 .gel-layout--no-flex {
