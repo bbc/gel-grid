@@ -276,8 +276,8 @@
      * 1. Prevents floated layout items from shrinking the layout
      */
     .#{$gel-grid-namespace}layout--no-flex {
-	width: 100%; // [1]
-	    
+	min-width: 100%; // [1]
+
         &,
         > .#{$gel-grid-namespace}layout__item {
             display: block;
