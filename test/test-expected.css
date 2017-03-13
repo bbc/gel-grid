@@ -183,7 +183,7 @@
      * 1. Prevents floated layout items from shrinking the layout
      */
 .gel-layout--no-flex {
-  width: 100%;
+  min-width: 100%;
 }
 
 .gel-layout--no-flex,
