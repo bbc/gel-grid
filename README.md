@@ -301,10 +301,10 @@ The following configurable options are available:
 
 The following Grid Bookmarklets can be used to overlay the grid in the browser to check visual alignment of elements:
 
-- [1280px - 12 Column](https://gist.github.com/shaunbent/1276abcdcc9494127a1ecc0222c57bbd#file-12-col-1280-js)
-- [1280px - 24 Column](https://gist.github.com/shaunbent/1276abcdcc9494127a1ecc0222c57bbd#file-24-col-1280-js)
-- [1008px - 12 Column](https://gist.github.com/shaunbent/1276abcdcc9494127a1ecc0222c57bbd#file-12-col-1008-js)
-- [1008px - 24 Column](https://gist.github.com/shaunbent/1276abcdcc9494127a1ecc0222c57bbd#file-24-col-1008-js)
+- [1280px - 12 Column](bookmarklets/12-col-1280-js)
+- [1280px - 24 Column](bookmarklets/24-col-1280-js)
+- [1008px - 12 Column](bookmarklets/12-col-1008-js)
+- [1008px - 24 Column](bookmarklets/24-col-1008-js)
 
 ## Who is using this?
 

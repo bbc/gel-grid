@@ -24,7 +24,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "bookmarklets"
   ],
   "dependencies": {
     "gel-sass-tools": "^1.0.0"
