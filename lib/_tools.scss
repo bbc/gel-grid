@@ -15,8 +15,8 @@
     @if $core {
         max-width: $gel-grid-max-width-1008;
         margin: 0 auto;
-        padding-right: $gel-spacing-unit;
-        padding-left: $gel-spacing-unit;
+        #{$padding-right}: $gel-spacing-unit;
+        #{$padding-left}: $gel-spacing-unit;
 
         @if $fixed {
             width: #{$gel-grid-max-width-1008}; // [1]
@@ -25,8 +25,8 @@
 
     @if $enhanced {
         @include mq($from: $gel-grid-margin-change) {
-            padding-left: double($gel-spacing-unit);
-            padding-right: double($gel-spacing-unit);
+            #{$padding-left}: double($gel-spacing-unit);
+            #{$padding-right}: double($gel-spacing-unit);
         }
 
         @if $gel-grid-enable--box-sizing {
@@ -84,13 +84,13 @@
         -webkit-flex-grow: 1;
         -ms-flex-grow: 1;
         flex-grow: 1;
-        margin-right: 0; // [2]
-        margin-left: -$gel-spacing-unit;
-        padding-right: 0; // [2]
-        padding-left: 0; // [2]
+        #{$margin-right}: 0; // [2]
+        #{$margin-left}: -$gel-spacing-unit;
+        #{$padding-right}: 0; // [2]
+        #{$padding-left}: 0; // [2]
 
         @include mq($from: $gel-grid-gutter-change) {
-            margin-left: double(-$gel-spacing-unit);
+            #{$margin-left}: double(-$gel-spacing-unit);
         }
 
         @if $gel-grid-enable--whitespace-fix {
@@ -123,13 +123,13 @@
     @if $enhanced {
         width: 100%;
         display: inline-block; // [1]
-        padding-left: $gel-spacing-unit; // [2]
+        #{$padding-left}: $gel-spacing-unit; // [2]
 
         text-align: flip(left, right); // [3]
         vertical-align: top; // [4]
 
         @include mq($from: $gel-grid-gutter-change) {
-            padding-left: double($gel-spacing-unit); // [2]
+            #{$padding-left}: double($gel-spacing-unit); // [2]
         }
 
         @if $gel-grid-enable--box-sizing {
@@ -177,10 +177,10 @@
      * Layouts with no gutters.
      */
     .#{$gel-grid-namespace}layout--flush {
-        margin-left: 0;
+        #{$margin-left}: 0;
 
         > .#{$gel-grid-namespace}layout__item {
-            padding-left: 0;
+            #{$padding-left}: 0;
         }
     }
 
@@ -194,13 +194,13 @@
         flex-direction: row-reverse;
 
         .#{$gel-grid-flexbox-feature-detection-class} & {
-            direction: rtl;
-            text-align: left;
+            direction: flip(rtl, ltr);
+            text-align: flip(left, right);
 
             > .#{$gel-grid-namespace}layout__item,
             > %#{$gel-grid-namespace}layout__item {
-                direction: ltr;
-                text-align: left;
+                direction: flip(ltr, rtl);
+                text-align: flip(left, right);
             }
         }
     }
@@ -237,7 +237,7 @@
      * Make the layout items fill up from the right hand side
      */
     .#{$gel-grid-namespace}layout--right {
-        text-align: right;
+        text-align: flip(right, left);
         -webkit-justify-content: flex-end;
         -ms-flex-pack: end;
         justify-content: flex-end;
