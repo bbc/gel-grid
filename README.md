@@ -145,7 +145,7 @@ The class structure is as follows:
 - `.gel-2/3` - 66.666666667%
 - `.gel-10/12` - 83.333333333%
 
-In order to reduce page weight we do not output whole fractions for each group as this can be simply normalised to one whole (`.gel-1/1`).
+In order to reduce page weight we do not output whole fractions for each group as this can be simply normalised to one whole (`.gel-1/1`). Also, mathematically identical fractions should be normalised to the lowest denominator (for example instead of `.gel-2/4` or `.gel-6/12` use **`.gel-1/2`**)
 
 #### Breakpoints
 
