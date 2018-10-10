@@ -179,7 +179,7 @@ To help enforce this way of thinking all width utilities classes proactively car
 
 **More information:**
 
-- [The Importance of !important(http://csswizardry.com/2016/05/the-importance-of-important/)
+- [The Importance of !important](http://csswizardry.com/2016/05/the-importance-of-important/)
 
 ### Sass Mixins
 The GEL grid component exposes a collection of Sass Mixins which can be called within your Sass. Should you need to create a more bespoke component which is not possible using the standard utility classes.
