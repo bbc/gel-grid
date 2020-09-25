@@ -9,7 +9,7 @@
 
 ## What is this?
 
-An implementation of the [GEL Grid Guidelines](http://www.bbc.co.uk/gel/guidelines/grid).
+An implementation of the [GEL Grid Guidelines](https://www.bbc.co.uk/gel/guidelines/grid).
 The Grid provides a way of creating flexible and unique layouts whilst also maintaining consistent margins, gutters and containing widths across the BBC, online.
 
 This is implementation of the grid is built using `flexbox` with an `inline-block` fallback older browsers. This allows us to support browsers IE8 and above.
@@ -223,14 +223,14 @@ We recommend you include some JavaScript based [Feature Detection](https://moder
 
 The following features are only supported by the flexbox grid and will degrade gracefully:
 
-- [Equal Height Columns](http://bbc.github.io/gel-grid/#equal-height)
-- [Independent Alignment](http://bbc.github.io/gel-grid/#independent-alignment)
-- [Automatic Grids](http://bbc.github.io/gel-grid/#fit)
+- [Equal Height Columns](https://bbc.github.io/gel-grid/#equal-height)
+- [Independent Alignment](https://bbc.github.io/gel-grid/#independent-alignment)
+- [Automatic Grids](https://bbc.github.io/gel-grid/#fit)
 
 **More information:**
 
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [Can I Use: Flexbox](http://caniuse.com/#feat=flexbox)
+- [Can I Use: Flexbox](https://caniuse.com/flexbox)
 
 ### 1280px
 The GEL Grid guideline has been updated to include a wider 1280px breakpoint. By default the grid supports this breakpoint. It can be displayed by setting the `$gel-grid-enable--1280-breakpoint` to `false`.
@@ -239,7 +239,7 @@ It is also possible to toggle the 1280px breakpoint on and off based on the pres
 
 **More information:**
 
-- [ORB 1280px Documentation](http://www.bbc.co.uk/frameworks/orb/css#orb-1280)
+- [ORB 1280px Documentation](https://www.bbc.co.uk/frameworks/orb/css#orb-1280)
 
 ### Box Sizing
 The GEL Grid consistences of a combination of fixed gutters and margins with fluid width columns. This combination of fixed and fluid units is achieved using `box-sizing: border-box`.
