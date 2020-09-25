@@ -1,6 +1,6 @@
 {
   "name": "gel-grid",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "A flexible code implementation of the GEL Grid",
   "main": "_grid.scss",
   "scripts": {
@@ -32,10 +32,10 @@
   },
   "homepage": "https://github.com/bbc/gel-grid",
   "devDependencies": {
-    "node-sass": "^3.2.0",
-    "sass-mq": "^3.2.2"
+    "node-sass": "^4.14.1",
+    "sass-mq": "^5.0.1"
   },
   "dependencies": {
-    "gel-sass-tools": "^1.0.0"
+    "gel-sass-tools": "^1.3.0"
   }
 }
