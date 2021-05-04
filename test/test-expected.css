@@ -11,14 +11,12 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 @media (min-width: 25em) {
   .gel-wrap {
     padding-left: 16px;
     padding-right: 16px;
   }
 }
-
 @media (min-width: 80em) {
   .gel-wrap {
     max-width: 1280px;
@@ -48,13 +46,11 @@
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
-
 @media (min-width: 37.5em) {
   .gel-layout {
     margin-left: -16px;
   }
 }
-
 .opera-only :-o-prefocus,
 .gel-layout {
   word-spacing: -0.43em;
@@ -76,7 +72,6 @@
   word-spacing: normal;
   text-rendering: auto;
 }
-
 @media (min-width: 37.5em) {
   .gel-layout__item {
     padding-left: 16px;
@@ -494,7 +489,6 @@
     width: 95.83333% !important;
   }
 }
-
 @media (min-width: 37.5em) {
   .gel-1\/1\@m {
     width: 100% !important;
@@ -624,7 +618,6 @@
     width: 95.83333% !important;
   }
 }
-
 @media (min-width: 56.25em) {
   .gel-1\/1\@l {
     width: 100% !important;
@@ -754,7 +747,6 @@
     width: 95.83333% !important;
   }
 }
-
 @media (min-width: 63em) {
   .gel-1\/1\@xl {
     width: 100% !important;
@@ -884,7 +876,6 @@
     width: 95.83333% !important;
   }
 }
-
 @media (min-width: 80em) {
   .gel-1\/1\@xxl {
     width: 100% !important;
@@ -1014,7 +1005,6 @@
     width: 95.83333% !important;
   }
 }
-
 .my-page {
   max-width: 1008px;
   margin: 0 auto;
@@ -1024,14 +1014,12 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 @media (min-width: 25em) {
   .my-page {
     padding-left: 16px;
     padding-right: 16px;
   }
 }
-
 @media (min-width: 80em) {
   .my-page {
     max-width: 1280px;
@@ -1058,13 +1046,11 @@
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
-
 @media (min-width: 37.5em) {
   .my-component {
     margin-left: -16px;
   }
 }
-
 .opera-only :-o-prefocus,
 .my-component {
   word-spacing: -0.43em;
@@ -1083,7 +1069,6 @@
   word-spacing: normal;
   text-rendering: auto;
 }
-
 @media (min-width: 37.5em) {
   .my-component__item {
     padding-left: 16px;

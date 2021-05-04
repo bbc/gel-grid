@@ -96,7 +96,9 @@
         @if $gel-grid-enable--whitespace-fix {
             letter-spacing: -0.31em;
             text-rendering: optimizespeed;
+        }
 
+        @if $gel-grid-enable--whitespace-fix {
             @at-root {
                 // Opera as of 12 on Windows needs word-spacing.
                 .opera-only :-o-prefocus,
@@ -104,7 +106,6 @@
                     word-spacing: -0.43em;
                 }
             }
-
         }
     }
 }
@@ -178,11 +179,14 @@
      */
     .#{$gel-grid-namespace}layout--flush {
         #{$margin-left}: 0;
+    }
 
+    .#{$gel-grid-namespace}layout--flush {
         > .#{$gel-grid-namespace}layout__item {
             #{$padding-left}: 0;
         }
     }
+
 
     /**
      * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
@@ -192,11 +196,17 @@
         -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
         flex-direction: row-reverse;
+    }
 
+    .#{$gel-grid-namespace}layout--rev {
         .#{$gel-grid-flexbox-feature-detection-class} & {
             direction: flip(rtl, ltr);
             text-align: flip(left, right);
+        }
+    }
 
+    .#{$gel-grid-namespace}layout--rev {
+        .#{$gel-grid-flexbox-feature-detection-class} & {
             > .#{$gel-grid-namespace}layout__item,
             > %#{$gel-grid-namespace}layout__item {
                 direction: flip(ltr, rtl);
@@ -213,7 +223,9 @@
         -ms-flex-align: center;
         -ms-grid-row-align: center;
         align-items: center;
+    }
 
+    .#{$gel-grid-namespace}layout--middle {
         > .#{$gel-grid-namespace}layout__item {
             vertical-align: middle;
         }
@@ -227,7 +239,9 @@
         -ms-flex-align: end;
         -ms-grid-row-align: flex-end;
         align-items: flex-end;
+    }
 
+    .#{$gel-grid-namespace}layout--bottom {
         > .#{$gel-grid-namespace}layout__item {
             vertical-align: bottom;
         }
@@ -241,7 +255,9 @@
         -webkit-justify-content: flex-end;
         -ms-flex-pack: end;
         justify-content: flex-end;
+    }
 
+    .#{$gel-grid-namespace}layout--right {
         > .#{$gel-grid-namespace}layout__item {
             text-align: flip(left, right);
         }
@@ -255,7 +271,9 @@
         -webkit-justify-content: center;
         -ms-flex-pack: center;
         justify-content: center;
+    }
 
+    .#{$gel-grid-namespace}layout--center {
         > .#{$gel-grid-namespace}layout__item {
             text-align: flip(left, right);
         }
@@ -276,8 +294,10 @@
      * 1. Prevents floated layout items from shrinking the layout
      */
     .#{$gel-grid-namespace}layout--no-flex {
-	min-width: 100%; // [1]
+        min-width: 100%; // [1]
+    }
 
+    .#{$gel-grid-namespace}layout--no-flex {
         &,
         > .#{$gel-grid-namespace}layout__item {
             display: block;
