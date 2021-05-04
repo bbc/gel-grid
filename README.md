@@ -42,19 +42,6 @@ The easiest way to get started with the GEL Grid component is to use the compile
 
 If you're a more advanced user and want to integrate the GEL Grid component within your codebase, use one of the following options:
 
-### Install using Bower
-
-```bash
-$ bower install --save gel-grid
-```
-
-```sass
-// your-app/main.scss
-@import 'bower_components/gel-sass-tools/sass-tools';
-@import 'bower_components/sass-mq/mq';
-@import 'bower_components/gel-grid/grid';
-```
-
 ### Install using NPM
 
 ```bash
