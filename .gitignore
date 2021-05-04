@@ -1,5 +1,4 @@
-# Bower
-bower_components/*
+dist/
 
 # NPM
 node_modules/*
@@ -8,11 +7,6 @@ node_modules/*
 test/*.css
 test/*.css.map
 !test/*-expected.css
-
-# Misc
-.DS_Store
-.DS_Store?
-.sass-cache/
 
 # Demo
 demo/dist/*

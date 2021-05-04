@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-- '6'
+- '14.16.1'
 before_script:
 - npm install
 script:
 - npm test
 after_success:
-- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash scripts/deploy.sh
+- test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master"
 deploy:
   provider: npm
   email: "${EMAIL}"
