@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 ///*------------------------------------*\
 //    # GEL GRID - TOOLS
 //\*------------------------------------*/
@@ -451,7 +453,7 @@
 		} @else {
 			@for $i from 1 to $column {
                 // dart-sass does not support precision, so do it manually
-                $width: round(($i / $column) * 10000000) / 10000000;
+                $width: math.div(round(math.div($i, $column) * 10000000), 10000000);
 
                 @if map-has-key($output-widths, $width) == false {
                     $output-widths: map-merge($output-widths, ($width: true));
