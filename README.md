@@ -295,7 +295,7 @@ The following Grid Bookmarklets can be used to overlay the grid in the browser t
 
 ## Who is using this?
 
-The following teams are currently using this component: GEL, News, Sport, Live, Search, BBC Food, Taster & Academy, IPS Web (R&D)
+The following teams are currently using this component: GEL, News, Sport, Live, Search, BBC Food, Taster & Academy, IPS Web (R&D), BBC Subtitle Guidelines
 
 If your team is using this component, let us know and we'll add you to the list.
 
