@@ -409,7 +409,7 @@
 @function gel-columns($span, $columns: $gel-grid-default-columns) {
 	@if $span >= 1 {
 		// Convert the given span to a fraction of the columns
-		@return percentage($span / $columns);
+		@return percentage(math.div($span, $columns));
 	} @else {
 		// A fraction has been supplied so lets just converting it to a percentage
 		@return percentage($span);
