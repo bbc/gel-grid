@@ -4,7 +4,7 @@
 set -e +x
 
 # Extract the tag/release number
-echo "VERSION=${GIT_BRANCH##*/v}" >> build/jenkins.properties
+echo "VERSION=${GIT_BRANCH##*/}" >> actions/jenkins.properties
 
 # Source the properties file
-. build/jenkins.properties
+. actions/jenkins.properties
