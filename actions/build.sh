@@ -3,8 +3,7 @@
 # Ensure abort if any command fails (returns non zero status code $?)
 set -e +x
 
-# Install the dependencies
+# Install dependencies, build and verify tests
 npm i
-
-# Create assets
 npm run build
+npm test

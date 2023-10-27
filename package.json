@@ -4,11 +4,12 @@
   "description": "A flexible code implementation of the GEL Grid",
   "main": "_grid.scss",
   "scripts": {
+    "build": "npm run css:compressed && npm run css:expanded",
     "css:compressed": "sass --style=compressed --no-source-map src/gel-grid.scss dist/gel-grid.min.css",
     "css:expanded": "sass --style=expanded --no-source-map src/gel-grid.scss dist/gel-grid.css",
     "pretest": "sass --style=expanded --no-source-map test/test.scss test/test.css",
     "test": "diff -u test/test-expected.css test/test.css",
-    "dist": "npm run css:compressed && npm run css:expanded"
+    "dist": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -34,10 +35,10 @@
   },
   "homepage": "https://github.com/bbc/gel-grid",
   "devDependencies": {
-    "sass": "1.65.1",
+    "sass": "1.69.5",
     "sass-mq": "6.0.0"
   },
   "dependencies": {
-    "gel-sass-tools": "3.0.1"
+    "gel-sass-tools": "3.1.2"
   }
 }
