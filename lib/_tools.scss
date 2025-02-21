@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use 'sass:math';
 
 ///*------------------------------------*\
@@ -456,7 +457,7 @@
                 $width: math.div(round(math.div($i, $column) * 10000000), 10000000);
 
                 @if map-has-key($output-widths, $width) == false {
-                    $output-widths: map-merge($output-widths, ($width: true));
+                    $output-widths: map.merge($output-widths, ($width: true));
 
                     .#{$gel-grid-namespace}#{$i}\/#{$column}#{$breakpoint-suffix} {
                         width: gel-columns($width) !important;
