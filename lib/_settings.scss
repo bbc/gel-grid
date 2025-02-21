@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 ///*------------------------------------*\
 //    # GEL GRID - SETTINGS
 //\*------------------------------------*/
@@ -133,5 +135,5 @@ $gel-grid-enable--whitespace-fix: false !default;
 // all the breakpoints into a single map
 //
 @if $gel-grid-1280-toggle-class == null {
-	$gel-grid-breakpoints: join($gel-grid-breakpoints, $gel-grid-breakpoints--1280);
+	$gel-grid-breakpoints: list.join($gel-grid-breakpoints, $gel-grid-breakpoints--1280);
 }

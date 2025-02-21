@@ -46,14 +46,15 @@
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
+.opera-only :-o-prefocus,
+.gel-layout {
+  word-spacing: -0.43em;
+}
+
 @media (min-width: 37.5em) {
   .gel-layout {
     margin-left: -16px;
   }
-}
-.opera-only :-o-prefocus,
-.gel-layout {
-  word-spacing: -0.43em;
 }
 
 /**
@@ -891,14 +892,15 @@
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
+.opera-only :-o-prefocus,
+.my-component {
+  word-spacing: -0.43em;
+}
+
 @media (min-width: 37.5em) {
   .my-component {
     margin-left: -16px;
   }
-}
-.opera-only :-o-prefocus,
-.my-component {
-  word-spacing: -0.43em;
 }
 
 .my-component__item {

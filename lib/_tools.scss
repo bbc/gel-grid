@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use 'sass:math';
 
 ///*------------------------------------*\
@@ -26,15 +27,15 @@
     }
 
     @if $enhanced {
-        @include mq($from: $gel-grid-margin-change) {
-            #{$padding-left}: double($gel-spacing-unit);
-            #{$padding-right}: double($gel-spacing-unit);
-        }
-
         @if $gel-grid-enable--box-sizing {
             -webkit-box-sizing: border-box;
                -moz-box-sizing: border-box;
                     box-sizing: border-box;
+        }
+
+        @include mq($from: $gel-grid-margin-change) {
+            #{$padding-left}: double($gel-spacing-unit);
+            #{$padding-right}: double($gel-spacing-unit);
         }
 
         @if $gel-grid-enable--1280-breakpoint {
@@ -91,10 +92,6 @@
         #{$padding-right}: 0; // [2]
         #{$padding-left}: 0; // [2]
 
-        @include mq($from: $gel-grid-gutter-change) {
-            #{$margin-left}: double(-$gel-spacing-unit);
-        }
-
         @if $gel-grid-enable--whitespace-fix {
             letter-spacing: -0.31em;
             text-rendering: optimizespeed;
@@ -108,6 +105,10 @@
                     word-spacing: -0.43em;
                 }
             }
+        }
+
+        @include mq($from: $gel-grid-gutter-change) {
+            #{$margin-left}: double(-$gel-spacing-unit);
         }
     }
 }
@@ -131,10 +132,6 @@
         text-align: flip(left, right); // [3]
         vertical-align: top; // [4]
 
-        @include mq($from: $gel-grid-gutter-change) {
-            #{$padding-left}: double($gel-spacing-unit); // [2]
-        }
-
         @if $gel-grid-enable--box-sizing {
             -webkit-box-sizing: border-box;
                -moz-box-sizing: border-box;
@@ -145,6 +142,10 @@
             letter-spacing: normal;
             word-spacing: normal;
             text-rendering: auto;
+        }
+
+        @include mq($from: $gel-grid-gutter-change) {
+            #{$padding-left}: double($gel-spacing-unit); // [2]
         }
     }
 }
@@ -409,10 +410,10 @@
 @function gel-columns($span, $columns: $gel-grid-default-columns) {
 	@if $span >= 1 {
 		// Convert the given span to a fraction of the columns
-		@return percentage(math.div($span, $columns));
+		@return math.percentage(math.div($span, $columns));
 	} @else {
 		// A fraction has been supplied so lets just converting it to a percentage
-		@return percentage($span);
+		@return math.percentage($span);
 	}
 }
 
@@ -455,8 +456,8 @@
                 // dart-sass does not support precision, so do it manually
                 $width: math.div(round(math.div($i, $column) * 10000000), 10000000);
 
-                @if map-has-key($output-widths, $width) == false {
-                    $output-widths: map-merge($output-widths, ($width: true));
+                @if map.has-key($output-widths, $width) == false {
+                    $output-widths: map.merge($output-widths, ($width: true));
 
                     .#{$gel-grid-namespace}#{$i}\/#{$column}#{$breakpoint-suffix} {
                         width: gel-columns($width) !important;
