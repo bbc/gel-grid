@@ -92,10 +92,6 @@
         #{$padding-right}: 0; // [2]
         #{$padding-left}: 0; // [2]
 
-        @include mq($from: $gel-grid-gutter-change) {
-            #{$margin-left}: double(-$gel-spacing-unit);
-        }
-
         @if $gel-grid-enable--whitespace-fix {
             letter-spacing: -0.31em;
             text-rendering: optimizespeed;
@@ -109,6 +105,10 @@
                     word-spacing: -0.43em;
                 }
             }
+        }
+
+        @include mq($from: $gel-grid-gutter-change) {
+            #{$margin-left}: double(-$gel-spacing-unit);
         }
     }
 }
