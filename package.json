@@ -39,6 +39,6 @@
     "sass-mq": "6.0.0"
   },
   "dependencies": {
-    "gel-sass-tools": "3.3.0"
+    "gel-sass-tools": "3.4.0"
   }
 }
