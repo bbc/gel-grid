@@ -5,8 +5,6 @@
 //    # GEL GRID - TOOLS
 //\*------------------------------------*/
 
-/* autoprefixer: off */
-
 // Grid container, used to wrap all grid elements and apply the correct maximum widths
 //
 // 1. IE8 doesn't apply border-box box-sizing logic correctly on (min|max)-(width|height) properties.
@@ -16,8 +14,8 @@
 //
 @mixin gel-wrap() {
     @if $core {
-        max-width: $gel-grid-max-width-1008;
         margin: 0 auto;
+        max-width: $gel-grid-max-width-1008;
         #{$padding-right}: $gel-spacing-unit;
         #{$padding-left}: $gel-spacing-unit;
 
@@ -73,8 +71,8 @@
 // @author Shaun Bent
 //
 @mixin gel-layout() {
-    list-style: none; // [1]
     direction: flip(ltr, rtl);
+    list-style: none; // [1]
     text-align: flip(left, right);
 
     @if $enhanced {
@@ -140,8 +138,8 @@
 
         @if $gel-grid-enable--whitespace-fix {
             letter-spacing: normal;
-            word-spacing: normal;
             text-rendering: auto;
+            word-spacing: normal;
         }
 
         @include mq($from: $gel-grid-gutter-change) {

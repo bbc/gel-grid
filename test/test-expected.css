@@ -1,10 +1,9 @@
-/* autoprefixer: off */
 /**
  * Grid containing element
  */
 .gel-wrap {
-  max-width: 1008px;
   margin: 0 auto;
+  max-width: 1008px;
   padding-right: 8px;
   padding-left: 8px;
   -webkit-box-sizing: border-box;
@@ -27,8 +26,8 @@
  * A grid row
  */
 .gel-layout {
-  list-style: none;
   direction: ltr;
+  list-style: none;
   text-align: left;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -70,8 +69,8 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: normal;
-  word-spacing: normal;
   text-rendering: auto;
+  word-spacing: normal;
 }
 @media (min-width: 37.5em) {
   .gel-layout__item {
@@ -852,8 +851,8 @@
   }
 }
 .my-page {
-  max-width: 1008px;
   margin: 0 auto;
+  max-width: 1008px;
   padding-right: 8px;
   padding-left: 8px;
   -webkit-box-sizing: border-box;
@@ -873,8 +872,8 @@
 }
 
 .my-component {
-  list-style: none;
   direction: ltr;
+  list-style: none;
   text-align: left;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -913,8 +912,8 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: normal;
-  word-spacing: normal;
   text-rendering: auto;
+  word-spacing: normal;
 }
 @media (min-width: 37.5em) {
   .my-component__item {
