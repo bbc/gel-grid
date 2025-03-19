@@ -1,0 +1,107 @@
+@import 'true';
+@import '../node_modules/sass-mq/mq';
+@import '../node_modules/gel-sass-tools/sass-tools';
+
+@include describe('gel-wrap()') {
+  @include it('supports a 1008px width by default') {
+    @include assert {
+      @include output {
+        $gel-grid-enable--box-sizing: false;
+        $gel-grid-enable--1280-breakpoint: false;
+
+        @import '../_grid';
+
+        .gel-wrap {
+          @include gel-wrap;
+        }
+      }
+
+      @include expect {
+        .gel-wrap {
+          margin: 0 auto;
+          max-width: 1008px;
+          padding-right: 8px;
+          padding-left: 8px;
+        }
+
+        @media (min-width: 25em) {
+          .gel-wrap {
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  @include it('supports box-sizing when box-sizing is enabled') {
+    @include assert {
+      @include output {
+        $gel-grid-enable--box-sizing: true;
+        $gel-grid-enable--1280-breakpoint: false;
+
+        @import '../_grid';
+
+        .gel-wrap {
+          @include gel-wrap;
+        }
+      }
+
+      @include expect {
+        .gel-wrap {
+          margin: 0 auto;
+          max-width: 1008px;
+          padding-right: 8px;
+          padding-left: 8px;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+        }
+
+        @media (min-width: 25em) {
+          .gel-wrap {
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  @include it('supports a 1280px width when the 1280 breakpoint is enabled') {
+    @include assert {
+      @include output {
+        $gel-grid-enable--box-sizing: false;
+        $gel-grid-enable--1280-breakpoint: true;
+
+        @import '../_grid';
+
+        .gel-wrap {
+          @include gel-wrap;
+        }
+      }
+
+      @include expect {
+        .gel-wrap {
+          margin: 0 auto;
+          max-width: 1008px;
+          padding-right: 8px;
+          padding-left: 8px;
+        }
+
+        @media (min-width: 25em) {
+          .gel-wrap {
+            padding-left: 16px;
+            padding-right: 16px;
+          }
+        }
+
+        @media (min-width: 80em) {
+          .gel-wrap {
+            max-width: 1280px;
+          }
+        }
+      }
+    }
+  }
+}

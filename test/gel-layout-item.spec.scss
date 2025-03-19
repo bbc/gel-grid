@@ -1,0 +1,33 @@
+@import 'true';
+@import '../node_modules/sass-mq/mq';
+@import '../node_modules/gel-sass-tools/sass-tools';
+
+@include describe('gel-layout-item()') {
+  @include it('...') {
+    @include assert {
+      @include output {
+        @import '../_grid';
+
+        .gel-layout-item {
+          @include gel-layout-item;
+        }
+      }
+
+      @include expect {
+        .gel-layout-item {
+          width: 100%;
+          display: inline-block;
+          padding-left: 8px;
+          text-align: left;
+          vertical-align: top;
+        }
+
+        @media (min-width: 37.5em) {
+          .gel-layout-item {
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+  }
+}
