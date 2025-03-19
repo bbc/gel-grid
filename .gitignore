@@ -1,10 +1,5 @@
-# NPM
-node_modules/*
-
-# Testing - Ignore css files except those ending in -expected
-test/*.css
-test/*.css.map
-!test/*-expected.css
+coverage
+node_modules
 
 # Demo
 demo/dist/*
