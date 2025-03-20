@@ -1,0 +1,11 @@
+@import '../../../node_modules/sass-mq/mq';
+@import '../../../node_modules/gel-sass-tools/sass-tools';
+
+$gel-grid-enable--box-sizing: false;
+$gel-grid-enable--1280-breakpoint: true;
+
+@import '../../../_grid';
+
+.gel-wrap {
+  @include gel-wrap;
+}

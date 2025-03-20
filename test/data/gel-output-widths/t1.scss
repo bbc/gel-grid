@@ -1,0 +1,5 @@
+@import '../../../node_modules/sass-mq/mq';
+@import '../../../node_modules/gel-sass-tools/sass-tools';
+@import '../../../_grid';
+
+@include gel-output-widths;
