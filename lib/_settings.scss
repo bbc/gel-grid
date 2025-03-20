@@ -8,7 +8,6 @@
 // These variables should not be modified or adjusted directly; you should
 // predefine the variables in your own project, to overide these default settings.
 
-
 /// General configuration
 //
 // The default namespace applied to all grid classes output is inherited
@@ -35,7 +34,6 @@ $gel-grid-breakpoint-namespace: $gel-breakpoint-prefix !default;
 // @type String
 //
 $gel-grid-1280-toggle-class: null !default;
-
 
 /// Grid configuration
 //
@@ -80,17 +78,7 @@ $gel-grid-default-columns: 12 !default;
 //
 // @type List
 //
-$gel-grid-columns: (
-	1
-	2
-	3
-	4
-	5
-	8
-	10
-	12
-	24
-) !default;
+$gel-grid-columns: (1 2 3 4 5 8 10 12 24) !default;
 
 // The class applied by a feature detection script to signify there the
 // current browser doesn't support Flexbox
@@ -98,7 +86,6 @@ $gel-grid-columns: (
 // @type String
 //
 $gel-grid-flexbox-feature-detection-class: 'no-flexbox' !default;
-
 
 /// Output configuration
 //
@@ -130,10 +117,9 @@ $gel-grid-enable--box-sizing: false !default;
 //
 $gel-grid-enable--whitespace-fix: false !default;
 
-
 // If the optional 1280 toggle class it not enabled we need to merge
 // all the breakpoints into a single map
 //
 @if $gel-grid-1280-toggle-class == null {
-	$gel-grid-breakpoints: list.join($gel-grid-breakpoints, $gel-grid-breakpoints--1280);
+  $gel-grid-breakpoints: list.join($gel-grid-breakpoints, $gel-grid-breakpoints--1280);
 }

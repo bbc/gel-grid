@@ -2,8 +2,8 @@
 
 exports[`gel-output-grid() generates a collection of generic grid classes 1`] = `
 "/**
- * Grid containing element
- */
+   * Grid containing element
+   */
 .gel-wrap {
   margin: 0 auto;
   max-width: 1008px;
@@ -23,20 +23,14 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * A grid row
- */
+   * A grid row
+   */
 .gel-layout {
   direction: ltr;
   list-style: none;
   text-align: left;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  -webkit-flex-grow: 1;
-  -ms-flex-grow: 1;
   flex-grow: 1;
   margin-right: 0;
   margin-left: -8px;
@@ -50,8 +44,8 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * A single grid item
- */
+   * A single grid item
+   */
 .gel-layout__item {
   width: 100%;
   display: inline-block;
@@ -66,8 +60,8 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * Layouts with no gutters.
- */
+   * Layouts with no gutters.
+   */
 .gel-layout--flush {
   margin-left: 0;
 }
@@ -77,12 +71,10 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
- * markup will display in order 4, 3, 2, 1 on your page
- */
+   * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+   * markup will display in order 4, 3, 2, 1 on your page
+   */
 .gel-layout--rev {
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
 
@@ -97,12 +89,9 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * Align layout items to the vertical centers of each other
- */
+   * Align layout items to the vertical centers of each other
+   */
 .gel-layout--middle {
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  -ms-grid-row-align: center;
   align-items: center;
 }
 
@@ -111,12 +100,9 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * Align layout items to the vertical bottoms of each other
- */
+   * Align layout items to the vertical bottoms of each other
+   */
 .gel-layout--bottom {
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  -ms-grid-row-align: flex-end;
   align-items: flex-end;
 }
 
@@ -125,12 +111,10 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * Make the layout items fill up from the right hand side
- */
+   * Make the layout items fill up from the right hand side
+   */
 .gel-layout--right {
   text-align: right;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
@@ -139,12 +123,10 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * Make the layout items fill up from the center outward
- */
+   * Make the layout items fill up from the center outward
+   */
 .gel-layout--center {
   text-align: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -153,17 +135,17 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * Cause layout items to take up a non-explicit amount of width
- */
+   * Cause layout items to take up a non-explicit amount of width
+   */
 .gel-layout--auto > .gel-layout__item {
   width: auto;
 }
 
 /**
- * Disable the flexbox grid
- *
- * 1. Prevents floated layout items from shrinking the layout
- */
+   * Disable the flexbox grid
+   *
+   * 1. Prevents floated layout items from shrinking the layout
+   */
 .gel-layout--no-flex {
   min-width: 100%;
 }
@@ -175,47 +157,38 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 }
 
 /**
- * Force items to be of equal height
- */
+     * Force items to be of equal height
+     */
 .gel-layout--equal > .gel-layout__item {
-  display: -webkit-flex;
   display: flex;
 }
 
 /**
- * Allow items to devide the space equally between the number of items
- */
+     * Allow items to devide the space equally between the number of items
+     */
 .gel-layout--fit > .gel-layout__item {
   width: auto;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
 /**
- * Align a single grid item to the top
- */
+     * Align a single grid item to the top
+     */
 .gel-layout__item--top {
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
 }
 
 /**
- * Align a single grid item to the center
- */
+     * Align a single grid item to the center
+     */
 .gel-layout__item--center {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
 }
 
 /**
- * Align a single grid item to the bottom
- */
+     * Align a single grid item to the bottom
+     */
 .gel-layout__item--bottom {
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
@@ -841,15 +814,13 @@ exports[`gel-output-grid() generates a collection of generic grid classes 1`] = 
 
 exports[`gel-output-grid() generates a collection of generic grid classes, with all options enabled 1`] = `
 "/**
- * Grid containing element
- */
+   * Grid containing element
+   */
 .gel-wrap {
   margin: 0 auto;
   max-width: 1008px;
   padding-right: 8px;
   padding-left: 8px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 @media (min-width: 25em) {
@@ -865,20 +836,14 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * A grid row
- */
+   * A grid row
+   */
 .gel-layout {
   direction: ltr;
   list-style: none;
   text-align: left;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  -webkit-flex-grow: 1;
-  -ms-flex-grow: 1;
   flex-grow: 1;
   margin-right: 0;
   margin-left: -8px;
@@ -899,16 +864,14 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * A single grid item
- */
+   * A single grid item
+   */
 .gel-layout__item {
   width: 100%;
   display: inline-block;
   padding-left: 8px;
   text-align: left;
   vertical-align: top;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   letter-spacing: normal;
   text-rendering: auto;
@@ -921,8 +884,8 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * Layouts with no gutters.
- */
+   * Layouts with no gutters.
+   */
 .gel-layout--flush {
   margin-left: 0;
 }
@@ -932,12 +895,10 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
- * markup will display in order 4, 3, 2, 1 on your page
- */
+   * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+   * markup will display in order 4, 3, 2, 1 on your page
+   */
 .gel-layout--rev {
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
 
@@ -952,12 +913,9 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * Align layout items to the vertical centers of each other
- */
+   * Align layout items to the vertical centers of each other
+   */
 .gel-layout--middle {
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  -ms-grid-row-align: center;
   align-items: center;
 }
 
@@ -966,12 +924,9 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * Align layout items to the vertical bottoms of each other
- */
+   * Align layout items to the vertical bottoms of each other
+   */
 .gel-layout--bottom {
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  -ms-grid-row-align: flex-end;
   align-items: flex-end;
 }
 
@@ -980,12 +935,10 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * Make the layout items fill up from the right hand side
- */
+   * Make the layout items fill up from the right hand side
+   */
 .gel-layout--right {
   text-align: right;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
@@ -994,12 +947,10 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * Make the layout items fill up from the center outward
- */
+   * Make the layout items fill up from the center outward
+   */
 .gel-layout--center {
   text-align: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -1008,17 +959,17 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * Cause layout items to take up a non-explicit amount of width
- */
+   * Cause layout items to take up a non-explicit amount of width
+   */
 .gel-layout--auto > .gel-layout__item {
   width: auto;
 }
 
 /**
- * Disable the flexbox grid
- *
- * 1. Prevents floated layout items from shrinking the layout
- */
+   * Disable the flexbox grid
+   *
+   * 1. Prevents floated layout items from shrinking the layout
+   */
 .gel-layout--no-flex {
   min-width: 100%;
 }
@@ -1030,47 +981,38 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
 }
 
 /**
- * Force items to be of equal height
- */
+     * Force items to be of equal height
+     */
 .gel-layout--equal > .gel-layout__item {
-  display: -webkit-flex;
   display: flex;
 }
 
 /**
- * Allow items to devide the space equally between the number of items
- */
+     * Allow items to devide the space equally between the number of items
+     */
 .gel-layout--fit > .gel-layout__item {
   width: auto;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
 
 /**
- * Align a single grid item to the top
- */
+     * Align a single grid item to the top
+     */
 .gel-layout__item--top {
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: start;
   align-self: flex-start;
 }
 
 /**
- * Align a single grid item to the center
- */
+     * Align a single grid item to the center
+     */
 .gel-layout__item--center {
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
 }
 
 /**
- * Align a single grid item to the bottom
- */
+     * Align a single grid item to the bottom
+     */
 .gel-layout__item--bottom {
-  -webkit-align-self: flex-end;
-  -ms-flex-item-align: end;
   align-self: flex-end;
 }
 
