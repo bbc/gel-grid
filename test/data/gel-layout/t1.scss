@@ -1,7 +1,5 @@
-@import '../../../node_modules/sass-mq/mq';
-@import '../../../node_modules/gel-sass-tools/sass-tools';
-@import '../../../_grid';
+@use '../../../_grid';
 
 .gel-layout {
-  @include gel-layout;
+  @include grid.gel-layout;
 }

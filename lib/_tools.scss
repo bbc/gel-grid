@@ -87,8 +87,6 @@
 
     @if $gel-grid-enable--whitespace-fix {
       @at-root {
-        // Opera as of 12 on Windows needs word-spacing.
-        .opera-only :-o-prefocus,
         #{&} {
           word-spacing: -0.43em;
         }

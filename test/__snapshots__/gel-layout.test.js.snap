@@ -35,7 +35,6 @@ exports[`gel-layout() creates a layout to wrap around items, with an optional wh
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
-.opera-only :-o-prefocus,
 .gel-layout {
   word-spacing: -0.43em;
 }

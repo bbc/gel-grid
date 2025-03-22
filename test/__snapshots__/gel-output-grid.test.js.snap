@@ -852,7 +852,6 @@ exports[`gel-output-grid() generates a collection of generic grid classes, with 
   letter-spacing: -0.31em;
   text-rendering: optimizespeed;
 }
-.opera-only :-o-prefocus,
 .gel-layout {
   word-spacing: -0.43em;
 }
