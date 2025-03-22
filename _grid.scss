@@ -2,23 +2,6 @@
 //    # GEL GRID
 //\*------------------------------------*/
 
-// We need to check that the GEL Sass Tools are available globally
-$gel-settings-available: false !default;
-@if ($gel-settings-available == false) {
-  @warn "Missing Dependency: Have you included the gel-sass-tools?";
-}
-
-// import the local dependancies
-@import 'lib/settings';
-@import 'lib/tools';
-
-// define some output control variables
-$core: true !default;
-$enhanced: true !default;
-$fixed: false !default;
-
-//  Create our width helper classes prefixed with any given alias.
-@if $gel-grid-enable--markup-output {
-  @include gel-output-grid;
-  @include gel-output-widths;
-}
+// Import the local dependancies
+@forward 'lib/settings';
+@forward 'lib/tools';

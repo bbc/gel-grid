@@ -1,9 +1,17 @@
+@use 'sass-mq/mq' as *;
+@use 'gel-sass-tools/sass-tools' as *;
+@use 'settings' as *;
 @use 'sass:map';
 @use 'sass:math';
 
 ///*------------------------------------*\
 //    # GEL GRID - TOOLS
 //\*------------------------------------*/
+
+// define some output control variables
+$core: true !default;
+$enhanced: true !default;
+$fixed: false !default;
 
 // Grid container, used to wrap all grid elements and apply the correct maximum widths
 //
@@ -87,8 +95,6 @@
 
     @if $gel-grid-enable--whitespace-fix {
       @at-root {
-        // Opera as of 12 on Windows needs word-spacing.
-        .opera-only :-o-prefocus,
         #{&} {
           word-spacing: -0.43em;
         }
@@ -428,4 +434,10 @@
       }
     }
   }
+}
+
+//  Create our width helper classes prefixed with any given alias.
+@if $gel-grid-enable--markup-output {
+  @include gel-output-grid;
+  @include gel-output-widths;
 }

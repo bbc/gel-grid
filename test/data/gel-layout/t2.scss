@@ -1,9 +1,6 @@
-@import '../../../node_modules/sass-mq/mq';
-@import '../../../node_modules/gel-sass-tools/sass-tools';
+@use '../../../_grid' as *;
 
 $gel-grid-enable--whitespace-fix: true;
-
-@import '../../../_grid';
 
 .gel-layout {
   @include gel-layout;
