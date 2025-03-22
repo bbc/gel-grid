@@ -5,8 +5,8 @@
   "main": "_grid.scss",
   "scripts": {
     "build": "npm run build:compressed && npm run build:expanded",
-    "build:compressed": "sass --style=compressed --no-source-map src/gel-grid.scss dist/gel-grid.min.css",
-    "build:expanded": "sass --style=expanded --no-source-map src/gel-grid.scss dist/gel-grid.css",
+    "build:compressed": "sass --load-path=node_modules/ --style=compressed --no-source-map src/gel-grid.scss dist/gel-grid.min.css",
+    "build:expanded": "sass --load-path=node_modules/ --style=expanded --no-source-map src/gel-grid.scss dist/gel-grid.css",
     "prettier": "prettier --write '{lib/**/*,src/**/*,test/**/*,*}.{js,json,mjs,scss}'",
     "pretest": "npm run prettier",
     "test": "jest --verbose"
@@ -37,10 +37,10 @@
   "devDependencies": {
     "jest": "29.7.0",
     "prettier": "3.5.3",
-    "sass": "1.86.0",
-    "sass-mq": "7.0.0-beta.1"
+    "sass": "1.86.0"
   },
   "dependencies": {
-    "gel-sass-tools": "4.0.0-beta.1"
+    "gel-sass-tools": "4.0.0-beta.3",
+    "sass-mq": "7.0.0-beta.1"
   }
 }
