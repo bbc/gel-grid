@@ -1,8 +1,9 @@
 ///*------------------------------------*\
 //    # GEL GRID
 //\*------------------------------------*/
+
 // Import the typography component
-// and nable the output for our distributed code
+// and enable the output for our distributed code
 @use '../grid' with (
   $gel-grid-enable--markup-output: true,
   $gel-grid-enable--whitespace-fix: true,
