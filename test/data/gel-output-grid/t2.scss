@@ -1,16 +1,6 @@
-$gel-grid-enable--markup-output: true !default;
-$gel-grid-enable--1280-breakpoint: true !default;
-$gel-grid-enable--markup-output: true !default;
-$gel-grid-enable--box-sizing: true !default;
-$gel-grid-enable--whitespace-fix: true !default;
-$gel-grid-enable--flush: true !default;
-$gel-grid-enable--rev: true !default;
-$gel-grid-enable--middle: true !default;
-$gel-grid-enable--bottom: true !default;
-$gel-grid-enable--right: true !default;
-$gel-grid-enable--center: true !default;
-$gel-grid-enable--auto: true !default;
-
-@import '../../../node_modules/sass-mq/mq';
-@import '../../../node_modules/gel-sass-tools/sass-tools';
-@import '../../../_grid';
+@use '../../../_grid' with (
+  $gel-grid-enable--markup-output: true,
+  $gel-grid-enable--1280-breakpoint: true,
+  $gel-grid-enable--box-sizing: true,
+  $gel-grid-enable--whitespace-fix: true
+);
