@@ -57,8 +57,6 @@ $ npm install --save gel-grid
 
 ```sass
 // your-app/main.scss
-@use 'gel-sass-tools/sass-tools';
-@use 'sass-mq/mq';
 @use 'gel-grid/grid';
 ```
 
