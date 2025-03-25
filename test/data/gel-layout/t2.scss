@@ -1,7 +1,7 @@
-@use '../../../_grid' as *;
-
-$gel-grid-enable--whitespace-fix: true;
+@use '../../../_grid' with (
+  $gel-grid-enable--whitespace-fix: true
+);
 
 .gel-layout {
-  @include gel-layout;
+  @include grid.gel-layout;
 }
