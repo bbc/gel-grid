@@ -1,4 +1,4 @@
-@use 'sass-mq/mq' as *;
+@use 'sass-mq/mq';
 @use 'gel-sass-tools/sass-tools';
 @use 'settings' as *;
 @use 'sass:map';
@@ -37,7 +37,7 @@ $fixed: false !default;
       box-sizing: border-box;
     }
 
-    @include mq($from: $gel-grid-margin-change) {
+    @include mq.mq($from: $gel-grid-margin-change) {
       #{sass-tools.$padding-left}: sass-tools.double(sass-tools.$gel-spacing-unit);
       #{sass-tools.$padding-right}: sass-tools.double(sass-tools.$gel-spacing-unit);
     }
@@ -55,7 +55,7 @@ $fixed: false !default;
 }
 
 @mixin gel-wrap-1280-breakpoint() {
-  @include mq($from: $gel-grid-max-width-1280) {
+  @include mq.mq($from: $gel-grid-max-width-1280) {
     max-width: $gel-grid-max-width-1280;
 
     @if $fixed {
@@ -101,7 +101,7 @@ $fixed: false !default;
       }
     }
 
-    @include mq($from: $gel-grid-gutter-change) {
+    @include mq.mq($from: $gel-grid-gutter-change) {
       #{sass-tools.$margin-left}: sass-tools.double(-(sass-tools.$gel-spacing-unit));
     }
   }
@@ -135,7 +135,7 @@ $fixed: false !default;
       word-spacing: normal;
     }
 
-    @include mq($from: $gel-grid-gutter-change) {
+    @include mq.mq($from: $gel-grid-gutter-change) {
       #{sass-tools.$padding-left}: sass-tools.double(sass-tools.$gel-spacing-unit); // [2]
     }
   }
@@ -346,7 +346,7 @@ $fixed: false !default;
 
   @if $enhanced {
     @each $breakpoint in $gel-grid-breakpoints {
-      @include mq($from: '#{$gel-grid-breakpoint-namespace}#{$breakpoint}') {
+      @include mq.mq($from: '#{$gel-grid-breakpoint-namespace}#{$breakpoint}') {
         @include _gel-widths($gel-grid-columns, $breakpoint);
       }
     }
@@ -354,7 +354,7 @@ $fixed: false !default;
     @if $gel-grid-1280-toggle-class != null {
       .#{$gel-grid-1280-toggle-class} {
         @each $breakpoint in $gel-grid-breakpoints--1280 {
-          @include mq($from: '#{$gel-grid-breakpoint-namespace}#{$breakpoint}') {
+          @include mq.mq($from: '#{$gel-grid-breakpoint-namespace}#{$breakpoint}') {
             @include _gel-widths($gel-grid-columns, $breakpoint);
           }
         }
