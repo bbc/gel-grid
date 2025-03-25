@@ -1,5 +1,5 @@
 @use 'sass-mq/mq' as *;
-@use 'gel-sass-tools/sass-tools' as *;
+@use 'gel-sass-tools/sass-tools';
 @use 'settings' as *;
 @use 'sass:map';
 @use 'sass:math';
@@ -24,8 +24,8 @@ $fixed: false !default;
   @if $core {
     margin: 0 auto;
     max-width: $gel-grid-max-width-1008;
-    #{$padding-right}: $gel-spacing-unit;
-    #{$padding-left}: $gel-spacing-unit;
+    #{sass-tools.$padding-right}: sass-tools.$gel-spacing-unit;
+    #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit;
 
     @if $fixed {
       width: #{$gel-grid-max-width-1008}; // [1]
@@ -38,8 +38,8 @@ $fixed: false !default;
     }
 
     @include mq($from: $gel-grid-margin-change) {
-      #{$padding-left}: double($gel-spacing-unit);
-      #{$padding-right}: double($gel-spacing-unit);
+      #{sass-tools.$padding-left}: sass-tools.double(sass-tools.$gel-spacing-unit);
+      #{sass-tools.$padding-right}: sass-tools.double(sass-tools.$gel-spacing-unit);
     }
 
     @if $gel-grid-enable--1280-breakpoint {
@@ -75,18 +75,18 @@ $fixed: false !default;
 // @author Shaun Bent
 //
 @mixin gel-layout() {
-  direction: flip(ltr, rtl);
+  direction: sass-tools.flip(ltr, rtl);
   list-style: none; // [1]
-  text-align: flip(left, right);
+  text-align: sass-tools.flip(left, right);
 
   @if $enhanced {
     display: flex;
     flex-flow: row wrap;
     flex-grow: 1;
-    #{$margin-right}: 0; // [2]
-    #{$margin-left}: -$gel-spacing-unit;
-    #{$padding-right}: 0; // [2]
-    #{$padding-left}: 0; // [2]
+    #{sass-tools.$margin-right}: 0; // [2]
+    #{sass-tools.$margin-left}: -(sass-tools.$gel-spacing-unit);
+    #{sass-tools.$padding-right}: 0; // [2]
+    #{sass-tools.$padding-left}: 0; // [2]
 
     @if $gel-grid-enable--whitespace-fix {
       letter-spacing: -0.31em;
@@ -102,7 +102,7 @@ $fixed: false !default;
     }
 
     @include mq($from: $gel-grid-gutter-change) {
-      #{$margin-left}: double(-$gel-spacing-unit);
+      #{sass-tools.$margin-left}: sass-tools.double(-(sass-tools.$gel-spacing-unit));
     }
   }
 }
@@ -120,9 +120,9 @@ $fixed: false !default;
   @if $enhanced {
     width: 100%;
     display: inline-block; // [1]
-    #{$padding-left}: $gel-spacing-unit; // [2]
+    #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit; // [2]
 
-    text-align: flip(left, right); // [3]
+    text-align: sass-tools.flip(left, right); // [3]
     vertical-align: top; // [4]
 
     @if $gel-grid-enable--box-sizing {
@@ -136,7 +136,7 @@ $fixed: false !default;
     }
 
     @include mq($from: $gel-grid-gutter-change) {
-      #{$padding-left}: double($gel-spacing-unit); // [2]
+      #{sass-tools.$padding-left}: sass-tools.double(sass-tools.$gel-spacing-unit); // [2]
     }
   }
 }
@@ -171,12 +171,12 @@ $fixed: false !default;
      * Layouts with no gutters.
      */
   .#{$gel-grid-namespace}layout--flush {
-    #{$margin-left}: 0;
+    #{sass-tools.$margin-left}: 0;
   }
 
   .#{$gel-grid-namespace}layout--flush {
     > .#{$gel-grid-namespace}layout__item {
-      #{$padding-left}: 0;
+      #{sass-tools.$padding-left}: 0;
     }
   }
 
@@ -190,8 +190,8 @@ $fixed: false !default;
 
   .#{$gel-grid-namespace}layout--rev {
     .#{$gel-grid-flexbox-feature-detection-class} & {
-      direction: flip(rtl, ltr);
-      text-align: flip(left, right);
+      direction: sass-tools.flip(rtl, ltr);
+      text-align: sass-tools.flip(left, right);
     }
   }
 
@@ -199,8 +199,8 @@ $fixed: false !default;
     .#{$gel-grid-flexbox-feature-detection-class} & {
       > .#{$gel-grid-namespace}layout__item,
       > %#{$gel-grid-namespace}layout__item {
-        direction: flip(ltr, rtl);
-        text-align: flip(left, right);
+        direction: sass-tools.flip(ltr, rtl);
+        text-align: sass-tools.flip(left, right);
       }
     }
   }
@@ -235,13 +235,13 @@ $fixed: false !default;
      * Make the layout items fill up from the right hand side
      */
   .#{$gel-grid-namespace}layout--right {
-    text-align: flip(right, left);
+    text-align: sass-tools.flip(right, left);
     justify-content: flex-end;
   }
 
   .#{$gel-grid-namespace}layout--right {
     > .#{$gel-grid-namespace}layout__item {
-      text-align: flip(left, right);
+      text-align: sass-tools.flip(left, right);
     }
   }
 
@@ -255,7 +255,7 @@ $fixed: false !default;
 
   .#{$gel-grid-namespace}layout--center {
     > .#{$gel-grid-namespace}layout__item {
-      text-align: flip(left, right);
+      text-align: sass-tools.flip(left, right);
     }
   }
 
