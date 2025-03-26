@@ -79,12 +79,13 @@ If compiling from the command line you can specify:
 sass --load-path=node_modules/ <options>
 ```
 
-whereas within nodejs you can call compile ot compileAsync:
+With nodejs you can call `compile` or `compileAsync`:
 ```js
 await sass.compileAsync(file, { loadPaths: ['./node_modules'] })
 ```
 
-This ensures the dependencies required by this module can be loaded correctly.
+This ensures the dependencies can be loaded correctly.
+
 
 ## Usage
 
