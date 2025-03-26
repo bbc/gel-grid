@@ -8,7 +8,7 @@
 
 v7.0.0 of GEL Grid implements the [@use](https://sass-lang.com/documentation/at-rules/use/) and [@forward](https://sass-lang.com/documentation/at-rules/forward/) approach and removes [@import](https://sass-lang.com/documentation/at-rules/import/).
 
-This has a number of consequences, but mostly the impact relates to how other modules are now loaded in and how to access variables. Namespaces now come into play, so please read the sass documention linked to above.
+This has a number of consequences; how modules are loaded, and how to access variables. Namespaces now come into play, so please read the sass documention links above to learn more.
 
 For usage of GEL Grid prior to v7.0.0 please reference the [v6.3.0 readme](https://github.com/bbc/gel-grid/tree/6.3.0).
 
