@@ -1,11 +1,16 @@
 <h1 align="center">GEL Grid</h1>
 <p align="center">
-  <a href="https://travis-ci.org/bbc/gel-grid" target="_blank"><img src="https://travis-ci.org/bbc/gel-grid.svg?branch=master"></a>
-</p>
-<p align="center">
     A flexible code implementation of the GEL Grid.<br />
     Forms part of the <a href="https://github.com/bbc/gel-foundations" target="_blank"><b>GEL Foundations</b></a>
 </p>
+
+## Breaking Change: v7.0.0
+
+v7.0.0 of GEL Grid implements the [@use](https://sass-lang.com/documentation/at-rules/use/) and [@forward](https://sass-lang.com/documentation/at-rules/forward/) approach and removes [@import](https://sass-lang.com/documentation/at-rules/import/).
+
+This has a number of consequences, but mostly the impact relates to how other modules are now loaded in and how to access variables. Namespaces now come into play, so please read the sass documention linked to above.
+
+For usage of GEL Grid prior to v7.0.0 please reference the [v6.3.0 readme](https://github.com/bbc/gel-grid/tree/6.3.0).
 
 ## What is this?
 
@@ -25,14 +30,16 @@ It can used in two forms, by simply adding the relevant classes to your markup:
 
 Or using a Sass mixin:
 
-```sass
+```scss
+@use 'gel-grid/grid';
+
 .my-component {
-    @include gel-layout;
+    @include grid.gel-layout;
 }
 
 .my-component__item {
-    @include gel-layout-item;
-    @include gel-columns(1/2);
+    @include grid.gel-layout-item;
+    @include grid.gel-columns(1/2);
 }
 ```
 
@@ -50,14 +57,12 @@ $ npm install --save gel-grid
 
 ```sass
 // your-app/main.scss
-@import 'node_modules/gel-sass-tools/sass-tools';
-@import 'node_modules/sass-mq/mq';
-@import 'node_modules/gel-grid/grid';
+@use 'gel-grid/grid';
 ```
 
 ### Install manually
 
-You can install this component manually by downloading the content of this Git repo into your project and use a Sass @import to include it in your project.
+You can install this component manually by downloading the content of this Git repo into your project and use a Sass @use to include it in your project.
 
 > **Note:** you will manually need to manage the dependencies below, without these this component will fail to compile.
 
@@ -65,23 +70,32 @@ You can install this component manually by downloading the content of this Git r
 
 If you require just the built css, it is automatically built to the [gel-grid.css](https://github.com/bbc/gel-grid.css) repository.
 
-## Dependencies
+### Loadpaths
 
-In order to use the component you will need the following components available:
+Because this module depends on other modules, [GEL Sass Tools](https://github.com/bbc/gel-sass-tools) and [Sass MQ](https://github.com/sass-mq/sass-mq), when compiling your Sass it needs to know where find the referenced modules. It does this via a [loadPath](https://sass-lang.com/documentation/at-rules/use/#load-paths).
 
-- [GEL Sass Tools](https://github.com/bbc/gel-sass-tools)
-- [Sass MQ](https://github.com/sass-mq/sass-mq)
+If compiling from the command line you can specify:
+```
+sass --load-path=node_modules/ <options>
+```
+
+whereas within nodejs you can call compile ot compileAsync:
+```js
+await sass.compileAsync(file, { loadPaths: ['./node_modules'] })
+```
+
+This ensures the dependencies required by this module can be loaded correctly.
 
 ## Usage
 
-A collection of grid utility classes can be output by defining `$gel-grid-enable--markup-output: true;` before you `@import` the main grid partial.
+A collection of grid utility classes can be output by defining `$gel-grid-enable--markup-output: true` when you `@use` the main grid partial.
 
 **Example:**
 
 ```scss
-$gel-grid-enable--markup-output: true;
-
-@import "gel-grid/grid";
+@use 'gel-grid/grid' with (
+  $gel-grid-enable--markup-output: true,
+);
 ```
 
 This will allow you to create grids using specific markup within your page. With the grid markup enabled, its possible to create grids like so:
@@ -174,17 +188,20 @@ The GEL grid component exposes a collection of Sass Mixins which can be called w
 **Example**
 
 ```scss
+@use 'gel-grid/grid';
+@use 'sass-mq/mq';
+
 .my-component {
-    @include gel-layout;
+    @include grid.gel-layout;
 }
 
 .my-component__item {
-    @include gel-layout-item;
-    @include gel-columns(1/2);
+    @include grid.gel-layout-item;
+    @include grid.gel-columns(1/2);
 
     @if $enhanced {
-        @include mq($from: gel-bp-m) {
-            @include gel-columns(1/4);
+        @include mq.mq($from: gel-bp-m) {
+            @include grid.gel-columns(1/4);
         }
     }
 }

@@ -1,5 +1,4 @@
-@use 'sass-mq/mq' as *;
-@use 'gel-sass-tools/sass-tools' as *;
+@use 'gel-sass-tools/sass-tools';
 @use 'sass:list';
 
 ///*------------------------------------*\
@@ -18,7 +17,7 @@
 // @type String
 // @link http://bit.ly/1Z6hPfd
 //
-$gel-grid-namespace: $gel-namespace !default;
+$gel-grid-namespace: sass-tools.$gel-namespace !default;
 
 // The prefix applied to all GEL breakpoints used by Sass MQ. By default this
 // inherits from the default gel-breakpoint-prefix: `gel-bp-`.
@@ -26,7 +25,7 @@ $gel-grid-namespace: $gel-namespace !default;
 // @type String
 // @link http://bit.ly/1nxxE0p
 //
-$gel-grid-breakpoint-namespace: $gel-breakpoint-prefix !default;
+$gel-grid-breakpoint-namespace: sass-tools.$gel-breakpoint-prefix !default;
 
 // Not all pages or products will be using 1280px grid, you can conditional
 // wrap 1280px grid styles in a class so they only apply if 1280px is required
