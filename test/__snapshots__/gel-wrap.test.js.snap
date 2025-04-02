@@ -2,11 +2,11 @@
 
 exports[`gel-wrap() adds box-sizing properties when box-sizing is enabled 1`] = `
 ".gel-wrap {
+  box-sizing: border-box;
   margin: 0 auto;
   max-width: 1008px;
   padding-right: 8px;
   padding-left: 8px;
-  box-sizing: border-box;
 }
 @media (min-width: 25em) {
   .gel-wrap {
