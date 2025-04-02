@@ -1,3 +1,6 @@
+$gel-grid-enable--markup-output: true;
+$rtl: true;
+
 /*------------------------------------*\
     # GEL DEMO
 \*------------------------------------*/
@@ -9,10 +12,7 @@
 @forward 'base/reset';
 @forward 'base/page';
 
-@import '../../bower_components/bbc-grandstand/grandstand';
-
-$gel-grid-enable--markup-output: true;
-@import '../../../../grid';
+@forward '../../../grid';
 
 @forward 'object/button';
 

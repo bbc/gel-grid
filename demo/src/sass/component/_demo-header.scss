@@ -1,14 +1,19 @@
+@use 'gel-sass-tools/sass-tools';
+@use 'sass-mq/mq';
+@use 'settings/global';
+@use '../../../../grid';
+
 /*------------------------------------*\
     # DEMO HEADER
 \*------------------------------------*/
 
 .gel-c-demo-header {
-    margin-bottom: double($gel-spacing-unit);
+    margin-bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
 }
 
 .gel-c-demo-header__github-link {
     display: block;
-    margin: $gel-spacing-unit 0;
+    margin: sass-tools.$gel-spacing-unit 0;
 
     object {
         max-width: 72px;
@@ -17,19 +22,19 @@
 }
 
 .gel-c-demo-header__banner {
-    border-top: 1px solid $gel-color--alto;
-	border-bottom: 1px solid $gel-color--alto;
-    padding: $gel-alt-spacing-unit 0;
+    border-top: 1px solid global.$gel-color--alto;
+	border-bottom: 1px solid global.$gel-color--alto;
+    padding: sass-tools.$gel-alt-spacing-unit 0;
 }
 
 .gel-c-demo-header__brand {
     display: block;
-    margin-bottom: $gel-alt-spacing-unit;
+    margin-bottom: sass-tools.$gel-alt-spacing-unit;
 
-    @include mq($from: 460px) {
-        float: flip(left, right);
+    @include mq.mq($from: 460px) {
+        float: sass-tools.flip(left, right);
         margin-bottom: 0;
-        padding: halve($gel-alt-spacing-unit) 0;
+        padding: sass-tools.halve(sass-tools.$gel-alt-spacing-unit) 0;
     }
 }
 
@@ -48,13 +53,13 @@
 }
 
 .gel-c-demo-header__brand-beta {
-    padding: 1px halve($gel-spacing-unit);
+    padding: 1px sass-tools.halve(sass-tools.$gel-spacing-unit);
 
     font-style: normal;
     font-weight: bold;
 
-    color: $gel-color--white;
-    background: $gel-color--orange;
+    color: global.$gel-color--white;
+    background: global.$gel-color--orange;
 
     vertical-align: top;
 }
@@ -63,16 +68,16 @@
     display: block;
     width: 100%;
 
-    @include mq($from: 460px) {
-        float: flip(right, left);
+    @include mq.mq($from: 460px) {
+        float: sass-tools.flip(right, left);
         width: auto;
     }
 }
 
 .gel-c-demo-header__intro {
-    margin: double($gel-spacing-unit) 0;
+    margin: sass-tools.double(sass-tools.$gel-spacing-unit) 0;
 
-    @include mq($from: gel-bp-l) {
-        margin: quadruple($gel-spacing-unit) 0;
+    @include mq.mq($from: gel-bp-l) {
+        margin: sass-tools.quadruple(sass-tools.$gel-spacing-unit) 0;
     }
 }

@@ -1,0 +1,23 @@
+$gel-grid-enable--markup-output: true;
+
+/*------------------------------------*\
+    # GEL DEMO
+\*------------------------------------*/
+
+@forward 'settings/global';
+
+@forward 'base/box-sizing';
+@forward 'base/normalize';
+@forward 'base/reset';
+@forward 'base/page';
+
+@forward '../../../grid';
+
+@forward 'object/button';
+
+@forward 'component/demo-header';
+@forward 'component/demo-controls';
+@forward 'component/grid-controls';
+@forward 'component/grid-demo';
+
+@forward 'utilities/float';

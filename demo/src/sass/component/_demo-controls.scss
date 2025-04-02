@@ -1,3 +1,8 @@
+@use 'gel-sass-tools/sass-tools';
+@use 'sass-mq/mq';
+@use 'settings/global';
+@use '../../../../grid';
+
 /*------------------------------------*\
     # DEMO CONTROLS
 \*------------------------------------*/
@@ -6,32 +11,32 @@
     position: relative;
 
     margin-top: 0;
-    margin-right: -$gel-spacing-unit;
-    margin-left: -$gel-spacing-unit;
-    padding: $gel-spacing-unit;
+    margin-right: -(sass-tools.$gel-spacing-unit);
+    margin-left: -(sass-tools.$gel-spacing-unit);
+    padding: sass-tools.$gel-spacing-unit;
 
-    background-color: $gel-color--orange;
-    color: $gel-color--white;
+    background-color: global.$gel-color--orange;
+    color: global.$gel-color--white;
 
-    @include mq($from: gel-bp-s) {
-        margin-right: double(-$gel-spacing-unit);
-        margin-left: double(-$gel-spacing-unit);
-        padding: double($gel-spacing-unit);
+    @include mq.mq($from: gel-bp-s) {
+        margin-right: sass-tools.double(-(sass-tools.$gel-spacing-unit));
+        margin-left: sass-tools.double(-(sass-tools.$gel-spacing-unit));
+        padding: sass-tools.double(sass-tools.$gel-spacing-unit);
     }
 
-    @include mq($from: gel-bp-l) {
-        margin: 0 0 quadruple($gel-spacing-unit);
+    @include mq.mq($from: gel-bp-l) {
+        margin: 0 0 sass-tools.quadruple(sass-tools.$gel-spacing-unit);
     }
 }
 
 .gel-c-demo-controls__options {
-    margin-top: $gel-spacing-unit;
+    margin-top: sass-tools.$gel-spacing-unit;
 
-    @include mq($from: gel-bp-m) {
+    @include mq.mq($from: gel-bp-m) {
         margin-bottom: 0;
         position: absolute;
-        bottom: double($gel-spacing-unit);
-        #{$right}: double($gel-spacing-unit);
+        bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
+        #{sass-tools.$right}: sass-tools.double(sass-tools.$gel-spacing-unit);
     }
 }
 
@@ -51,5 +56,5 @@
 }
 
 .gel-c-demo-controls__option + .gel-c-demo-controls__option {
-    #{$margin-left}: $gel-spacing-unit;
+    #{sass-tools.$margin-left}: sass-tools.$gel-spacing-unit;
 }

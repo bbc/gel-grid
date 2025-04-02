@@ -1,3 +1,8 @@
+@use 'gel-sass-tools/sass-tools';
+@use 'sass-mq/mq';
+@use 'settings/global';
+@use '../../../../grid';
+
 .gel-o-button,
 .gel-o-button:visited {
     position: relative;
@@ -6,19 +11,19 @@
 
     margin: 0;
     border: 0;
-    border: 1px solid $gel-color--tundora;
-    padding: double($gel-spacing-unit);
+    border: 1px solid global.$gel-color--tundora;
+    padding: sass-tools.double(sass-tools.$gel-spacing-unit);
 
-    color: $gel-color--white;
+    color: global.$gel-color--white;
     text-align: center;
     text-decoration: none;
     line-height: 1.2;
 
-    background-color: $gel-color--tundora;
+    background-color: global.$gel-color--tundora;
     appearance: none;
     cursor: pointer;
 
-    @include mq($from: gel-bp-xs) {
+    @include mq.mq($from: gel-bp-xs) {
         min-width: 190px;
     }
 
@@ -30,13 +35,9 @@
 
     &:active {
         top: 1px;
-        background-color: $gel-color--orange;
-        border-color: $gel-color--orange;
+        background-color: global.$gel-color--orange;
+        border-color: global.$gel-color--orange;
     }
-
-    /*.gel-icon--inline {
-        margin-right:$gel-spacing-unit;
-    }*/
 }
 
 /**
@@ -44,12 +45,12 @@
  */
 .gel-o-button--clear {
     background-color: transparent;
-    color: $gel-color--tundora;
+    color: global.$gel-color--tundora;
 
     &:focus,
     &:hover {
         background-color: transparent;
-        border-color: $gel-color--tundora;
+        border-color: global.$gel-color--tundora;
     }
 
     &:active {

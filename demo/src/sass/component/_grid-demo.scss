@@ -1,16 +1,21 @@
+@use 'gel-sass-tools/sass-tools';
+@use 'sass-mq/mq';
+@use 'settings/global';
+@use '../../../../grid';
+
 /*------------------------------------*\
     # GRID DEMO
 \*------------------------------------*/
 
 .gel-c-grid-demo-section {
-    margin-top: double($gel-spacing-unit);
-    border-top: 1px solid $gel-color--alto;
-    padding-top: double($gel-spacing-unit);
+    margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
+    border-top: 1px solid global.$gel-color--alto;
+    padding-top: sass-tools.double(sass-tools.$gel-spacing-unit);
 }
 
 .gel-c-grid-demo__summary {
-    margin-top: halve($gel-spacing-unit);
-    color: $gel-color--cod-gray;
+    margin-top: sass-tools.halve(sass-tools.$gel-spacing-unit);
+    color: global.$gel-color--cod-gray;
 }
 
 /**
@@ -18,13 +23,13 @@
  */
 .gel-c-grid-demo-item {
     width: 100%;
-    padding: $gel-spacing-unit;
+    padding: sass-tools.$gel-spacing-unit;
 
     background-color: #d4e7eb;
-    color: $gel-color--black;
+    color: global.$gel-color--black;
 
-    @include mq($from: gel-bp-s) {
-        padding: double($gel-spacing-unit);
+    @include mq.mq($from: gel-bp-s) {
+        padding: sass-tools.double(sass-tools.$gel-spacing-unit);
     }
 }
 
@@ -44,31 +49,17 @@
  * A basic GEL Promo pattern
  */
 .gel-c-grid-demo-promo {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
 
 .gel-c-grid-demo-promo__image {
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
     flex: 1 1 auto;
 }
 
 .gel-c-grid-demo-promo__body {
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-flex-flow: column wrap;
-    -ms-flex-flow: column wrap;
     flex-flow: column wrap;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    -webkit-justify-content: space-between;
-    -moz-justify-content: space-between;
     justify-content: space-between;
 }
