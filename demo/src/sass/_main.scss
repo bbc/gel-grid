@@ -14,7 +14,7 @@
 $gel-grid-enable--markup-output: true;
 @import '../../../../grid';
 
-@import 'object.button';
+@import 'object/button';
 
 @forward 'component/demo-header';
 @forward 'component/demo-controls';
