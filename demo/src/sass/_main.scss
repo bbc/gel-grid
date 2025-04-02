@@ -2,7 +2,7 @@
     # GEL DEMO
 \*------------------------------------*/
 
-@import 'settings.global';
+@forward 'settings/global';
 
 @forward 'base/box-sizing';
 @forward 'base/normalize';
@@ -14,7 +14,7 @@
 $gel-grid-enable--markup-output: true;
 @import '../../../../grid';
 
-@import 'object/button';
+@forward 'object/button';
 
 @forward 'component/demo-header';
 @forward 'component/demo-controls';
