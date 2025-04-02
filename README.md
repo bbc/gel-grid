@@ -200,10 +200,8 @@ The GEL grid component exposes a collection of Sass Mixins which can be called w
     @include grid.gel-layout-item;
     @include grid.gel-columns(1/2);
 
-    @if $enhanced {
-        @include mq.mq($from: gel-bp-m) {
-            @include grid.gel-columns(1/4);
-        }
+    @include mq.mq($from: gel-bp-m) {
+        @include grid.gel-columns(1/4);
     }
 }
 ```

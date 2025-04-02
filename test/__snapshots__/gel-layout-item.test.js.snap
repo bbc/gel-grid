@@ -2,11 +2,11 @@
 
 exports[`gel-layout-item() creates a single layout group/row, this wraps individual layout items 1`] = `
 ".gel-layout-item {
-  width: 100%;
   display: inline-block;
   padding-left: 8px;
   text-align: left;
   vertical-align: top;
+  width: 100%;
 }
 @media (min-width: 37.5em) {
   .gel-layout-item {

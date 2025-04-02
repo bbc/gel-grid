@@ -8,40 +8,31 @@
 //    # GEL GRID - TOOLS
 //\*------------------------------------*/
 
-// define some output control variables
-$enhanced: true !default;
-
 // Grid container, used to wrap all grid elements and apply the correct maximum widths
-//
-// 1. IE8 doesn't apply border-box box-sizing logic correctly on (min|max)-(width|height) properties.
-//    As we serve IE8 a none responsive layout, lets just use the `width` property
 //
 // @author Shaun Bent
 //
 @mixin gel-wrap() {
+  @if settings.$gel-grid-enable--box-sizing {
+    box-sizing: border-box;
+  }
   margin: 0 auto;
   max-width: settings.$gel-grid-max-width-1008;
   #{sass-tools.$padding-right}: sass-tools.$gel-spacing-unit;
   #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit;
 
-  @if $enhanced {
-    @if settings.$gel-grid-enable--box-sizing {
-      box-sizing: border-box;
-    }
+  @include mq.mq($from: settings.$gel-grid-margin-change) {
+    #{sass-tools.$padding-left}: sass-tools.double(sass-tools.$gel-spacing-unit);
+    #{sass-tools.$padding-right}: sass-tools.double(sass-tools.$gel-spacing-unit);
+  }
 
-    @include mq.mq($from: settings.$gel-grid-margin-change) {
-      #{sass-tools.$padding-left}: sass-tools.double(sass-tools.$gel-spacing-unit);
-      #{sass-tools.$padding-right}: sass-tools.double(sass-tools.$gel-spacing-unit);
-    }
-
-    @if settings.$gel-grid-enable--1280-breakpoint {
-      @if settings.$gel-grid-1280-toggle-class != null {
-        .#{settings.$gel-grid-1280-toggle-class} & {
-          @include gel-wrap-1280-breakpoint;
-        }
-      } @else {
+  @if settings.$gel-grid-enable--1280-breakpoint {
+    @if settings.$gel-grid-1280-toggle-class != null {
+      .#{settings.$gel-grid-1280-toggle-class} & {
         @include gel-wrap-1280-breakpoint;
       }
+    } @else {
+      @include gel-wrap-1280-breakpoint;
     }
   }
 }
@@ -64,34 +55,31 @@ $enhanced: true !default;
 //
 @mixin gel-layout() {
   direction: sass-tools.flip(ltr, rtl);
+  display: flex;
+  flex-flow: row wrap;
+  flex-grow: 1;
   list-style: none; // [1]
+  #{sass-tools.$margin-right}: 0; // [2]
+  #{sass-tools.$margin-left}: -(sass-tools.$gel-spacing-unit);
+  #{sass-tools.$padding-right}: 0; // [2]
+  #{sass-tools.$padding-left}: 0; // [2]
   text-align: sass-tools.flip(left, right);
 
-  @if $enhanced {
-    display: flex;
-    flex-flow: row wrap;
-    flex-grow: 1;
-    #{sass-tools.$margin-right}: 0; // [2]
-    #{sass-tools.$margin-left}: -(sass-tools.$gel-spacing-unit);
-    #{sass-tools.$padding-right}: 0; // [2]
-    #{sass-tools.$padding-left}: 0; // [2]
+  @if settings.$gel-grid-enable--whitespace-fix {
+    letter-spacing: -0.31em;
+    text-rendering: optimizespeed;
+  }
 
-    @if settings.$gel-grid-enable--whitespace-fix {
-      letter-spacing: -0.31em;
-      text-rendering: optimizespeed;
-    }
-
-    @if settings.$gel-grid-enable--whitespace-fix {
-      @at-root {
-        #{&} {
-          word-spacing: -0.43em;
-        }
+  @if settings.$gel-grid-enable--whitespace-fix {
+    @at-root {
+      #{&} {
+        word-spacing: -0.43em;
       }
     }
+  }
 
-    @include mq.mq($from: settings.$gel-grid-gutter-change) {
-      #{sass-tools.$margin-left}: sass-tools.double(-(sass-tools.$gel-spacing-unit));
-    }
+  @include mq.mq($from: settings.$gel-grid-gutter-change) {
+    #{sass-tools.$margin-left}: sass-tools.double(-(sass-tools.$gel-spacing-unit));
   }
 }
 
@@ -105,27 +93,23 @@ $enhanced: true !default;
 // @author  Shaun Bent
 //
 @mixin gel-layout-item() {
-  @if $enhanced {
-    width: 100%;
-    display: inline-block; // [1]
-    #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit; // [2]
+  @if settings.$gel-grid-enable--box-sizing {
+    box-sizing: border-box;
+  }
+  display: inline-block; // [1]
+  #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit; // [2]
+  text-align: sass-tools.flip(left, right); // [3]
+  vertical-align: top; // [4]
+  width: 100%;
 
-    text-align: sass-tools.flip(left, right); // [3]
-    vertical-align: top; // [4]
+  @if settings.$gel-grid-enable--whitespace-fix {
+    letter-spacing: normal;
+    text-rendering: auto;
+    word-spacing: normal;
+  }
 
-    @if settings.$gel-grid-enable--box-sizing {
-      box-sizing: border-box;
-    }
-
-    @if settings.$gel-grid-enable--whitespace-fix {
-      letter-spacing: normal;
-      text-rendering: auto;
-      word-spacing: normal;
-    }
-
-    @include mq.mq($from: settings.$gel-grid-gutter-change) {
-      #{sass-tools.$padding-left}: sass-tools.double(sass-tools.$gel-spacing-unit); // [2]
-    }
+  @include mq.mq($from: settings.$gel-grid-gutter-change) {
+    #{sass-tools.$padding-left}: sass-tools.double(sass-tools.$gel-spacing-unit); // [2]
   }
 }
 
@@ -135,29 +119,29 @@ $enhanced: true !default;
 //
 @mixin gel-output-grid() {
   /**
-     * Grid containing element
-     */
+    * Grid containing element
+    */
   .#{settings.$gel-grid-namespace}wrap {
     @include gel-wrap;
   }
 
   /**
-     * A grid row
-     */
+    * A grid row
+    */
   .#{settings.$gel-grid-namespace}layout {
     @include gel-layout;
   }
 
   /**
-     * A single grid item
-     */
+    * A single grid item
+    */
   .#{settings.$gel-grid-namespace}layout__item {
     @include gel-layout-item;
   }
 
   /**
-     * Layouts with no gutters.
-     */
+    * Layouts with no gutters.
+    */
   .#{settings.$gel-grid-namespace}layout--flush {
     #{sass-tools.$margin-left}: 0;
   }
@@ -169,9 +153,9 @@ $enhanced: true !default;
   }
 
   /**
-     * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
-     * markup will display in order 4, 3, 2, 1 on your page
-     */
+    * Reversed rendered order of layout items, e.g. items 1, 2, 3, 4 in your
+    * markup will display in order 4, 3, 2, 1 on your page
+    */
   .#{settings.$gel-grid-namespace}layout--rev {
     flex-direction: row-reverse;
   }
@@ -194,8 +178,8 @@ $enhanced: true !default;
   }
 
   /**
-     * Align layout items to the vertical centers of each other
-     */
+    * Align layout items to the vertical centers of each other
+    */
   .#{settings.$gel-grid-namespace}layout--middle {
     align-items: center;
   }
@@ -207,8 +191,8 @@ $enhanced: true !default;
   }
 
   /**
-     * Align layout items to the vertical bottoms of each other
-     */
+    * Align layout items to the vertical bottoms of each other
+    */
   .#{settings.$gel-grid-namespace}layout--bottom {
     align-items: flex-end;
   }
@@ -220,8 +204,8 @@ $enhanced: true !default;
   }
 
   /**
-     * Make the layout items fill up from the right hand side
-     */
+    * Make the layout items fill up from the right hand side
+    */
   .#{settings.$gel-grid-namespace}layout--right {
     text-align: sass-tools.flip(right, left);
     justify-content: flex-end;
@@ -234,8 +218,8 @@ $enhanced: true !default;
   }
 
   /**
-     * Make the layout items fill up from the center outward
-     */
+    * Make the layout items fill up from the center outward
+    */
   .#{settings.$gel-grid-namespace}layout--center {
     text-align: center;
     justify-content: center;
@@ -248,8 +232,8 @@ $enhanced: true !default;
   }
 
   /**
-     * Cause layout items to take up a non-explicit amount of width
-     */
+    * Cause layout items to take up a non-explicit amount of width
+    */
   .#{settings.$gel-grid-namespace}layout--auto {
     > .#{settings.$gel-grid-namespace}layout__item {
       width: auto;
@@ -257,10 +241,10 @@ $enhanced: true !default;
   }
 
   /**
-     * Disable the flexbox grid
-     *
-     * 1. Prevents floated layout items from shrinking the layout
-     */
+    * Disable the flexbox grid
+    *
+    * 1. Prevents floated layout items from shrinking the layout
+    */
   .#{settings.$gel-grid-namespace}layout--no-flex {
     min-width: 100%; // [1]
   }
@@ -268,54 +252,48 @@ $enhanced: true !default;
   .#{settings.$gel-grid-namespace}layout--no-flex {
     &,
     > .#{settings.$gel-grid-namespace}layout__item {
-      display: block;
-
-      @if $enhanced {
-        display: inline-block;
-      }
+      display: inline-block;
     }
   }
 
-  @if $enhanced {
-    /**
-         * Force items to be of equal height
-         */
-    .#{settings.$gel-grid-namespace}layout--equal {
-      > .#{settings.$gel-grid-namespace}layout__item {
-        display: flex;
-      }
+  /**
+    * Force items to be of equal height
+    */
+  .#{settings.$gel-grid-namespace}layout--equal {
+    > .#{settings.$gel-grid-namespace}layout__item {
+      display: flex;
     }
+  }
 
-    /**
-         * Allow items to devide the space equally between the number of items
-         */
-    .#{settings.$gel-grid-namespace}layout--fit {
-      > .#{settings.$gel-grid-namespace}layout__item {
-        width: auto;
-        flex: 1 1 auto;
-      }
+  /**
+    * Allow items to devide the space equally between the number of items
+    */
+  .#{settings.$gel-grid-namespace}layout--fit {
+    > .#{settings.$gel-grid-namespace}layout__item {
+      width: auto;
+      flex: 1 1 auto;
     }
+  }
 
-    /**
-         * Align a single grid item to the top
-         */
-    .#{settings.$gel-grid-namespace}layout__item--top {
-      align-self: flex-start;
-    }
+  /**
+    * Align a single grid item to the top
+    */
+  .#{settings.$gel-grid-namespace}layout__item--top {
+    align-self: flex-start;
+  }
 
-    /**
-         * Align a single grid item to the center
-         */
-    .#{settings.$gel-grid-namespace}layout__item--center {
-      align-self: center;
-    }
+  /**
+        * Align a single grid item to the center
+        */
+  .#{settings.$gel-grid-namespace}layout__item--center {
+    align-self: center;
+  }
 
-    /**
-         * Align a single grid item to the bottom
-         */
-    .#{settings.$gel-grid-namespace}layout__item--bottom {
-      align-self: flex-end;
-    }
+  /**
+    * Align a single grid item to the bottom
+    */
+  .#{settings.$gel-grid-namespace}layout__item--bottom {
+    align-self: flex-end;
   }
 }
 
@@ -330,19 +308,17 @@ $enhanced: true !default;
 @mixin gel-output-widths() {
   @include _gel-widths(settings.$gel-grid-columns);
 
-  @if $enhanced {
-    @each $breakpoint in settings.$gel-grid-breakpoints {
-      @include mq.mq($from: '#{settings.$gel-grid-breakpoint-namespace}#{$breakpoint}') {
-        @include _gel-widths(settings.$gel-grid-columns, $breakpoint);
-      }
+  @each $breakpoint in settings.$gel-grid-breakpoints {
+    @include mq.mq($from: '#{settings.$gel-grid-breakpoint-namespace}#{$breakpoint}') {
+      @include _gel-widths(settings.$gel-grid-columns, $breakpoint);
     }
+  }
 
-    @if settings.$gel-grid-1280-toggle-class != null {
-      .#{settings.$gel-grid-1280-toggle-class} {
-        @each $breakpoint in settings.$gel-grid-breakpoints--1280 {
-          @include mq.mq($from: '#{settings.$gel-grid-breakpoint-namespace}#{$breakpoint}') {
-            @include _gel-widths(settings.$gel-grid-columns, $breakpoint);
-          }
+  @if settings.$gel-grid-1280-toggle-class != null {
+    .#{settings.$gel-grid-1280-toggle-class} {
+      @each $breakpoint in settings.$gel-grid-breakpoints--1280 {
+        @include mq.mq($from: '#{settings.$gel-grid-breakpoint-namespace}#{$breakpoint}') {
+          @include _gel-widths(settings.$gel-grid-columns, $breakpoint);
         }
       }
     }
