@@ -16,9 +16,9 @@ $gel-grid-enable--markup-output: true;
 
 @import 'object.button';
 
-@import 'component.demo-header';
-@import 'component.demo-controls';
-@import 'component.grid-controls';
-@import 'component.grid-demo';
+@forward 'component/demo-header';
+@forward 'component/demo-controls';
+@forward 'component/grid-controls';
+@forward 'component/grid-demo';
 
 @import 'utilities.float';
