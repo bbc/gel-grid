@@ -21,4 +21,4 @@ $gel-grid-enable--markup-output: true;
 @forward 'component/grid-controls';
 @forward 'component/grid-demo';
 
-@import 'utilities.float';
+@forward 'utilities/float';
