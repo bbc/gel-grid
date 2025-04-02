@@ -23,10 +23,8 @@
     background-color: #d4e7eb;
     color: $gel-color--black;
 
-    @if $enhanced {
-        @include mq($from: gel-bp-s) {
-            padding: double($gel-spacing-unit);
-        }
+    @include mq($from: gel-bp-s) {
+        padding: double($gel-spacing-unit);
     }
 }
 

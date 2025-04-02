@@ -18,10 +18,8 @@
     appearance: none;
     cursor: pointer;
 
-    @if $enhanced {
-        @include mq($from: gel-bp-xs) {
-            min-width: 190px;
-        }
+    @include mq($from: gel-bp-xs) {
+        min-width: 190px;
     }
 
     &:focus,

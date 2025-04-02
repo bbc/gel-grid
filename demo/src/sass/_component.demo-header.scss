@@ -26,12 +26,10 @@
     display: block;
     margin-bottom: $gel-alt-spacing-unit;
 
-    @if $enhanced {
-        @include mq($from: 460px) {
-            float: flip(left, right);
-            margin-bottom: 0;
-            padding: halve($gel-alt-spacing-unit) 0;
-        }
+    @include mq($from: 460px) {
+        float: flip(left, right);
+        margin-bottom: 0;
+        padding: halve($gel-alt-spacing-unit) 0;
     }
 }
 
@@ -65,20 +63,16 @@
     display: block;
     width: 100%;
 
-    @if $enhanced {
-        @include mq($from: 460px) {
-            float: flip(right, left);
-            width: auto;
-        }
+    @include mq($from: 460px) {
+        float: flip(right, left);
+        width: auto;
     }
 }
 
 .gel-c-demo-header__intro {
     margin: double($gel-spacing-unit) 0;
 
-    @if $enhanced {
-        @include mq($from: gel-bp-l) {
-            margin: quadruple($gel-spacing-unit) 0;
-        }
+    @include mq($from: gel-bp-l) {
+        margin: quadruple($gel-spacing-unit) 0;
     }
 }
