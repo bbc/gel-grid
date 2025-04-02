@@ -11,7 +11,7 @@ $gel-grid-enable--markup-output: true;
 @forward 'base/reset';
 @forward 'base/page';
 
-@forward '../../../grid';
+@forward '../../grid';
 
 @forward 'object/button';
 
