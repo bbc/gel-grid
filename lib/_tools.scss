@@ -11,7 +11,6 @@
 // define some output control variables
 $core: true !default;
 $enhanced: true !default;
-$fixed: false !default;
 
 // Grid container, used to wrap all grid elements and apply the correct maximum widths
 //
@@ -26,10 +25,6 @@ $fixed: false !default;
     max-width: settings.$gel-grid-max-width-1008;
     #{sass-tools.$padding-right}: sass-tools.$gel-spacing-unit;
     #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit;
-
-    @if $fixed {
-      width: #{settings.$gel-grid-max-width-1008}; // [1]
-    }
   }
 
   @if $enhanced {
@@ -57,10 +52,6 @@ $fixed: false !default;
 @mixin gel-wrap-1280-breakpoint() {
   @include mq.mq($from: settings.$gel-grid-max-width-1280) {
     max-width: settings.$gel-grid-max-width-1280;
-
-    @if $fixed {
-      width: #{settings.$gel-grid-max-width-1280}; // [1]
-    }
   }
 }
 
