@@ -4,11 +4,10 @@
   "description": "A flexible code implementation of the GEL Grid",
   "main": "_grid.scss",
   "scripts": {
-    "build": "npm run build:compressed && npm run build:expanded && npm run build:demo && npm run build:demo-rtl",
+    "build": "npm run build:compressed && npm run build:expanded && npm run build:demo",
     "build:compressed": "sass --load-path=node_modules/ --style=compressed --no-source-map src/gel-grid.scss dist/gel-grid.min.css",
     "build:expanded": "sass --load-path=node_modules/ --style=expanded --no-source-map src/gel-grid.scss dist/gel-grid.css",
-    "build:demo": "sass --load-path=node_modules/ --load-path=demo/sass --style=compressed --no-source-map demo/sass/demo.scss demo/css/demo.css",
-    "build:demo-rtl": "sass --load-path=node_modules/ --load-path=demo/sass --style=compressed --no-source-map demo/sass/demo-rtl.scss demo/css/demo-rtl.css",
+    "build:demo": "sass --load-path=node_modules/ --load-path=demo/sass --style=compressed --no-source-map demo/sass:demo/css",
     "prettier": "prettier --write '{lib/**/*,src/**/*,test/**/*,*}.{js,json,mjs,scss}'",
     "pretest": "npm run prettier",
     "test": "jest"
