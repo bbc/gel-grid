@@ -9,7 +9,6 @@
 //\*------------------------------------*/
 
 // define some output control variables
-$core: true !default;
 $enhanced: true !default;
 
 // Grid container, used to wrap all grid elements and apply the correct maximum widths
@@ -20,12 +19,10 @@ $enhanced: true !default;
 // @author Shaun Bent
 //
 @mixin gel-wrap() {
-  @if $core {
-    margin: 0 auto;
-    max-width: settings.$gel-grid-max-width-1008;
-    #{sass-tools.$padding-right}: sass-tools.$gel-spacing-unit;
-    #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit;
-  }
+  margin: 0 auto;
+  max-width: settings.$gel-grid-max-width-1008;
+  #{sass-tools.$padding-right}: sass-tools.$gel-spacing-unit;
+  #{sass-tools.$padding-left}: sass-tools.$gel-spacing-unit;
 
   @if $enhanced {
     @if settings.$gel-grid-enable--box-sizing {
@@ -331,9 +328,7 @@ $enhanced: true !default;
 // @author Shaun Bent
 //
 @mixin gel-output-widths() {
-  @if $core {
-    @include _gel-widths(settings.$gel-grid-columns);
-  }
+  @include _gel-widths(settings.$gel-grid-columns);
 
   @if $enhanced {
     @each $breakpoint in settings.$gel-grid-breakpoints {
