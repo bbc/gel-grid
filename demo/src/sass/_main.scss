@@ -4,10 +4,10 @@
 
 @import 'settings.global';
 
-@import 'base.box-sizing';
-@import 'base.normalize';
-@import 'base.reset';
-@import 'base.page';
+@forward 'base/box-sizing';
+@forward 'base/normalize';
+@forward 'base/reset';
+@forward 'base/page';
 
 @import '../../bower_components/bbc-grandstand/grandstand';
 
