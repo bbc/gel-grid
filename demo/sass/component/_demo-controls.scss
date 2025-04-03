@@ -1,60 +1,60 @@
-@use 'gel-sass-tools/sass-tools';
-@use 'sass-mq/mq';
-@use 'settings/global';
-@use '../../../grid';
+// @use 'gel-sass-tools/sass-tools';
+// @use 'sass-mq/mq';
+// @use 'settings/global';
+// @use '../../../grid';
 
-/*------------------------------------*\
-    # DEMO CONTROLS
-\*------------------------------------*/
+// /*------------------------------------*\
+//     # DEMO CONTROLS
+// \*------------------------------------*/
 
- .gel-c-demo-controls {
-    position: relative;
+//  .gel-c-demo-controls {
+//     position: relative;
 
-    margin-top: 0;
-    margin-right: -(sass-tools.$gel-spacing-unit);
-    margin-left: -(sass-tools.$gel-spacing-unit);
-    padding: sass-tools.$gel-spacing-unit;
+//     margin-top: 0;
+//     margin-right: -(sass-tools.$gel-spacing-unit);
+//     margin-left: -(sass-tools.$gel-spacing-unit);
+//     padding: sass-tools.$gel-spacing-unit;
 
-    background-color: global.$gel-color--orange;
-    color: global.$gel-color--white;
+//     background-color: global.$gel-color--orange;
+//     color: global.$gel-color--white;
 
-    @include mq.mq($from: gel-bp-s) {
-        margin-right: sass-tools.double(-(sass-tools.$gel-spacing-unit));
-        margin-left: sass-tools.double(-(sass-tools.$gel-spacing-unit));
-        padding: sass-tools.double(sass-tools.$gel-spacing-unit);
-    }
+//     @include mq.mq($from: gel-bp-s) {
+//         margin-right: sass-tools.double(-(sass-tools.$gel-spacing-unit));
+//         margin-left: sass-tools.double(-(sass-tools.$gel-spacing-unit));
+//         padding: sass-tools.double(sass-tools.$gel-spacing-unit);
+//     }
 
-    @include mq.mq($from: gel-bp-l) {
-        margin: 0 0 sass-tools.quadruple(sass-tools.$gel-spacing-unit);
-    }
-}
+//     @include mq.mq($from: gel-bp-l) {
+//         margin: 0 0 sass-tools.quadruple(sass-tools.$gel-spacing-unit);
+//     }
+// }
 
-.gel-c-demo-controls__options {
-    margin-top: sass-tools.$gel-spacing-unit;
+// .gel-c-demo-controls__options {
+//     margin-top: sass-tools.$gel-spacing-unit;
 
-    @include mq.mq($from: gel-bp-m) {
-        margin-bottom: 0;
-        position: absolute;
-        bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
-        #{sass-tools.$right}: sass-tools.double(sass-tools.$gel-spacing-unit);
-    }
-}
+//     @include mq.mq($from: gel-bp-m) {
+//         margin-bottom: 0;
+//         position: absolute;
+//         bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
+//         #{sass-tools.$right}: sass-tools.double(sass-tools.$gel-spacing-unit);
+//     }
+// }
 
-.gel-c-demo-controls__option {
-    padding: 0;
-    border: 0;
-    outline: 0;
+// .gel-c-demo-controls__option {
+//     padding: 0;
+//     border: 0;
+//     outline: 0;
 
-    color: #fff;
+//     color: #fff;
 
-    background: none;
+//     background: none;
 
-    &:focus,
-    &:hover {
-        text-decoration: underline;
-    }
-}
+//     &:focus,
+//     &:hover {
+//         text-decoration: underline;
+//     }
+// }
 
-.gel-c-demo-controls__option + .gel-c-demo-controls__option {
-    #{sass-tools.$margin-left}: sass-tools.$gel-spacing-unit;
-}
+// .gel-c-demo-controls__option + .gel-c-demo-controls__option {
+//     #{sass-tools.$margin-left}: sass-tools.$gel-spacing-unit;
+// }

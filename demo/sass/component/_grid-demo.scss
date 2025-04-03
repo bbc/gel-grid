@@ -19,33 +19,6 @@
 }
 
 /**
- * A placeholder element to demostrate grid sizing
- */
-.gel-c-grid-demo-item {
-    width: 100%;
-    padding: sass-tools.$gel-spacing-unit;
-
-    background-color: #d4e7eb;
-    color: global.$gel-color--black;
-
-    @include mq.mq($from: gel-bp-s) {
-        padding: sass-tools.double(sass-tools.$gel-spacing-unit);
-    }
-}
-
-.gel-c-grid-demo-item--fill {
-    background: repeating-linear-gradient(180deg, #d4e7eb, #d4e7eb 8px, #aec4cc 8px, #aec4cc 16px);
-}
-
-.gel-c-grid-demo-item--auto {
-    height: auto;
-}
-
-.gel-c-grid-demo-item--large {
-    height: 144px;
-}
-
-/**
  * A basic GEL Promo pattern
  */
 .gel-c-grid-demo-promo {
