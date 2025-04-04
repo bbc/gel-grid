@@ -1,6 +1,6 @@
 @use 'gel-sass-tools/sass-tools';
 @use 'sass-mq/mq';
-@use 'settings/global';
+@use 'settings';
 @use '../../../grid';
 
 .gel-o-button,
@@ -11,15 +11,15 @@
 
     margin: 0;
     border: 0;
-    border: 1px solid global.$gel-color--tundora;
+    border: 1px solid settings.$gel-color--tundora;
     padding: sass-tools.double(sass-tools.$gel-spacing-unit);
 
-    color: global.$gel-color--white;
+    color: settings.$gel-color--white;
     text-align: center;
     text-decoration: none;
     line-height: 1.2;
 
-    background-color: global.$gel-color--tundora;
+    background-color: settings.$gel-color--tundora;
     appearance: none;
     cursor: pointer;
 
@@ -35,8 +35,8 @@
 
     &:active {
         top: 1px;
-        background-color: global.$gel-color--orange;
-        border-color: global.$gel-color--orange;
+        background-color: settings.$gel-color--orange;
+        border-color: settings.$gel-color--orange;
     }
 }
 
@@ -45,12 +45,12 @@
  */
 .gel-o-button--clear {
     background-color: transparent;
-    color: global.$gel-color--tundora;
+    color: settings.$gel-color--tundora;
 
     &:focus,
     &:hover {
         background-color: transparent;
-        border-color: global.$gel-color--tundora;
+        border-color: settings.$gel-color--tundora;
     }
 
     &:active {

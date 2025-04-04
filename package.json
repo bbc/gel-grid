@@ -10,7 +10,8 @@
     "build:demo": "sass --load-path=node_modules/ --load-path=demo/sass --style=compressed --no-source-map demo/sass:demo/css",
     "prettier": "prettier --write '{lib/**/*,src/**/*,test/**/*,*}.{js,json,mjs,scss}'",
     "pretest": "npm run prettier",
-    "test": "jest"
+    "test": "jest",
+    "watch:demo": "sass --watch --load-path=node_modules/ --load-path=demo/sass --style=compressed --no-source-map demo/sass:demo/css"
   },
   "repository": {
     "type": "git",
