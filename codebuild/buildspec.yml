@@ -1,0 +1,16 @@
+version: 0.2
+
+env:
+  secrets-manager:
+    NPM_TOKEN: CodeBuild:npm
+
+phases:
+  install:
+    commands:
+      - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+      - npm ci
+
+  build:
+    commands:
+      - npm run build
+      - npm test
