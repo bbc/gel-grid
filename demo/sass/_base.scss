@@ -1,0 +1,33 @@
+@use 'settings';
+
+html {
+  box-sizing: border-box;
+  color: settings.$gel-color--tundora;
+  font-family: Helvetica, Arial, Sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a,
+a:visited {
+  color: settings.$gel-color--tundora;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.2s ease-out;
+}
+
+a:focus,
+a:hover,
+a:active {
+  color: settings.$gel-color--orange;
+  text-decoration: underline;
+}

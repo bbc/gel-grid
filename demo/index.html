@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html class="b-pw-1280" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>GEL Grid Demo | BBC GEL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        function hasTouchscreen () {
+          if ('ontouchstart' in window) {
+            return true;
+          }
+
+          if (window.hasOwnProperty && window.hasOwnProperty('ontouchstart')) {
+            return true;
+          }
+
+          if (window.DocumentTouch && document instanceof DocumentTouch) {
+            return true;
+          }
+
+          if (navigator.msMaxTouchPoints) {
+            return true;
+          }
+
+          return false;
+        };
+
+        if (!hasTouchscreen()) {
+          document.documentElement.classList.add('no-touch');
+        }
+      })();
+    </script>
+    <link rel="stylesheet" id="stylesheet" href="css/demo.css" />
+  </head>
+  <body>
+    <header class="header" role="banner">
+      <div class="masthead">
+        <div class="masthead__inner">
+          <div class="masthead-brand">
+            <a href="https://www.bbc.co.uk/gel" class="masthead-brand-link">
+              <svg viewBox="0 0 702 162">
+                <title>GEL - Global Experience Language</title>
+                <g>
+                  <rect x="399.1" y="4.2" width="4.3" height="144.4"></rect>
+                <g>
+                  <path d="M129.3,139.9c-4.6,2.4-9.8,4.5-15.6,6.3c-5.8,1.8-11.9,3.1-18.2,3.9c-6.3,0.9-12.7,1.3-19,1.3 
+                        c-11.7,0-22.3-1.7-31.6-5.2c-9.4-3.4-17.3-8.4-23.8-15c-6.5-6.5-11.5-14.4-15-23.7S1,87.8,1,76.1c0-11.4,1.8-21.8,5.5-31 
+                        c3.6-9.2,8.8-17.1,15.6-23.7c6.7-6.6,14.8-11.6,24.3-15.2c9.5-3.5,20.1-5.3,31.8-5.3c8.8,0,17.1,0.8,25.2,2.5 
+                        c8,1.7,15.4,4.1,22.1,7.4v28.7c-6.2-3.8-13-6.6-20.3-8.6C97.8,29,89.9,28,81.4,28c-10.2,0-18.9,1.9-26.1,5.7 
+                        C48.2,37.4,42.8,42.9,39,50c-3.8,7.1-5.7,15.8-5.7,26.1c0,15.6,3.9,27.6,11.7,36.1c7.8,8.4,19,12.6,33.5,12.6 
+                        c3.6,0,7.3-0.3,10.9-0.8c3.6-0.5,7.2-1.3,10.7-2.4V92.5H74.3V68h55V139.9z"></path>
+                  <path d="M148.1,4h99.4v25.9h-68.3v31.3h60.6V87h-60.6v35.6h72.1v25.9H148.1V4z"></path>
+                  <path d="M269.1,4h31.1v117.4h68.5v27.1h-99.6V4z"></path>
+                </g>
+                <g>
+                  <path d="M465.2,40.8c-1.2,0.6-2.5,1.2-4,1.6c-1.5,0.5-3.1,0.8-4.7,1c-1.6,0.2-3.3,0.3-4.9,0.3c-3,0-5.8-0.4-8.2-1.3 
+                        c-2.4-0.9-4.5-2.2-6.2-3.9c-1.7-1.7-3-3.7-3.9-6.1c-0.9-2.4-1.3-5.1-1.3-8.2c0-3,0.5-5.6,1.4-8c0.9-2.4,2.3-4.4,4-6.1 
+                        c1.7-1.7,3.8-3,6.3-3.9c2.5-0.9,5.2-1.4,8.2-1.4c2.3,0,4.4,0.2,6.5,0.7c2.1,0.4,4,1.1,5.7,1.9v7.4c-1.6-1-3.4-1.7-5.3-2.2 
+                        c-1.9-0.5-3.9-0.8-6.1-0.8c-2.6,0-4.9,0.5-6.7,1.5c-1.8,1-3.3,2.4-4.2,4.2c-1,1.8-1.5,4.1-1.5,6.7c0,4,1,7.2,3,9.3 
+                        c2,2.2,4.9,3.3,8.7,3.3c0.9,0,1.9-0.1,2.8-0.2c0.9-0.1,1.9-0.3,2.8-0.6v-7.5H451v-6.3h14.2V40.8z"></path>
+                  <path d="M478.9,43.4c-4.8,0-7.2-2.6-7.2-7.8V4h7.7V35c0,0.9,0.2,1.5,0.5,1.9c0.3,0.4,0.9,0.5,1.7,0.5 
+                        c0.4,0,0.8,0,1.2-0.1c0.4-0.1,0.8-0.2,1.1-0.4v5.7C482.6,43.1,480.9,43.4,478.9,43.4z"></path>
+                  <path d="M501,15.2c2.8,0,5.2,0.6,7.2,1.8c2,1.2,3.6,2.8,4.7,4.9c1.1,2.1,1.6,4.6,1.6,7.5c0,2.2-0.3,4.1-0.9,5.9 
+                        c-0.6,1.7-1.5,3.2-2.7,4.5c-1.2,1.3-2.6,2.2-4.3,2.9s-3.5,1-5.6,1c-2.1,0-3.9-0.3-5.6-1c-1.7-0.7-3.1-1.6-4.3-2.9 
+                        c-1.2-1.3-2.1-2.8-2.7-4.5c-0.6-1.7-0.9-3.7-0.9-5.9c0-2.9,0.5-5.4,1.6-7.5c1.1-2.1,2.7-3.8,4.7-4.9 
+                        C495.8,15.8,498.2,15.2,501,15.2z M501,37.4c1.8,0,3.2-0.7,4.2-2.1c1-1.4,1.5-3.4,1.5-5.9c0-2.5-0.5-4.5-1.5-5.9 
+                        c-1-1.4-2.4-2.1-4.2-2.1c-1.8,0-3.2,0.7-4.2,2.1c-1,1.4-1.5,3.4-1.5,5.9c0,2.5,0.5,4.5,1.5,5.9C497.8,36.7,499.2,37.4,501,37.4z"></path>
+                  <path d="M546.2,28.9c0,3.1-0.6,5.7-1.8,7.9c-1.2,2.2-2.9,3.9-5.2,5c-2.3,1.2-5,1.8-8.2,1.8c-1.7,0-3.5-0.2-5.3-0.6 
+                        c-1.8-0.4-3.6-1-5.6-1.9V4h7.7v14.3c0.9-1,2-1.8,3.2-2.4c1.2-0.5,2.5-0.8,3.9-0.8c2.3,0,4.3,0.6,6,1.7c1.7,1.1,3,2.7,3.9,4.8 
+                        C545.7,23.7,546.2,26.1,546.2,28.9z M532.9,21.5c-2,0-3.6,0.8-4.9,2.4v12.8c0.6,0.2,1.2,0.4,1.8,0.5c0.6,0.1,1.2,0.2,1.9,0.2 
+                        c2.1,0,3.8-0.7,4.9-2.1c1.1-1.4,1.7-3.4,1.7-6c0-2.5-0.5-4.4-1.4-5.8C536,22.2,534.6,21.5,532.9,21.5z"></path>
+                  <path d="M572.4,43.5c-3,0-4.9-1-5.6-3c-1.1,1-2.3,1.8-3.6,2.4s-2.7,0.8-4.3,0.8c-2.7,0-4.8-0.7-6.4-2.1 
+                        c-1.5-1.4-2.3-3.4-2.3-5.9c0-2.8,1.1-4.9,3.2-6.4c2.1-1.5,5.1-2.2,9.1-2.2c0.6,0,1.2,0,1.8,0.1c0.6,0.1,1.3,0.1,1.9,0.2v-1.2 
+                        c0-1.6-0.5-2.9-1.4-3.7c-0.9-0.8-2.3-1.2-4.2-1.2c-1.6,0-3,0.2-4.4,0.6s-2.7,1.1-4,2v-6.5c1.5-0.7,3-1.3,4.7-1.7 
+                        c1.6-0.4,3.2-0.6,4.9-0.6c3.8,0,6.7,1,8.8,2.8c2.1,1.9,3.1,4.6,3.1,8.1v10.1c0,0.6,0.1,1.1,0.3,1.4c0.2,0.3,0.6,0.4,1.1,0.4 
+                        c0.3,0,0.5,0,0.8-0.1c0.2-0.1,0.5-0.1,0.7-0.3v4.8c-0.6,0.3-1.2,0.5-2,0.7C573.9,43.4,573.1,43.5,572.4,43.5z M557.7,35 
+                        c0,2.1,1.2,3.2,3.7,3.2c1.8,0,3.4-0.7,4.8-2.2v-4.1c-0.5-0.1-1-0.2-1.5-0.2c-0.5-0.1-1.1-0.1-1.6-0.1c-1.8,0-3.2,0.3-4,0.8 
+                        C558.2,32.9,557.7,33.7,557.7,35z"></path>
+                  <path d="M587.7,43.4c-4.8,0-7.2-2.6-7.2-7.8V4h7.7V35c0,0.9,0.2,1.5,0.5,1.9c0.3,0.4,0.9,0.5,1.7,0.5 
+                        c0.4,0,0.8,0,1.2-0.1c0.4-0.1,0.8-0.2,1.1-0.4v5.7C591.5,43.1,589.8,43.4,587.7,43.4z"></path>
+                  <path d="M433.6,58.4h25.7v6.7h-17.7v8.1h15.7v6.7h-15.7v9.2h18.7v6.7h-26.7V58.4z"></path>
+                  <path d="M483.8,95.8c-1.7-3-3.6-6.1-5.6-9.2c-0.9,1.5-1.8,3-2.8,4.5c-0.9,1.6-1.8,3.1-2.7,4.7h-8.4 
+                        c1.5-2.3,3.1-4.7,4.7-7c1.6-2.3,3.2-4.5,4.8-6.7c-1.5-2.2-3-4.5-4.4-6.7c-1.4-2.2-2.9-4.5-4.3-6.7h8.6c0.7,1.5,1.5,2.9,2.3,4.3 
+                        c0.8,1.4,1.6,2.9,2.4,4.3c1.7-2.9,3.3-5.8,4.8-8.6h8.4c-1.4,2.2-2.8,4.5-4.2,6.7c-1.5,2.2-2.9,4.4-4.4,6.6 
+                        c1.6,2.2,3.2,4.5,4.8,6.8s3.1,4.6,4.7,7H483.8z"></path>
+                  <path d="M509.2,96.4c-0.9,0-1.8-0.1-2.6-0.3c-0.9-0.2-1.7-0.5-2.5-0.8v12.2h-7.7V68.7h6.6l0.4,3 
+                        c2-2.5,4.6-3.7,7.7-3.7c2.3,0,4.3,0.6,6,1.7c1.7,1.1,3,2.7,3.9,4.7c0.9,2,1.4,4.5,1.4,7.3c0,3-0.5,5.6-1.6,7.8 
+                        c-1.1,2.2-2.6,3.9-4.5,5.1C514.2,95.8,511.9,96.4,509.2,96.4z M509,74.3c-2,0-3.6,0.8-4.9,2.4v12.5c0.7,0.3,1.3,0.6,1.9,0.8 
+                        c0.6,0.2,1.3,0.2,2,0.2c2.1,0,3.6-0.7,4.7-2.1c1.1-1.4,1.6-3.4,1.6-6c0-2.5-0.5-4.4-1.4-5.7C512.1,74.9,510.8,74.3,509,74.3z"></path>
+                  <path d="M550.3,94.4c-2.7,1.4-5.9,2-9.5,2c-3,0-5.5-0.6-7.6-1.7c-2.1-1.1-3.8-2.7-4.9-4.8c-1.1-2.1-1.7-4.6-1.7-7.6 
+                        c0-2.2,0.3-4.2,0.9-5.9c0.6-1.8,1.5-3.3,2.6-4.5c1.1-1.3,2.5-2.2,4.1-2.9c1.6-0.7,3.4-1,5.4-1c3.8,0,6.7,1.2,8.7,3.5 
+                        c2,2.4,3,5.7,3,10.1v2.2h-17.2c0.3,2.2,1.1,3.8,2.3,4.9c1.3,1,3.1,1.6,5.5,1.6c1.6,0,3.1-0.2,4.4-0.5c1.3-0.3,2.6-0.9,3.9-1.7 
+                        V94.4z M539.5,73.6c-1.5,0-2.6,0.5-3.6,1.5c-0.9,1-1.5,2.4-1.8,4.3h10c-0.1-2-0.6-3.4-1.4-4.4C542.1,74.1,541,73.6,539.5,73.6z"></path>
+                  <path d="M571.1,74.9c-2.6,0-4.7,1.1-6.4,3.3v17.6h-7.7V68.7h6.6l0.5,4.2c1.9-3.1,4.3-4.7,7.2-4.7 
+                        c0.7,0,1.3,0.1,1.8,0.2c0.5,0.1,1,0.3,1.5,0.5v7C573.6,75.2,572.5,74.9,571.1,74.9z"></path>
+                  <path d="M582.5,56.7c1.4,0,2.5,0.4,3.3,1.1c0.8,0.7,1.2,1.7,1.2,3c0,1.2-0.4,2.2-1.2,2.9c-0.8,0.7-1.9,1.1-3.3,1.1 
+                        c-1.4,0-2.5-0.4-3.3-1.1c-0.8-0.7-1.2-1.7-1.2-2.9c0-1.3,0.4-2.2,1.2-3C580,57,581.1,56.7,582.5,56.7z M578.6,68.7h7.7v27.1h-7.7 
+                        V68.7z"></path>
+                  <path d="M614.8,94.4c-2.7,1.4-5.9,2-9.5,2c-3,0-5.5-0.6-7.6-1.7c-2.1-1.1-3.8-2.7-4.9-4.8c-1.1-2.1-1.7-4.6-1.7-7.6 
+                        c0-2.2,0.3-4.2,0.9-5.9c0.6-1.8,1.5-3.3,2.6-4.5c1.1-1.3,2.5-2.2,4.1-2.9c1.6-0.7,3.4-1,5.4-1c3.8,0,6.7,1.2,8.7,3.5 
+                        c2,2.4,3,5.7,3,10.1v2.2h-17.2c0.3,2.2,1.1,3.8,2.3,4.9c1.3,1,3.1,1.6,5.5,1.6c1.6,0,3.1-0.2,4.4-0.5c1.3-0.3,2.6-0.9,3.9-1.7 
+                        V94.4z M604,73.6c-1.5,0-2.6,0.5-3.6,1.5c-0.9,1-1.5,2.4-1.8,4.3h10c-0.1-2-0.6-3.4-1.4-4.4C606.6,74.1,605.5,73.6,604,73.6z"></path>
+                  <path d="M634.2,74.3c-2,0-3.7,0.9-5.1,2.6v18.9h-7.7V68.7h6.6l0.4,3.3c2.2-2.6,5-4,8.2-4c3,0,5.3,0.9,6.9,2.7 
+                        c1.6,1.8,2.5,4.4,2.5,7.8v17.2h-7.7V78.9c0-1.5-0.3-2.6-1-3.4C636.5,74.7,635.5,74.3,634.2,74.3z"></path>
+                  <path d="M664.6,96.4c-3,0-5.6-0.6-7.7-1.7c-2.1-1.1-3.7-2.7-4.9-4.8c-1.1-2.1-1.7-4.7-1.7-7.7c0-2.2,0.3-4.1,1-5.9 
+                        c0.7-1.8,1.6-3.3,2.9-4.5c1.3-1.2,2.8-2.2,4.6-2.8c1.8-0.7,3.8-1,6-1c1.4,0,2.7,0.1,3.9,0.4c1.2,0.3,2.3,0.7,3.3,1.2v6.6 
+                        c-0.9-0.7-1.9-1.2-3-1.5c-1.1-0.3-2.2-0.5-3.3-0.5c-2.4,0-4.2,0.7-5.5,2.1c-1.3,1.4-2,3.3-2,5.9c0,2.5,0.6,4.5,1.9,5.9 
+                        c1.3,1.4,3.1,2.1,5.4,2.1c1.3,0,2.4-0.2,3.6-0.5c1.1-0.3,2.2-0.8,3.3-1.6v6.5c-1.1,0.6-2.3,1-3.6,1.4 
+                        C667.5,96.3,666.1,96.4,664.6,96.4z"></path>
+                  <path d="M699.9,94.4c-2.7,1.4-5.9,2-9.5,2c-3,0-5.5-0.6-7.6-1.7c-2.1-1.1-3.8-2.7-4.9-4.8c-1.1-2.1-1.7-4.6-1.7-7.6 
+                        c0-2.2,0.3-4.2,0.9-5.9c0.6-1.8,1.5-3.3,2.6-4.5c1.1-1.3,2.5-2.2,4.1-2.9c1.6-0.7,3.4-1,5.4-1c3.8,0,6.7,1.2,8.7,3.5 
+                        c2,2.4,3,5.7,3,10.1v2.2h-17.2c0.3,2.2,1.1,3.8,2.3,4.9c1.3,1,3.1,1.6,5.5,1.6c1.6,0,3.1-0.2,4.4-0.5c1.3-0.3,2.6-0.9,3.9-1.7 
+                        V94.4z M689.1,73.6c-1.5,0-2.6,0.5-3.6,1.5c-0.9,1-1.5,2.4-1.8,4.3h10c-0.1-2-0.6-3.4-1.4-4.4C691.7,74.1,690.6,73.6,689.1,73.6z"></path>
+                  <path d="M433.6,111.2h8v30.4h17.7v7h-25.8V111.2z"></path>
+                  <path d="M485.2,149.1c-3,0-4.9-1-5.6-3c-1.1,1-2.3,1.8-3.6,2.4c-1.3,0.5-2.7,0.8-4.3,0.8c-2.7,0-4.8-0.7-6.4-2.1 
+                        c-1.5-1.4-2.3-3.4-2.3-5.9c0-2.8,1.1-4.9,3.2-6.4c2.1-1.5,5.1-2.2,9.1-2.2c0.6,0,1.2,0,1.8,0.1c0.6,0.1,1.3,0.1,1.9,0.2v-1.2 
+                        c0-1.6-0.5-2.9-1.4-3.7c-0.9-0.8-2.3-1.2-4.2-1.2c-1.6,0-3,0.2-4.4,0.6c-1.4,0.4-2.7,1.1-4,2v-6.5c1.5-0.7,3-1.3,4.7-1.7 
+                        c1.6-0.4,3.2-0.6,4.9-0.6c3.8,0,6.7,1,8.8,2.8c2.1,1.9,3.1,4.6,3.1,8.1v10.1c0,0.6,0.1,1.1,0.3,1.4c0.2,0.3,0.6,0.4,1.1,0.4 
+                        c0.3,0,0.5,0,0.8-0.1c0.2-0.1,0.5-0.1,0.7-0.3v4.8c-0.6,0.3-1.2,0.5-2,0.7C486.7,149,486,149.1,485.2,149.1z M470.6,140.6 
+                        c0,2.1,1.2,3.2,3.7,3.2c1.8,0,3.4-0.7,4.8-2.2v-4.1c-0.5-0.1-1-0.2-1.5-0.2c-0.5-0.1-1.1-0.1-1.6-0.1c-1.8,0-3.2,0.3-4,0.8 
+                        C471,138.5,470.6,139.4,470.6,140.6z"></path>
+                  <path d="M506.4,127.1c-2,0-3.7,0.9-5.1,2.6v18.9h-7.7v-27.1h6.6l0.4,3.3c2.2-2.6,5-4,8.2-4c3,0,5.3,0.9,6.9,2.7 
+                        c1.6,1.8,2.5,4.4,2.5,7.8v17.2h-7.7v-16.9c0-1.5-0.3-2.6-1-3.4C508.6,127.5,507.7,127.1,506.4,127.1z"></path>
+                  <path d="M548.5,148c0,4.3-1.2,7.5-3.6,9.7c-2.4,2.2-5.9,3.3-10.6,3.3c-1.9,0-3.6-0.2-5.3-0.5 
+                        c-1.6-0.3-3.1-0.9-4.5-1.6v-6.5c1.2,0.8,2.5,1.4,4.1,1.8c1.5,0.4,3.1,0.6,4.7,0.6c4.9,0,7.4-2.1,7.4-6.4v-3.2c-1,1-2,1.8-3.2,2.3 
+                        c-1.1,0.5-2.4,0.7-3.8,0.7c-2.3,0-4.3-0.5-6-1.6c-1.7-1.1-3-2.6-3.9-4.6c-0.9-2-1.4-4.3-1.4-7c0-3,0.6-5.6,1.8-7.7 
+                        c1.2-2.1,2.9-3.7,5.1-4.9c2.2-1.1,5-1.7,8.2-1.7c1.7,0,3.5,0.2,5.2,0.6c1.7,0.4,3.6,1,5.6,1.9V148z M530.5,134.7 
+                        c0,2.3,0.5,4.1,1.4,5.4c0.9,1.3,2.3,1.9,4.1,1.9c1.9,0,3.5-0.7,4.9-2.2v-12c-0.6-0.2-1.2-0.4-1.8-0.5c-0.6-0.1-1.2-0.2-1.9-0.2 
+                        c-2.1,0-3.8,0.7-4.9,2C531,130.4,530.5,132.2,530.5,134.7z"></path>
+                  <path d="M571.5,148.6l-0.4-3.2c-2.2,2.6-4.9,3.9-8,3.9c-3,0-5.2-0.9-6.8-2.7c-1.6-1.8-2.4-4.4-2.4-7.7v-17.4h7.7v17 
+                        c0,1.4,0.3,2.5,1,3.3c0.7,0.7,1.6,1.1,2.9,1.1c1,0,1.9-0.2,2.7-0.7c0.9-0.4,1.6-1.1,2.2-1.9v-18.9h7.7v27.1H571.5z"></path>
+                  <path d="M605.7,149.1c-3,0-4.9-1-5.6-3c-1.1,1-2.3,1.8-3.6,2.4c-1.3,0.5-2.7,0.8-4.3,0.8c-2.7,0-4.8-0.7-6.4-2.1 
+                        c-1.5-1.4-2.3-3.4-2.3-5.9c0-2.8,1.1-4.9,3.2-6.4c2.1-1.5,5.1-2.2,9.1-2.2c0.6,0,1.2,0,1.8,0.1c0.6,0.1,1.3,0.1,1.9,0.2v-1.2 
+                        c0-1.6-0.5-2.9-1.4-3.7c-0.9-0.8-2.3-1.2-4.2-1.2c-1.6,0-3,0.2-4.4,0.6s-2.7,1.1-4,2v-6.5c1.5-0.7,3-1.3,4.7-1.7s3.2-0.6,4.9-0.6 
+                        c3.8,0,6.7,1,8.8,2.8c2.1,1.9,3.1,4.6,3.1,8.1v10.1c0,0.6,0.1,1.1,0.3,1.4c0.2,0.3,0.6,0.4,1.1,0.4c0.3,0,0.5,0,0.8-0.1 
+                        c0.2-0.1,0.5-0.1,0.7-0.3v4.8c-0.6,0.3-1.2,0.5-2,0.7C607.2,149,606.5,149.1,605.7,149.1z M591.1,140.6c0,2.1,1.2,3.2,3.7,3.2 
+                        c1.8,0,3.4-0.7,4.8-2.2v-4.1c-0.5-0.1-1-0.2-1.5-0.2c-0.5-0.1-1.1-0.1-1.6-0.1c-1.8,0-3.2,0.3-4,0.8 
+                        C591.5,138.5,591.1,139.4,591.1,140.6z"></path>
+                  <path d="M638.7,148c0,4.3-1.2,7.5-3.6,9.7c-2.4,2.2-5.9,3.3-10.6,3.3c-1.9,0-3.6-0.2-5.3-0.5 
+                        c-1.6-0.3-3.1-0.9-4.5-1.6v-6.5c1.2,0.8,2.5,1.4,4.1,1.8c1.5,0.4,3.1,0.6,4.7,0.6c4.9,0,7.4-2.1,7.4-6.4v-3.2c-1,1-2,1.8-3.2,2.3 
+                        c-1.1,0.5-2.4,0.7-3.8,0.7c-2.3,0-4.3-0.5-6-1.6c-1.7-1.1-3-2.6-3.9-4.6c-0.9-2-1.4-4.3-1.4-7c0-3,0.6-5.6,1.8-7.7 
+                        c1.2-2.1,2.9-3.7,5.1-4.9c2.2-1.1,5-1.7,8.2-1.7c1.7,0,3.5,0.2,5.2,0.6c1.7,0.4,3.6,1,5.6,1.9V148z M620.6,134.7 
+                        c0,2.3,0.5,4.1,1.4,5.4c0.9,1.3,2.3,1.9,4.1,1.9c1.9,0,3.5-0.7,4.9-2.2v-12c-0.6-0.2-1.2-0.4-1.8-0.5c-0.6-0.1-1.2-0.2-1.9-0.2 
+                        c-2.1,0-3.8,0.7-4.9,2C621.1,130.4,620.6,132.2,620.6,134.7z"></path>
+                  <path d="M667,147.2c-2.7,1.4-5.9,2-9.5,2c-3,0-5.5-0.6-7.6-1.7c-2.1-1.1-3.8-2.7-4.9-4.8c-1.1-2.1-1.7-4.6-1.7-7.6 
+                        c0-2.2,0.3-4.2,0.9-5.9c0.6-1.8,1.5-3.3,2.6-4.5c1.1-1.3,2.5-2.2,4.1-2.9c1.6-0.7,3.4-1,5.4-1c3.8,0,6.7,1.2,8.7,3.5 
+                        c2,2.4,3,5.7,3,10.1v2.2h-17.2c0.3,2.2,1.1,3.8,2.3,4.9c1.3,1,3.1,1.6,5.5,1.6c1.6,0,3.1-0.2,4.4-0.5c1.3-0.3,2.6-0.9,3.9-1.7
+                        V147.2z M656.3,126.4c-1.5,0-2.6,0.5-3.6,1.5c-0.9,1-1.5,2.4-1.8,4.3h10c-0.1-2-0.6-3.4-1.4-4.4
+                        C658.8,126.9,657.7,126.4,656.3,126.4z"></path>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <a href="https://www.bbc.co.uk/gel/features/typography" class="masthead__button gel-o-button">
+            Go to BBC GEL
+          </a>
+        </div>
+      </div>
+      <div class="intro">
+        <div class="intro__outer">
+          <div class="intro__inner gel-3/4@l">
+            <h1 class="intro__heading">Grid</h1>
+            <p class="intro__description">This is a working demo of the <a href="https://www.bbc.co.uk/gel/features/grid">GEL Grid Guidelines</a>. The demo shows how our flexible, percentage-based grid works and how you can use it to create a BBC website.</p>
+          </div>
+        </div>
+      </div>
+      <div class="gel-wrap">
+        <div class="grid-row gel-layout--center">
+          <div class="gel-layout__item gel-10/12@xxl">
+            <div class="grid-controls">
+              <p class="grid-control__device">Your device is currently using:</p>
+              <p class="grid-control__group"></p>
+              <p class="grid-control__spacing"></p>
+              <div class="grid-control__options">
+                <button class="grid-control__option" id="rtl-toggle">Toggle RTL On</button>
+                <button class="grid-control__option" id="overlay-toggle">Toggle Grid Overlay On</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+    <main class="demo" role="main">
+      <div class="grid-section" id="sizes">
+        <h2 class="grid-heading">Sizes</h2>
+        <div class="grid-row">
+          <div class="gel-layout__item">
+            <div class="grid-item">100%</div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="gel-layout__item gel-1/2">
+            <div class="grid-item">50%</div>
+          </div>
+          <div class="gel-layout__item gel-1/2">
+            <div class="grid-item">50%</div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item">33.333%</div>
+          </div>
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item">33.333%</div>
+          </div>
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item">33.333%</div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="gel-layout__item gel-1/4">
+            <div class="grid-item">25%</div>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <div class="grid-item">25%</div>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <div class="grid-item">25%</div>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <div class="grid-item">25%</div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="gel-layout__item gel-1/5">
+            <div class="grid-item">20%</div>
+          </div>
+          <div class="gel-layout__item gel-1/5">
+            <div class="grid-item">20%</div>
+          </div>
+          <div class="gel-layout__item gel-1/5">
+            <div class="grid-item">20%</div>
+          </div>
+          <div class="gel-layout__item gel-1/5">
+            <div class="grid-item">20%</div>
+          </div>
+          <div class="gel-layout__item gel-1/5">
+            <div class="grid-item">20%</div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="gel-layout__item gel-1/8">
+            <div class="grid-item">12.5%</div>
+          </div>
+          <div class="gel-layout__item gel-1/8">
+            <div class="grid-item">12.5%</div>
+          </div>
+          <div class="gel-layout__item gel-1/8">
+            <div class="grid-item">12.5%</div>
+          </div>
+          <div class="gel-layout__item gel-1/8">
+            <div class="grid-item">12.5%</div>
+          </div>
+          <div class="gel-layout__item gel-1/8">
+            <div class="grid-item">12.5%</div>
+          </div>
+          <div class="gel-layout__item gel-1/8">
+            <div class="grid-item">12.5%</div>
+          </div>
+          <div class="gel-layout__item gel-1/8">
+            <div class="grid-item">12.5%</div>
+          </div>
+          <div class="gel-layout__item gel-1/8">
+            <div class="grid-item">12.5%</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-section" id="example">
+        <h2 class="grid-heading">Example grid combinations</h2>
+        <div class="grid-row">
+          <div class="gel-layout__item">
+            <p class="grid-row__title">Quarter / Three Quarters</p>
+          </div>
+          <div class="gel-layout__item gel-1/4@xs">
+            <div class="grid-item">25%</div>
+          </div>
+          <div class="gel-layout__item gel-3/4@xs">
+            <div class="grid-item">75%</div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied at extra small (240px) devices and above.</p>
+        <div class="grid-row">
+          <div class="gel-layout__item">
+            <p class="grid-row__title">Half / Quarter / Two Eighths</p>
+          </div>
+          <div class="gel-layout__item gel-1/2@s">
+            <div class="grid-item">50%</div>
+          </div>
+          <div class="gel-layout__item gel-1/4@s">
+            <div class="grid-item">25%</div>
+          </div>
+          <div class="gel-layout__item gel-1/8@s">
+            <div class="grid-item">12.5%</div>
+          </div>
+          <div class="gel-layout__item gel-1/8@s">
+            <div class="grid-item">12.5%</div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied at small (400px) devices and above.</p>
+        <div class="grid-row">
+          <div class="gel-layout__item">
+            <p class="grid-row__title">Two Thirds / Third</p>
+          </div>
+          <div class="gel-layout__item gel-2/3@m">
+            <div class="grid-item">66.666%</div>
+          </div>
+          <div class="gel-layout__item gel-1/3@m">
+            <div class="grid-item">33.333%</div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied at medium (600px) devices and above.</p>
+        <div class="grid-row">
+          <div class="gel-layout__item">
+            <p class="grid-row__title">Half / Three Sixths</p>
+          </div>
+          <div class="gel-layout__item gel-1/2@l">
+            <div class="grid-item">50%</div>
+          </div>
+          <div class="gel-layout__item gel-1/2@l">
+            <div class="grid-row">
+              <div class="gel-layout__item gel-1/3@s">
+                <div class="grid-item">33.333%</div>
+              </div>
+              <div class="gel-layout__item gel-1/3@s">
+                <div class="grid-item">33.333%</div>
+              </div>
+              <div class="gel-layout__item gel-1/3@s">
+                <div class="grid-item">33.333%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied at large (900px) devices and above.</p>
+      </div>
+
+      <div class="grid-section" id="nested-grids">
+        <h2 class="grid-heading">Nested Grids</h2>
+        <div class="grid-row gel-layout--equal">
+          <div class="gel-layout__item gel-1/2@m">
+            <div class="grid-item">50%</div>
+          </div>
+          <div class="gel-layout__item gel-1/2@m">
+            <div class="grid-row gel-layout--equal">
+              <div class="gel-layout__item gel-1/3@s">
+                <div class="grid-item">33.333%</div>
+              </div>
+              <div class="gel-layout__item gel-2/3@s">
+                <div class="gel-layout">
+                  <div class="gel-layout__item gel-1/2">
+                    <div class="grid-item">50%</div>
+                  </div>
+                  <div class="gel-layout__item gel-1/2">
+                    <div class="grid-item">50%</div>
+                  </div>
+                  <div class="gel-layout__item gel-1/3" style="margin-top: 16px;">
+                    <div class="grid-item">33.333%</div>
+                  </div>
+                  <div class="gel-layout__item gel-1/3" style="margin-top: 16px;">
+                    <div class="grid-item">33.333%</div>
+                  </div>
+                  <div class="gel-layout__item gel-1/3" style="margin-top: 16px;">
+                    <div class="grid-item">33.333%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-section" id="equal-height">
+        <h2 class="grid-heading">Equal Height</h2>
+        <div class="grid-row gel-layout--equal">
+          <div class="gel-layout__item gel-1/2">
+            <div class="grid-item grid-item--auto grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/2">
+            <div class="grid-item grid-item--large grid-item--fill"></div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied with the class: <code>gel-layout--equal</code>. This option only works for browsers which support <code>flexbox</code></p>
+      </div>
+
+      <div class="grid-section" id="horizontal-alignment">
+        <h2 class="grid-heading">Horizontal Alignment</h2>
+        <div class="grid-row">
+          <div class="gel-layout__item gel-1/2">
+            <p class="grid-item__description">Left</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+        </div>
+        <div class="grid-row gel-layout--center">
+          <div class="gel-layout__item gel-1/2">
+            <p class="grid-item__description">Centre</p>
+            <div class="grid-item grid-item--fill"></div>
+            <p class="grid-row__summary">Applied with the class: <code>gel-layout--center</code></p>
+          </div>
+        </div>
+        <div class="grid-row gel-layout--right">
+          <div class="gel-layout__item gel-1/2">
+            <p class="grid-item__description">Right</p>
+            <div class="grid-item grid-item--fill"></div>
+            <p class="grid-row__summary">Applied with the class: <code>gel-layout--right</code></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-section" id="top-alignment">
+        <h2 class="grid-heading">Top Alignment</h2>
+        <div class="grid-row">
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item grid-item--large grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-section" id="middle-alignment">
+        <h2 class="grid-heading">Middle Alignment</h2>
+        <div class="grid-row gel-layout--middle">
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item grid-item--large grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied with the class: <code>gel-layout--middle</code></p>
+      </div>
+
+      <div class="grid-section" id="bottom-alignment">
+        <h2 class="grid-heading">Bottom Alignment</h2>
+        <div class="grid-row gel-layout--bottom">
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item grid-item--large grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/3">
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied with the class: <code>gel-layout--bottom</code></p>
+      </div>
+
+      <div class="grid-section" id="reversed">
+        <h2 class="grid-heading">Reversed</h2>
+        <div class="grid-row gel-layout--rev">
+          <div class="gel-layout__item gel-1/4">
+            <p class="grid-item__description">1</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <p class="grid-item__description">2</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <p class="grid-item__description">3</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <p class="grid-item__description">4</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied with the class: <code>gel-layout--rev</code></p>
+      </div>
+
+      <div class="grid-section" id="independent-alignment">
+        <h2 class="grid-heading">Independent Alignment</h2>
+        <div class="grid-row">
+          <div class="gel-layout__item gel-layout__item--top gel-1/4">
+            <div class="grid-item grid-item--fill"></div>
+            <p class="grid-row__summary">Align Top</p>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <div class="grid-item grid-item--large grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-layout__item--center gel-1/4">
+            <div class="grid-item grid-item--fill"></div>
+            <p class="grid-row__summary">Align Center</p>
+          </div>
+          <div class="gel-layout__item gel-layout__item--bottom gel-1/4">
+            <p class="grid-row__summary">Align Bottom</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied with classes on individual layout items: <code>gel-layout__item--top</code>, <code>gel-layout__item--center</code>, <code>gel-layout__item--bottom</code></p>
+      </div>
+
+      <div class="grid-section" id="flush">
+        <h2 class="grid-heading">Flush</h2>
+        <div class="grid-row gel-layout--flush">
+          <div class="gel-layout__item gel-1/4">
+            <p class="grid-item__description">1</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <p class="grid-item__description">2</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <p class="grid-item__description">3</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item gel-1/4">
+            <p class="grid-item__description">4</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied with the class: <code>gel-layout--flush</code></p>
+      </div>
+
+      <div class="grid-section" id="fit">
+        <h2 class="grid-heading">Fit</h2>
+        <div class="grid-row gel-layout--fit">
+          <div class="gel-layout__item">
+            <p class="grid-item__description">1</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item">
+            <p class="grid-item__description">2</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item">
+            <p class="grid-item__description">3</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item">
+            <p class="grid-item__description">4</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+        </div>
+        <div class="grid-row gel-layout--fit">
+          <div class="gel-layout__item">
+            <p class="grid-item__description">1</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+          <div class="gel-layout__item">
+            <p class="grid-item__description">2</p>
+            <div class="grid-item grid-item--fill"></div>
+          </div>
+        </div>
+        <p class="grid-row__summary">Applied with the class: <code>gel-layout--fit</code>. This option only works for browsers which support <code>flexbox</code></p>
+      </div>
+    </main>
+
+    <script>
+    function overlayTextToggle() {
+      var overlayToggle = document.getElementById('overlay-toggle');
+      overlayToggle.innerHTML === 'Toggle Grid Overlay On' ?
+        overlayToggle.innerHTML = 'Toggle Grid Overlay Off' : overlayToggle.innerHTML = 'Toggle Grid Overlay On';
+    }
+
+    function gridOverlay() {
+      if (document.getElementsByClassName("gel-grid-overlay").length) {
+        document.getElementsByClassName("gel-grid-overlay")[0].remove()
+      }
+      var e = "<div class=\"gel-grid-overlay__grid\"><div class=\"gel-grid-overlay__margin\" style=\"left: 0;\"></div>";
+      for (i = 0; i < 12; i++) {
+        e += "<div class=\"gel-grid-overlay__column\"><div class=\"gel-grid-overlay__column-fill\"></div></div>"
+      }
+      e += "<div class=\"gel-grid-overlay__margin\" style=\"right: 0;\"></div>";
+      e += "</div>";
+      var t = document.createElement("div");
+      t.className = "gel-grid-overlay";
+      t.innerHTML = e;
+      var n = document.createElement("style");
+      n.innerHTML = ".gel-grid-overlay * {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;);}.gel-grid-overlay {z-index: 2147483647; position: fixed; height: 100%; width: 100%; left: 0; top: 0;}.gel-grid-overlay__grid {position: relative; width: 100%; height: 100%; max-width: 1008px; margin: 0 auto; padding: 0 4px;}.gel-grid-overlay__column {display: inline-block; height: 100%; width: 8.33333%; padding: 0 4px;}.gel-grid-overlay__column-fill {background: rgba(255,0,0,0.1); height: 100%;}.gel-grid-overlay__margin {display: inline-block; height: 100%; width: 8px; position: absolute; top: 0; background: rgba(0,255,0,0.1);}@media screen and (min-width: 400px) {.gel-grid-overlay__grid {padding: 0 12px;}.gel-grid-overlay__margin {width: 16px;}@media screen and (min-width: 600px) {.gel-grid-overlay__grid {padding: 0 8px;}.gel-grid-overlay__column {padding: 0 8px;}}@media screen and (min-width: 1280px) {.gel-grid-overlay__grid {max-width: 1280px;}}";
+      document.getElementsByTagName("head")[0].appendChild(n);
+      document.getElementsByTagName("body")[0].appendChild(t);
+      t.addEventListener("click", function() {
+        document.getElementsByClassName("gel-grid-overlay")[0].remove();
+        overlayTextToggle();
+      });
+    }
+
+    function toggleStyles() {
+      var html = document.querySelector('html');
+      var stylesheet = document.getElementById('stylesheet');
+      var rtlToggle = document.getElementById('rtl-toggle');
+
+      rtlToggle.innerHTML = (rtlToggle.innerHTML === 'Toggle RTL On') ?
+        'Toggle RTL Off' : 'Toggle RTL On';
+
+      if (stylesheet.getAttribute('href').indexOf('-rtl') > -1) {
+        stylesheet.setAttribute('href', 'css/demo.css');
+        html.setAttribute('dir', 'ltr');
+      } else {
+        stylesheet.setAttribute('href', 'css/demo-rtl.css');
+        html.setAttribute('dir', 'rtl');
+      }
+    }
+
+    (function() {
+      var overlayToggle = document.getElementById('overlay-toggle');
+      overlayToggle.addEventListener('click', function() {
+        gridOverlay();
+        overlayTextToggle();
+      });
+
+      var rtlToggle = document.getElementById('rtl-toggle');
+      rtlToggle.addEventListener('click', function() {
+        toggleStyles();
+      });
+    }());
+    </script>
+  </body>
+</html>

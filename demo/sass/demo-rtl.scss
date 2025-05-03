@@ -1,0 +1,21 @@
+$gel-grid-enable--markup-output: true;
+$rtl: true;
+
+/*------------------------------------*\
+    # GEL DEMO
+\*------------------------------------*/
+// External Dependencies
+@use 'gel-sass-tools/sass-tools';
+@use 'gel-typography/typography' as type;
+@use 'sass-mq/mq';
+
+// Local Dependencies
+@use 'base';
+@use 'settings';
+
+@use '../../grid' with (
+    $gel-grid-enable--markup-output: true,
+    $gel-grid-breakpoints: (xs, s, m, l, xl),
+);
+
+@use 'object/button';

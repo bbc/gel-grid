@@ -1,0 +1,409 @@
+$gel-grid-enable--markup-output: true;
+$rtl: false;
+// $gel-grid-breakpoints: (xs, s, m, l, xl);
+
+/*------------------------------------*\
+    # GEL DEMO
+\*------------------------------------*/
+// External Dependencies
+@use 'gel-sass-tools/sass-tools';
+@use 'gel-typography/typography' as type;
+@use 'sass-mq/mq';
+
+// Local Dependencies
+@use 'base';
+@use 'settings';
+@use '../../grid' with (
+    $gel-grid-enable--markup-output: true,
+    $gel-grid-breakpoints: (xs, s, m, l, xl),
+);
+@use 'object/button';
+
+
+/**
+  * NEW
+  **/
+
+/**
+  *
+  * CONTROLS
+  *
+  */
+.grid-controls {
+  background-color: settings.$gel-color--orange;
+  color: settings.$gel-color--white;
+  margin-left: -(sass-tools.$gel-spacing-unit);
+  margin-right: -(sass-tools.$gel-spacing-unit);
+  margin-top: 0;
+  padding: sass-tools.$gel-spacing-unit;
+  position: relative;
+
+  @include mq.mq($from: gel-bp-s) {
+      margin-left: sass-tools.double(-(sass-tools.$gel-spacing-unit));
+      margin-right: sass-tools.double(-(sass-tools.$gel-spacing-unit));
+      padding: sass-tools.double(sass-tools.$gel-spacing-unit);
+  }
+
+  @include mq.mq($from: gel-bp-l) {
+      margin: 0 0 sass-tools.quadruple(sass-tools.$gel-spacing-unit);
+  }
+}
+
+.grid-control__device {
+  margin: 0 0 sass-tools.$gel-spacing-unit;
+  padding: 0;
+
+  @include type.gel-typography('double-pica');
+}
+
+.grid-control__group {
+  margin: 0 0 4px;
+  padding: 0;
+
+  @include type.gel-typography('great-primer');
+
+  /**
+    * Change the group name based on the current media-query
+    */
+  &:after {
+    content: sass-tools.flip('Group 1 - Extra Small (0 - 399px)', 'Group 1 - Extra Small \200F(0 - 399px)');
+  }
+ 
+  @include mq.mq($from: gel-bp-s) {
+    &:after {
+      content: sass-tools.flip('Group 2 - Small (400px - 599px)', 'Group 2 - Small \200F(400px - 599px)');
+    }
+  }
+ 
+  @include mq.mq($from: gel-bp-m) {
+    &:after {
+      content: sass-tools.flip('Group 3 - Medium (600px - 899px)', 'Group 3 - Medium \200F(600px - 899px)');
+    }
+  }
+ 
+  @include mq.mq($from: gel-bp-l) {
+    &:after {
+      content: sass-tools.flip('Group 4 - Large (900px)', 'Group 4 - Large \200F(900px)');
+    }
+  }
+ 
+  @include mq.mq($from: gel-bp-xl) {
+    &:after {
+      content: sass-tools.flip('Group 5 - Extra Large (1008px)', 'Group 5 - Extra Large \200F(1008px)');
+    }
+  }
+ 
+  @include mq.mq($from: gel-bp-xxl) {
+    &:after {
+      content: sass-tools.flip('Group 6 - Extra Extra Large (1280px)', 'Group 6 - Extra Extra Large \200F(1280px)');
+    }
+  }
+}
+
+.grid-control__spacing {
+  margin: 0;
+  padding: 0;
+
+  @include type.gel-typography('brevier');
+
+  /**
+    * Change the margin's and gutter's based on the breakpoint
+    */
+  &:after {
+    content: 'Margins: 8px | Gutters: 8px';
+  }
+
+  @include mq.mq($from: gel-bp-s) {
+    &:after {
+      content: 'Margins: 16px | Gutters: 8px';
+    }
+  }
+
+  @include mq.mq($from: gel-bp-m) {
+    &:after {
+      content: 'Margins: 16px | Gutters: 16px  |  For layouts a 900px breakpoint can also be used.';
+    }
+  }
+
+  @include mq.mq($from: gel-bp-l) {
+    &:after {
+      content: 'Margins: 16px | Gutters: 16px';
+    }
+  }
+}
+
+.grid-control__options {
+  margin: sass-tools.$gel-spacing-unit 0 0;
+  padding: 0;
+
+  @include type.gel-typography('brevier-bold');
+
+  @include mq.mq($from: gel-bp-m) {
+    margin-bottom: 0;
+    position: absolute;
+    bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
+    #{sass-tools.$right}: sass-tools.double(sass-tools.$gel-spacing-unit);
+  }
+}
+
+.grid-control__option {
+  background: none;
+  border: 0;
+  color: #fff;
+  outline: 0;
+  padding: 0;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.grid-control__option + .grid-control__option {
+  #{sass-tools.$margin-left}: sass-tools.$gel-spacing-unit;
+}
+
+
+.gel-wrap {
+  @include grid.gel-wrap();
+}
+
+.grid-examples {
+  padding-bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
+}
+
+.gel-layout {
+  @include grid.gel-layout();
+}
+
+.gel-layout__item {
+  @include grid.gel-layout-item();
+}
+
+.grid-heading {
+  margin: 0 0 sass-tools.double(sass-tools.$gel-spacing-unit);
+  padding: 0;
+
+  @include type.gel-typography('double-pica-bold');
+}
+
+.grid-section {
+  border-top: 1px solid settings.$gel-color--alto;
+  margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
+  padding-top: sass-tools.double(sass-tools.$gel-spacing-unit);
+}
+
+.grid-row {
+  margin-top: 16px;
+
+  @include grid.gel-layout();
+
+  // A nested grid-row
+  .grid-row {
+    margin-top: 0;
+  }
+}
+
+.grid-row__title {
+  margin: 0 0 8px;
+  padding: 0;
+
+  @include type.gel-typography('pica');
+}
+
+.grid-row__summary {
+  color: settings.$gel-color--cod-gray;
+  margin: sass-tools.halve(sass-tools.$gel-spacing-unit) 0 0;
+  padding: 0;
+
+  @include type.gel-typography('brevier');
+}
+
+
+/**
+ * A placeholder element to demostrate grid sizing
+ */
+ .grid-item {
+  background-color: #d4e7eb;
+  color: settings.$gel-color--black;
+  padding: sass-tools.$gel-spacing-unit;
+  width: 100%;
+
+  @include type.gel-typography('pica');
+
+  @include mq.mq($from: gel-bp-s) {
+    padding: sass-tools.double(sass-tools.$gel-spacing-unit);
+  }
+
+  &.grid-item {
+    line-height: 18px;
+  }
+}
+
+.grid-item--fill {
+  background: repeating-linear-gradient(180deg, #d4e7eb, #d4e7eb 8px, #aec4cc 8px, #aec4cc 16px);
+}
+
+.grid-item--auto {
+  height: auto;
+}
+
+.grid-item--large {
+  height: 144px;
+}
+
+.grid-item__description {
+  margin-bottom: 8px;
+
+  @include type.gel-typography('pica');
+}
+
+
+
+
+
+
+
+
+
+
+
+.header {
+  margin-bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
+
+
+}
+
+
+
+/**
+*
+* MASTHEAD
+*
+*/
+.masthead {
+  border-bottom: 1px solid settings.$gel-color--alto;
+  padding: sass-tools.$gel-alt-spacing-unit 0;
+}
+
+.masthead__inner {
+  @include grid.gel-wrap();
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.masthead-brand {
+  display: block;
+  margin-bottom: sass-tools.$gel-alt-spacing-unit;
+
+  @include mq.mq($from: 460px) {
+    float: sass-tools.flip(left, right);
+    margin-bottom: 0;
+    padding: sass-tools.halve(sass-tools.$gel-alt-spacing-unit) 0;
+  }
+}
+
+.masthead-brand-link {
+  color: #3a3c3e;
+  display: inline-block;
+  height: 34px;
+  line-height: 1;
+  position: relative;
+  vertical-align: middle;
+  width: 148px;
+
+  @include mq.mq($from: gel-bp-l) {
+    height: 38px;
+    width: 164px;
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+      text-decoration: underline;
+      color: settings.$gel-color--tundora;
+  }
+
+  svg {
+    display: block;
+    fill: currentColor;
+    height: inherit;
+    width: inherit;
+  }
+}
+
+.masthead__button {
+  display: block;
+  width: 100%;
+
+  @include type.gel-typography('long-primer-bold');
+
+  @include mq.mq($from: 460px) {
+    float: sass-tools.flip(right, left);
+    width: auto;
+  }
+}
+
+
+
+/**
+*
+* INTRO
+*
+*/
+.intro {
+  @include grid.gel-wrap();
+
+  & {
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+
+  @include mq.mq($from: gel-bp-l) {
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.intro__outer {
+  @include grid.gel-layout();
+}
+
+.intro__inner {
+  @include grid.gel-layout-item();
+}
+
+.intro__heading {
+  margin: 0 0 sass-tools.$gel-spacing-unit; 
+
+  @include type.gel-typography('canon-bold');
+}
+
+.intro__description {
+  margin: 0;
+  padding: 0;
+}
+
+@include grid.gel-output-grid();
+
+
+/**
+*
+* DEMO
+*
+*/
+.demo {
+  padding-bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
+
+  @include grid.gel-wrap();
+}
