@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   secrets-manager:
-    NPM_TOKEN: CodeBuild:npm
+    NPM_TOKEN: npm:token
 
 phases:
   install:
