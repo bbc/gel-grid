@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   secrets-manager:
-    NPM_TOKEN: npm:token
+    NPM_TOKEN: npm:global
 
 phases:
   install:
