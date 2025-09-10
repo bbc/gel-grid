@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`gel-output-widths() outputs a collection of grid-agnostic width utility classess 1`] = `
 ".gel-1\\/1 {
