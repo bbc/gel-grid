@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`gel-layout-item() creates a single layout group/row, this wraps individual layout items 1`] = `
 ".gel-layout-item {
