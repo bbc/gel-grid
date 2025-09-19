@@ -8,8 +8,8 @@ phases:
   install:
     on-failure: ABORT
     commands:
-      - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-      - npm ci
+      - npm config set -g '//registry.npmjs.org/:_authToken' $NPM_TOKEN
+      - npm config set -g ignore-scripts true
  
   build:
     on-failure: ABORT
