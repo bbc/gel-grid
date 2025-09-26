@@ -11,6 +11,7 @@ phases:
       - npm config set '//registry.npmjs.org/:_authToken' $NPM_TOKEN
       - npm config set ignore-scripts true
       - npm ci
+      - npm audit
 
   build:
     on-failure: ABORT
