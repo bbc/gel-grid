@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`gel-output-widths() outputs a collection of grid-agnostic width utility classess 1`] = `
+exports[`gel-output-widths() > outputs a collection of grid-agnostic width utility classess 1`] = `
 ".gel-1\\/1 {
   width: 100% !important;
 }

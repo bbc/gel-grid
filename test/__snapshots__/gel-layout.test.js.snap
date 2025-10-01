@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`gel-layout() creates a layout to wrap around items 1`] = `
+exports[`gel-layout() > creates a layout to wrap around items 1`] = `
 ".gel-layout {
   direction: ltr;
   display: flex;
@@ -20,7 +20,7 @@ exports[`gel-layout() creates a layout to wrap around items 1`] = `
 }"
 `;
 
-exports[`gel-layout() creates a layout to wrap around items, with an optional whitespace adjustment 1`] = `
+exports[`gel-layout() > creates a layout to wrap around items, with an optional whitespace adjustment 1`] = `
 ".gel-layout {
   direction: ltr;
   display: flex;
