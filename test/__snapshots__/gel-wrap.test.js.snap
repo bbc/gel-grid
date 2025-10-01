@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`gel-wrap() adds box-sizing properties when box-sizing is enabled 1`] = `
+exports[`gel-wrap() > adds box-sizing properties when box-sizing is enabled 1`] = `
 ".gel-wrap {
   box-sizing: border-box;
   margin: 0 auto;
@@ -16,7 +16,7 @@ exports[`gel-wrap() adds box-sizing properties when box-sizing is enabled 1`] = 
 }"
 `;
 
-exports[`gel-wrap() increases to a 1280px width when the 1280 breakpoint is enabled 1`] = `
+exports[`gel-wrap() > increases to a 1280px width when the 1280 breakpoint is enabled 1`] = `
 ".gel-wrap {
   margin: 0 auto;
   max-width: 1008px;
@@ -36,7 +36,7 @@ exports[`gel-wrap() increases to a 1280px width when the 1280 breakpoint is enab
 }"
 `;
 
-exports[`gel-wrap() supports a 1008px width by default 1`] = `
+exports[`gel-wrap() > supports a 1008px width by default 1`] = `
 ".gel-wrap {
   margin: 0 auto;
   max-width: 1008px;
