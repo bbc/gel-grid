@@ -38,7 +38,7 @@
     "jsdom": "27.0.1",
     "prettier": "3.6.2",
     "sass": "1.93.2",
-    "vitest": "3.2.4"
+    "vitest": "4.0.4"
   },
   "dependencies": {
     "gel-sass-tools": "4.1.0",
