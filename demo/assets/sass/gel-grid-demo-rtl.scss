@@ -1,4 +1,7 @@
 @charset "UTF-8";
+
+@use './palette';
+
 html {
   box-sizing: border-box;
 }
@@ -212,19 +215,19 @@ ins {
 
 html {
   font-family: Helvetica, Arial, Sans-serif;
-  color: #404040;
+  color: palette.$tundora;
 }
 
 a, a:visited {
   font-weight: 700;
   text-decoration: underline;
-  color: #404040;
+  color: palette.$tundora;
   transition: color 0.2s ease-out;
 }
 
 a:active, a:focus, a:hover {
   text-decoration: underline;
-  color: #e6711b;
+  color: palette.$orange;
 }
 
 .gel-canon {
@@ -719,11 +722,11 @@ body {
 
 .gs-o-button--primary {
   background-color: #252525;
-  color: #fff;
+  color: palette.$white;
 }
 
 .gs-o-button--primary:active, .gs-o-button--primary:hover {
-  background-color: #121212;
+  background-color: palette.$black;
 }
 
 .gs-o-button--secondary {
@@ -742,22 +745,22 @@ body {
 
 .gs-o-button--clear:active, .gs-o-button--clear:hover {
   background-color: transparent;
-  color: #121212;
+  color: palette.$black;
 }
 
 .gs-o-button--white {
-  background: #fff;
+  background: palette.$white;
   color: #252525;
 }
 
 .gs-o-button--white:active, .gs-o-button--white:hover {
-  background: #fff;
-  color: #121212;
+  background: palette.$white;
+  color: palette.$black;
 }
 
 .gs-o-button--my-bbc {
   background-color: #006def;
-  color: #fff;
+  color: palette.$white;
 }
 
 .gs-o-button--my-bbc:hover {
@@ -766,7 +769,7 @@ body {
 
 .gs-o-button--share {
   background-color: #4a9442;
-  color: #fff;
+  color: palette.$white;
 }
 
 .gs-o-button--share:hover {
@@ -774,7 +777,7 @@ body {
 }
 
 .gs-o-button--border {
-  border: 1px solid #121212;
+  border: 1px solid palette.$black;
 }
 
 .gs-o-button--disabled, .gs-o-button[disabled] {
@@ -996,17 +999,17 @@ body {
 .gs-o-list-ui__link {
   display: block;
   padding: 8px 0;
-  color: #121212;
+  color: palette.$black;
 }
 
 .gs-o-list-ui__link:focus .gs-c-media-icon, .gs-o-list-ui__link:hover .gs-c-media-icon {
   background-color: #ffdf43;
-  color: #121212;
+  color: palette.$black;
 }
 
 .gs-o-list-ui__link:focus .gs-c-media-icon--live, .gs-o-list-ui__link:hover .gs-c-media-icon--live {
   background-color: #1169f6;
-  color: #fff;
+  color: palette.$white;
 }
 
 .gs-o-media {
@@ -1179,7 +1182,7 @@ body {
 
 .gs-o-table__link {
   display: block;
-  color: #121212;
+  color: palette.$black;
   font-weight: 700;
 }
 
@@ -4150,13 +4153,13 @@ body {
   display: inline-block;
   margin: 0;
   border: 0;
-  border: 1px solid #404040;
+  border: 1px solid palette.$tundora;
   padding: 16px;
-  color: #fff;
+  color: palette.$white;
   text-align: center;
   text-decoration: none;
   line-height: 1.2;
-  background-color: #404040;
+  background-color: palette.$tundora;
   appearance: none;
   cursor: pointer;
 }
@@ -4168,23 +4171,23 @@ body {
 }
 .gel-o-button:focus, .gel-o-button:hover, .gel-o-button:visited:focus, .gel-o-button:visited:hover {
   text-decoration: underline;
-  background-color: #121212;
+  background-color: palette.$black;
 }
 
 .gel-o-button:active, .gel-o-button:visited:active {
   top: 1px;
-  background-color: #e6711b;
-  border-color: #e6711b;
+  background-color: palette.$orange;
+  border-color: palette.$orange;
 }
 
 .gel-o-button--clear {
   background-color: transparent;
-  color: #404040;
+  color: palette.$tundora;
 }
 
 .gel-o-button--clear:focus, .gel-o-button--clear:hover {
   background-color: transparent;
-  border-color: #404040;
+  border-color: palette.$tundora;
 }
 
 .gel-o-button--clear:active {
@@ -4206,8 +4209,8 @@ body {
 }
 
 .gel-c-demo-header__banner {
-  border-top: 1px solid #dcdcdc;
-  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid palette.$alto;
+  border-bottom: 1px solid palette.$alto;
   padding: 12px 0;
 }
 
@@ -4224,7 +4227,7 @@ body {
   }
 }
 .gel-c-demo-header__brand-logo {
-  color: #404040;
+  color: palette.$tundora;
   display: inline-block;
   height: 38px;
   line-height: 1;
@@ -4267,8 +4270,8 @@ body {
   margin-right: -8px;
   margin-left: -8px;
   padding: 8px;
-  background-color: #e6711b;
-  color: #fff;
+  background-color: palette.$orange;
+  color: palette.$white;
 }
 
 @media (min-width: 25em) {
@@ -4299,7 +4302,7 @@ body {
   padding: 0;
   border: 0;
   outline: 0;
-  color: #fff;
+  color: palette.$white;
   background: none;
 }
 
@@ -4361,20 +4364,20 @@ body {
 }
 .gel-c-grid-demo-section {
   margin-top: 16px;
-  border-top: 1px solid #dcdcdc;
+  border-top: 1px solid palette.$alto;
   padding-top: 16px;
 }
 
 .gel-c-grid-demo__summary {
   margin-top: 4px;
-  color: #767676;
+  color: palette.$cod-gray;
 }
 
 .gel-c-grid-demo-item {
   width: 100%;
   padding: 8px;
   background-color: #d4e7eb;
-  color: #121212;
+  color: palette.$black;
 }
 
 @media (min-width: 25em) {
