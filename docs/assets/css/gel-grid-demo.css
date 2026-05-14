@@ -1472,7 +1472,7 @@ a:hover {
   display: block;
   margin-bottom: 12px;
 }
-@media (min-width: 28.75em) {
+@media (min-width: 25em) {
   .gel-demo-masthead__brand {
     float: left;
     margin-bottom: 0;
@@ -1520,7 +1520,7 @@ a:hover {
     min-width: 190px;
   }
 }
-@media (min-width: 28.75em) {
+@media (min-width: 25em) {
   .gel-demo-masthead__link,
   .gel-demo-masthead__link:visited {
     float: right;

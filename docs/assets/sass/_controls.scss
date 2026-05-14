@@ -27,7 +27,7 @@
 }
 
 .demo-controls__group {
-  margin-bottom: 4px;
+  margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
 }
 
 .demo-controls__options {
@@ -105,7 +105,7 @@
 }
 
 .gel-demo-items__title {
-    margin-bottom: 4px;
+    margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
 }
 
 .gel-demo-item {
@@ -148,12 +148,12 @@
 }
 
 .gel-demo-item__caption {
-  margin-top: 4px;
+  margin-top: sass-tools.halve(sass-tools.$gel-spacing-unit);
 }
 
 .gel-layout__item--bottom {
   .gel-demo-item__caption {
-    margin-bottom: 4px;
+    margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
     margin-top: 0;
   }
 }

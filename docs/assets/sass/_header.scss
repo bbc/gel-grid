@@ -3,7 +3,7 @@
 @use './palette';
 
 .gel-demo-header {
-  margin-bottom: 16px;
+  margin-bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
 }
 
 .gel-demo-masthead {
@@ -22,7 +22,7 @@
   display: block;
   margin-bottom: 12px;
 
-  @media (min-width: 28.75em) {
+  @include mq.mq($from: gel-bp-s) {
     float: left;
     margin-bottom: 0;
     padding: 6px 0;
@@ -57,17 +57,17 @@
   display: block;
   line-height: 1.2;
   margin: 0;
-  padding: 16px;
+  padding: sass-tools.double(sass-tools.$gel-spacing-unit);
   position: relative;
   text-align: center;
   text-decoration: none;
   width: 100%;
 
-  @media (min-width: 15em) {
+  @include mq.mq($from: gel-bp-xs) {
     min-width: 190px;
   }
 
-  @media (min-width: 28.75em) {
+  @include mq.mq($from: gel-bp-s) {
     float: right;
     width: auto;
   }
@@ -89,13 +89,13 @@
 }
 
 .gel-demo-header__intro {
-  margin: 16px 0;
+  margin: sass-tools.double(sass-tools.$gel-spacing-unit) 0;
 
-  @media (min-width: 56.25em) {
-    margin: 32px 0;
+  @include mq.mq($from: gel-bp-l) {
+    margin: sass-tools.quadruple(sass-tools.$gel-spacing-unit) 0;
   }
 }
 
 .gel-demo-header__title {
-  margin: 0 0 8px;
+  margin: 0 0 sass-tools.$gel-spacing-unit;
 }
