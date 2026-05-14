@@ -1,0 +1,24 @@
+@use 'gel-sass-tools/sass-tools';
+@use 'sass-mq/mq';
+@use './palette';
+
+.gel-demo-section {
+  border-top: 1px solid palette.$alto;
+  margin-top: calc(sass-tools.$gel-spacing-unit * 2);
+  padding-top: calc(sass-tools.$gel-spacing-unit * 2);
+}
+
+.gel-demo-items__title {
+    margin-bottom: 4px;
+}
+
+.gel-demo-section--combinations {
+  .gel-demo-items__title {
+      margin-bottom: 8px;
+  }
+}
+
+.gel-demo-section__summary {
+  margin-top: 4px;
+  color: palette.$cod-gray;
+}

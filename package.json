@@ -7,11 +7,11 @@
     "build": "npm run build:compressed && npm run build:expanded && npm run build:demo",
     "build:compressed": "sass --load-path=node_modules/ --style=compressed --no-source-map src/gel-grid.scss dist/gel-grid.min.css",
     "build:expanded": "sass --load-path=node_modules/ --style=expanded --no-source-map src/gel-grid.scss dist/gel-grid.css",
-    "build:demo": "sass --load-path=node_modules/ --load-path=demo/assets/sass --style=expanded --no-source-map demo/assets/sass:demo/assets/css",
+    "build:demo": "sass --load-path=node_modules/ --load-path=docs/assets/sass --style=expanded --no-source-map docs/assets/sass:docs/assets/css",
     "prettier": "prettier . '!**/*.md' '!bookmarklets/*.js' '!**/*.min.*' --write",
     "test": "npm run prettier && npm run vitest",
     "vitest": "vitest run",
-    "watch:demo": "sass --watch --load-path=node_modules/ --load-path=demo/scss --style=compressed --no-source-map demo/scss:demo/css"
+    "watch": "sass --watch --load-path=node_modules/ --load-path=docs/assets/sass --style=expanded --no-source-map docs/assets/sass:docs/assets/css"
   },
   "repository": {
     "type": "git",

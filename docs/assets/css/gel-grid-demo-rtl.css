@@ -155,9 +155,9 @@ select {
 }
 
 button,
-html input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+html input[type=button],
+input[type=reset],
+input[type=submit] {
   -webkit-appearance: button;
   cursor: pointer;
 }
@@ -177,24 +177,24 @@ input {
   line-height: normal;
 }
 
-input[type='checkbox'],
-input[type='radio'] {
+input[type=checkbox],
+input[type=radio] {
   box-sizing: border-box;
   padding: 0;
 }
 
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
-input[type='search'] {
+input[type=search] {
   -webkit-appearance: textfield;
   box-sizing: content-box;
 }
 
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -905,7 +905,7 @@ body {
   }
 }
 .gs-u-clearfix:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -3831,51 +3831,51 @@ body {
 }
 
 .gel-c-grid-controls__group-name:after {
-  content: 'Group 1 - Extra Small ‏(0 - 399px)';
+  content: "Group 1 - Extra Small ‏(0 - 399px)";
 }
 
 @media (min-width: 25em) {
   .gel-c-grid-controls__group-name:after {
-    content: 'Group 2 - Small ‏(400px - 599px)';
+    content: "Group 2 - Small ‏(400px - 599px)";
   }
 }
 @media (min-width: 37.5em) {
   .gel-c-grid-controls__group-name:after {
-    content: 'Group 3 - Medium ‏(600px - 899px)';
+    content: "Group 3 - Medium ‏(600px - 899px)";
   }
 }
 @media (min-width: 56.25em) {
   .gel-c-grid-controls__group-name:after {
-    content: 'Group 4 - Large ‏(900px)';
+    content: "Group 4 - Large ‏(900px)";
   }
 }
 @media (min-width: 63em) {
   .gel-c-grid-controls__group-name:after {
-    content: 'Group 5 - Extra Large ‏(1008px)';
+    content: "Group 5 - Extra Large ‏(1008px)";
   }
 }
 @media (min-width: 80em) {
   .gel-c-grid-controls__group-name:after {
-    content: 'Group 6 - Extra Extra Large ‏(1280px)';
+    content: "Group 6 - Extra Extra Large ‏(1280px)";
   }
 }
 .gel-c-grid-controls__margin-gutter-size:after {
-  content: 'Margins: 8px | Gutters: 8px';
+  content: "Margins: 8px | Gutters: 8px";
 }
 
 @media (min-width: 25em) {
   .gel-c-grid-controls__margin-gutter-size:after {
-    content: 'Margins: 16px | Gutters: 8px';
+    content: "Margins: 16px | Gutters: 8px";
   }
 }
 @media (min-width: 37.5em) {
   .gel-c-grid-controls__margin-gutter-size:after {
-    content: 'Margins: 16px | Gutters: 16px  |  For layouts a 900px breakpoint can also be used.';
+    content: "Margins: 16px | Gutters: 16px  |  For layouts a 900px breakpoint can also be used.";
   }
 }
 @media (min-width: 56.25em) {
   .gel-c-grid-controls__margin-gutter-size:after {
-    content: 'Margins: 16px | Gutters: 16px';
+    content: "Margins: 16px | Gutters: 16px";
   }
 }
 .gel-c-grid-demo-section {
