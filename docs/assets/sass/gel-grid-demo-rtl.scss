@@ -1,54 +1,7 @@
 @charset "UTF-8";
 
-// GEL Foundations: Grid
-@use '../grid' with (
-  $gel-grid-breakpoints: (xs, s, m, l, xl),
-  $gel-grid-enable--markup-output: true
+@use 'gel-sass-tools/sass-tools' with (
+  $rtl: true
 );
 
-// GEL Foundations: Typography
-@use 'gel-typography';
-
-@use 'demo';
-@use 'header';
-@use 'controls';
-@use 'sections';
-
-.gel-layout {
-  direction: rtl;
-  hanging-punctuation: last;
-  text-align: right;
-}
-
-.gel-layout__item {
-  hanging-punctuation: last;
-  text-align: right;
-}
-
-.gel-layout--right > .gel-layout__item {
-  hanging-punctuation: last;
-  text-align: right;
-}
-
-.gel-layout--center > .gel-layout__item {
-  hanging-punctuation: last;
-  text-align: right;
-}
-
-@media (min-width: 28.75em) {
-  .gel-demo-masthead__brand {
-    float: left;
-  }
-}
-
-@media (min-width: 37.5em) {
-  .demo-controls__options {
-    left: 16px;
-    right: auto;
-  }
-}
-
-.demo-controls__option + .demo-controls__option {
-  margin-left: 0;
-  margin-right: 8px;
-}
+@use 'gel-grid-demo';

@@ -23,7 +23,7 @@
   margin-bottom: 12px;
 
   @include mq.mq($from: gel-bp-s) {
-    float: left;
+    float: sass-tools.flip(left, right);
     margin-bottom: 0;
     padding: 6px 0;
   }
@@ -68,7 +68,7 @@
   }
 
   @include mq.mq($from: gel-bp-s) {
-    float: right;
+    float: sass-tools.flip(right, left);
     width: auto;
   }
 }
