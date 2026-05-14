@@ -4,13 +4,13 @@
 .gel-wrap {
   margin: 0 auto;
   max-width: 1008px;
-  padding-right: 8px;
   padding-left: 8px;
+  padding-right: 8px;
 }
 @media (min-width: 25em) {
   .gel-wrap {
-    padding-left: 16px;
     padding-right: 16px;
+    padding-left: 16px;
   }
 }
 @media (min-width: 80em) {
@@ -23,20 +23,20 @@
   * A grid row
   */
 .gel-layout {
-  direction: ltr;
+  direction: rtl;
   display: flex;
   flex-flow: row wrap;
   flex-grow: 1;
   list-style: none;
-  margin-right: 0;
-  margin-left: -8px;
-  padding-right: 0;
+  margin-left: 0;
+  margin-right: -8px;
   padding-left: 0;
-  text-align: left;
+  padding-right: 0;
+  text-align: right;
 }
 @media (min-width: 37.5em) {
   .gel-layout {
-    margin-left: -16px;
+    margin-right: -16px;
   }
 }
 
@@ -45,14 +45,14 @@
   */
 .gel-layout__item {
   display: inline-block;
-  padding-left: 8px;
-  text-align: left;
+  padding-right: 8px;
+  text-align: right;
   vertical-align: top;
   width: 100%;
 }
 @media (min-width: 37.5em) {
   .gel-layout__item {
-    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -60,11 +60,11 @@
   * Layouts with no gutters.
   */
 .gel-layout--flush {
-  margin-left: 0;
+  margin-right: 0;
 }
 
 .gel-layout--flush > .gel-layout__item {
-  padding-left: 0;
+  padding-right: 0;
 }
 
 /**
@@ -76,13 +76,13 @@
 }
 
 .no-flexbox .gel-layout--rev {
-  direction: rtl;
-  text-align: left;
+  direction: ltr;
+  text-align: right;
 }
 
 .no-flexbox .gel-layout--rev > .gel-layout__item {
-  direction: ltr;
-  text-align: left;
+  direction: rtl;
+  text-align: right;
 }
 
 /**
@@ -111,12 +111,12 @@
   * Make the layout items fill up from the right hand side
   */
 .gel-layout--right {
-  text-align: right;
+  text-align: left;
   justify-content: flex-end;
 }
 
 .gel-layout--right > .gel-layout__item {
-  text-align: left;
+  text-align: right;
 }
 
 /**
@@ -128,7 +128,7 @@
 }
 
 .gel-layout--center > .gel-layout__item {
-  text-align: left;
+  text-align: right;
 }
 
 /**
@@ -1474,7 +1474,7 @@ a:hover {
 }
 @media (min-width: 25em) {
   .gel-demo-masthead__brand {
-    float: left;
+    float: right;
     margin-bottom: 0;
     padding: 6px 0;
   }
@@ -1523,7 +1523,7 @@ a:hover {
 @media (min-width: 25em) {
   .gel-demo-masthead__link,
   .gel-demo-masthead__link:visited {
-    float: right;
+    float: left;
     width: auto;
   }
 }
@@ -1594,7 +1594,7 @@ a:hover {
     bottom: 16px;
     margin-bottom: 0;
     position: absolute;
-    right: 16px;
+    left: 16px;
   }
 }
 
@@ -1607,7 +1607,7 @@ a:hover {
 }
 
 .demo-controls__option + .demo-controls__option {
-  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .demo-controls__group:after {
@@ -1736,41 +1736,4 @@ a:hover {
 .gel-demo-section__summary {
   margin-top: 4px;
   color: #767676;
-}
-
-.gel-layout {
-  direction: rtl;
-  hanging-punctuation: last;
-  text-align: right;
-}
-
-.gel-layout__item {
-  hanging-punctuation: last;
-  text-align: right;
-}
-
-.gel-layout--right > .gel-layout__item {
-  hanging-punctuation: last;
-  text-align: right;
-}
-
-.gel-layout--center > .gel-layout__item {
-  hanging-punctuation: last;
-  text-align: right;
-}
-
-@media (min-width: 28.75em) {
-  .gel-demo-masthead__brand {
-    float: left;
-  }
-}
-@media (min-width: 37.5em) {
-  .demo-controls__options {
-    left: 16px;
-    right: auto;
-  }
-}
-.demo-controls__option + .demo-controls__option {
-  margin-left: 0;
-  margin-right: 8px;
 }

@@ -37,7 +37,7 @@
     bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
     margin-bottom: 0;
     position: absolute;
-    right: sass-tools.double(sass-tools.$gel-spacing-unit);
+    #{sass-tools.$right}: sass-tools.double(sass-tools.$gel-spacing-unit);
   }
 }
 
@@ -50,7 +50,7 @@
 }
 
 .demo-controls__option + .demo-controls__option {
-    margin-left: sass-tools.$gel-spacing-unit;
+    #{sass-tools.$margin-left}: sass-tools.$gel-spacing-unit;
 }
 
 .demo-controls__group:after {
