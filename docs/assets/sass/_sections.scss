@@ -1,0 +1,23 @@
+@use 'gel-sass-tools/sass-tools';
+@use './palette';
+
+.gel-demo-section {
+  border-top: 1px solid palette.$alto;
+  margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
+  padding-top: sass-tools.double(sass-tools.$gel-spacing-unit);
+}
+
+.gel-demo-items__title {
+    margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
+}
+
+.gel-demo-section--combinations {
+  .gel-demo-items__title {
+      margin-bottom: sass-tools.$gel-spacing-unit;
+  }
+}
+
+.gel-demo-section__summary {
+  margin-top: sass-tools.halve(sass-tools.$gel-spacing-unit);
+  color: palette.$cod-gray;
+}

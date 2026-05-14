@@ -1,0 +1,101 @@
+@use 'gel-sass-tools/sass-tools';
+@use 'sass-mq/mq';
+@use './palette';
+
+.gel-demo-header {
+  margin-bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
+}
+
+.gel-demo-masthead {
+  border-top: 1px solid palette.$alto;
+  border-bottom: 1px solid palette.$alto;
+  padding: 12px 0;
+
+  > .gel-wrap:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.gel-demo-masthead__brand {
+  display: block;
+  margin-bottom: 12px;
+
+  @include mq.mq($from: gel-bp-s) {
+    float: left;
+    margin-bottom: 0;
+    padding: 6px 0;
+  }
+}
+
+.gel-demo-masthead__logo {
+  color: palette.$tundora;
+  display: inline-block;
+  height: 38px;
+  line-height: 1;
+  position: relative;
+  vertical-align: middle;
+  width: 164px;
+}
+
+.gel-demo-masthead__svg {
+  display: block;
+  fill: currentColor;
+  height: inherit;
+  width: inherit;
+}
+
+.gel-demo-masthead__link,
+.gel-demo-masthead__link:visited {
+  appearance: none;
+  background-color: palette.$tundora;
+  border: 0;
+  border: 1px solid palette.$tundora;
+  color: palette.$white;
+  cursor: pointer;
+  display: block;
+  line-height: 1.2;
+  margin: 0;
+  padding: sass-tools.double(sass-tools.$gel-spacing-unit);
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+
+  @include mq.mq($from: gel-bp-xs) {
+    min-width: 190px;
+  }
+
+  @include mq.mq($from: gel-bp-s) {
+    float: right;
+    width: auto;
+  }
+}
+
+.gel-demo-masthead__link:focus,
+.gel-demo-masthead__link:hover,
+.gel-demo-masthead__link:visited:focus,
+.gel-demo-masthead__link:visited:hover {
+  background-color: palette.$black;
+  text-decoration: underline;
+}
+
+.gel-demo-masthead__link:active,
+.gel-demo-masthead__link:visited:active {
+  background-color: palette.$orange;
+  border-color: palette.$orange;
+  top: 1px;
+}
+
+.gel-demo-header__intro {
+  margin: sass-tools.double(sass-tools.$gel-spacing-unit) 0;
+
+  @include mq.mq($from: gel-bp-l) {
+    margin: sass-tools.quadruple(sass-tools.$gel-spacing-unit) 0;
+  }
+}
+
+.gel-demo-header__title {
+  margin: 0 0 sass-tools.$gel-spacing-unit;
+}

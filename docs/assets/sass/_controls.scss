@@ -1,0 +1,159 @@
+@use 'gel-sass-tools/sass-tools';
+@use 'sass-mq/mq';
+@use './palette';
+
+.demo-controls {
+  position: relative;
+  margin-top: 0;
+  margin-right: -8px;
+  margin-left: -8px;
+  padding: sass-tools.$gel-spacing-unit;
+  background-color: palette.$orange;
+  color: palette.$white;
+
+  @include mq.mq($from: gel-bp-s) {
+    margin-right: -16px;
+    margin-left: -16px;
+    padding: sass-tools.double(sass-tools.$gel-spacing-unit);
+  }
+
+  @include mq.mq($from: gel-bp-l) {
+    margin: 0 0 sass-tools.quadruple(sass-tools.$gel-spacing-unit);;
+  }
+}
+
+.demo-controls__device {
+  margin-bottom: sass-tools.$gel-spacing-unit;
+}
+
+.demo-controls__group {
+  margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
+}
+
+.demo-controls__options {
+  margin-top: sass-tools.$gel-spacing-unit;
+
+  @include mq.mq($from: gel-bp-m) {
+    bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
+    margin-bottom: 0;
+    position: absolute;
+    right: sass-tools.double(sass-tools.$gel-spacing-unit);
+  }
+}
+
+.demo-controls__option {
+    background: none;
+    border: 0;
+    color: palette.$white;
+    outline: 0;
+    padding: 0;
+}
+
+.demo-controls__option + .demo-controls__option {
+    margin-left: sass-tools.$gel-spacing-unit;
+}
+
+.demo-controls__group:after {
+  content: 'Group 1 - Extra Small (0 - 399px)';
+
+  @include mq.mq($from: gel-bp-s) {
+    content: 'Group 2 - Small (400px - 599px)';
+  }
+
+  @include mq.mq($from: gel-bp-m) {
+    content: 'Group 3 - Medium (600px - 899px)';
+  }
+
+  @include mq.mq($from: gel-bp-l) {
+    content: 'Group 4 - Large (900px)';
+  }
+
+  @include mq.mq($from: gel-bp-xl) {
+    content: 'Group 5 - Extra Large (1008px)';
+  }
+
+  @include mq.mq($from: gel-bp-xxl) {
+    content: 'Group 6 - Extra Extra Large (1280px)';
+  }
+}
+
+.demo-controls__margins:after {
+  content: 'Margins: 8px | Gutters: 8px';
+
+  @include mq.mq($from: gel-bp-s) {
+    content: 'Margins: 16px | Gutters: 8px';
+  }
+
+  @include mq.mq($from: gel-bp-m) {
+    content: 'Margins: 16px | Gutters: 16px  |  For layouts a 900px breakpoint can also be used.';
+  }
+
+  @include mq.mq($from: gel-bp-l) {
+    content: 'Margins: 16px | Gutters: 16px';
+  }
+}
+
+
+.demo-row {
+  margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
+}
+
+.demo-row .demo-row {
+  @include mq.mq($from: gel-bp-m) {
+    margin-top: 0;
+  }
+}
+
+.gel-demo-items__title {
+    margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
+}
+
+.gel-demo-item {
+  background-color: palette.$botticelli;
+  color: palette.$black;
+  padding: sass-tools.$gel-spacing-unit;
+  width: 100%;
+
+  @include mq.mq($from: gel-bp-s) {
+    padding: sass-tools.double(sass-tools.$gel-spacing-unit);
+  }
+}
+
+.gel-demo-section--nested {
+  .gel-demo-item {
+    margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
+
+    @include mq.mq($from: gel-bp-m) {
+      margin-top: 0;
+    }
+  }
+
+  .gel-layout__item .gel-1\/3 .gel-demo-item {
+    @include mq.mq($from: gel-bp-m) {
+      margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
+    }
+  }
+}
+
+.gel-demo-item--fill {
+  background: repeating-linear-gradient(180deg, palette.$botticelli, palette.$botticelli 8px, palette.$heather 0, palette.$heather 16px);
+}
+
+.gel-demo-item--auto {
+  height: auto;
+}
+
+.gel-demo-item--large {
+  height: 144px;
+}
+
+.gel-demo-item__caption {
+  margin-top: sass-tools.halve(sass-tools.$gel-spacing-unit);
+}
+
+.gel-layout__item--bottom {
+  .gel-demo-item__caption {
+    margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
+    margin-top: 0;
+  }
+}
