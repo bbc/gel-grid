@@ -7,8 +7,8 @@
 }
 
 .gel-demo-masthead {
-  border-top: 1px solid #dcdcdc;
-  border-bottom: 1px solid #dcdcdc;
+  border-top: 1px solid palette.$alto;
+  border-bottom: 1px solid palette.$alto;
   padding: 12px 0;
 
   > .gel-wrap:after {
@@ -30,7 +30,7 @@
 }
 
 .gel-demo-masthead__logo {
-  color: #404040;
+  color: palette.$tundora;
   display: inline-block;
   height: 38px;
   line-height: 1;
@@ -49,10 +49,10 @@
 .gel-demo-masthead__link,
 .gel-demo-masthead__link:visited {
   appearance: none;
-  background-color: #404040;
+  background-color: palette.$tundora;
   border: 0;
-  border: 1px solid #404040;
-  color: #fff;
+  border: 1px solid palette.$tundora;
+  color: palette.$white;
   cursor: pointer;
   display: block;
   line-height: 1.2;
@@ -77,14 +77,14 @@
 .gel-demo-masthead__link:hover,
 .gel-demo-masthead__link:visited:focus,
 .gel-demo-masthead__link:visited:hover {
-  background-color: #121212;
+  background-color: palette.$black;
   text-decoration: underline;
 }
 
 .gel-demo-masthead__link:active,
 .gel-demo-masthead__link:visited:active {
-  background-color: #e6711b;
-  border-color: #e6711b;
+  background-color: palette.$orange;
+  border-color: palette.$orange;
   top: 1px;
 }
 

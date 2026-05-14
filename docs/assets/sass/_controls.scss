@@ -1,28 +1,6 @@
 @use 'gel-sass-tools/sass-tools';
 @use 'sass-mq/mq';
-@use '../../../grid';
 @use './palette';
-
-// .gel-wrap {
-//   @include grid.gel-wrap;
-// }
-
-// .gel-layout {
-//   @include grid.gel-layout;
-// }
-
-// .gel-layout__item {
-//   @include grid.gel-layout-item;
-// }
-
-// .gel-layout--center {
-//   text-align: center;
-//   justify-content: center;
-
-//   > .gel-layout__item {
-//     text-align: left;
-//   }
-// }
 
 .demo-controls {
   position: relative;
@@ -36,11 +14,11 @@
   @include mq.mq($from: gel-bp-s) {
     margin-right: -16px;
     margin-left: -16px;
-    padding: 16px;
+    padding: sass-tools.double(sass-tools.$gel-spacing-unit);
   }
 
   @include mq.mq($from: gel-bp-l) {
-    margin: 0 0 32px;
+    margin: 0 0 sass-tools.quadruple(sass-tools.$gel-spacing-unit);;
   }
 }
 
@@ -52,18 +30,14 @@
   margin-bottom: 4px;
 }
 
-.demo-controls__margins {
-  // margin-bottom: 4px;
-}
-
 .demo-controls__options {
   margin-top: sass-tools.$gel-spacing-unit;
 
   @include mq.mq($from: gel-bp-m) {
-    bottom: 16px;
+    bottom: sass-tools.double(sass-tools.$gel-spacing-unit);
     margin-bottom: 0;
     position: absolute;
-    right: 16px;
+    right: sass-tools.double(sass-tools.$gel-spacing-unit);
   }
 }
 
@@ -121,7 +95,7 @@
 
 
 .demo-row {
-  margin-top: 16px
+  margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
 }
 
 .demo-row .demo-row {
@@ -135,19 +109,19 @@
 }
 
 .gel-demo-item {
-  background-color: #d4e7eb;
+  background-color: palette.$botticelli;
   color: palette.$black;
-  padding: 8px;
+  padding: sass-tools.$gel-spacing-unit;
   width: 100%;
 
   @include mq.mq($from: gel-bp-s) {
-    padding: 16px;
+    padding: sass-tools.double(sass-tools.$gel-spacing-unit);
   }
 }
 
 .gel-demo-section--nested {
   .gel-demo-item {
-    margin-top: 16px;
+    margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
 
     @include mq.mq($from: gel-bp-m) {
       margin-top: 0;
@@ -156,17 +130,13 @@
 
   .gel-layout__item .gel-1\/3 .gel-demo-item {
     @include mq.mq($from: gel-bp-m) {
-      margin-top: 16px;
+      margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
     }
   }
-
-  // .gel-layout__item .gel-1\/3 .gel-demo-item {
-  //   margin-top: 16px;
-  // }
 }
 
 .gel-demo-item--fill {
-  background: repeating-linear-gradient(180deg, #d4e7eb, #d4e7eb 8px, #aec4cc 0, #aec4cc 16px);
+  background: repeating-linear-gradient(180deg, palette.$botticelli, palette.$botticelli 8px, palette.$heather 0, palette.$heather 16px);
 }
 
 .gel-demo-item--auto {
