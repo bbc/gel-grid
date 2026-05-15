@@ -1425,8 +1425,12 @@ html {
 }
 
 body {
+  font-family: Arial, Helvetica, freesans, sans-serif;
   margin: 0;
   padding-bottom: 32px;
+}
+.b-reith-sans-font body {
+  font-family: ReithSans, Arial, Helvetica, freesans, sans-serif;
 }
 
 button {
