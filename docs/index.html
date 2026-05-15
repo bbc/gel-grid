@@ -1,9 +1,14 @@
 <!doctype html>
-<html class="no-js b-pw-1280" dir="ltr" lang="en-GB">
+<html class="no-js b-pw-1280 b-reith-sans-font b-reith-serif-font b-reith-serif-loaded b-reith-sans-loaded" dir="ltr" lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <title>GEL Grid Demo | BBC GEL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://static.files.bbci.co.uk" rel="preconnect" crossorigin />
+    <link href="https://static.files.bbci.co.uk" rel="dns-prefetch" />
+    <link rel="preload" href="https://static.files.bbci.co.uk/fonts/reith/2.610/BBCReithSans_W_Rg.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://static.files.bbci.co.uk/fonts/reith/2.610/BBCReithSans_W_Bd.woff2" as="font" type="font/woff2" crossorigin>
 
     <script>
       function hasTouchscreen() {
@@ -36,6 +41,7 @@
 
       document.addEventListener('DOMContentLoaded', initialised);
     </script>
+    <link rel="stylesheet" href="https://static.files.bbci.co.uk/fonts/reith/2.610/bbc-reith.csss" />
     <link rel="stylesheet" href="assets/css/gel-grid-demo.css" id="stylesheet" />
   </head>
   <body>
