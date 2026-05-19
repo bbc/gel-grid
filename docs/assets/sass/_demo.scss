@@ -22,14 +22,13 @@ html {
   box-sizing: inherit;
 }
 
-
 body {
   font-family: Arial, Helvetica, freesans, sans-serif;
   margin: 0;
   padding-bottom: sass-tools.quadruple(sass-tools.$gel-spacing-unit);
 
   .b-reith-sans-font & {
-      font-family: ReithSans, Arial, Helvetica, freesans, sans-serif;
+    font-family: ReithSans, Arial, Helvetica, freesans, sans-serif;
   }
 }
 

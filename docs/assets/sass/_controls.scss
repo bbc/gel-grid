@@ -18,7 +18,7 @@
   }
 
   @include mq.mq($from: gel-bp-l) {
-    margin: 0 0 sass-tools.quadruple(sass-tools.$gel-spacing-unit);;
+    margin: 0 0 sass-tools.quadruple(sass-tools.$gel-spacing-unit);
   }
 }
 
@@ -42,15 +42,15 @@
 }
 
 .demo-controls__option {
-    background: none;
-    border: 0;
-    color: palette.$white;
-    outline: 0;
-    padding: 0;
+  background: none;
+  border: 0;
+  color: palette.$white;
+  outline: 0;
+  padding: 0;
 }
 
 .demo-controls__option + .demo-controls__option {
-    #{sass-tools.$margin-left}: sass-tools.$gel-spacing-unit;
+  #{sass-tools.$margin-left}: sass-tools.$gel-spacing-unit;
 }
 
 .demo-controls__group:after {
@@ -93,7 +93,6 @@
   }
 }
 
-
 .demo-row {
   margin-top: sass-tools.double(sass-tools.$gel-spacing-unit);
 }
@@ -105,7 +104,7 @@
 }
 
 .gel-demo-items__title {
-    margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
+  margin-bottom: sass-tools.halve(sass-tools.$gel-spacing-unit);
 }
 
 .gel-demo-item {
@@ -136,7 +135,13 @@
 }
 
 .gel-demo-item--fill {
-  background: repeating-linear-gradient(180deg, palette.$botticelli, palette.$botticelli 8px, palette.$heather 0, palette.$heather 16px);
+  background: repeating-linear-gradient(
+    180deg,
+    palette.$botticelli,
+    palette.$botticelli 8px,
+    palette.$heather 0,
+    palette.$heather 16px
+  );
 }
 
 .gel-demo-item--auto {
