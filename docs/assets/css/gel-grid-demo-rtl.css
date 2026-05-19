@@ -943,7 +943,8 @@
   letter-spacing: -0.0625rem;
 }
 
-.b-reith-sans-loaded .gel-canon-bold, .b-reith-serif-loaded .gel-canon-bold {
+.b-reith-sans-loaded .gel-canon-bold,
+.b-reith-serif-loaded .gel-canon-bold {
   letter-spacing: normal;
 }
 
@@ -1008,7 +1009,8 @@
   letter-spacing: -0.0625rem;
 }
 
-.b-reith-sans-loaded .gel-trafalgar-bold, .b-reith-serif-loaded .gel-trafalgar-bold {
+.b-reith-sans-loaded .gel-trafalgar-bold,
+.b-reith-serif-loaded .gel-trafalgar-bold {
   letter-spacing: normal;
 }
 
@@ -1073,7 +1075,8 @@
   letter-spacing: -0.0625rem;
 }
 
-.b-reith-sans-loaded .gel-paragon-bold, .b-reith-serif-loaded .gel-paragon-bold {
+.b-reith-sans-loaded .gel-paragon-bold,
+.b-reith-serif-loaded .gel-paragon-bold {
   letter-spacing: normal;
 }
 
@@ -1130,7 +1133,8 @@
   letter-spacing: -0.0625rem;
 }
 
-.b-reith-sans-loaded .gel-double-pica-bold, .b-reith-serif-loaded .gel-double-pica-bold {
+.b-reith-sans-loaded .gel-double-pica-bold,
+.b-reith-serif-loaded .gel-double-pica-bold {
   letter-spacing: normal;
 }
 
@@ -1180,7 +1184,8 @@
     letter-spacing: -1px;
     letter-spacing: -0.0625rem;
   }
-  .b-reith-sans-loaded .gel-great-primer-bold, .b-reith-serif-loaded .gel-great-primer-bold {
+  .b-reith-sans-loaded .gel-great-primer-bold,
+  .b-reith-serif-loaded .gel-great-primer-bold {
     letter-spacing: normal;
   }
 }
@@ -1467,7 +1472,7 @@ a:hover {
   padding: 12px 0;
 }
 .gel-demo-masthead > .gel-wrap:after {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
@@ -1615,50 +1620,50 @@ a:hover {
 }
 
 .demo-controls__group:after {
-  content: "Group 1 - Extra Small (0 - 399px)";
+  content: 'Group 1 - Extra Small (0 - 399px)';
 }
 @media (min-width: 25em) {
   .demo-controls__group:after {
-    content: "Group 2 - Small (400px - 599px)";
+    content: 'Group 2 - Small (400px - 599px)';
   }
 }
 @media (min-width: 37.5em) {
   .demo-controls__group:after {
-    content: "Group 3 - Medium (600px - 899px)";
+    content: 'Group 3 - Medium (600px - 899px)';
   }
 }
 @media (min-width: 56.25em) {
   .demo-controls__group:after {
-    content: "Group 4 - Large (900px)";
+    content: 'Group 4 - Large (900px)';
   }
 }
 @media (min-width: 63em) {
   .demo-controls__group:after {
-    content: "Group 5 - Extra Large (1008px)";
+    content: 'Group 5 - Extra Large (1008px)';
   }
 }
 @media (min-width: 80em) {
   .demo-controls__group:after {
-    content: "Group 6 - Extra Extra Large (1280px)";
+    content: 'Group 6 - Extra Extra Large (1280px)';
   }
 }
 
 .demo-controls__margins:after {
-  content: "Margins: 8px | Gutters: 8px";
+  content: 'Margins: 8px | Gutters: 8px';
 }
 @media (min-width: 25em) {
   .demo-controls__margins:after {
-    content: "Margins: 16px | Gutters: 8px";
+    content: 'Margins: 16px | Gutters: 8px';
   }
 }
 @media (min-width: 37.5em) {
   .demo-controls__margins:after {
-    content: "Margins: 16px | Gutters: 16px  |  For layouts a 900px breakpoint can also be used.";
+    content: 'Margins: 16px | Gutters: 16px  |  For layouts a 900px breakpoint can also be used.';
   }
 }
 @media (min-width: 56.25em) {
   .demo-controls__margins:after {
-    content: "Margins: 16px | Gutters: 16px";
+    content: 'Margins: 16px | Gutters: 16px';
   }
 }
 

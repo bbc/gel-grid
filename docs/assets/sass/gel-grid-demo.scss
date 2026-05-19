@@ -2,7 +2,13 @@
 
 // GEL Foundations: Grid
 @use '../grid' with (
-  $gel-grid-breakpoints: (xs, s, m, l, xl),
+  $gel-grid-breakpoints: (
+    xs,
+    s,
+    m,
+    l,
+    xl,
+  ),
   $gel-grid-enable--markup-output: true
 );
 
