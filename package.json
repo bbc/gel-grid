@@ -43,7 +43,13 @@
   "devDependencies": {
     "jsdom": "29.1.1",
     "prettier": "3.9.6",
-    "sass": "1.101.3",
+    "sass": "1.101.6",
     "vitest": "4.1.10"
+  },
+  "overrides": {
+    "immutable": "5.1.9",
+    "postcss": "8.5.22",
+    "undici": "7.28.0"
+
   }
 }
