@@ -1,6 +1,6 @@
 {
   "name": "gel-grid",
-  "version": "7.1.4",
+  "version": "7.1.5",
   "description": "A flexible code implementation of the GEL Grid",
   "main": "_grid.scss",
   "scripts": {
@@ -37,19 +37,18 @@
   },
   "homepage": "https://github.com/bbc/gel-grid",
   "dependencies": {
-    "gel-sass-tools": "4.1.10",
+    "gel-sass-tools": "4.1.11",
     "sass-mq": "7.0.1"
   },
   "devDependencies": {
-    "jsdom": "29.1.1",
+    "jsdom": "30.0.1",
     "prettier": "3.9.6",
-    "sass": "1.101.6",
+    "sass": "1.102.0",
     "vitest": "4.1.10"
   },
   "overrides": {
     "immutable": "5.1.9",
-    "postcss": "8.5.22",
-    "undici": "7.28.0"
-
+    "postcss": "8.5.24",
+    "undici": "7.29.0"
   }
 }
