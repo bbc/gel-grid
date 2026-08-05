@@ -1,1 +1,4 @@
+--ignore-recency=@asamuzakjp/dom-selector@8.3.2
 --ignore-recency=gel-sass-tools@4.1.11
+--ignore-recency=tldts@7.4.10
+--ignore-recency=tldts-core@7.4.10
