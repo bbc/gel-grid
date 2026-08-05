@@ -37,13 +37,13 @@
   },
   "homepage": "https://github.com/bbc/gel-grid",
   "dependencies": {
-    "gel-sass-tools": "4.1.10",
+    "gel-sass-tools": "4.1.11",
     "sass-mq": "7.0.1"
   },
   "devDependencies": {
-    "jsdom": "29.1.1",
+    "jsdom": "30.0.1",
     "prettier": "3.9.6",
-    "sass": "1.101.6",
+    "sass": "1.102.0",
     "vitest": "4.1.10"
   },
   "overrides": {
