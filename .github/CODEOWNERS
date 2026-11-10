@@ -1,4 +1,1 @@
-/.github/                                                                      @bbc/uxd-admins
-/.npmrc                                                                        @bbc/uxd-admins
-/package.json                                                                  @bbc/uxd-admins
-/package-lock.json                                                             @bbc/uxd-admins
+*                                                                              @bbc/uxd-engineering

@@ -1,0 +1,37 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    allow:
+      - dependency-name: '*'
+        # Block major version updates
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
+    commit-message:
+      prefix: 'chore (deps)'
+    cooldown:
+      default-days: 7
+      exclude:
+        - '@bbc/*'
+        - 'gel-grid'
+        - 'gel-sass-tools'
+        - 'gel-typography'
+    groups:
+      dependencies:
+        dependency-type: production
+      dev-dependencies:
+        dependency-type: development
+    # Updates are grouped into two (production & development), so we can limit
+    # the number of PRs (security updates are excluded from this limit)
+    open-pull-requests-limit: 4
+    schedule:
+      interval: 'weekly'
+      day: 'tuesday'
+      time: '06:00'
+      timezone: 'Europe/London'
