@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/bbc/gel-grid",
   "dependencies": {
-    "gel-sass-tools": "4.1.12",
+    "gel-sass-tools": "4.1.13",
     "sass-mq": "7.0.1"
   },
   "devDependencies": {
