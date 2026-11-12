@@ -11,8 +11,8 @@ updates:
       - dependency-name: '*'
         # Block major version updates
         update-types:
-          - "version-update:semver-minor"
-          - "version-update:semver-patch"
+          - 'version-update:semver-minor'
+          - 'version-update:semver-patch'
     commit-message:
       prefix: 'chore (deps)'
     cooldown:
