@@ -41,9 +41,9 @@
     "sass-mq": "7.0.1"
   },
   "devDependencies": {
-    "jsdom": "30.1.3",
-    "prettier": "3.9.10",
-    "sass": "1.108.1",
+    "jsdom": "31.0.0",
+    "prettier": "3.10.0",
+    "sass": "1.108.2",
     "vitest": "5.1.0"
   }
 }
